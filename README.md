@@ -180,6 +180,30 @@ Ensure `@astrojs/mdx` is at least version 4.0.0 (required for Astro 5).
 - [Astro 5 Upgrade Guide](https://docs.astro.build/en/guides/upgrade-to/v5/)
 - [Material You 3 Guidelines](https://m3.material.io/)
 
+## 🔗 Obsidian Knowledge Garden Integration
+
+### Bidirectional Linking
+
+Teardowns can link to your Obsidian notes using the `relatedNotes` frontmatter field:
+
+```yaml
+relatedNotes:
+  - "Homelab/Pi-hole Setup"
+  - "Projects/Raspberry Pi NVMe Configuration"
+```
+
+These render as clickable links to your published knowledge garden.
+
+### Automatic Index Updates
+
+Run `./sync-to-obsidian.sh` after committing teardowns to automatically update your Obsidian vault with:
+- Complete teardown index
+- Statistics and categories
+- Bidirectional links
+- Auto-generated metadata
+
+See [WORKFLOW.md](./WORKFLOW.md) for complete integration details.
+
 ## 🔒 Privacy Considerations
 
 - All uploaded images should have EXIF metadata stripped

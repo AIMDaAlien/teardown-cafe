@@ -147,3 +147,23 @@ img {
   height: auto;
   display: block;
 }
+
+.teardown-content img,
+article img {
+  max-height: 600px;
+  width: auto;
+  height: auto;
+  display: block;
+  margin: 1.5rem auto;
+  object-fit: contain;
+  border: 1px solid var(--md-sys-color-outline-variant, rgba(255, 255, 255, 0.1));
+  border-radius: 8px;
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  .teardown-content img,
+  article img {
+    max-height: 400px;
+  }
+}
