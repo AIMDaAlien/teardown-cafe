@@ -1,0 +1,85 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="About">
+  <article class="about-content">
+    <h1 class="display-large">About Teardown Cafe</h1>
+    
+    <section class="about-section">
+      <p class="lead-text">
+        Welcome to Teardown Cafe, where curiosity meets coffee and every device 
+        has a story to tell.
+      </p>
+      
+      <h2 class="headline-large">What We Do</h2>
+      <p>
+        We meticulously disassemble and document consumer electronics, embedded systems, 
+        and mechanical devices. Each teardown reveals the engineering decisions, component 
+        choices, and design philosophies that make modern technology tick.
+      </p>
+      
+      <h2 class="headline-large">Why Teardowns?</h2>
+      <p>
+        Understanding how devices work internally helps us appreciate the complexity 
+        of modern engineering, make better purchasing decisions, and learn repair techniques. 
+        Plus, it's just plain fascinating.
+      </p>
+      
+      <h2 class="headline-large">Our Process</h2>
+      <ul>
+        <li>Careful documentation with high-quality photography</li>
+        <li>Component identification and analysis</li>
+        <li>Build quality assessment</li>
+        <li>Repairability evaluation</li>
+        <li>Privacy-conscious metadata handling</li>
+      </ul>
+      
+      <h2 class="headline-large">Privacy First</h2>
+      <p>
+        All uploaded images are automatically stripped of EXIF metadata, including 
+        location data, to protect your privacy. We believe in responsible tech journalism.
+      </p>
+    </section>
+  </article>
+</BaseLayout>
+
+<style>
+  .about-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .about-content h1 {
+    margin-bottom: 2rem;
+  }
+  
+  .lead-text {
+    font-size: 1.25rem;
+    color: var(--md-sys-color-on-surface-variant);
+    margin: 1.5rem 0;
+    line-height: 1.6;
+  }
+  
+  .about-section h2 {
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .about-section p {
+    margin: 1rem 0;
+    line-height: 1.8;
+    color: var(--md-sys-color-on-surface);
+  }
+  
+  .about-section ul {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+  }
+  
+  .about-section li {
+    margin: 0.75rem 0;
+    line-height: 1.6;
+    color: var(--md-sys-color-on-surface);
+  }
+</style>

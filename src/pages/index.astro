@@ -1,0 +1,199 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+// Astro 5: Get all teardowns using Content Layer API
+const teardowns = await getCollection('teardowns');
+
+// Sort by date (newest first)
+const sortedTeardowns = teardowns.sort((a, b) => {
+  return b.data.pubDate.valueOf() - a.data.pubDate.valueOf();
+});
+---
+
+<BaseLayout title="Home">
+  <section class="hero">
+    <h1 class="display-large">Teardown Cafe</h1>
+    <p class="hero-subtitle">
+      Where curiosity meets coffee. Deconstructing devices one screw at a time.
+    </p>
+  </section>
+
+  <section class="teardowns-grid">
+    {sortedTeardowns.map((teardown) => (
+      <article class="teardown-card">
+        <a href={`/teardowns/${teardown.id}`} class="card-link">
+          {teardown.data.heroImage && (
+            <div class="card-image">
+              <img 
+                src={teardown.data.heroImage} 
+                alt={teardown.data.title}
+                loading="lazy"
+              />
+            </div>
+          )}
+          <div class="card-content">
+            <div class="card-meta">
+              <span class="device-type">{teardown.data.device}</span>
+              <span class="difficulty difficulty-{teardown.data.difficulty}">
+                {teardown.data.difficulty}
+              </span>
+            </div>
+            <h2 class="title-large">{teardown.data.title}</h2>
+            <p class="card-description">{teardown.data.description}</p>
+            <time class="card-date" datetime={teardown.data.pubDate.toISOString()}>
+              {teardown.data.pubDate.toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+              })}
+            </time>
+          </div>
+        </a>
+      </article>
+    ))}
+  </section>
+
+  {sortedTeardowns.length === 0 && (
+    <div class="empty-state">
+      <p>No teardowns yet. Check back soon!</p>
+    </div>
+  )}
+</BaseLayout>
+
+<style>
+  .hero {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 2rem 0;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.25rem;
+    color: var(--md-sys-color-on-surface-variant);
+    margin-top: 1rem;
+  }
+  
+  .teardowns-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+  
+  .teardown-card {
+    background-color: var(--md-sys-color-surface-container);
+    border-radius: var(--md-sys-shape-corner-large);
+    overflow: hidden;
+    transition: all var(--md-sys-motion-duration-medium) var(--md-sys-motion-easing-emphasized);
+    box-shadow: var(--md-sys-elevation-level1);
+  }
+  
+  .teardown-card:hover {
+    box-shadow: var(--md-sys-elevation-level3);
+    transform: translateY(-8px) scale(1.02);
+  }
+  
+  .card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+  
+  .card-image {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 aspect ratio */
+    background-color: var(--md-sys-color-surface-container-highest);
+    overflow: hidden;
+  }
+  
+  .card-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--md-sys-motion-duration-medium) var(--md-sys-motion-easing-emphasized);
+  }
+  
+  .teardown-card:hover .card-image img {
+    transform: scale(1.1);
+  }
+  
+  .card-content {
+    padding: 1.5rem;
+  }
+  
+  .card-meta {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+    flex-wrap: wrap;
+  }
+  
+  .device-type {
+    background-color: var(--md-sys-color-primary-container);
+    color: var(--md-sys-color-on-primary-container);
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--md-sys-shape-corner-full);
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-transform: capitalize;
+  }
+  
+  .difficulty {
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--md-sys-shape-corner-full);
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-transform: capitalize;
+  }
+  
+  .difficulty-easy {
+    background-color: #2E7D32;
+    color: #E8F5E9;
+  }
+  
+  .difficulty-medium {
+    background-color: #F57C00;
+    color: #FFF3E0;
+  }
+  
+  .difficulty-hard {
+    background-color: #C62828;
+    color: #FFEBEE;
+  }
+  
+  .card-content h2 {
+    margin: 0.5rem 0;
+    color: var(--md-sys-color-on-surface);
+  }
+  
+  .card-description {
+    color: var(--md-sys-color-on-surface-variant);
+    margin: 0.75rem 0;
+    line-height: 1.5;
+  }
+  
+  .card-date {
+    display: block;
+    font-size: 0.875rem;
+    color: var(--md-sys-color-on-surface-variant);
+    margin-top: 0.75rem;
+  }
+  
+  .empty-state {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: var(--md-sys-color-on-surface-variant);
+    font-size: 1.25rem;
+  }
+  
+  @media (max-width: 768px) {
+    .teardowns-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

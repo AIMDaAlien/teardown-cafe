@@ -1,0 +1,228 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection, render } from 'astro:content';
+
+// Astro 5: Generate static paths using entry.id (not entry.slug)
+export async function getStaticPaths() {
+  const teardowns = await getCollection('teardowns');
+  return teardowns.map((entry) => ({
+    params: { id: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+
+// Astro 5: Use render(entry) instead of entry.render()
+const { Content } = await render(entry);
+---
+
+<BaseLayout 
+  title={entry.data.title}
+  description={entry.data.description}
+>
+  <article class="teardown-article">
+    <header class="article-header">
+      <div class="article-meta">
+        <span class="device-type">{entry.data.device}</span>
+        <span class="difficulty difficulty-{entry.data.difficulty}">
+          {entry.data.difficulty}
+        </span>
+        <time datetime={entry.data.pubDate.toISOString()}>
+          {entry.data.pubDate.toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+          })}
+        </time>
+      </div>
+      
+      <h1 class="display-large">{entry.data.title}</h1>
+      <p class="article-lead">{entry.data.description}</p>
+      
+      {entry.data.heroImage && (
+        <div class="hero-image">
+          <img 
+            src={entry.data.heroImage} 
+            alt={entry.data.title}
+          />
+        </div>
+      )}
+    </header>
+    
+    <div class="article-content">
+      <Content />
+    </div>
+    
+    <footer class="article-footer">
+      <a href="/" class="back-link">← Back to all teardowns</a>
+    </footer>
+  </article>
+</BaseLayout>
+
+<style>
+  .teardown-article {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .article-header {
+    margin-bottom: 3rem;
+  }
+  
+  .article-meta {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  
+  .device-type {
+    background-color: var(--md-sys-color-primary-container);
+    color: var(--md-sys-color-on-primary-container);
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--md-sys-shape-corner-full);
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-transform: capitalize;
+  }
+  
+  .difficulty {
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--md-sys-shape-corner-full);
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-transform: capitalize;
+  }
+  
+  .difficulty-easy {
+    background-color: #2E7D32;
+    color: #E8F5E9;
+  }
+  
+  .difficulty-medium {
+    background-color: #F57C00;
+    color: #FFF3E0;
+  }
+  
+  .difficulty-hard {
+    background-color: #C62828;
+    color: #FFEBEE;
+  }
+  
+  .article-meta time {
+    color: var(--md-sys-color-on-surface-variant);
+    font-size: 0.875rem;
+  }
+  
+  .article-header h1 {
+    margin: 1rem 0;
+  }
+  
+  .article-lead {
+    font-size: 1.25rem;
+    color: var(--md-sys-color-on-surface-variant);
+    margin: 1rem 0 2rem;
+  }
+  
+  .hero-image {
+    border-radius: var(--md-sys-shape-corner-large);
+    overflow: hidden;
+    margin: 2rem 0;
+    box-shadow: var(--md-sys-elevation-level2);
+  }
+  
+  .hero-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .article-content {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: var(--md-sys-color-on-surface);
+  }
+  
+  .article-content :global(h2) {
+    font-size: var(--md-sys-typescale-headline-large-size);
+    font-weight: var(--md-sys-typescale-headline-large-weight);
+    margin: 2rem 0 1rem;
+    color: var(--md-sys-color-on-surface);
+  }
+  
+  .article-content :global(h3) {
+    font-size: var(--md-sys-typescale-title-large-size);
+    font-weight: var(--md-sys-typescale-title-large-weight);
+    margin: 1.5rem 0 0.75rem;
+    color: var(--md-sys-color-on-surface);
+  }
+  
+  .article-content :global(p) {
+    margin: 1rem 0;
+  }
+  
+  .article-content :global(ul),
+  .article-content :global(ol) {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+  }
+  
+  .article-content :global(li) {
+    margin: 0.5rem 0;
+  }
+  
+  .article-content :global(img) {
+    border-radius: var(--md-sys-shape-corner-medium);
+    margin: 1.5rem 0;
+    box-shadow: var(--md-sys-elevation-level1);
+  }
+  
+  .article-content :global(code) {
+    background-color: var(--md-sys-color-surface-container-highest);
+    color: var(--md-sys-color-primary);
+    padding: 0.125rem 0.375rem;
+    border-radius: var(--md-sys-shape-corner-extra-small);
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+  }
+  
+  .article-content :global(pre) {
+    background-color: var(--md-sys-color-surface-container-highest);
+    border-radius: var(--md-sys-shape-corner-medium);
+    padding: 1rem;
+    overflow-x: auto;
+    margin: 1.5rem 0;
+  }
+  
+  .article-content :global(pre code) {
+    background: none;
+    padding: 0;
+  }
+  
+  .article-footer {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--md-sys-color-outline-variant);
+  }
+  
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--md-sys-color-primary);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.75rem 1.25rem;
+    background-color: var(--md-sys-color-surface-container-highest);
+    border-radius: var(--md-sys-shape-corner-full);
+    transition: all var(--md-sys-motion-duration-short) var(--md-sys-motion-easing-standard);
+  }
+  
+  .back-link:hover {
+    background-color: var(--md-sys-color-primary-container);
+    color: var(--md-sys-color-on-primary-container);
+    transform: translateX(-4px);
+  }
+</style>
