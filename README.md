@@ -1,10 +1,10 @@
 # ☕ Teardown Cafe
 
-A modern device teardown blog built with **Astro 5** and Material You 3 design system.
+Teardown blog built with **Astro 5** and Material You 3 design system.
 
 ## 🏗️ Architecture Overview
 
-This project uses **Astro 5's Content Layer API** (released December 2024) for content management. This is a significant departure from legacy content collections.
+This project uses **Astro 5's Content Layer API** (released December 2024) for content management.
 
 ### Key Astro 5 Changes Implemented
 
