@@ -1,100 +1,90 @@
 ---
 // Circuit Pattern SVG Accents - Tech-themed minimalistic floating elements
-// 3-4 subtle accents with gentle scroll-responsive motion
-// Periwinkle palette (#C4ACFA primary) with increased saturation
+// ENHANCED v2: Continuous rotation + NO gradients + internal element animations
+// 4 subtle accents with:
+// - Continuous slow rotation (20-40s cycles)
+// - Pulsing nodes + flowing traces
+// - Enhanced hover physics + internal animations
+// - Solid periwinkle colors only (no gradients per constraints)
+// - 60fps+ performance with reduced-motion support
 ---
 
 <div class="circuit-accents" aria-hidden="true">
   <!-- Accent 1: Top-right floating circuit node -->
-  <svg class="circuit-accent circuit-accent-1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <linearGradient id="circuit-grad-1" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" style="stop-color:#C4ACFA;stop-opacity:0.4" />
-        <stop offset="100%" style="stop-color:#A78BFF;stop-opacity:0.2" />
-      </linearGradient>
-    </defs>
-    <!-- Central node -->
-    <circle cx="100" cy="100" r="8" fill="#C4ACFA" opacity="0.6"/>
-    <!-- Connection lines -->
-    <line x1="100" y1="100" x2="140" y2="80" stroke="url(#circuit-grad-1)" stroke-width="2" opacity="0.5"/>
-    <line x1="100" y1="100" x2="60" y2="120" stroke="url(#circuit-grad-1)" stroke-width="2" opacity="0.5"/>
-    <line x1="100" y1="100" x2="100" y2="50" stroke="url(#circuit-grad-1)" stroke-width="2" opacity="0.5"/>
-    <!-- Terminal nodes -->
-    <circle cx="140" cy="80" r="5" fill="#A78BFF" opacity="0.5"/>
-    <circle cx="60" cy="120" r="5" fill="#A78BFF" opacity="0.5"/>
-    <circle cx="100" cy="50" r="5" fill="#A78BFF" opacity="0.5"/>
+  <svg class="circuit-accent circuit-accent-1" data-accent-id="1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <!-- Central node with pulse animation -->
+    <circle class="pulse-node pulse-node-center" cx="100" cy="100" r="8" fill="#C4ACFA" opacity="0.7"/>
+    
+    <!-- Connection lines with flow animation -->
+    <line class="circuit-trace trace-1" x1="100" y1="100" x2="140" y2="80" stroke="#C4ACFA" stroke-width="2" opacity="0.4"/>
+    <line class="circuit-trace trace-2" x1="100" y1="100" x2="60" y2="120" stroke="#B8B3FF" stroke-width="2" opacity="0.4"/>
+    <line class="circuit-trace trace-3" x1="100" y1="100" x2="100" y2="50" stroke="#D4BCFF" stroke-width="2" opacity="0.4"/>
+    
+    <!-- Terminal nodes with blink animation -->
+    <circle class="pulse-node pulse-node-1" cx="140" cy="80" r="5" fill="#A78BFF" opacity="0.5"/>
+    <circle class="pulse-node pulse-node-2" cx="60" cy="120" r="5" fill="#A78BFF" opacity="0.5"/>
+    <circle class="pulse-node pulse-node-3" cx="100" cy="50" r="5" fill="#A78BFF" opacity="0.5"/>
+    
     <!-- Micro traces -->
-    <path d="M 140 80 l 15 -10 l 5 5" stroke="#C4ACFA" stroke-width="1.5" fill="none" opacity="0.3"/>
-    <path d="M 60 120 l -15 10 l -5 -5" stroke="#C4ACFA" stroke-width="1.5" fill="none" opacity="0.3"/>
+    <path class="circuit-trace trace-4" d="M 140 80 l 15 -10 l 5 5" stroke="#C4ACFA" stroke-width="1.5" fill="none" opacity="0.3"/>
+    <path class="circuit-trace trace-5" d="M 60 120 l -15 10 l -5 -5" stroke="#C4ACFA" stroke-width="1.5" fill="none" opacity="0.3"/>
   </svg>
 
   <!-- Accent 2: Mid-left circuit board trace -->
-  <svg class="circuit-accent circuit-accent-2" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <linearGradient id="circuit-grad-2" x1="0%" y1="0%" x2="0%" y2="100%">
-        <stop offset="0%" style="stop-color:#D4BCFF;stop-opacity:0.4" />
-        <stop offset="100%" style="stop-color:#C4ACFA;stop-opacity:0.2" />
-      </linearGradient>
-    </defs>
+  <svg class="circuit-accent circuit-accent-2" data-accent-id="2" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
     <!-- Vertical trace with junction -->
-    <rect x="88" y="40" width="4" height="60" fill="url(#circuit-grad-2)" opacity="0.5"/>
-    <circle cx="90" cy="100" r="6" fill="#C4ACFA" opacity="0.6"/>
-    <!-- Horizontal branch -->
-    <rect x="60" y="98" width="30" height="4" fill="url(#circuit-grad-2)" opacity="0.5"/>
-    <rect x="90" y="98" width="30" height="4" fill="url(#circuit-grad-2)" opacity="0.5"/>
+    <rect class="circuit-trace" x="88" y="40" width="4" height="60" fill="#D4BCFF" opacity="0.4"/>
+    <circle class="pulse-node pulse-node-center" cx="90" cy="100" r="6" fill="#C4ACFA" opacity="0.6"/>
+    
+    <!-- Horizontal branches -->
+    <rect class="circuit-trace" x="60" y="98" width="30" height="4" fill="#C4ACFA" opacity="0.4"/>
+    <rect class="circuit-trace" x="90" y="98" width="30" height="4" fill="#B8B3FF" opacity="0.4"/>
+    
     <!-- Terminal pads -->
-    <rect x="58" y="96" width="8" height="8" rx="2" fill="#D4BCFF" opacity="0.4"/>
-    <rect x="114" y="96" width="8" height="8" rx="2" fill="#D4BCFF" opacity="0.4"/>
-    <!-- Via hole -->
+    <rect class="pulse-node pulse-node-1" x="58" y="96" width="8" height="8" rx="2" fill="#D4BCFF" opacity="0.4"/>
+    <rect class="pulse-node pulse-node-2" x="114" y="96" width="8" height="8" rx="2" fill="#D4BCFF" opacity="0.4"/>
+    
+    <!-- Via hole (darker center) -->
     <circle cx="90" cy="100" r="3" fill="#361F68" opacity="0.8"/>
   </svg>
 
   <!-- Accent 3: Bottom-right chip outline -->
-  <svg class="circuit-accent circuit-accent-3" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <linearGradient id="circuit-grad-3" x1="0%" y1="0%" x2="100%" y2="0%">
-        <stop offset="0%" style="stop-color:#A78BFF;stop-opacity:0.3" />
-        <stop offset="50%" style="stop-color:#C4ACFA;stop-opacity:0.5" />
-        <stop offset="100%" style="stop-color:#A78BFF;stop-opacity:0.3" />
-      </linearGradient>
-    </defs>
+  <svg class="circuit-accent circuit-accent-3" data-accent-id="3" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
     <!-- Chip body -->
-    <rect x="60" y="60" width="40" height="40" rx="3" 
-          fill="none" stroke="url(#circuit-grad-3)" stroke-width="2" opacity="0.6"/>
-    <!-- Pins (left side) -->
-    <rect x="50" y="65" width="10" height="2" fill="#C4ACFA" opacity="0.4"/>
-    <rect x="50" y="72" width="10" height="2" fill="#C4ACFA" opacity="0.4"/>
-    <rect x="50" y="79" width="10" height="2" fill="#C4ACFA" opacity="0.4"/>
-    <rect x="50" y="86" width="10" height="2" fill="#C4ACFA" opacity="0.4"/>
-    <rect x="50" y="93" width="10" height="2" fill="#C4ACFA" opacity="0.4"/>
+    <rect class="chip-body" x="60" y="60" width="40" height="40" rx="3" 
+          fill="none" stroke="#C4ACFA" stroke-width="2" opacity="0.5"/>
+    
+    <!-- Pins (left side) with stagger animation -->
+    <rect class="chip-pin chip-pin-1" x="50" y="65" width="10" height="2" fill="#C4ACFA" opacity="0.4"/>
+    <rect class="chip-pin chip-pin-2" x="50" y="72" width="10" height="2" fill="#B8B3FF" opacity="0.4"/>
+    <rect class="chip-pin chip-pin-3" x="50" y="79" width="10" height="2" fill="#C4ACFA" opacity="0.4"/>
+    <rect class="chip-pin chip-pin-4" x="50" y="86" width="10" height="2" fill="#B8B3FF" opacity="0.4"/>
+    <rect class="chip-pin chip-pin-5" x="50" y="93" width="10" height="2" fill="#C4ACFA" opacity="0.4"/>
+    
     <!-- Pins (right side) -->
-    <rect x="100" y="65" width="10" height="2" fill="#C4ACFA" opacity="0.4"/>
-    <rect x="100" y="72" width="10" height="2" fill="#C4ACFA" opacity="0.4"/>
-    <rect x="100" y="79" width="10" height="2" fill="#C4ACFA" opacity="0.4"/>
-    <rect x="100" y="86" width="10" height="2" fill="#C4ACFA" opacity="0.4"/>
-    <rect x="100" y="93" width="10" height="2" fill="#C4ACFA" opacity="0.4"/>
-    <!-- Center dot -->
-    <circle cx="80" cy="80" r="2" fill="#C4ACFA" opacity="0.7"/>
+    <rect class="chip-pin chip-pin-6" x="100" y="65" width="10" height="2" fill="#C4ACFA" opacity="0.4"/>
+    <rect class="chip-pin chip-pin-7" x="100" y="72" width="10" height="2" fill="#B8B3FF" opacity="0.4"/>
+    <rect class="chip-pin chip-pin-8" x="100" y="79" width="10" height="2" fill="#C4ACFA" opacity="0.4"/>
+    <rect class="chip-pin chip-pin-9" x="100" y="86" width="10" height="2" fill="#B8B3FF" opacity="0.4"/>
+    <rect class="chip-pin chip-pin-10" x="100" y="93" width="10" height="2" fill="#C4ACFA" opacity="0.4"/>
+    
+    <!-- Center dot with pulse -->
+    <circle class="pulse-node pulse-node-center" cx="80" cy="80" r="2" fill="#C4ACFA" opacity="0.7"/>
   </svg>
 
   <!-- Accent 4: Top-left resistor symbol -->
-  <svg class="circuit-accent circuit-accent-4" viewBox="0 0 220 100" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <linearGradient id="circuit-grad-4" x1="0%" y1="50%" x2="100%" y2="50%">
-        <stop offset="0%" style="stop-color:#C4ACFA;stop-opacity:0.2" />
-        <stop offset="50%" style="stop-color:#D4BCFF;stop-opacity:0.5" />
-        <stop offset="100%" style="stop-color:#C4ACFA;stop-opacity:0.2" />
-      </linearGradient>
-    </defs>
+  <svg class="circuit-accent circuit-accent-4" data-accent-id="4" viewBox="0 0 220 100" xmlns="http://www.w3.org/2000/svg">
     <!-- Wire leads -->
-    <line x1="20" y1="50" x2="60" y2="50" stroke="#C4ACFA" stroke-width="2" opacity="0.4"/>
-    <line x1="160" y1="50" x2="200" y2="50" stroke="#C4ACFA" stroke-width="2" opacity="0.4"/>
-    <!-- Resistor zigzag body -->
-    <polyline points="60,50 70,35 80,65 90,35 100,65 110,35 120,65 130,35 140,65 150,35 160,50"
-              stroke="url(#circuit-grad-4)" stroke-width="2.5" fill="none" opacity="0.6"/>
+    <line class="circuit-trace" x1="20" y1="50" x2="60" y2="50" stroke="#C4ACFA" stroke-width="2" opacity="0.4"/>
+    <line class="circuit-trace" x1="160" y1="50" x2="200" y2="50" stroke="#C4ACFA" stroke-width="2" opacity="0.4"/>
+    
+    <!-- Resistor zigzag body with flow animation -->
+    <polyline class="resistor-body" points="60,50 70,35 80,65 90,35 100,65 110,35 120,65 130,35 140,65 150,35 160,50"
+              stroke="#D4BCFF" stroke-width="2.5" fill="none" opacity="0.5"/>
+    
     <!-- Connection dots -->
-    <circle cx="60" cy="50" r="3" fill="#C4ACFA" opacity="0.6"/>
-    <circle cx="160" cy="50" r="3" fill="#C4ACFA" opacity="0.6"/>
+    <circle class="pulse-node pulse-node-1" cx="60" cy="50" r="3" fill="#C4ACFA" opacity="0.6"/>
+    <circle class="pulse-node pulse-node-2" cx="160" cy="50" r="3" fill="#C4ACFA" opacity="0.6"/>
   </svg>
 </div>
 
@@ -110,44 +100,97 @@
   .circuit-accent {
     position: absolute;
     opacity: 0;
-    will-change: transform, opacity;
+    cursor: pointer;
+    pointer-events: auto;
+    will-change: transform, opacity, filter;
     animation: fadeInFloat 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    transition: opacity 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), 
+                filter 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+                transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
 
-  /* Accent 1: Top-right (200x200) */
+  /* Enhanced hover states */
+  .circuit-accent:hover {
+    opacity: 1 !important;
+    filter: drop-shadow(0 0 20px rgba(212, 188, 255, 0.9)) 
+            drop-shadow(0 6px 12px rgba(212, 188, 255, 0.5))
+            brightness(1.3);
+    transform-origin: center;
+  }
+
+  .circuit-accent:hover .pulse-node {
+    animation-duration: 1s !important; /* Speed up pulse on hover */
+  }
+
+  .circuit-accent:hover .circuit-trace {
+    opacity: 0.8 !important;
+  }
+
+  .circuit-accent:hover .chip-pin {
+    opacity: 0.7 !important;
+  }
+
+  /* Accent 1: Top-right (200x200) - Clockwise slow rotation */
   .circuit-accent-1 {
     top: 8%;
     right: 12%;
     width: 200px;
     height: 200px;
     animation-delay: 0.2s;
+    animation: fadeInFloat 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards,
+               rotateClockwise 35s linear infinite 1.2s;
   }
 
-  /* Accent 2: Mid-left (180x180) */
+  /* Accent 2: Mid-left (180x180) - Counter-clockwise slower */
   .circuit-accent-2 {
     top: 45%;
     left: 8%;
     width: 180px;
     height: 180px;
     animation-delay: 0.4s;
+    animation: fadeInFloat 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards,
+               rotateCounterClockwise 40s linear infinite 1.6s;
   }
 
-  /* Accent 3: Bottom-right (160x160) */
+  /* Accent 3: Bottom-right (160x160) - Clockwise faster */
   .circuit-accent-3 {
     bottom: 15%;
     right: 18%;
     width: 160px;
     height: 160px;
     animation-delay: 0.6s;
+    animation: fadeInFloat 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards,
+               rotateClockwise 28s linear infinite 2s;
   }
 
-  /* Accent 4: Top-left (220x100) */
+  /* Accent 4: Top-left (220x100) - Subtle counter-clockwise */
   .circuit-accent-4 {
     top: 12%;
     left: 15%;
     width: 220px;
     height: 100px;
     animation-delay: 0.8s;
+    animation: fadeInFloat 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards,
+               rotateCounterClockwise 45s linear infinite 2.4s;
+  }
+
+  /* Continuous rotation keyframes */
+  @keyframes rotateClockwise {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes rotateCounterClockwise {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(-360deg);
+    }
   }
 
   /* Fade in with gentle float */
@@ -162,15 +205,136 @@
     }
   }
 
+  /* Internal element animations */
+  
+  /* Pulsing nodes */
+  .pulse-node {
+    animation: pulseNode 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .pulse-node-center {
+    animation-delay: 0s;
+  }
+
+  .pulse-node-1 {
+    animation-delay: 0.3s;
+  }
+
+  .pulse-node-2 {
+    animation-delay: 0.6s;
+  }
+
+  .pulse-node-3 {
+    animation-delay: 0.9s;
+  }
+
+  @keyframes pulseNode {
+    0%, 100% {
+      opacity: 0.5;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.9;
+      transform: scale(1.15);
+    }
+  }
+
+  /* Circuit trace flow effect */
+  .circuit-trace {
+    animation: traceFlow 3s ease-in-out infinite;
+  }
+
+  .trace-1 { animation-delay: 0s; }
+  .trace-2 { animation-delay: 0.4s; }
+  .trace-3 { animation-delay: 0.8s; }
+  .trace-4 { animation-delay: 1.2s; }
+  .trace-5 { animation-delay: 1.6s; }
+
+  @keyframes traceFlow {
+    0%, 100% {
+      opacity: 0.3;
+    }
+    50% {
+      opacity: 0.7;
+    }
+  }
+
+  /* Chip pins stagger blink */
+  .chip-pin {
+    animation: chipPinBlink 4s ease-in-out infinite;
+  }
+
+  .chip-pin-1 { animation-delay: 0s; }
+  .chip-pin-2 { animation-delay: 0.2s; }
+  .chip-pin-3 { animation-delay: 0.4s; }
+  .chip-pin-4 { animation-delay: 0.6s; }
+  .chip-pin-5 { animation-delay: 0.8s; }
+  .chip-pin-6 { animation-delay: 1s; }
+  .chip-pin-7 { animation-delay: 1.2s; }
+  .chip-pin-8 { animation-delay: 1.4s; }
+  .chip-pin-9 { animation-delay: 1.6s; }
+  .chip-pin-10 { animation-delay: 1.8s; }
+
+  @keyframes chipPinBlink {
+    0%, 90%, 100% {
+      opacity: 0.4;
+    }
+    95% {
+      opacity: 0.8;
+    }
+  }
+
+  /* Chip body pulse */
+  .chip-body {
+    animation: chipBodyPulse 3s ease-in-out infinite;
+  }
+
+  @keyframes chipBodyPulse {
+    0%, 100% {
+      opacity: 0.5;
+      stroke-width: 2;
+    }
+    50% {
+      opacity: 0.7;
+      stroke-width: 2.5;
+    }
+  }
+
+  /* Resistor body flow */
+  .resistor-body {
+    animation: resistorFlow 3.5s ease-in-out infinite;
+  }
+
+  @keyframes resistorFlow {
+    0%, 100% {
+      opacity: 0.5;
+      stroke-width: 2.5;
+    }
+    50% {
+      opacity: 0.8;
+      stroke-width: 3;
+    }
+  }
+
   /* Respect reduced motion preferences */
   @media (prefers-reduced-motion: reduce) {
     .circuit-accent {
-      animation: fadeInSimple 0.6s ease-out forwards;
+      animation: fadeInSimple 0.6s ease-out forwards !important;
+      transition: opacity 0.3s ease, filter 0.3s ease;
     }
 
     @keyframes fadeInSimple {
       0% { opacity: 0; }
       100% { opacity: 1; }
+    }
+
+    /* Disable all internal animations */
+    .pulse-node,
+    .circuit-trace,
+    .chip-pin,
+    .chip-body,
+    .resistor-body {
+      animation: none !important;
     }
   }
 
@@ -186,60 +350,188 @@
     /* Reduce visibility on mobile to avoid clutter */
     .circuit-accent-1 { opacity: 0.5; width: 120px; height: 120px; }
     .circuit-accent-2 { opacity: 0.5; width: 108px; height: 108px; }
-    .circuit-accent-3 { display: none; } /* Hide on smallest screens */
+    .circuit-accent-3 { display: none; }
     .circuit-accent-4 { opacity: 0.5; width: 132px; height: 60px; }
+
+    /* Slow down animations on mobile */
+    .circuit-accent-1 { animation-duration: 1.2s, 50s !important; }
+    .circuit-accent-2 { animation-duration: 1.2s, 55s !important; }
+    .circuit-accent-4 { animation-duration: 1.2s, 60s !important; }
   }
 </style>
 
 <script>
-  // Scroll-responsive gentle floating motion for circuit accents
-  // Target: 60fps minimum performance
+  // ENHANCED physics-based interactions: scroll parallax + STRONGER gravity hover
+  // Target: 60fps+ performance (syncs to vsync automatically via requestAnimationFrame)
   
   let ticking = false;
   let lastScrollY = window.scrollY;
+  let rafId: number | null = null;
   
   // Check for reduced motion preference
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   
   if (!prefersReducedMotion) {
-    const accents = document.querySelectorAll('.circuit-accent');
+    const accents = document.querySelectorAll('.circuit-accent') as NodeListOf<HTMLElement>;
     
-    // Parallax configuration for each accent (subtle motion)
+    // ENHANCED parallax configuration (more noticeable motion)
     const parallaxConfig = [
-      { speed: 0.15, rotation: 0.02 },  // Accent 1: gentle vertical + micro rotation
-      { speed: -0.12, rotation: -0.015 }, // Accent 2: opposite direction
-      { speed: 0.18, rotation: 0.025 },  // Accent 3: slightly faster
-      { speed: -0.10, rotation: -0.01 }   // Accent 4: minimal motion
+      { speed: 0.25, rotation: 0.04 },
+      { speed: -0.20, rotation: -0.03 },
+      { speed: 0.30, rotation: 0.05 },
+      { speed: -0.18, rotation: -0.025 }
     ];
     
-    function updateAccents() {
+    // Physics state for each accent
+    interface PhysicsState {
+      x: number;
+      y: number;
+      velocityX: number;
+      velocityY: number;
+      targetX: number;
+      targetY: number;
+      isHovered: boolean;
+      baseRotation: number; // Track base rotation from continuous animation
+    }
+    
+    const physicsStates: PhysicsState[] = Array.from(accents).map(() => ({
+      x: 0,
+      y: 0,
+      velocityX: 0,
+      velocityY: 0,
+      targetX: 0,
+      targetY: 0,
+      isHovered: false,
+      baseRotation: 0
+    }));
+    
+    // ENHANCED spring physics constants
+    const SPRING_TENSION = 0.22;
+    const SPRING_FRICTION = 0.20;
+    const GRAVITY = 0.8;
+    const MAX_DISPLACEMENT = 60;
+    const MAGNETIC_STRENGTH = 0.35;
+    
+    function updateParallax() {
       const scrollY = window.scrollY;
-      const delta = scrollY - lastScrollY;
       lastScrollY = scrollY;
       
       accents.forEach((accent, index) => {
         const config = parallaxConfig[index];
         const yOffset = scrollY * config.speed;
-        const rotation = scrollY * config.rotation;
+        const scrollRotation = scrollY * config.rotation;
+        const state = physicsStates[index];
         
-        // Use transform for GPU-accelerated rendering
-        accent.style.transform = `translate3d(0, ${yOffset}px, 0) rotate(${rotation}deg)`;
+        // Combine scroll parallax with hover physics
+        const totalX = state.x;
+        const totalY = yOffset + state.y;
+        
+        // Note: Continuous rotation is handled by CSS animation
+        // We only add the scroll-based rotation modifier here
+        const computedStyle = window.getComputedStyle(accent);
+        const matrix = new DOMMatrixReadOnly(computedStyle.transform);
+        const currentRotation = Math.atan2(matrix.b, matrix.a) * (180 / Math.PI);
+        
+        // Apply parallax offset while preserving CSS rotation
+        accent.style.transform = `translate3d(${totalX}px, ${totalY}px, 0) rotate(${currentRotation + scrollRotation}deg)`;
       });
-      
-      ticking = false;
     }
     
+    function updatePhysics() {
+      let needsUpdate = false;
+      
+      accents.forEach((accent, index) => {
+        const state = physicsStates[index];
+        
+        if (state.isHovered) {
+          const dx = state.targetX - state.x;
+          const dy = state.targetY - state.y;
+          
+          state.velocityX += dx * SPRING_TENSION;
+          state.velocityY += dy * SPRING_TENSION;
+        } else {
+          state.velocityX += (0 - state.x) * SPRING_TENSION;
+          state.velocityY += (0 - state.y) * SPRING_TENSION + GRAVITY;
+        }
+        
+        state.velocityX *= (1 - SPRING_FRICTION);
+        state.velocityY *= (1 - SPRING_FRICTION);
+        
+        state.x += state.velocityX;
+        state.y += state.velocityY;
+        
+        state.x = Math.max(-MAX_DISPLACEMENT, Math.min(MAX_DISPLACEMENT, state.x));
+        state.y = Math.max(-MAX_DISPLACEMENT, Math.min(MAX_DISPLACEMENT, state.y));
+        
+        if (Math.abs(state.velocityX) > 0.005 || Math.abs(state.velocityY) > 0.005 ||
+            Math.abs(state.x - state.targetX) > 0.05 || Math.abs(state.y - state.targetY) > 0.05) {
+          needsUpdate = true;
+        }
+      });
+      
+      updateParallax();
+      
+      if (needsUpdate) {
+        rafId = requestAnimationFrame(updatePhysics);
+      } else {
+        rafId = null;
+      }
+    }
+    
+    // Mouse interaction handlers
+    accents.forEach((accent, index) => {
+      accent.addEventListener('mouseenter', () => {
+        physicsStates[index].isHovered = true;
+        if (rafId === null) {
+          rafId = requestAnimationFrame(updatePhysics);
+        }
+      });
+      
+      accent.addEventListener('mouseleave', () => {
+        physicsStates[index].isHovered = false;
+        physicsStates[index].targetX = 0;
+        physicsStates[index].targetY = 0;
+        if (rafId === null) {
+          rafId = requestAnimationFrame(updatePhysics);
+        }
+      });
+      
+      accent.addEventListener('mousemove', (e: MouseEvent) => {
+        if (physicsStates[index].isHovered) {
+          const rect = accent.getBoundingClientRect();
+          const centerX = rect.left + rect.width / 2;
+          const centerY = rect.top + rect.height / 2;
+          
+          const offsetX = (e.clientX - centerX) * MAGNETIC_STRENGTH;
+          const offsetY = (e.clientY - centerY) * MAGNETIC_STRENGTH;
+          
+          physicsStates[index].targetX = offsetX;
+          physicsStates[index].targetY = offsetY;
+        }
+      });
+    });
+    
+    // Scroll listener (passive for performance)
     function requestTick() {
-      if (!ticking) {
-        window.requestAnimationFrame(updateAccents);
+      if (!ticking && rafId === null) {
+        rafId = requestAnimationFrame(updatePhysics);
         ticking = true;
       }
     }
     
-    // Passive event listener for better scroll performance
-    window.addEventListener('scroll', requestTick, { passive: true });
+    window.addEventListener('scroll', () => {
+      requestTick();
+      ticking = false;
+    }, { passive: true });
     
     // Initial position
-    updateAccents();
+    updateParallax();
+    
+    // Start idle animation
+    setTimeout(() => {
+      if (rafId === null) {
+        rafId = requestAnimationFrame(updatePhysics);
+      }
+    }, 1000);
   }
 </script>
