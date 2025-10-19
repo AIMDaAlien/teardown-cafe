@@ -2,11 +2,16 @@
 /* Primary: Periwinkle/Lavender Purple */
 
 :root {
-  /* Core Colors - Periwinkle/Lavender Theme */
-  --md-sys-color-primary: #C4ACFA;
+  /* Core Colors - Periwinkle/Lavender Theme (Enhanced Saturation) */
+  --md-sys-color-primary: #D4BCFF; /* Increased saturation from #C4ACFA */
   --md-sys-color-on-primary: #361F68;
-  --md-sys-color-primary-container: #4D3780;
-  --md-sys-color-on-primary-container: #E8DDFF;
+  --md-sys-color-primary-container: #5847A0; /* Increased saturation from #4D3780 */
+  --md-sys-color-on-primary-container: #F0E7FF; /* Increased brightness from #E8DDFF */
+  
+  /* Complementary accent colors for specific sections */
+  --md-sys-color-accent-teal: #00BCD4; /* Teal accent for tech elements */
+  --md-sys-color-accent-amber: #FFA726; /* Amber for highlights */
+  --md-sys-color-accent-green: #66BB6A; /* Green for success states */
   
   --md-sys-color-secondary: #CCC2DC;
   --md-sys-color-on-secondary: #332D41;
@@ -60,12 +65,18 @@
   --md-sys-shape-corner-extra-large: 28px;
   --md-sys-shape-corner-full: 9999px;
   
-  /* Motion Tokens */
+  /* Motion Tokens - Enhanced with Spring Physics (Material 3 Expressive) */
+  --md-sys-motion-duration-short1: 50ms;
+  --md-sys-motion-duration-short2: 100ms;
+  --md-sys-motion-duration-short3: 150ms;
   --md-sys-motion-duration-short: 200ms;
   --md-sys-motion-duration-medium: 400ms;
   --md-sys-motion-duration-long: 600ms;
   --md-sys-motion-easing-standard: cubic-bezier(0.4, 0.0, 0.2, 1);
   --md-sys-motion-easing-emphasized: cubic-bezier(0.2, 0.0, 0, 1);
+  --md-sys-motion-easing-spring: cubic-bezier(0.34, 1.56, 0.64, 1); /* Spring bounce */
+  --md-sys-motion-easing-spring-soft: cubic-bezier(0.4, 1.2, 0.6, 1); /* Softer spring */
+  --md-sys-motion-easing-decelerate: cubic-bezier(0.0, 0.0, 0.2, 1); /* Smooth deceleration */
   
   /* Typography Tokens */
   --md-sys-typescale-display-large-font: 'Inter', system-ui, sans-serif;

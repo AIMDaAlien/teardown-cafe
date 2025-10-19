@@ -1,0 +1,245 @@
+---
+// Circuit Pattern SVG Accents - Tech-themed minimalistic floating elements
+// 3-4 subtle accents with gentle scroll-responsive motion
+// Periwinkle palette (#C4ACFA primary) with increased saturation
+---
+
+<div class="circuit-accents" aria-hidden="true">
+  <!-- Accent 1: Top-right floating circuit node -->
+  <svg class="circuit-accent circuit-accent-1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="circuit-grad-1" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#C4ACFA;stop-opacity:0.4" />
+        <stop offset="100%" style="stop-color:#A78BFF;stop-opacity:0.2" />
+      </linearGradient>
+    </defs>
+    <!-- Central node -->
+    <circle cx="100" cy="100" r="8" fill="#C4ACFA" opacity="0.6"/>
+    <!-- Connection lines -->
+    <line x1="100" y1="100" x2="140" y2="80" stroke="url(#circuit-grad-1)" stroke-width="2" opacity="0.5"/>
+    <line x1="100" y1="100" x2="60" y2="120" stroke="url(#circuit-grad-1)" stroke-width="2" opacity="0.5"/>
+    <line x1="100" y1="100" x2="100" y2="50" stroke="url(#circuit-grad-1)" stroke-width="2" opacity="0.5"/>
+    <!-- Terminal nodes -->
+    <circle cx="140" cy="80" r="5" fill="#A78BFF" opacity="0.5"/>
+    <circle cx="60" cy="120" r="5" fill="#A78BFF" opacity="0.5"/>
+    <circle cx="100" cy="50" r="5" fill="#A78BFF" opacity="0.5"/>
+    <!-- Micro traces -->
+    <path d="M 140 80 l 15 -10 l 5 5" stroke="#C4ACFA" stroke-width="1.5" fill="none" opacity="0.3"/>
+    <path d="M 60 120 l -15 10 l -5 -5" stroke="#C4ACFA" stroke-width="1.5" fill="none" opacity="0.3"/>
+  </svg>
+
+  <!-- Accent 2: Mid-left circuit board trace -->
+  <svg class="circuit-accent circuit-accent-2" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="circuit-grad-2" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" style="stop-color:#D4BCFF;stop-opacity:0.4" />
+        <stop offset="100%" style="stop-color:#C4ACFA;stop-opacity:0.2" />
+      </linearGradient>
+    </defs>
+    <!-- Vertical trace with junction -->
+    <rect x="88" y="40" width="4" height="60" fill="url(#circuit-grad-2)" opacity="0.5"/>
+    <circle cx="90" cy="100" r="6" fill="#C4ACFA" opacity="0.6"/>
+    <!-- Horizontal branch -->
+    <rect x="60" y="98" width="30" height="4" fill="url(#circuit-grad-2)" opacity="0.5"/>
+    <rect x="90" y="98" width="30" height="4" fill="url(#circuit-grad-2)" opacity="0.5"/>
+    <!-- Terminal pads -->
+    <rect x="58" y="96" width="8" height="8" rx="2" fill="#D4BCFF" opacity="0.4"/>
+    <rect x="114" y="96" width="8" height="8" rx="2" fill="#D4BCFF" opacity="0.4"/>
+    <!-- Via hole -->
+    <circle cx="90" cy="100" r="3" fill="#361F68" opacity="0.8"/>
+  </svg>
+
+  <!-- Accent 3: Bottom-right chip outline -->
+  <svg class="circuit-accent circuit-accent-3" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="circuit-grad-3" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#A78BFF;stop-opacity:0.3" />
+        <stop offset="50%" style="stop-color:#C4ACFA;stop-opacity:0.5" />
+        <stop offset="100%" style="stop-color:#A78BFF;stop-opacity:0.3" />
+      </linearGradient>
+    </defs>
+    <!-- Chip body -->
+    <rect x="60" y="60" width="40" height="40" rx="3" 
+          fill="none" stroke="url(#circuit-grad-3)" stroke-width="2" opacity="0.6"/>
+    <!-- Pins (left side) -->
+    <rect x="50" y="65" width="10" height="2" fill="#C4ACFA" opacity="0.4"/>
+    <rect x="50" y="72" width="10" height="2" fill="#C4ACFA" opacity="0.4"/>
+    <rect x="50" y="79" width="10" height="2" fill="#C4ACFA" opacity="0.4"/>
+    <rect x="50" y="86" width="10" height="2" fill="#C4ACFA" opacity="0.4"/>
+    <rect x="50" y="93" width="10" height="2" fill="#C4ACFA" opacity="0.4"/>
+    <!-- Pins (right side) -->
+    <rect x="100" y="65" width="10" height="2" fill="#C4ACFA" opacity="0.4"/>
+    <rect x="100" y="72" width="10" height="2" fill="#C4ACFA" opacity="0.4"/>
+    <rect x="100" y="79" width="10" height="2" fill="#C4ACFA" opacity="0.4"/>
+    <rect x="100" y="86" width="10" height="2" fill="#C4ACFA" opacity="0.4"/>
+    <rect x="100" y="93" width="10" height="2" fill="#C4ACFA" opacity="0.4"/>
+    <!-- Center dot -->
+    <circle cx="80" cy="80" r="2" fill="#C4ACFA" opacity="0.7"/>
+  </svg>
+
+  <!-- Accent 4: Top-left resistor symbol -->
+  <svg class="circuit-accent circuit-accent-4" viewBox="0 0 220 100" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="circuit-grad-4" x1="0%" y1="50%" x2="100%" y2="50%">
+        <stop offset="0%" style="stop-color:#C4ACFA;stop-opacity:0.2" />
+        <stop offset="50%" style="stop-color:#D4BCFF;stop-opacity:0.5" />
+        <stop offset="100%" style="stop-color:#C4ACFA;stop-opacity:0.2" />
+      </linearGradient>
+    </defs>
+    <!-- Wire leads -->
+    <line x1="20" y1="50" x2="60" y2="50" stroke="#C4ACFA" stroke-width="2" opacity="0.4"/>
+    <line x1="160" y1="50" x2="200" y2="50" stroke="#C4ACFA" stroke-width="2" opacity="0.4"/>
+    <!-- Resistor zigzag body -->
+    <polyline points="60,50 70,35 80,65 90,35 100,65 110,35 120,65 130,35 140,65 150,35 160,50"
+              stroke="url(#circuit-grad-4)" stroke-width="2.5" fill="none" opacity="0.6"/>
+    <!-- Connection dots -->
+    <circle cx="60" cy="50" r="3" fill="#C4ACFA" opacity="0.6"/>
+    <circle cx="160" cy="50" r="3" fill="#C4ACFA" opacity="0.6"/>
+  </svg>
+</div>
+
+<style>
+  .circuit-accents {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+  }
+
+  .circuit-accent {
+    position: absolute;
+    opacity: 0;
+    will-change: transform, opacity;
+    animation: fadeInFloat 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  /* Accent 1: Top-right (200x200) */
+  .circuit-accent-1 {
+    top: 8%;
+    right: 12%;
+    width: 200px;
+    height: 200px;
+    animation-delay: 0.2s;
+  }
+
+  /* Accent 2: Mid-left (180x180) */
+  .circuit-accent-2 {
+    top: 45%;
+    left: 8%;
+    width: 180px;
+    height: 180px;
+    animation-delay: 0.4s;
+  }
+
+  /* Accent 3: Bottom-right (160x160) */
+  .circuit-accent-3 {
+    bottom: 15%;
+    right: 18%;
+    width: 160px;
+    height: 160px;
+    animation-delay: 0.6s;
+  }
+
+  /* Accent 4: Top-left (220x100) */
+  .circuit-accent-4 {
+    top: 12%;
+    left: 15%;
+    width: 220px;
+    height: 100px;
+    animation-delay: 0.8s;
+  }
+
+  /* Fade in with gentle float */
+  @keyframes fadeInFloat {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Respect reduced motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+    .circuit-accent {
+      animation: fadeInSimple 0.6s ease-out forwards;
+    }
+
+    @keyframes fadeInSimple {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+  }
+
+  /* Responsive sizing for smaller screens */
+  @media (max-width: 1024px) {
+    .circuit-accent-1 { width: 150px; height: 150px; }
+    .circuit-accent-2 { width: 135px; height: 135px; }
+    .circuit-accent-3 { width: 120px; height: 120px; }
+    .circuit-accent-4 { width: 165px; height: 75px; }
+  }
+
+  @media (max-width: 768px) {
+    /* Reduce visibility on mobile to avoid clutter */
+    .circuit-accent-1 { opacity: 0.5; width: 120px; height: 120px; }
+    .circuit-accent-2 { opacity: 0.5; width: 108px; height: 108px; }
+    .circuit-accent-3 { display: none; } /* Hide on smallest screens */
+    .circuit-accent-4 { opacity: 0.5; width: 132px; height: 60px; }
+  }
+</style>
+
+<script>
+  // Scroll-responsive gentle floating motion for circuit accents
+  // Target: 60fps minimum performance
+  
+  let ticking = false;
+  let lastScrollY = window.scrollY;
+  
+  // Check for reduced motion preference
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  
+  if (!prefersReducedMotion) {
+    const accents = document.querySelectorAll('.circuit-accent');
+    
+    // Parallax configuration for each accent (subtle motion)
+    const parallaxConfig = [
+      { speed: 0.15, rotation: 0.02 },  // Accent 1: gentle vertical + micro rotation
+      { speed: -0.12, rotation: -0.015 }, // Accent 2: opposite direction
+      { speed: 0.18, rotation: 0.025 },  // Accent 3: slightly faster
+      { speed: -0.10, rotation: -0.01 }   // Accent 4: minimal motion
+    ];
+    
+    function updateAccents() {
+      const scrollY = window.scrollY;
+      const delta = scrollY - lastScrollY;
+      lastScrollY = scrollY;
+      
+      accents.forEach((accent, index) => {
+        const config = parallaxConfig[index];
+        const yOffset = scrollY * config.speed;
+        const rotation = scrollY * config.rotation;
+        
+        // Use transform for GPU-accelerated rendering
+        accent.style.transform = `translate3d(0, ${yOffset}px, 0) rotate(${rotation}deg)`;
+      });
+      
+      ticking = false;
+    }
+    
+    function requestTick() {
+      if (!ticking) {
+        window.requestAnimationFrame(updateAccents);
+        ticking = true;
+      }
+    }
+    
+    // Passive event listener for better scroll performance
+    window.addEventListener('scroll', requestTick, { passive: true });
+    
+    // Initial position
+    updateAccents();
+  }
+</script>

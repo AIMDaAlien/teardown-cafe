@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import CircuitAccents from '../components/CircuitAccents.astro';
+import WaveDiffusions from '../components/WaveDiffusions.astro';
 import { getCollection } from 'astro:content';
 
 // Astro 5: Get all teardowns using Content Layer API
@@ -9,89 +11,169 @@ const teardowns = await getCollection('teardowns');
 const sortedTeardowns = teardowns.sort((a, b) => {
   return b.data.pubDate.valueOf() - a.data.pubDate.valueOf();
 });
+
+// Device type emoji mapping
+const deviceEmoji: Record<string, string> = {
+  'monitor': '🖥️',
+  'laptop': '💻',
+  'smartphone': '📱',
+  'raspberry-pi': '🥧',
+  'nas': '🗄️',
+  'mechanical-keyboard': '⌨️',
+  'other': '🔧'
+};
 ---
 
 <BaseLayout title="Home">
-  <section class="hero">
-    <h1 class="display-large">Teardown Cafe</h1>
-    <p class="hero-subtitle">
-      Where curiosity meets coffee. Deconstructing devices one screw at a time.
-    </p>
-  </section>
+  <!-- Background layers -->
+  <CircuitAccents />
+  <WaveDiffusions />
 
-  <section class="teardowns-grid">
-    {sortedTeardowns.map((teardown) => (
-      <article class="teardown-card">
-        <a href={`/teardowns/${teardown.id}`} class="card-link">
-          {teardown.data.heroImage && (
-            <div class="card-image">
-              <img 
-                src={teardown.data.heroImage} 
-                alt={teardown.data.title}
-                loading="lazy"
-              />
-            </div>
-          )}
-          <div class="card-content">
-            <div class="card-meta">
-              <span class="device-type">{teardown.data.device}</span>
-              <span class="difficulty difficulty-{teardown.data.difficulty}">
-                {teardown.data.difficulty}
-              </span>
-            </div>
-            <h2 class="title-large">{teardown.data.title}</h2>
-            <p class="card-description">{teardown.data.description}</p>
-            <time class="card-date" datetime={teardown.data.pubDate.toISOString()}>
-              {teardown.data.pubDate.toLocaleDateString('en-US', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric'
-              })}
-            </time>
-          </div>
-        </a>
-      </article>
-    ))}
-  </section>
+  <!-- Content layer (above background) -->
+  <div class="content-wrapper">
+    <section class="hero">
+      <h1 class="display-large">Teardown Cafe</h1>
+      <p class="hero-subtitle">
+        Where curiosity meets coffee. Deconstructing devices one screw at a time.
+      </p>
+    </section>
 
-  {sortedTeardowns.length === 0 && (
-    <div class="empty-state">
-      <p>No teardowns yet. Check back soon!</p>
-    </div>
-  )}
+    <section class="teardowns-grid">
+      {sortedTeardowns.map((teardown, index) => (
+        <article class="teardown-card" style={`--card-index: ${index};`}>
+          <a href={`/teardowns/${teardown.id}`} class="card-link">
+            {teardown.data.heroImage && (
+              <div class="card-image">
+                <img 
+                  src={teardown.data.heroImage} 
+                  alt={teardown.data.title}
+                  loading="lazy"
+                />
+                <div class="image-overlay" aria-hidden="true"></div>
+              </div>
+            )}
+            <div class="card-content">
+              <div class="card-meta">
+                <span class="device-type">
+                  <span class="device-emoji" aria-hidden="true">{deviceEmoji[teardown.data.device] || '🔧'}</span>
+                  {teardown.data.device}
+                </span>
+                <span class="difficulty difficulty-{teardown.data.difficulty}">
+                  {teardown.data.difficulty}
+                </span>
+              </div>
+              <h2 class="title-large">{teardown.data.title}</h2>
+              <p class="card-description">{teardown.data.description}</p>
+              <time class="card-date" datetime={teardown.data.pubDate.toISOString()}>
+                {teardown.data.pubDate.toLocaleDateString('en-US', {
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric'
+                })}
+              </time>
+            </div>
+          </a>
+        </article>
+      ))}
+    </section>
+
+    {sortedTeardowns.length === 0 && (
+      <div class="empty-state">
+        <p>No teardowns yet. Check back soon!</p>
+      </div>
+    )}
+  </div>
 </BaseLayout>
 
 <style>
+  .content-wrapper {
+    position: relative;
+    z-index: 1;
+  }
+
   .hero {
     text-align: center;
     margin-bottom: 3rem;
     padding: 2rem 0;
+    position: relative;
+    z-index: 2;
   }
   
   .hero-subtitle {
     font-size: 1.25rem;
     color: var(--md-sys-color-on-surface-variant);
     margin-top: 1rem;
+    animation: fadeInUp 0.8s var(--md-sys-motion-easing-decelerate) 0.2s both;
+  }
+  
+  .display-large {
+    animation: fadeInUp 0.8s var(--md-sys-motion-easing-decelerate) both;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
   
   .teardowns-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 1.5rem;
-    margin: 2rem 0;
+    margin: 2rem 0 8rem 0; /* Extra bottom margin for wave visibility */
+    position: relative;
+    z-index: 2;
   }
   
   .teardown-card {
     background-color: var(--md-sys-color-surface-container);
     border-radius: var(--md-sys-shape-corner-large);
     overflow: hidden;
-    transition: all var(--md-sys-motion-duration-medium) var(--md-sys-motion-easing-emphasized);
+    transition: all var(--md-sys-motion-duration-medium) var(--md-sys-motion-easing-spring-soft);
     box-shadow: var(--md-sys-elevation-level1);
+    opacity: 0;
+    animation: cardFadeIn 0.6s var(--md-sys-motion-easing-decelerate) forwards;
+    animation-delay: calc(var(--card-index) * 100ms + 400ms);
+    position: relative;
+    will-change: transform, box-shadow;
+  }
+
+  @keyframes cardFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(30px) scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
   }
   
   .teardown-card:hover {
-    box-shadow: var(--md-sys-elevation-level3);
-    transform: translateY(-8px) scale(1.02);
+    box-shadow: var(--md-sys-elevation-level4);
+    transform: translateY(-12px) scale(1.03);
+  }
+
+  /* Subtle blur backdrop effect on hover */
+  .teardown-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--md-sys-color-surface-container-high);
+    opacity: 0;
+    transition: opacity var(--md-sys-motion-duration-medium) var(--md-sys-motion-easing-standard);
+    backdrop-filter: blur(0px);
+    z-index: -1;
+  }
+
+  .teardown-card:hover::before {
+    opacity: 0.3;
+    backdrop-filter: blur(8px);
   }
   
   .card-link {
@@ -115,15 +197,30 @@ const sortedTeardowns = teardowns.sort((a, b) => {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform var(--md-sys-motion-duration-medium) var(--md-sys-motion-easing-emphasized);
+    transition: transform var(--md-sys-motion-duration-medium) var(--md-sys-motion-easing-spring);
   }
   
   .teardown-card:hover .card-image img {
-    transform: scale(1.1);
+    transform: scale(1.12);
+  }
+
+  /* Image overlay for depth effect */
+  .image-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 0%, rgba(19, 18, 24, 0.4) 100%);
+    opacity: 0;
+    transition: opacity var(--md-sys-motion-duration-short) var(--md-sys-motion-easing-standard);
+  }
+
+  .teardown-card:hover .image-overlay {
+    opacity: 1;
   }
   
   .card-content {
     padding: 1.5rem;
+    position: relative;
+    background: var(--md-sys-color-surface-container);
   }
   
   .card-meta {
@@ -136,39 +233,64 @@ const sortedTeardowns = teardowns.sort((a, b) => {
   .device-type {
     background-color: var(--md-sys-color-primary-container);
     color: var(--md-sys-color-on-primary-container);
-    padding: 0.25rem 0.75rem;
+    padding: 0.35rem 0.85rem;
     border-radius: var(--md-sys-shape-corner-full);
     font-size: 0.875rem;
     font-weight: 500;
     text-transform: capitalize;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    transition: all var(--md-sys-motion-duration-short) var(--md-sys-motion-easing-spring-soft);
+  }
+
+  .device-emoji {
+    font-size: 1rem;
+    line-height: 1;
+  }
+
+  .teardown-card:hover .device-type {
+    transform: scale(1.05);
+    background-color: var(--md-sys-color-primary);
+    color: var(--md-sys-color-on-primary);
   }
   
   .difficulty {
-    padding: 0.25rem 0.75rem;
+    padding: 0.35rem 0.85rem;
     border-radius: var(--md-sys-shape-corner-full);
     font-size: 0.875rem;
     font-weight: 500;
     text-transform: capitalize;
+    transition: transform var(--md-sys-motion-duration-short) var(--md-sys-motion-easing-spring-soft);
+  }
+
+  .teardown-card:hover .difficulty {
+    transform: scale(1.05);
   }
   
   .difficulty-easy {
-    background-color: #2E7D32;
-    color: #E8F5E9;
+    background-color: var(--md-sys-color-accent-green);
+    color: #1B5E20;
   }
   
   .difficulty-medium {
-    background-color: #F57C00;
-    color: #FFF3E0;
+    background-color: var(--md-sys-color-accent-amber);
+    color: #E65100;
   }
   
   .difficulty-hard {
-    background-color: #C62828;
+    background-color: #EF5350;
     color: #FFEBEE;
   }
   
   .card-content h2 {
     margin: 0.5rem 0;
     color: var(--md-sys-color-on-surface);
+    transition: color var(--md-sys-motion-duration-short) var(--md-sys-motion-easing-standard);
+  }
+
+  .teardown-card:hover .card-content h2 {
+    color: var(--md-sys-color-primary);
   }
   
   .card-description {
@@ -190,10 +312,47 @@ const sortedTeardowns = teardowns.sort((a, b) => {
     color: var(--md-sys-color-on-surface-variant);
     font-size: 1.25rem;
   }
+
+  /* Respect reduced motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+    .teardown-card,
+    .hero-subtitle,
+    .display-large {
+      animation: fadeInSimple 0.6s ease-out both;
+    }
+
+    @keyframes fadeInSimple {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .teardown-card:hover {
+      transform: none;
+    }
+
+    .teardown-card:hover .card-image img {
+      transform: none;
+    }
+
+    .teardown-card:hover .device-type,
+    .teardown-card:hover .difficulty {
+      transform: none;
+    }
+  }
   
   @media (max-width: 768px) {
     .teardowns-grid {
       grid-template-columns: 1fr;
+      margin-bottom: 6rem; /* Reduced for mobile wave height */
+    }
+
+    .hero {
+      padding: 1.5rem 0;
+      margin-bottom: 2rem;
+    }
+
+    .teardown-card:hover {
+      transform: translateY(-8px) scale(1.02);
     }
   }
 </style>
