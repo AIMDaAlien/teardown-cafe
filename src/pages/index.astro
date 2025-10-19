@@ -2,17 +2,17 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import CircuitAccents from '../components/CircuitAccents.astro';
 import WaveDiffusions from '../components/WaveDiffusions.astro';
+import ReadingProgressCircuit from '../components/ReadingProgressCircuit.astro';
+import FloatingParticles from '../components/FloatingParticles.astro';
+import DifficultyMeter from '../components/DifficultyMeter.astro';
 import { getCollection } from 'astro:content';
 
-// Astro 5: Get all teardowns using Content Layer API
 const teardowns = await getCollection('teardowns');
 
-// Sort by date (newest first)
 const sortedTeardowns = teardowns.sort((a, b) => {
   return b.data.pubDate.valueOf() - a.data.pubDate.valueOf();
 });
 
-// Device type emoji mapping
 const deviceEmoji: Record<string, string> = {
   'monitor': '🖥️',
   'laptop': '💻',
@@ -25,22 +25,31 @@ const deviceEmoji: Record<string, string> = {
 ---
 
 <BaseLayout title="Home">
-  <!-- Background layers -->
+  <!-- Fixed progress circuit -->
+  <ReadingProgressCircuit />
+
+  <!-- Ambient effects -->
   <CircuitAccents />
   <WaveDiffusions />
+  <FloatingParticles />
 
-  <!-- Content layer (above background) -->
+  <!-- Content layer -->
   <div class="content-wrapper">
-    <section class="hero">
+    <section class="hero" id="intro">
       <h1 class="display-large">Teardown Cafe</h1>
       <p class="hero-subtitle">
-        Where curiosity meets coffee. Deconstructing devices one screw at a time.
+        Curiosity meets caffeine. Constructing and deconstructing is either screwing or unscrewing 🔩
       </p>
     </section>
 
-    <section class="teardowns-grid">
+    <!-- Difficulty meter section -->
+    <section id="disassembly">
+      <DifficultyMeter />
+    </section>
+
+    <section class="teardowns-grid" id="components">
       {sortedTeardowns.map((teardown, index) => (
-        <article class="teardown-card" style={`--card-index: ${index};`}>
+        <article class="teardown-card" style={`--card-index: ${index};`} data-card-index={index}>
           <a href={`/teardowns/${teardown.id}`} class="card-link">
             {teardown.data.heroImage && (
               <div class="card-image">
@@ -78,10 +87,15 @@ const deviceEmoji: Record<string, string> = {
     </section>
 
     {sortedTeardowns.length === 0 && (
-      <div class="empty-state">
+      <div class="empty-state" id="analysis">
         <p>No teardowns yet. Check back soon!</p>
       </div>
     )}
+
+    <!-- Footer/conclusion section -->
+    <section class="site-footer" id="conclusion">
+      <p class="footer-text">More teardowns coming soon. Stay curious.</p>
+    </section>
   </div>
 </BaseLayout>
 
@@ -89,6 +103,7 @@ const deviceEmoji: Record<string, string> = {
   .content-wrapper {
     position: relative;
     z-index: 1;
+    padding-top: 120px; /* Space for fixed progress bar */
   }
 
   .hero {
@@ -97,6 +112,10 @@ const deviceEmoji: Record<string, string> = {
     padding: 2rem 0;
     position: relative;
     z-index: 2;
+    min-height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
   
   .hero-subtitle {
@@ -125,7 +144,7 @@ const deviceEmoji: Record<string, string> = {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 1.5rem;
-    margin: 2rem 0 8rem 0; /* Extra bottom margin for wave visibility */
+    margin: 4rem 0;
     position: relative;
     z-index: 2;
   }
@@ -134,7 +153,7 @@ const deviceEmoji: Record<string, string> = {
     background-color: var(--md-sys-color-surface-container);
     border-radius: var(--md-sys-shape-corner-large);
     overflow: hidden;
-    transition: all var(--md-sys-motion-duration-medium) var(--md-sys-motion-easing-spring-soft);
+    transition: box-shadow var(--md-sys-motion-duration-medium) var(--md-sys-motion-easing-spring-soft);
     box-shadow: var(--md-sys-elevation-level1);
     opacity: 0;
     animation: cardFadeIn 0.6s var(--md-sys-motion-easing-decelerate) forwards;
@@ -156,10 +175,8 @@ const deviceEmoji: Record<string, string> = {
   
   .teardown-card:hover {
     box-shadow: var(--md-sys-elevation-level4);
-    transform: translateY(-12px) scale(1.03);
   }
 
-  /* Subtle blur backdrop effect on hover */
   .teardown-card::before {
     content: '';
     position: absolute;
@@ -185,7 +202,7 @@ const deviceEmoji: Record<string, string> = {
   .card-image {
     position: relative;
     width: 100%;
-    padding-top: 56.25%; /* 16:9 aspect ratio */
+    padding-top: 56.25%;
     background-color: var(--md-sys-color-surface-container-highest);
     overflow: hidden;
   }
@@ -204,7 +221,6 @@ const deviceEmoji: Record<string, string> = {
     transform: scale(1.12);
   }
 
-  /* Image overlay for depth effect */
   .image-overlay {
     position: absolute;
     inset: 0;
@@ -311,9 +327,26 @@ const deviceEmoji: Record<string, string> = {
     padding: 4rem 2rem;
     color: var(--md-sys-color-on-surface-variant);
     font-size: 1.25rem;
+    min-height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
-  /* Respect reduced motion preferences */
+  .site-footer {
+    text-align: center;
+    padding: 4rem 2rem 8rem;
+    min-height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .footer-text {
+    font-size: 1.125rem;
+    color: var(--md-sys-color-on-surface-variant);
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .teardown-card,
     .hero-subtitle,
@@ -341,18 +374,139 @@ const deviceEmoji: Record<string, string> = {
   }
   
   @media (max-width: 768px) {
+    .content-wrapper {
+      padding-top: 100px;
+    }
+
     .teardowns-grid {
       grid-template-columns: 1fr;
-      margin-bottom: 6rem; /* Reduced for mobile wave height */
+      margin: 2rem 0;
     }
 
     .hero {
       padding: 1.5rem 0;
       margin-bottom: 2rem;
-    }
-
-    .teardown-card:hover {
-      transform: translateY(-8px) scale(1.02);
+      min-height: 30vh;
     }
   }
 </style>
+
+<script>
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  
+  if (!prefersReducedMotion) {
+    const cards = document.querySelectorAll('.teardown-card') as NodeListOf<HTMLElement>;
+    
+    interface CardPhysicsState {
+      x: number;
+      y: number;
+      rotation: number;
+      velocityX: number;
+      velocityY: number;
+      velocityRotation: number;
+      isHovered: boolean;
+      targetX: number;
+      targetY: number;
+      targetRotation: number;
+    }
+    
+    const cardStates: CardPhysicsState[] = Array.from(cards).map(() => ({
+      x: 0,
+      y: -12,
+      rotation: 0,
+      velocityX: 0,
+      velocityY: 0,
+      velocityRotation: 0,
+      isHovered: false,
+      targetX: 0,
+      targetY: -12,
+      targetRotation: 0
+    }));
+    
+    const SPRING_TENSION = 0.18;
+    const SPRING_FRICTION = 0.22;
+    const GRAVITY = 0.6;
+    const LIFT_HEIGHT = 12;
+    const ROTATION_MAX = 2;
+    
+    let rafId: number | null = null;
+    
+    function updateCardPhysics() {
+      let needsUpdate = false;
+      
+      cards.forEach((card, index) => {
+        const state = cardStates[index];
+        
+        if (state.isHovered) {
+          const dx = state.targetX - state.x;
+          const dy = state.targetY - state.y;
+          const dRot = state.targetRotation - state.rotation;
+          
+          state.velocityX += dx * SPRING_TENSION;
+          state.velocityY += dy * SPRING_TENSION;
+          state.velocityRotation += dRot * SPRING_TENSION;
+        } else {
+          state.velocityX += (0 - state.x) * SPRING_TENSION;
+          state.velocityY += (0 - state.y) * SPRING_TENSION + GRAVITY;
+          state.velocityRotation += (0 - state.rotation) * SPRING_TENSION;
+        }
+        
+        state.velocityX *= (1 - SPRING_FRICTION);
+        state.velocityY *= (1 - SPRING_FRICTION);
+        state.velocityRotation *= (1 - SPRING_FRICTION);
+        
+        state.x += state.velocityX;
+        state.y += state.velocityY;
+        state.rotation += state.velocityRotation;
+        
+        card.style.transform = `translate3d(${state.x}px, ${state.y}px, 0) rotate(${state.rotation}deg) scale(${state.isHovered ? 1.03 : 1})`;
+        
+        if (Math.abs(state.velocityX) > 0.01 || Math.abs(state.velocityY) > 0.01 || Math.abs(state.velocityRotation) > 0.01) {
+          needsUpdate = true;
+        }
+      });
+      
+      if (needsUpdate) {
+        rafId = requestAnimationFrame(updateCardPhysics);
+      } else {
+        rafId = null;
+      }
+    }
+    
+    cards.forEach((card, index) => {
+      card.addEventListener('mouseenter', () => {
+        cardStates[index].isHovered = true;
+        cardStates[index].targetY = -LIFT_HEIGHT;
+        
+        if (rafId === null) {
+          rafId = requestAnimationFrame(updateCardPhysics);
+        }
+      });
+      
+      card.addEventListener('mouseleave', () => {
+        cardStates[index].isHovered = false;
+        cardStates[index].targetX = 0;
+        cardStates[index].targetY = 0;
+        cardStates[index].targetRotation = 0;
+        
+        if (rafId === null) {
+          rafId = requestAnimationFrame(updateCardPhysics);
+        }
+      });
+      
+      card.addEventListener('mousemove', (e: MouseEvent) => {
+        if (cardStates[index].isHovered) {
+          const rect = card.getBoundingClientRect();
+          const centerX = rect.left + rect.width / 2;
+          const centerY = rect.top + rect.height / 2;
+          
+          const relativeX = e.clientX - centerX;
+          const relativeY = e.clientY - centerY;
+          
+          cardStates[index].targetRotation = (relativeX / rect.width) * ROTATION_MAX;
+          cardStates[index].targetX = (relativeX / rect.width) * 4;
+        }
+      });
+    });
+  }
+</script>

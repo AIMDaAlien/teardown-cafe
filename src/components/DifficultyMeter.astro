@@ -1,0 +1,447 @@
+---
+// Difficulty Meter - Product images instead of emojis
+// Modular data structure for easy additions
+---
+
+<div class="difficulty-meter-container">
+  <div class="meter-wrapper">
+    <h2 class="meter-title">Teardown Difficulty</h2>
+    <p class="meter-subtitle">Comprehensive repairability analysis</p>
+
+    <!-- Device selector -->
+    <div class="device-selector" id="deviceSelector"></div>
+
+    <!-- Main display -->
+    <div class="meter-display">
+      <!-- Circular gauge -->
+      <div class="gauge-container">
+        <svg class="gauge-svg" viewBox="0 0 320 320">
+          <circle
+            cx="160"
+            cy="160"
+            r="80"
+            stroke="#1A0B2E"
+            stroke-width="20"
+            fill="none"
+          />
+          <circle
+            class="gauge-progress"
+            cx="160"
+            cy="160"
+            r="80"
+            stroke="#C4ACFA"
+            stroke-width="20"
+            fill="none"
+            stroke-linecap="round"
+            style="filter: drop-shadow(0 0 12px rgba(196, 172, 250, 0.8));"
+          />
+          <circle
+            cx="160"
+            cy="160"
+            r="50"
+            stroke="#B8B3FF"
+            stroke-width="2"
+            fill="none"
+            opacity="0.3"
+          />
+        </svg>
+
+        <div class="gauge-center">
+          <img class="device-image" src="" alt="Device" />
+          <div class="overall-score">
+            <span class="score-number">0</span>
+            <span class="score-max">/10</span>
+          </div>
+          <div class="difficulty-label">Overall Difficulty</div>
+          <div class="difficulty-badge">MODERATE</div>
+        </div>
+      </div>
+
+      <!-- Metrics -->
+      <div class="metrics-container" id="metricsContainer"></div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .difficulty-meter-container {
+    padding: 64px 32px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .meter-wrapper {
+    text-align: center;
+  }
+
+  .meter-title {
+    font-size: 36px;
+    font-weight: 700;
+    color: #D4BCFF;
+    margin-bottom: 8px;
+  }
+
+  .meter-subtitle {
+    font-size: 18px;
+    color: #B8B3FF;
+    margin-bottom: 48px;
+  }
+
+  .device-selector {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 48px;
+  }
+
+  .device-button {
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    backdrop-filter: blur(8px);
+    background: #1A0B2E;
+    color: #B8B3FF;
+    border: 2px solid rgba(196, 172, 250, 0.2);
+  }
+
+  .device-button.active {
+    background: rgba(196, 172, 250, 0.3);
+    color: #D4BCFF;
+    border-color: rgba(196, 172, 250, 0.5);
+    transform: scale(1.05);
+  }
+
+  .device-button:not(.active):hover {
+    background: rgba(196, 172, 250, 0.1);
+  }
+
+  .meter-display {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+
+  .gauge-container {
+    position: relative;
+    width: 320px;
+    height: 320px;
+    margin: 0 auto;
+  }
+
+  .gauge-svg {
+    position: absolute;
+    inset: 0;
+    transform: rotate(-90deg);
+  }
+
+  .gauge-progress {
+    stroke-dasharray: 502.65;
+    stroke-dashoffset: 502.65;
+    transition: stroke-dashoffset 1.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .gauge-center {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .device-image {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 8px;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .device-image.loaded {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .overall-score {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+  }
+
+  .score-number {
+    font-size: 64px;
+    font-weight: 700;
+    color: #D4BCFF;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) 0.2s;
+  }
+
+  .score-number.visible {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .score-max {
+    font-size: 32px;
+    color: #B8B3FF;
+  }
+
+  .difficulty-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #B8B3FF;
+    opacity: 0;
+    transition: opacity 0.7s 0.3s;
+  }
+
+  .difficulty-label.visible {
+    opacity: 1;
+  }
+
+  .difficulty-badge {
+    padding: 4px 16px;
+    border-radius: 9999px;
+    font-size: 12px;
+    font-weight: 700;
+    opacity: 0;
+    transition: all 0.7s 0.4s;
+  }
+
+  .difficulty-badge.visible {
+    opacity: 1;
+  }
+
+  .metrics-container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .metric {
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .metric.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .metric-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+
+  .metric-label {
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .metric-value {
+    font-size: 14px;
+    font-weight: 700;
+    color: #D4BCFF;
+  }
+
+  .metric-bar {
+    height: 12px;
+    border-radius: 9999px;
+    background: #1A0B2E;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .metric-fill {
+    height: 100%;
+    border-radius: 9999px;
+    width: 0;
+    transition: width 1s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  @media (max-width: 1024px) {
+    .meter-display {
+      grid-template-columns: 1fr;
+      gap: 48px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .difficulty-meter-container {
+      padding: 48px 16px;
+    }
+
+    .meter-title {
+      font-size: 28px;
+    }
+
+    .gauge-container {
+      width: 280px;
+      height: 280px;
+    }
+  }
+</style>
+
+<script>
+  // MODULAR DATA STRUCTURE - Easy to add new devices
+  const devices = [
+    {
+      name: 'Mac Mini M4 Pro',
+      overall: 7,
+      // Use placeholder - replace with actual product image URL
+      imageUrl: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mac-mini-hero-202410?wid=904&hei=840&fmt=jpeg&qlt=90&.v=1728343840066',
+      metrics: {
+        screws: { value: 32, max: 50, label: 'Screws', color: '#D4BCFF' },
+        proprietary: { value: 8, max: 10, label: 'Proprietary Parts', color: '#C4ACFA' },
+        time: { value: 180, max: 300, label: 'Time (min)', color: '#B8B3FF' },
+        skill: { value: 7, max: 10, label: 'Skill Level', color: '#A78BFF' },
+      }
+    },
+    {
+      name: 'iPhone 15 Pro',
+      overall: 9,
+      imageUrl: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-finish-select-202309-6-7inch-bluetitanium?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1692846702945',
+      metrics: {
+        screws: { value: 18, max: 50, label: 'Screws', color: '#D4BCFF' },
+        proprietary: { value: 9, max: 10, label: 'Proprietary Parts', color: '#C4ACFA' },
+        time: { value: 150, max: 300, label: 'Time (min)', color: '#B8B3FF' },
+        skill: { value: 9, max: 10, label: 'Skill Level', color: '#A78BFF' },
+      }
+    },
+    {
+      name: 'Raspberry Pi 5',
+      overall: 3,
+      imageUrl: 'https://assets.raspberrypi.com/static/51035ec4c2f8f630b3d26c32e90c93f1/2b8d7/hero-shot.webp',
+      metrics: {
+        screws: { value: 0, max: 50, label: 'Screws', color: '#D4BCFF' },
+        proprietary: { value: 2, max: 10, label: 'Proprietary Parts', color: '#C4ACFA' },
+        time: { value: 60, max: 300, label: 'Time (min)', color: '#B8B3FF' },
+        skill: { value: 3, max: 10, label: 'Skill Level', color: '#A78BFF' },
+      }
+    },
+  ];
+
+  let currentIndex = 0;
+
+  // Create device selector buttons
+  const selector = document.getElementById('deviceSelector');
+  devices.forEach((device, index) => {
+    const btn = document.createElement('button');
+    btn.className = `device-button ${index === 0 ? 'active' : ''}`;
+    btn.textContent = device.name;
+    btn.onclick = () => switchDevice(index);
+    selector.appendChild(btn);
+  });
+
+  function switchDevice(index) {
+    currentIndex = index;
+    
+    // Update button states
+    document.querySelectorAll('.device-button').forEach((btn, i) => {
+      btn.classList.toggle('active', i === index);
+    });
+
+    updateDisplay();
+  }
+
+  function updateDisplay() {
+    const device = devices[currentIndex];
+    
+    // Update gauge
+    const gaugeProgress = document.querySelector('.gauge-progress');
+    const percentage = (device.overall / 10) * 100;
+    const circumference = 2 * Math.PI * 80;
+    const offset = circumference - (percentage / 100) * circumference;
+    
+    gaugeProgress.style.strokeDashoffset = offset;
+
+    // Update image
+    const deviceImage = document.querySelector('.device-image');
+    deviceImage.src = device.imageUrl;
+    deviceImage.alt = device.name;
+    deviceImage.classList.remove('loaded');
+    setTimeout(() => deviceImage.classList.add('loaded'), 100);
+
+    // Update score
+    const scoreNumber = document.querySelector('.score-number');
+    scoreNumber.textContent = device.overall;
+    scoreNumber.classList.remove('visible');
+    setTimeout(() => scoreNumber.classList.add('visible'), 200);
+
+    // Update difficulty label/badge
+    const label = document.querySelector('.difficulty-label');
+    const badge = document.querySelector('.difficulty-badge');
+    
+    label.classList.remove('visible');
+    badge.classList.remove('visible');
+    
+    setTimeout(() => {
+      label.classList.add('visible');
+      badge.classList.add('visible');
+    }, 300);
+
+    // Update badge styling
+    if (device.overall >= 8) {
+      badge.textContent = 'VERY DIFFICULT';
+      badge.style.background = 'rgba(167, 139, 255, 0.3)';
+      badge.style.color = '#D4BCFF';
+      badge.style.border = '1px solid rgba(167, 139, 255, 0.5)';
+    } else if (device.overall >= 5) {
+      badge.textContent = 'MODERATE';
+      badge.style.background = 'rgba(196, 172, 250, 0.3)';
+      badge.style.color = '#D4BCFF';
+      badge.style.border = '1px solid rgba(196, 172, 250, 0.5)';
+    } else {
+      badge.textContent = 'EASY';
+      badge.style.background = 'rgba(212, 188, 255, 0.3)';
+      badge.style.color = '#D4BCFF';
+      badge.style.border = '1px solid rgba(212, 188, 255, 0.5)';
+    }
+
+    // Update metrics
+    const container = document.getElementById('metricsContainer');
+    container.innerHTML = '';
+    
+    Object.entries(device.metrics).forEach(([key, metric], idx) => {
+      const metricDiv = document.createElement('div');
+      metricDiv.className = 'metric';
+      
+      const percentage = (metric.value / metric.max) * 100;
+      
+      metricDiv.innerHTML = `
+        <div class="metric-header">
+          <span class="metric-label" style="color: ${metric.color}">${metric.label}</span>
+          <span class="metric-value">${metric.value}${key === 'time' ? 'm' : ''}</span>
+        </div>
+        <div class="metric-bar" style="border: 1px solid ${metric.color}30">
+          <div class="metric-fill" style="background-color: ${metric.color}; box-shadow: 0 0 12px ${metric.color}60"></div>
+        </div>
+      `;
+      
+      container.appendChild(metricDiv);
+      
+      // Animate in
+      setTimeout(() => {
+        metricDiv.classList.add('visible');
+        const fill = metricDiv.querySelector('.metric-fill');
+        setTimeout(() => {
+          fill.style.width = `${percentage}%`;
+        }, 50);
+      }, idx * 100 + 500);
+    });
+  }
+
+  // Initial display
+  updateDisplay();
+</script>

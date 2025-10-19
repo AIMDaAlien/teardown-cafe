@@ -1,0 +1,335 @@
+---
+// Reading Progress Circuit - Material You 3 Expressive
+// Periwinkle palette, hidden titles until passed, 6px spacing
+---
+
+<div class="progress-circuit-container">
+  <!-- Fixed progress bar -->
+  <div class="progress-circuit-bar">
+    <div class="progress-inner">
+      <svg class="circuit-svg" viewBox="0 0 1000 64" preserveAspectRatio="none">
+        <!-- Base line -->
+        <line
+          x1="0"
+          y1="32"
+          x2="1000"
+          y2="32"
+          stroke="#C4ACFA"
+          stroke-width="3"
+          opacity="0.2"
+        />
+
+        <!-- Progress line -->
+        <line
+          class="progress-line"
+          x1="0"
+          y1="32"
+          x2="0"
+          y2="32"
+          stroke="#C4ACFA"
+          stroke-width="4"
+          opacity="0.8"
+          stroke-linecap="round"
+          style="filter: drop-shadow(0 0 8px rgba(196, 172, 250, 0.8));"
+        />
+
+        <!-- Milestones -->
+        <g class="milestone-group"></g>
+      </svg>
+
+      <!-- Labels -->
+      <div class="milestone-labels"></div>
+
+      <!-- Progress percentage -->
+      <div class="progress-info">
+        <span class="progress-label">Reading Progress</span>
+        <span class="progress-percent">0%</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .progress-circuit-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+  }
+
+  .progress-circuit-bar {
+    background: rgba(10, 0, 21, 0.8);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(196, 172, 250, 0.2);
+  }
+
+  .progress-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 24px 32px 18px;
+  }
+
+  .circuit-svg {
+    width: 100%;
+    height: 64px;
+    margin-bottom: 6px; /* 6px spacing as requested */
+  }
+
+  .milestone-labels {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 16px;
+  }
+
+  .milestone-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    cursor: pointer;
+    opacity: 0; /* Hidden by default */
+  }
+
+  .milestone-label.visible {
+    opacity: 1; /* Show when progress passes */
+  }
+
+  .milestone-label.active {
+    transform: scale(1.1);
+  }
+
+  .milestone-title {
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 9999px;
+    white-space: nowrap;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .milestone-label:not(.active) .milestone-title {
+    color: #B8B3FF;
+  }
+
+  .milestone-label.active .milestone-title {
+    background: rgba(196, 172, 250, 0.3);
+    color: #D4BCFF;
+    border: 1px solid rgba(196, 172, 250, 0.5);
+  }
+
+  .milestone-percent {
+    font-size: 10px;
+    color: #A78BFF;
+    margin-top: 4px;
+  }
+
+  .progress-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    color: #B8B3FF;
+  }
+
+  .progress-percent {
+    font-weight: 700;
+    color: #D4BCFF;
+  }
+
+  @media (max-width: 768px) {
+    .progress-inner {
+      padding: 16px 16px 12px;
+    }
+
+    .circuit-svg {
+      height: 48px;
+    }
+
+    .milestone-title {
+      font-size: 10px;
+      padding: 3px 8px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation: none !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+</style>
+
+<script>
+  const milestones = [
+    { percent: 0, label: 'Introduction', section: 'intro' },
+    { percent: 25, label: 'Disassembly', section: 'disassembly' },
+    { percent: 50, label: 'Components', section: 'components' },
+    { percent: 75, label: 'Analysis', section: 'analysis' },
+    { percent: 100, label: 'Conclusion', section: 'conclusion' },
+  ];
+
+  let scrollProgress = 0;
+  let activeMilestone = 0;
+
+  const progressLine = document.querySelector('.progress-line');
+  const progressPercent = document.querySelector('.progress-percent');
+  const milestoneGroup = document.querySelector('.milestone-group');
+  const milestoneLabelsContainer = document.querySelector('.milestone-labels');
+
+  // Create milestone nodes and labels
+  milestones.forEach((milestone, index) => {
+    const x = (milestone.percent / 100) * 1000;
+    const isEven = index % 2 === 0;
+
+    // SVG node
+    const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+    
+    // Connection line
+    const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+    line.setAttribute('x1', x);
+    line.setAttribute('y1', '32');
+    line.setAttribute('x2', x);
+    line.setAttribute('y2', isEven ? '8' : '56');
+    line.setAttribute('stroke', '#A78BFF');
+    line.setAttribute('stroke-width', '2');
+    line.setAttribute('opacity', '0.3');
+    line.classList.add(`milestone-line-${index}`);
+
+    // Node circle
+    const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+    circle.setAttribute('cx', x);
+    circle.setAttribute('cy', '32');
+    circle.setAttribute('r', '6');
+    circle.setAttribute('fill', '#1A0B2E');
+    circle.setAttribute('stroke', '#A78BFF');
+    circle.setAttribute('stroke-width', '2');
+    circle.classList.add(`milestone-node-${index}`);
+
+    // Pulse ring for active
+    const pulseRing = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+    pulseRing.setAttribute('cx', x);
+    pulseRing.setAttribute('cy', '32');
+    pulseRing.setAttribute('r', '8');
+    pulseRing.setAttribute('fill', 'none');
+    pulseRing.setAttribute('stroke', '#D4BCFF');
+    pulseRing.setAttribute('stroke-width', '2');
+    pulseRing.setAttribute('opacity', '0');
+    pulseRing.classList.add(`milestone-pulse-${index}`);
+
+    g.appendChild(line);
+    g.appendChild(circle);
+    g.appendChild(pulseRing);
+    milestoneGroup.appendChild(g);
+
+    // Label
+    const label = document.createElement('button');
+    label.className = 'milestone-label';
+    label.style.position = 'absolute';
+    label.style.left = `calc(${milestone.percent}% - 50px)`;
+    label.style[isEven ? 'top' : 'bottom'] = isEven ? '-50px' : '-50px';
+    
+    label.innerHTML = `
+      <span class="milestone-title">${milestone.label}</span>
+      <span class="milestone-percent">${milestone.percent}%</span>
+    `;
+
+    label.addEventListener('click', () => {
+      const element = document.getElementById(milestone.section);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+
+    milestoneLabelsContainer.appendChild(label);
+  });
+
+  function updateProgress() {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = Math.min((scrollTop / docHeight) * 100, 100);
+    
+    scrollProgress = progress;
+    progressLine.setAttribute('x2', (progress / 100) * 1000);
+    progressPercent.textContent = `${Math.round(progress)}%`;
+
+    // Update active milestone
+    const current = milestones.findIndex(m => progress < m.percent);
+    activeMilestone = current === -1 ? milestones.length - 1 : Math.max(0, current - 1);
+
+    // Update milestone styles
+    milestones.forEach((milestone, index) => {
+      const isActive = scrollProgress >= milestone.percent;
+      const isCurrent = index === activeMilestone;
+      
+      const line = document.querySelector(`.milestone-line-${index}`);
+      const node = document.querySelector(`.milestone-node-${index}`);
+      const pulse = document.querySelector(`.milestone-pulse-${index}`);
+      const label = milestoneLabelsContainer.children[index];
+
+      // Show/hide label based on progress
+      if (isActive) {
+        label.classList.add('visible');
+      }
+
+      if (isCurrent) {
+        label.classList.add('active');
+      } else {
+        label.classList.remove('active');
+      }
+
+      // Update SVG styles
+      if (line && node) {
+        line.setAttribute('stroke', isActive ? '#C4ACFA' : '#A78BFF');
+        line.setAttribute('opacity', isActive ? '0.6' : '0.3');
+        
+        node.setAttribute('fill', isActive ? '#C4ACFA' : '#1A0B2E');
+        node.setAttribute('stroke', isActive ? '#D4BCFF' : '#A78BFF');
+        node.setAttribute('r', isCurrent ? '8' : '6');
+        
+        if (isCurrent) {
+          node.style.filter = 'drop-shadow(0 0 12px rgba(212, 188, 255, 0.9))';
+          pulse.setAttribute('opacity', '0.6');
+          pulse.style.animation = 'pulseRing 2s cubic-bezier(0.4, 0, 0.6, 1) infinite';
+        } else {
+          node.style.filter = 'none';
+          pulse.setAttribute('opacity', '0');
+          pulse.style.animation = 'none';
+        }
+      }
+    });
+  }
+
+  // Optimized scroll handler
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        updateProgress();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
+
+  // Initial update
+  updateProgress();
+
+  // Add pulse animation
+  const style = document.createElement('style');
+  style.textContent = `
+    @keyframes pulseRing {
+      0% {
+        r: 8;
+        opacity: 0.6;
+      }
+      100% {
+        r: 20;
+        opacity: 0;
+      }
+    }
+  `;
+  document.head.appendChild(style);
+</script>
