@@ -41,6 +41,8 @@ These aren't immediately obvious (明白 - めいはく - meihaku - obvious) and
 
 ![Battery exposed with ZURUN branding visible](/images/moto-g-stylus-2022-screen/03-battery-internals-view.jpg)
 
+*The photo you see on screen? That's the inside of my Samsung Galaxy S6 from 2019, man I miss those rooted Android days [placeholder link to future Galaxy S6 entry]*
+
 This is where the repair gets interesting. Unlike some phones where you can access the screen ribbon cable without battery removal, the Moto G Stylus 2022 requires full battery extraction to reach the display connector.
 
 **Battery specs:**
