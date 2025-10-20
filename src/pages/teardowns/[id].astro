@@ -198,6 +198,16 @@ const { Content } = await render(entry);
     box-shadow: var(--md-sys-elevation-level1);
   }
   
+  .article-content :global(video) {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--md-sys-shape-corner-large);
+    margin: 1.5rem 0;
+    box-shadow: var(--md-sys-elevation-level2);
+    background-color: var(--md-sys-color-surface-container);
+  }
+  
   .article-content :global(code) {
     background-color: var(--md-sys-color-surface-container-highest);
     color: var(--md-sys-color-primary);

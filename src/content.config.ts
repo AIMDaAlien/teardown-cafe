@@ -23,6 +23,7 @@ const teardowns = defineCollection({
     ]),
     difficulty: z.enum(['easy', 'medium', 'hard']),
     heroImage: z.string().optional(),
+    video: z.string().optional(),
   }),
 });
 
