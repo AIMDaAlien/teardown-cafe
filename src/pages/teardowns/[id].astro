@@ -4,6 +4,7 @@ import ReadingProgressCircuit from '../../components/ReadingProgressCircuit.astr
 import CircuitAccents from '../../components/CircuitAccents.astro';
 import WaveDiffusions from '../../components/WaveDiffusions.astro';
 import FloatingParticles from '../../components/FloatingParticles.astro';
+import FocusMode from '../../components/FocusMode.astro';
 import { getCollection, render } from 'astro:content';
 
 // Astro 5: Generate static paths using entry.id (not entry.slug)
@@ -32,6 +33,9 @@ const { Content } = await render(entry);
   <CircuitAccents />
   <WaveDiffusions />
   <FloatingParticles />
+  
+  <!-- Focus Mode Toggle -->
+  <FocusMode />
   
   <article class="teardown-article">
     <header class="article-header">

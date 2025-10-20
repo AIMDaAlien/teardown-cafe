@@ -3,6 +3,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import CircuitAccents from '../components/CircuitAccents.astro';
 import WaveDiffusions from '../components/WaveDiffusions.astro';
 import FloatingParticles from '../components/FloatingParticles.astro';
+import DeviceIcons from '../components/DeviceIcons.astro';
+import FocusMode from '../components/FocusMode.astro';
 import { getCollection } from 'astro:content';
 
 const teardowns = await getCollection('teardowns');
@@ -10,16 +12,6 @@ const teardowns = await getCollection('teardowns');
 const sortedTeardowns = teardowns.sort((a, b) => {
   return b.data.pubDate.valueOf() - a.data.pubDate.valueOf();
 });
-
-const deviceEmoji: Record<string, string> = {
-  'monitor': '🖥️',
-  'laptop': '💻',
-  'smartphone': '📱',
-  'raspberry-pi': '🥧',
-  'nas': '🗄️',
-  'mechanical-keyboard': '⌨️',
-  'other': '🔧'
-};
 ---
 
 <BaseLayout title="Home">
@@ -27,6 +19,9 @@ const deviceEmoji: Record<string, string> = {
   <CircuitAccents />
   <WaveDiffusions />
   <FloatingParticles />
+  
+  <!-- Focus Mode Toggle -->
+  <FocusMode />
 
   <!-- Content layer -->
   <div class="content-wrapper">
@@ -54,7 +49,9 @@ const deviceEmoji: Record<string, string> = {
             <div class="card-content">
               <div class="card-meta">
                 <span class="device-type">
-                  <span class="device-emoji" aria-hidden="true">{deviceEmoji[teardown.data.device] || '🔧'}</span>
+                  <span class="device-icon" aria-hidden="true">
+                    <DeviceIcons type={teardown.data.device} class="icon-svg" />
+                  </span>
                   {teardown.data.device}
                 </span>
                 <span class="difficulty difficulty-{teardown.data.difficulty}">
@@ -250,9 +247,17 @@ const deviceEmoji: Record<string, string> = {
     transition: all var(--md-sys-motion-duration-short) var(--md-sys-motion-easing-spring-soft);
   }
 
-  .device-emoji {
-    font-size: 1rem;
-    line-height: 1;
+  .device-icon {
+    width: 16px;
+    height: 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .device-icon :global(.icon-svg) {
+    width: 100%;
+    height: 100%;
   }
 
   .teardown-card:hover .device-type {
