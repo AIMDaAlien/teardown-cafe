@@ -59,15 +59,19 @@
   }
 
   .progress-circuit-bar {
-    background: rgba(10, 0, 21, 0.8);
-    backdrop-filter: blur(8px);
-    border-bottom: 1px solid rgba(196, 172, 250, 0.2);
+    background: rgba(10, 0, 21, 0.3);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: var(--md-sys-shape-corner-large);
+    margin: 16px 32px;
+    border: 1px solid rgba(196, 172, 250, 0.15);
+    opacity: 0.7;
   }
 
   .progress-inner {
     max-width: 1400px;
     margin: 0 auto;
-    padding: 24px 32px 18px;
+    padding: 20px 32px 16px;
   }
 
   .circuit-svg {
@@ -82,22 +86,16 @@
     display: flex;
     justify-content: space-between;
     padding: 0 16px;
+    pointer-events: none;
   }
 
   .milestone-label {
     display: flex;
     flex-direction: column;
     align-items: center;
-    cursor: pointer;
     opacity: 0;
     transition: opacity 300ms cubic-bezier(0.4, 0, 0.2, 1);
-    background: none;
-    border: none;
-    padding: 0;
-    font-family: inherit;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
+    pointer-events: none;
   }
 
   .milestone-label.visible {
@@ -232,7 +230,7 @@
     milestoneGroup.appendChild(g);
 
     // Label
-    const label = document.createElement('button');
+    const label = document.createElement('div');
     label.className = 'milestone-label';
     label.style.position = 'absolute';
     label.style.left = `calc(${milestone.percent}% - 50px)`;
@@ -242,13 +240,6 @@
       <span class="milestone-title">${milestone.label}</span>
       <span class="milestone-percent">${milestone.percent}%</span>
     `;
-
-    label.addEventListener('click', () => {
-      const element = document.getElementById(milestone.section);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-    });
 
     milestoneLabelsContainer.appendChild(label);
   });
