@@ -9,8 +9,6 @@ heroImage: /images/macbook-air-2015-13inch/01-full-internals-view.jpg
 
 ## Initial Inspection
 
-![Full view of MacBook Air internals](/images/macbook-air-2015-13inch/01-full-internals-view.jpg)
-
 Opening up the MacBook Air 2015 13-inch reveals Apple's elegant internal layout from the last generation before the major redesign. This model represents the final iteration of the classic tapered aluminum design.
 
 ## Logic Board Detail

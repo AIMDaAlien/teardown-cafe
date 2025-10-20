@@ -4,13 +4,15 @@ description: "Replacing a cracked screen on the Motorola G Stylus 2022, navigati
 pubDate: 2024-02-26
 device: smartphone
 difficulty: medium
-heroImage: /images/moto-g-stylus-2022-screen/03-battery-internals-view.jpg
+heroImage: /images/moto-g-stylus-2022-screen/04-screen-replaced.jpg
 video: /images/moto-g-stylus-2022-screen/repair-process.mp4
 ---
 
 ## Why I Did This
 
 The Moto G Stylus 2022 came in with a cracked screen - a common issue with modern smartphones. While this repair seemed straightforward (まっすぐ - massugu - straightforward) at first glance, Motorola's design choices added a couple of gotchas that made it more interesting than your typical screen replacement.
+
+*The photo you see on screen? That's the inside of my Samsung Galaxy S6 from 2019, man I miss those rooted Android days [placeholder link to future Galaxy S6 entry]*
 
 ## The Repair Process
 
@@ -40,8 +42,6 @@ These aren't immediately obvious (明白 - めいはく - meihaku - obvious) and
 ### Step 2: Battery Disconnect and Removal
 
 ![Battery exposed with ZURUN branding visible](/images/moto-g-stylus-2022-screen/03-battery-internals-view.jpg)
-
-*The photo you see on screen? That's the inside of my Samsung Galaxy S6 from 2019, man I miss those rooted Android days [placeholder link to future Galaxy S6 entry]*
 
 This is where the repair gets interesting. Unlike some phones where you can access the screen ribbon cable without battery removal, the Moto G Stylus 2022 requires full battery extraction to reach the display connector.
 
@@ -91,46 +91,26 @@ Reassembly followed the reverse order:
 
 **Final test:** Touch response, brightness adjustment, and display quality all checked out.
 
-## What I Learned
+## Difficulty Assessment
 
-### Design Analysis
+This repair sits in the **easy-medium range** - very straightforward for phone repair experts, but medium difficulty for first-timers due to:
 
-**Good:**
-- Standard Phillips screws (no proprietary bits needed)
-- Relatively accessible internals once opened
-- Battery is replaceable (not soldered)
-- Modular screen assembly
-
-**Not so good:**
-- Hidden screws under stickers (not repairable-friendly)
-- Battery removal required for screen replacement
-- Strong adhesive makes battery extraction risky
-- No pull tabs on battery adhesive
-
-### Repairability Score: 6/10
-
-- **Tool requirements:** Basic tools sufficient ✓
-- **Disassembly complexity:** Medium - hidden screws and battery removal required
-- **Component availability:** Replacement screens readily available online
-- **Risk level:** Medium - battery removal always carries risk
-- **Documentation:** Minimal official repair guides
-- **Time required:** 45-60 minutes for experienced; 90+ for first-timers
-
-## Difficulty Breakdown
-
-This repair earned a **Medium** difficulty rating because:
-
-**Easy aspects:**
+**Why experts find it easy:**
 - Standard screw types throughout
 - No soldering required
 - Screen assembly is modular
 - Clear internal layout once opened
 
-**Challenging aspects:**
+**Why beginners find it medium:**
 - Hidden fasteners not immediately visible
 - Battery removal adds complexity and risk
 - Strong adhesive requires patience (忍耐 - にんたい - nintai - patience)
 - Ribbon cable positioning requires careful handling
+
+**Repairability Score: 6/10**
+- Tool requirements: Basic tools sufficient ✓
+- Component availability: Replacement screens readily available online
+- Time required: 30-45 minutes for experienced; 60-90 minutes for first-timers
 
 ## Tips for DIY Repairs
 
@@ -140,27 +120,7 @@ This repair earned a **Medium** difficulty rating because:
 4. **Take photos** - Document screw locations and cable routing during disassembly
 5. **Use proper tools** - A quality spudger prevents battery puncture
 
-## Related Resources
-
-- Motorola Moto G Stylus 2022 specifications
-- iFixit repair guides for similar Motorola devices
-- Battery safety guidelines
-
-## Conclusion
-
-The Moto G Stylus 2022 screen repair is straightforward (まっすぐ - massugu) once you know about the hidden screws and understand that battery removal is necessary. While not the most repair-friendly design, it's manageable for someone with basic electronics repair experience.
-
-**Would I recommend attempting this repair?**
-- **For experienced repair folks:** Yes, with proper precautions
-- **For beginners:** Maybe - watch tutorials first and proceed cautiously
-- **For the risk-averse:** Consider professional repair
-
-**Total repair cost:** ~$40-60 for replacement screen + tools
-**Time invested:** 1 hour with care and patience
-
-The satisfaction of bringing a device back to life? Priceless (かけがえのない - kakegaenonai - priceless).
-
 ---
 
 *Repair completed: February 26, 2024*
-*Difficulty level: Medium - Hidden fasteners and battery removal required*
+*Difficulty: Easy-medium - Hidden fasteners and battery removal required*
