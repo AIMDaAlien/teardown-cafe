@@ -4,7 +4,6 @@ import CircuitAccents from '../components/CircuitAccents.astro';
 import WaveDiffusions from '../components/WaveDiffusions.astro';
 import ReadingProgressCircuit from '../components/ReadingProgressCircuit.astro';
 import FloatingParticles from '../components/FloatingParticles.astro';
-import DifficultyMeter from '../components/DifficultyMeter.astro';
 import { getCollection } from 'astro:content';
 
 const teardowns = await getCollection('teardowns');
@@ -40,11 +39,6 @@ const deviceEmoji: Record<string, string> = {
       <p class="hero-subtitle">
         Curiosity meets caffeine. Constructing and deconstructing is either screwing or unscrewing 🔩
       </p>
-    </section>
-
-    <!-- Difficulty meter section -->
-    <section id="disassembly">
-      <DifficultyMeter />
     </section>
 
     <section class="teardowns-grid" id="components">
