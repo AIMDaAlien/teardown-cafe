@@ -1,0 +1,176 @@
+---
+// Vertical Progress Bar - Concept 1: Pill + Floating Text
+// Right-aligned, descends as user scrolls
+---
+
+<div class="vertical-progress-container">
+  <div class="progress-track">
+    <div class="progress-fill"></div>
+  </div>
+  <div class="progress-content">
+    <div class="section-text"></div>
+    <div class="progress-percent">0%</div>
+  </div>
+</div>
+
+<style>
+  .vertical-progress-container {
+    position: fixed;
+    right: 20px;
+    top: 120px;
+    bottom: 80px;
+    z-index: 40;
+    pointer-events: none;
+  }
+
+  .progress-track {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 6px;
+    background: rgba(167, 139, 255, 0.2);
+    border-radius: 100px;
+  }
+
+  .progress-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 0%;
+    background: linear-gradient(to bottom, #D4BCFF, #B8B3FF);
+    border-radius: 100px;
+    box-shadow: 0 0 12px rgba(212, 188, 255, 0.6);
+    transition: height 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .progress-content {
+    position: absolute;
+    right: 20px;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+  }
+
+  .section-text {
+    font-size: 11px;
+    font-weight: 600;
+    color: #D4BCFF;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 300ms ease, transform 300ms ease;
+    margin-bottom: 8px;
+  }
+
+  .section-text.visible {
+    opacity: 1;
+  }
+
+  .progress-percent {
+    font-size: 13px;
+    font-weight: 700;
+    color: #B8B3FF;
+    margin-top: 4px;
+  }
+
+  @media (max-width: 768px) {
+    .vertical-progress-container {
+      right: 12px;
+    }
+    
+    .progress-track {
+      width: 4px;
+    }
+    
+    .section-text {
+      font-size: 9px;
+    }
+    
+    .progress-percent {
+      font-size: 11px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .progress-fill {
+      transition: none;
+    }
+    
+    .section-text {
+      transition: opacity 150ms ease;
+    }
+  }
+</style>
+
+<script>
+  const sections = [
+    { percent: 0, label: 'Introduction', id: 'intro' },
+    { percent: 25, label: 'Disassembly', id: 'disassembly' },
+    { percent: 50, label: 'Components', id: 'components' },
+    { percent: 75, label: 'Analysis', id: 'analysis' },
+    { percent: 100, label: 'Conclusion', id: 'conclusion' },
+  ];
+
+  const progressFill = document.querySelector('.progress-fill');
+  const sectionText = document.querySelector('.section-text');
+  const progressPercent = document.querySelector('.progress-percent');
+  const progressContent = document.querySelector('.progress-content');
+
+  let currentSectionIndex = 0;
+  let isTransitioning = false;
+
+  function updateProgress() {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = Math.min((scrollTop / docHeight) * 100, 100);
+    
+    progressFill.style.height = `${progress}%`;
+    progressPercent.textContent = `${Math.round(progress)}%`;
+    
+    // Position content at current progress point
+    progressContent.style.top = `${progress}%`;
+    
+    // Determine current section
+    const newSectionIndex = sections.findIndex((s, i) => {
+      const nextSection = sections[i + 1];
+      return progress >= s.percent && (!nextSection || progress < nextSection.percent);
+    });
+    
+    if (newSectionIndex !== -1 && newSectionIndex !== currentSectionIndex && !isTransitioning) {
+      isTransitioning = true;
+      
+      // Fade out
+      sectionText.classList.remove('visible');
+      
+      // Wait for fade out, then update and fade in
+      setTimeout(() => {
+        sectionText.textContent = sections[newSectionIndex].label;
+        sectionText.classList.add('visible');
+        currentSectionIndex = newSectionIndex;
+        
+        setTimeout(() => {
+          isTransitioning = false;
+        }, 300);
+      }, 300);
+    }
+  }
+
+  // Optimized scroll handler
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        updateProgress();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
+
+  // Initial update
+  updateProgress();
+</script>

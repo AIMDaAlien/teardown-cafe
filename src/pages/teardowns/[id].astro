@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import ReadingProgressCircuit from '../../components/ReadingProgressCircuit.astro';
+import VerticalProgress from '../../components/VerticalProgress.astro';
 import CircuitAccents from '../../components/CircuitAccents.astro';
 import WaveDiffusions from '../../components/WaveDiffusions.astro';
 import FloatingParticles from '../../components/FloatingParticles.astro';
@@ -26,8 +26,8 @@ const { Content } = await render(entry);
   title={entry.data.title}
   description={entry.data.description}
 >
-  <!-- Progress circuit for article navigation -->
-  <ReadingProgressCircuit />
+  <!-- Vertical progress bar -->
+  <VerticalProgress />
   
   <!-- Ambient effects -->
   <CircuitAccents />
@@ -80,7 +80,7 @@ const { Content } = await render(entry);
   .teardown-article {
     max-width: 800px;
     margin: 0 auto;
-    padding-top: 180px;
+    padding-top: 120px;
     position: relative;
     z-index: 1;
   }
