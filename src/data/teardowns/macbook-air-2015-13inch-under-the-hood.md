@@ -25,6 +25,26 @@ This MacBook originally came with **OS X El Capitan 10.11** and I wanted to see 
 
 **The firmware issue:** Third-party SSDs won't be recognized without the firmware update that ships with High Sierra 10.13 or later. The original Apple SSD must be present during the High Sierra installation to receive this firmware update.
 
+## SSD Upgrade Considerations
+
+![NVMe adapter installation](/images/macbook-air-2015-13inch/04-nvme-adapter-install.jpg)
+
+### The Adapter Requirement
+
+Apple's proprietary NVMe socket in the 2015 MacBook Air uses a custom connector that's incompatible with standard M.2 SSDs. This necessitates (必要とする - ひつようとする - hitsuyoutosuru - necessitate) using an adapter to install third-party NVMe drives.
+
+**Performance impact:**
+- Adapter introduces approximately **15% speed reduction** from the drive's maximum rated speeds
+- Despite this limitation, modern NVMe SSDs through adapters might still outperform the original Apple SSD
+- The bottleneck comes from the adapter's PCIe lane configuration and connector translation
+
+**Example:** A rated 3500MB/s read speed NVMe drive might achieve ~3000MB/s through the adapter - still significantly faster than the original 1200-1500MB/s Apple SSD in most configurations.
+
+**Adapter considerations:**
+- Sintech adapters are the most widely documented and compatible
+- Proper seating critical to avoid recognition issues
+- Some drive models more compatible than others
+
 ## Technical Specifications
 
 **MacBook Air 13-inch, Early 2015 - Official Specifications**

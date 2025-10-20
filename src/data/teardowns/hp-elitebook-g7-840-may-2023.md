@@ -282,6 +282,12 @@ The hanging speakers at the bottom of the monitor aren't pretty, but they work. 
 
 **Historical note:** This project (Bangladesh, May 2023) proved that hardware constraints inspire creative solutions. The frankenstein all-in-one still works as of this documentation.
 
+## The Final Product
+
+![Frankenstein all-in-one configuration](/images/hp-elitebook-g7-840/frankenstein-all-in-one.jpg)
+
+The completed frankenstein build - motherboard mounted behind the monitor, speakers hanging at the bottom, external WiFi antenna. Unconventional? Absolutely. Functional? Perfectly.
+
 ---
 
 *Project completed: May 2023 (Dhaka, Bangladesh)*
