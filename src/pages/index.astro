@@ -2,7 +2,6 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import CircuitAccents from '../components/CircuitAccents.astro';
 import WaveDiffusions from '../components/WaveDiffusions.astro';
-import ReadingProgressCircuit from '../components/ReadingProgressCircuit.astro';
 import FloatingParticles from '../components/FloatingParticles.astro';
 import { getCollection } from 'astro:content';
 
@@ -24,10 +23,7 @@ const deviceEmoji: Record<string, string> = {
 ---
 
 <BaseLayout title="Home">
-  <!-- Fixed progress circuit -->
-  <ReadingProgressCircuit />
-
-  <!-- Ambient effects -->
+<!-- Ambient effects -->
   <CircuitAccents />
   <WaveDiffusions />
   <FloatingParticles />

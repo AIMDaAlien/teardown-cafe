@@ -1,5 +1,9 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import ReadingProgressCircuit from '../../components/ReadingProgressCircuit.astro';
+import CircuitAccents from '../../components/CircuitAccents.astro';
+import WaveDiffusions from '../../components/WaveDiffusions.astro';
+import FloatingParticles from '../../components/FloatingParticles.astro';
 import { getCollection, render } from 'astro:content';
 
 // Astro 5: Generate static paths using entry.id (not entry.slug)
@@ -21,6 +25,14 @@ const { Content } = await render(entry);
   title={entry.data.title}
   description={entry.data.description}
 >
+  <!-- Progress circuit for article navigation -->
+  <ReadingProgressCircuit />
+  
+  <!-- Ambient effects -->
+  <CircuitAccents />
+  <WaveDiffusions />
+  <FloatingParticles />
+  
   <article class="teardown-article">
     <header class="article-header">
       <div class="article-meta">
@@ -64,6 +76,9 @@ const { Content } = await render(entry);
   .teardown-article {
     max-width: 800px;
     margin: 0 auto;
+    padding-top: 140px; /* Space for fixed progress bar */
+    position: relative;
+    z-index: 1;
   }
   
   .article-header {

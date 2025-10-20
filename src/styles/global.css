@@ -79,25 +79,31 @@
   --md-sys-motion-easing-decelerate: cubic-bezier(0.0, 0.0, 0.2, 1); /* Smooth deceleration */
   
   /* Typography Tokens */
-  --md-sys-typescale-display-large-font: 'Inter', system-ui, sans-serif;
+  --md-sys-typescale-display-large-font: 'Ubuntu', system-ui, sans-serif;
   --md-sys-typescale-display-large-size: 57px;
   --md-sys-typescale-display-large-weight: 400;
   --md-sys-typescale-display-large-line-height: 64px;
   
-  --md-sys-typescale-headline-large-font: 'Inter', system-ui, sans-serif;
+  --md-sys-typescale-headline-large-font: 'Ubuntu', system-ui, sans-serif;
   --md-sys-typescale-headline-large-size: 32px;
   --md-sys-typescale-headline-large-weight: 400;
   --md-sys-typescale-headline-large-line-height: 40px;
   
-  --md-sys-typescale-title-large-font: 'Inter', system-ui, sans-serif;
+  --md-sys-typescale-title-large-font: 'Ubuntu', system-ui, sans-serif;
   --md-sys-typescale-title-large-size: 22px;
   --md-sys-typescale-title-large-weight: 500;
   --md-sys-typescale-title-large-line-height: 28px;
   
-  --md-sys-typescale-body-large-font: 'Inter', system-ui, sans-serif;
+  --md-sys-typescale-body-large-font: 'Ubuntu', system-ui, sans-serif;
   --md-sys-typescale-body-large-size: 16px;
   --md-sys-typescale-body-large-weight: 400;
   --md-sys-typescale-body-large-line-height: 24px;
+  
+  /* Code Typography */
+  --md-sys-typescale-code-font: 'JetBrains Mono', 'Courier New', monospace;
+  --md-sys-typescale-code-size: 14px;
+  --md-sys-typescale-code-weight: 400;
+  --md-sys-typescale-code-line-height: 20px;
 }
 
 /* Global Reset & Base Styles */
@@ -150,6 +156,23 @@ a {
 
 a:hover {
   color: var(--md-sys-color-on-primary-container);
+}
+
+/* Code Block Styling */
+code,
+pre code {
+  font-family: var(--md-sys-typescale-code-font);
+  font-size: var(--md-sys-typescale-code-size);
+  font-weight: var(--md-sys-typescale-code-weight);
+  line-height: var(--md-sys-typescale-code-line-height);
+}
+
+pre {
+  font-family: var(--md-sys-typescale-code-font);
+  padding: 1rem;
+  border-radius: var(--md-sys-shape-corner-medium);
+  background-color: var(--md-sys-color-surface-container-highest);
+  overflow-x: auto;
 }
 
 /* Image Optimization */
