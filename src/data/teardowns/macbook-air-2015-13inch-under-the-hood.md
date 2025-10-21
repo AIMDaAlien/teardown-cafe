@@ -31,7 +31,7 @@ This MacBook originally came with **OS X El Capitan 10.11** and I wanted to see 
 
 ### The Adapter Requirement
 
-Apple's proprietary NVMe socket in the 2015 MacBook Air uses a custom connector that's incompatible with standard M.2 SSDs. This necessitates (必要とする - ひつようとする - hitsuyoutosuru - necessitate) using an adapter to install third-party NVMe drives.
+Apple's proprietary NVMe socket in the 2015 MacBook Air uses a custom connector that's incompatible with standard M.2 SSDs. This necessitates using an adapter to install third-party NVMe drives.
 
 **Performance impact:**
 - Adapter introduces approximately **15% speed reduction** from the drive's maximum rated speeds
