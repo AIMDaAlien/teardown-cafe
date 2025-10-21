@@ -1,0 +1,40 @@
+{
+	"folders": [
+		{
+			"name": "Teardown Cafe",
+			"path": "."
+		},
+		{
+			"name": "Obsidian Vault",
+			"path": "/Users/aim/Documents/Obsidian Notes Vault"
+		}
+	],
+	"settings": {
+		"files.exclude": {
+			"**/node_modules": true,
+			"**/.git": true,
+			"**/.astro": true
+		},
+		"search.exclude": {
+			"**/node_modules": true,
+			"**/.git": true,
+			"**/.astro": true
+		},
+		"files.watcherExclude": {
+			"**/node_modules/**": true,
+			"**/.git/**": true,
+			"**/.astro/**": true
+		}
+	},
+	"extensions": {
+		"recommendations": [
+			"astro-build.astro-vscode",
+			"bradlc.vscode-tailwindcss",
+			"esbenp.prettier-vscode",
+			"ms-vscode.vscode-typescript-next",
+			"yzhang.markdown-all-in-one",
+			"davidanson.vscode-markdownlint",
+			"ms-vscode.vscode-json"
+		]
+	}
+}
