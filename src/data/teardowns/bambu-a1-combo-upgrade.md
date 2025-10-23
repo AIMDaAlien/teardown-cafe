@@ -1,7 +1,7 @@
 ---
 title: "Bambu Lab A1 Combo - Upgrade from A1 Mini"
 description: "Upgrading from A1 Mini to A1 Combo - bigger build volume and AMS lite for easy multi-color printing"
-pubDate: 2025-07-27
+pubDate: 2025-09-13
 device: 3d-printer
 difficulty: easy
 heroImage: /images/bambu-a1-combo/IMG20250727165952.jpg

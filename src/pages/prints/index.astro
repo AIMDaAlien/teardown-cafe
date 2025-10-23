@@ -1,0 +1,278 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+// Mock print data - replace with actual collection later
+const prints = [
+  { 
+    id: 1, 
+    image: '/images/bambu-a1-mini/IMG20250731124342.jpg',
+    title: 'Cable Organizers',
+    printer: 'A1 Mini',
+    material: 'PLA',
+    category: 'workspace'
+  },
+  { 
+    id: 2, 
+    image: '/images/bambu-a1-mini/IMG20250803142849.jpg',
+    title: 'Pen Holders',
+    printer: 'A1 Mini',
+    material: 'PLA',
+    category: 'workspace'
+  },
+  { 
+    id: 3, 
+    image: '/images/bambu-a1-combo/IMG20250814220937.jpg',
+    title: 'Multiboard Accessories',
+    printer: 'A1 Combo',
+    material: 'PETG',
+    category: 'workspace'
+  },
+  // Add more prints here
+];
+
+const categories = [...new Set(prints.map(p => p.category))];
+const printers = [...new Set(prints.map(p => p.printer))];
+---
+
+<BaseLayout title="3D Prints Gallery" description="All prints made with Bambu Lab printers">
+  <main class="gallery-container">
+    <header class="gallery-header">
+      <h1>🖨️ 3D Prints Gallery</h1>
+      <p>{prints.length} prints and counting</p>
+    </header>
+
+    <div class="filters">
+      <div class="filter-group">
+        <label>Printer:</label>
+        <select id="printer-filter">
+          <option value="all">All</option>
+          {printers.map(p => <option value={p}>{p}</option>)}
+        </select>
+      </div>
+      
+      <div class="filter-group">
+        <label>Category:</label>
+        <select id="category-filter">
+          <option value="all">All</option>
+          {categories.map(c => <option value={c}>{c}</option>)}
+        </select>
+      </div>
+    </div>
+
+    <div class="prints-grid" id="prints-grid">
+      {prints.map(print => (
+        <div 
+          class="print-card" 
+          data-printer={print.printer}
+          data-category={print.category}
+          data-id={print.id}
+        >
+          <img src={print.image} alt={print.title} loading="lazy" />
+          <div class="print-info">
+            <h3>{print.title}</h3>
+            <div class="meta">
+              <span class="badge">{print.printer}</span>
+              <span class="badge">{print.material}</span>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+      <button class="close">&times;</button>
+      <img id="lightbox-img" src="" alt="" />
+      <div class="lightbox-info">
+        <h2 id="lightbox-title"></h2>
+        <p id="lightbox-meta"></p>
+      </div>
+    </div>
+  </main>
+</BaseLayout>
+
+<style>
+  .gallery-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  .gallery-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .gallery-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .filters {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .filter-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .filter-group select {
+    padding: 0.5rem 1rem;
+    background: var(--surface-container);
+    border: 1px solid var(--outline);
+    border-radius: 8px;
+    color: var(--on-surface);
+  }
+
+  .prints-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .print-card {
+    background: var(--surface-container);
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .print-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+  }
+
+  .print-card img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+  }
+
+  .print-info {
+    padding: 1rem;
+  }
+
+  .print-info h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1rem;
+  }
+
+  .meta {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .badge {
+    padding: 0.25rem 0.5rem;
+    background: var(--primary-container);
+    color: var(--on-primary-container);
+    border-radius: 4px;
+    font-size: 0.75rem;
+  }
+
+  /* Lightbox */
+  .lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.95);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 2rem;
+  }
+
+  .lightbox.active {
+    display: flex;
+  }
+
+  .lightbox img {
+    max-width: 90%;
+    max-height: 70vh;
+    object-fit: contain;
+    border-radius: 8px;
+  }
+
+  .lightbox-info {
+    color: white;
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  .lightbox .close {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 3rem;
+    cursor: pointer;
+    line-height: 1;
+  }
+</style>
+
+<script>
+  // Filtering
+  const printerFilter = document.getElementById('printer-filter');
+  const categoryFilter = document.getElementById('category-filter');
+  const grid = document.getElementById('prints-grid');
+
+  function filterPrints() {
+    const printer = printerFilter.value;
+    const category = categoryFilter.value;
+    const cards = grid.querySelectorAll('.print-card');
+
+    cards.forEach(card => {
+      const matchPrinter = printer === 'all' || card.dataset.printer === printer;
+      const matchCategory = category === 'all' || card.dataset.category === category;
+      
+      card.style.display = matchPrinter && matchCategory ? 'block' : 'none';
+    });
+  }
+
+  printerFilter.addEventListener('change', filterPrints);
+  categoryFilter.addEventListener('change', filterPrints);
+
+  // Lightbox
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxTitle = document.getElementById('lightbox-title');
+  const lightboxMeta = document.getElementById('lightbox-meta');
+
+  document.querySelectorAll('.print-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const img = card.querySelector('img');
+      const title = card.querySelector('h3').textContent;
+      const badges = Array.from(card.querySelectorAll('.badge'))
+        .map(b => b.textContent).join(' • ');
+
+      lightboxImg.src = img.src;
+      lightboxTitle.textContent = title;
+      lightboxMeta.textContent = badges;
+      lightbox.classList.add('active');
+    });
+  });
+
+  document.querySelector('.close').addEventListener('click', () => {
+    lightbox.classList.remove('active');
+  });
+
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+      lightbox.classList.remove('active');
+    }
+  });
+</script>
+</BaseLayout>

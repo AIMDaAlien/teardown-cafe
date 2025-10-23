@@ -1,7 +1,7 @@
 ---
 title: "Bambu Lab A1 Mini - Best Beginner 3D Printer Setup"
 description: "Setting up the Bambu Lab A1 Mini 3D printer - probably the easiest and best printer for beginners in 2025"
-pubDate: 2025-07-27
+pubDate: 2025-08-27
 device: 3d-printer
 difficulty: easy
 heroImage: /images/bambu-a1-mini/IMG20250727165525.jpg

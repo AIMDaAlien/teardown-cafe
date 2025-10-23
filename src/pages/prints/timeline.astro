@@ -1,0 +1,168 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+// Timeline-based print organization
+const printTimeline = [
+  {
+    date: 'September 2025',
+    prints: [
+      { image: '/images/bambu-a1-combo/IMG20250910221256.jpg', title: 'Large workspace organizer', printer: 'A1 Combo' },
+      { image: '/images/bambu-a1-combo/IMG20250912221351.jpg', title: 'Multi-color cable holders', printer: 'A1 Combo' },
+    ]
+  },
+  {
+    date: 'August 2025',
+    prints: [
+      { image: '/images/bambu-a1-combo/IMG20250819142955.jpg', title: 'OpenGrid bases', printer: 'A1 Combo' },
+      { image: '/images/bambu-a1-mini/IMG20250803142849.jpg', title: 'Pen holders', printer: 'A1 Mini' },
+    ]
+  },
+  {
+    date: 'July 2025',
+    prints: [
+      { image: '/images/bambu-a1-mini/IMG20250731124342.jpg', title: 'Initial workspace prints', printer: 'A1 Mini' },
+    ]
+  }
+];
+---
+
+<BaseLayout title="3D Prints Timeline" description="Chronological view of all prints">
+  <main class="timeline-container">
+    <header>
+      <h1>📅 Prints Timeline</h1>
+      <p>Chronological archive of 3D printed projects</p>
+    </header>
+
+    <div class="timeline">
+      {printTimeline.map(period => (
+        <div class="timeline-period">
+          <h2 class="period-date">{period.date}</h2>
+          <div class="period-prints">
+            {period.prints.map(print => (
+              <div class="timeline-print">
+                <img src={print.image} alt={print.title} loading="lazy" />
+                <div class="print-details">
+                  <h3>{print.title}</h3>
+                  <span class="printer-badge">{print.printer}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </main>
+</BaseLayout>
+
+<style>
+  .timeline-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .timeline {
+    position: relative;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--outline);
+  }
+
+  .timeline-period {
+    margin-bottom: 3rem;
+    padding-left: 4rem;
+  }
+
+  .period-date {
+    position: relative;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .period-date::before {
+    content: '';
+    position: absolute;
+    left: -3.35rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--primary);
+    border: 3px solid var(--surface);
+  }
+
+  .period-prints {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .timeline-print {
+    display: flex;
+    gap: 1rem;
+    background: var(--surface-container);
+    border-radius: 12px;
+    padding: 1rem;
+    transition: transform 0.2s;
+  }
+
+  .timeline-print:hover {
+    transform: translateX(8px);
+  }
+
+  .timeline-print img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  .print-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .printer-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background: var(--primary-container);
+    color: var(--on-primary-container);
+    border-radius: 12px;
+    font-size: 0.75rem;
+    width: fit-content;
+  }
+
+  @media (max-width: 640px) {
+    .timeline::before {
+      left: 10px;
+    }
+
+    .timeline-period {
+      padding-left: 2.5rem;
+    }
+
+    .timeline-print {
+      flex-direction: column;
+    }
+
+    .timeline-print img {
+      width: 100%;
+      height: 200px;
+    }
+  }
+</style>
+</BaseLayout>
