@@ -8,37 +8,65 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     
     <section class="about-section">
       <p class="lead-text">
-        Welcome to Teardown Cafe, where curiosity meets coffee and every device 
-        has a story to tell.
+        Hey! I'm Aim. This is where I document tearing things apart and occasionally putting them back together.
       </p>
       
-      <h2 class="headline-large">What We Do</h2>
+      <h2 class="headline-large">What This Is</h2>
       <p>
-        We meticulously disassemble and document consumer electronics, embedded systems, 
-        and mechanical devices. Each teardown reveals the engineering decisions, component 
-        choices, and design philosophies that make modern technology tick.
+        I take apart consumer electronics, repair stuff that's broken, and build things in my spare time. Every device gets photographed, documented, and sometimes fixed. Sometimes I just want to see how it works inside. Other times I'm trying to save money on a repair. Either way, figured I'd share what I find.
       </p>
       
-      <h2 class="headline-large">Why Teardowns?</h2>
       <p>
-        Understanding how devices work internally helps us appreciate the complexity 
-        of modern engineering, make better purchasing decisions, and learn repair techniques. 
-        Plus, it's just plain fascinating.
+        Most of this happens in my workspace with whatever tools I have on hand. Some projects are planned, most aren't. If something breaks or looks interesting, it probably ends up here.
       </p>
       
-      <h2 class="headline-large">Our Process</h2>
+      <h2 class="headline-large">Why I Do This</h2>
+      <p>
+        Honestly? It's fun. There's something satisfying about understanding how things work at a component level. Plus:
+      </p>
       <ul>
-        <li>Careful documentation with high-quality photography</li>
-        <li>Component identification and analysis</li>
-        <li>Build quality assessment</li>
-        <li>Repairability evaluation</li>
-        <li>Privacy-conscious metadata handling</li>
+        <li>Learning by doing beats reading manuals</li>
+        <li>Fixing things yourself saves money and keeps stuff out of landfills</li>
+        <li>You start noticing good vs bad engineering decisions</li>
+        <li>Sometimes you end up with a frankenstein all-in-one computer superglued to a monitor (see: HP EliteBook entry)</li>
       </ul>
       
-      <h2 class="headline-large">Privacy First</h2>
       <p>
-        All uploaded images are automatically stripped of EXIF metadata, including 
-        location data, to protect your privacy. We believe in responsible tech journalism.
+        This isn't my day job - just a hobby that started with curiosity and spiraled into "how many 3D printers is too many 3D printers?"
+      </p>
+      
+      <h2 class="headline-large">My Process</h2>
+      <p>
+        Pretty straightforward:
+      </p>
+      <ul>
+        <li>Take photos during disassembly</li>
+        <li>Document what worked and what didn't</li>
+        <li>Note component choices and build quality</li>
+        <li>Rate repairability (because some devices are deliberately anti-repair)</li>
+        <li>Share the process so others can learn or avoid the same mistakes</li>
+      </ul>
+      
+      <h2 class="headline-large">Privacy Matters</h2>
+      <p>
+        All images get stripped of EXIF metadata before uploading - no location data, no camera info, nothing that could identify where or when photos were taken. This protects both my privacy and yours if you're following along with your own teardowns.
+      </p>
+      
+      <p>
+        Why this matters: Digital privacy isn't about having something to hide. It's about controlling what information you share and with whom. Location metadata in photos has been used for everything from stalking to identifying secure facilities. Your repair photos don't need to broadcast your home address.
+      </p>
+      
+      <p>
+        Same reason I use privacy-focused analytics (Plausible) - I want to know if anyone's actually reading this stuff, but I don't need to track you across the internet to do that. No cookies, no personal data collection, no selling your browsing habits. Just basic "X people viewed this page" stats.
+      </p>
+      
+      <p>
+        The default should be respecting people's privacy. Anything less is just lazy or predatory.
+      </p>
+      
+      <h2 class="headline-large">Get in Touch</h2>
+      <p>
+        Questions, suggestions, or found an error? Drop me a line or open an issue on the <a href="https://github.com/AIMDaAlien/teardown-cafe" target="_blank">GitHub repo</a>.
       </p>
     </section>
   </article>
@@ -48,6 +76,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .about-content {
     max-width: 800px;
     margin: 0 auto;
+    padding: 2rem 1rem;
   }
   
   .about-content h1 {
@@ -81,5 +110,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     margin: 0.75rem 0;
     line-height: 1.6;
     color: var(--md-sys-color-on-surface);
+  }
+  
+  .about-section a {
+    color: var(--md-sys-color-primary);
+    text-decoration: underline;
+    transition: color 0.2s ease;
+  }
+  
+  .about-section a:hover {
+    color: var(--md-sys-color-primary-container);
   }
 </style>
