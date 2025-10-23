@@ -32,6 +32,43 @@ const sortedTeardowns = teardowns.sort((a, b) => {
       </p>
     </section>
 
+    <!-- Device Type Navigation -->
+    <section class="device-nav">
+      <h2 class="section-title">Browse by Device Type</h2>
+      <div class="device-grid">
+        <a href="/device/laptop" class="device-card">
+          <div class="device-icon">💻</div>
+          <h3>Laptops</h3>
+          <p>Ultrabooks, gaming machines, and everything in between</p>
+        </a>
+        <a href="/device/3d-printer" class="device-card">
+          <div class="device-icon">🖨️</div>
+          <h3>3D Printers</h3>
+          <p>Setup, calibration, and hardware analysis</p>
+        </a>
+        <a href="/device/raspberry-pi" class="device-card">
+          <div class="device-icon">🍓</div>
+          <h3>Raspberry Pi</h3>
+          <p>SBC builds, modifications, and projects</p>
+        </a>
+        <a href="/device/nas" class="device-card">
+          <div class="device-icon">💾</div>
+          <h3>NAS & Storage</h3>
+          <p>Network storage and homelab setups</p>
+        </a>
+        <a href="/device/smartphone" class="device-card">
+          <div class="device-icon">📱</div>
+          <h3>Smartphones</h3>
+          <p>Repair guides and component analysis</p>
+        </a>
+        <a href="/device/mechanical-keyboard" class="device-card">
+          <div class="device-icon">⌨️</div>
+          <h3>Keyboards</h3>
+          <p>Mechanical keyboard disassembly and mods</p>
+        </a>
+      </div>
+    </section>
+
     <section class="teardowns-grid" id="components">
       {sortedTeardowns.map((teardown, index) => (
         <article class="teardown-card" style={`--card-index: ${index};`} data-card-index={index}>
@@ -340,6 +377,63 @@ const sortedTeardowns = teardowns.sort((a, b) => {
   .footer-text {
     font-size: 1.125rem;
     color: var(--md-sys-color-on-surface-variant);
+  }
+
+  /* Device Navigation Styles */
+  .device-nav {
+    margin: 4rem 0;
+    text-align: center;
+  }
+
+  .section-title {
+    font-size: var(--md-sys-typescale-headline-large-size);
+    font-weight: var(--md-sys-typescale-headline-large-weight);
+    margin-bottom: 2rem;
+    color: var(--md-sys-color-on-surface);
+  }
+
+  .device-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .device-card {
+    background: var(--md-sys-color-surface-container);
+    border-radius: var(--md-sys-shape-corner-large);
+    padding: 2rem 1.5rem;
+    text-decoration: none;
+    color: inherit;
+    transition: all var(--md-sys-motion-duration-medium) var(--md-sys-motion-easing-standard);
+    box-shadow: var(--md-sys-elevation-level1);
+    border: 1px solid var(--md-sys-color-outline-variant);
+  }
+
+  .device-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--md-sys-elevation-level3);
+    border-color: var(--md-sys-color-primary);
+  }
+
+  .device-card .device-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .device-card h3 {
+    font-size: var(--md-sys-typescale-title-large-size);
+    font-weight: var(--md-sys-typescale-title-large-weight);
+    margin-bottom: 0.75rem;
+    color: var(--md-sys-color-on-surface);
+  }
+
+  .device-card p {
+    color: var(--md-sys-color-on-surface-variant);
+    font-size: var(--md-sys-typescale-body-medium-size);
+    line-height: 1.5;
   }
 
   @media (prefers-reduced-motion: reduce) {

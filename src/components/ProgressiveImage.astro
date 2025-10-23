@@ -1,0 +1,138 @@
+---
+interface Props {
+  src: string;
+  alt: string;
+  width?: number;
+  height?: number;
+  class?: string;
+  loading?: 'lazy' | 'eager';
+  placeholder?: string;
+}
+
+const { 
+  src, 
+  alt, 
+  width, 
+  height, 
+  class: className = '',
+  loading = 'lazy',
+  placeholder
+} = Astro.props;
+
+// Generate a low-quality placeholder if not provided
+const lowQualityPlaceholder = placeholder || `${src}?w=20&q=10&f=blur`;
+---
+
+<div class={`progressive-image ${className}`}>
+  <div class="image-container">
+    <!-- Low-quality placeholder -->
+    <img 
+      src={lowQualityPlaceholder}
+      alt={alt}
+      class="placeholder-image"
+      loading="eager"
+      style={width ? `width: ${width}px` : ''}
+      style={height ? `height: ${height}px` : ''}
+    />
+    
+    <!-- High-quality image -->
+    <img 
+      src={src}
+      alt={alt}
+      class="main-image"
+      loading={loading}
+      width={width}
+      height={height}
+      onload="this.style.opacity = '1'"
+    />
+  </div>
+</div>
+
+<style>
+  .progressive-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--md-sys-shape-corner-medium);
+  }
+  
+  .image-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .placeholder-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(10px);
+    transform: scale(1.1);
+    transition: opacity 0.3s ease-out;
+  }
+  
+  .main-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.3s ease-out;
+  }
+  
+  .main-image.loaded {
+    opacity: 1;
+  }
+  
+  /* Ensure proper aspect ratio */
+  .progressive-image::before {
+    content: '';
+    display: block;
+    padding-top: 56.25%; /* 16:9 aspect ratio */
+  }
+  
+  .progressive-image[data-aspect="square"]::before {
+    padding-top: 100%;
+  }
+  
+  .progressive-image[data-aspect="portrait"]::before {
+    padding-top: 133.33%; /* 3:4 aspect ratio */
+  }
+  
+  .progressive-image[data-aspect="landscape"]::before {
+    padding-top: 75%; /* 4:3 aspect ratio */
+  }
+</style>
+
+<script>
+  // Enhanced loading with intersection observer for better performance
+  document.addEventListener('DOMContentLoaded', () => {
+    const images = document.querySelectorAll('.progressive-image .main-image');
+    
+    const imageObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const img = entry.target as HTMLImageElement;
+          if (img.dataset.src) {
+            img.src = img.dataset.src;
+            img.removeAttribute('data-src');
+          }
+          imageObserver.unobserve(img);
+        }
+      });
+    }, {
+      rootMargin: '50px 0px',
+      threshold: 0.01
+    });
+    
+    images.forEach(img => {
+      if (img.loading === 'lazy') {
+        imageObserver.observe(img);
+      }
+    });
+  });
+</script>

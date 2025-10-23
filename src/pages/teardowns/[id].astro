@@ -7,6 +7,7 @@ import FloatingParticles from '../../components/FloatingParticles.astro';
 import FocusMode from '../../components/FocusMode.astro';
 import TagCloud from '../../components/TagCloud.astro';
 import RelatedObsidianNotes from '../../components/RelatedObsidianNotes.astro';
+import RelatedTeardowns from '../../components/RelatedTeardowns.astro';
 import { getCollection, render } from 'astro:content';
 
 // Astro 5: Generate static paths using entry.id (not entry.slug)
@@ -91,6 +92,13 @@ const { Content } = await render(entry);
         </ul>
       </section>
     )}
+    
+    <!-- Related Teardowns -->
+    <RelatedTeardowns 
+      currentSlug={entry.id} 
+      currentDevice={entry.data.device} 
+      limit={3} 
+    />
     
     <footer class="article-footer">
       <a href="/" class="back-link">← Back to all teardowns</a>

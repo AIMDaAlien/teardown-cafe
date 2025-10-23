@@ -1,0 +1,86 @@
+---
+// Analytics component for privacy-friendly tracking
+// Supports both Plausible and Umami
+---
+
+<!-- Plausible Analytics -->
+<script 
+  defer 
+  data-domain="teardown.cafe" 
+  src="https://plausible.io/js/script.js"
+></script>
+
+<!-- Umami Analytics (alternative) -->
+<!-- Uncomment and configure if you prefer Umami over Plausible -->
+<!--
+<script 
+  async 
+  src="https://analytics.umami.is/script.js" 
+  data-website-id="your-website-id"
+></script>
+-->
+
+<!-- Custom event tracking for enhanced analytics -->
+<script>
+  // Track custom events for better insights
+  function trackEvent(eventName, properties = {}) {
+    // Plausible custom events
+    if (window.plausible) {
+      window.plausible(eventName, { props: properties });
+    }
+    
+    // Umami custom events
+    if (window.umami) {
+      window.umami.track(eventName, properties);
+    }
+  }
+  
+  // Track theme changes
+  document.addEventListener('DOMContentLoaded', () => {
+    const themeToggle = document.getElementById('theme-toggle');
+    if (themeToggle) {
+      themeToggle.addEventListener('click', () => {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        trackEvent('Theme Toggle', { theme: newTheme });
+      });
+    }
+    
+    // Track teardown views
+    const teardownTitle = document.querySelector('.teardown-article h1');
+    if (teardownTitle) {
+      const deviceType = document.querySelector('.device-type')?.textContent;
+      trackEvent('Teardown View', { 
+        title: teardownTitle.textContent,
+        device: deviceType 
+      });
+    }
+    
+    // Track related teardown clicks
+    document.addEventListener('click', (e) => {
+      const relatedLink = e.target.closest('.teardown-card a');
+      if (relatedLink) {
+        const cardTitle = relatedLink.querySelector('.card-title')?.textContent;
+        trackEvent('Related Teardown Click', { 
+          title: cardTitle 
+        });
+      }
+    });
+    
+    // Track device type page views
+    const deviceHeader = document.querySelector('.device-header');
+    if (deviceHeader) {
+      const deviceType = window.location.pathname.split('/').pop();
+      trackEvent('Device Type View', { 
+        type: deviceType 
+      });
+    }
+  });
+</script>
+
+<style>
+  /* Analytics components are invisible */
+  .analytics {
+    display: none;
+  }
+</style>

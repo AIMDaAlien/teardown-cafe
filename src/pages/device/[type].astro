@@ -1,0 +1,389 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import ProgressiveImage from '../../components/ProgressiveImage.astro';
+
+export async function getStaticPaths() {
+  const deviceTypes = [
+    'laptop',
+    'smartphone', 
+    'raspberry-pi',
+    'nas',
+    '3d-printer',
+    'mechanical-keyboard',
+    'monitor',
+    'other'
+  ];
+  
+  return deviceTypes.map((type) => ({
+    params: { type },
+    props: { type }
+  }));
+}
+
+const { type } = Astro.props;
+
+// Get all teardowns for this device type
+const allTeardowns = await getCollection('teardowns');
+const deviceTeardowns = allTeardowns
+  .filter(teardown => teardown.data.device === type)
+  .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
+
+// Device type metadata
+const deviceMetadata = {
+  'laptop': {
+    title: 'Laptop Teardowns',
+    description: 'Detailed disassembly and analysis of laptops, from ultrabooks to gaming machines',
+    icon: '💻',
+    color: 'var(--md-sys-color-primary)'
+  },
+  'smartphone': {
+    title: 'Smartphone Teardowns', 
+    description: 'Inside look at smartphone internals, repair guides, and component analysis',
+    icon: '📱',
+    color: 'var(--md-sys-color-secondary)'
+  },
+  'raspberry-pi': {
+    title: 'Raspberry Pi Projects',
+    description: 'Single-board computer builds, modifications, and performance analysis',
+    icon: '🍓',
+    color: 'var(--md-sys-color-tertiary)'
+  },
+  'nas': {
+    title: 'NAS & Storage Builds',
+    description: 'Network-attached storage systems, drive configurations, and homelab setups',
+    icon: '💾',
+    color: 'var(--md-sys-color-accent-teal)'
+  },
+  '3d-printer': {
+    title: '3D Printer Teardowns',
+    description: '3D printer setup, calibration, and hardware analysis',
+    icon: '🖨️',
+    color: 'var(--md-sys-color-accent-amber)'
+  },
+  'mechanical-keyboard': {
+    title: 'Keyboard Teardowns',
+    description: 'Mechanical keyboard disassembly, switch analysis, and modifications',
+    icon: '⌨️',
+    color: 'var(--md-sys-color-accent-green)'
+  },
+  'monitor': {
+    title: 'Monitor Analysis',
+    description: 'Display technology, panel analysis, and calibration guides',
+    icon: '🖥️',
+    color: 'var(--md-sys-color-primary-container)'
+  },
+  'other': {
+    title: 'Other Devices',
+    description: 'Miscellaneous hardware teardowns and analysis',
+    icon: '🔧',
+    color: 'var(--md-sys-color-surface-variant)'
+  }
+};
+
+const metadata = deviceMetadata[type] || deviceMetadata['other'];
+---
+
+<BaseLayout 
+  title={metadata.title}
+  description={metadata.description}
+>
+  <div class="device-type-page">
+    <header class="device-header">
+      <div class="device-icon" style={`color: ${metadata.color}`}>
+        {metadata.icon}
+      </div>
+      <h1 class="device-title">{metadata.title}</h1>
+      <p class="device-description">{metadata.description}</p>
+      <div class="device-stats">
+        <span class="stat">
+          <strong>{deviceTeardowns.length}</strong> teardowns
+        </span>
+        <span class="stat">
+          <strong>{new Set(deviceTeardowns.map(t => t.data.difficulty)).size}</strong> difficulty levels
+        </span>
+      </div>
+    </header>
+    
+    {deviceTeardowns.length > 0 ? (
+      <section class="teardowns-section">
+        <div class="teardowns-grid">
+          {deviceTeardowns.map(teardown => (
+            <article class="teardown-card">
+              <a href={`/teardowns/${teardown.id}`} class="card-link">
+                <div class="card-image">
+                  {teardown.data.heroImage ? (
+                    <ProgressiveImage 
+                      src={teardown.data.heroImage} 
+                      alt={teardown.data.title}
+                      loading="lazy"
+                      class="teardown-hero"
+                    />
+                  ) : (
+                    <div class="placeholder-image">
+                      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                        <circle cx="8.5" cy="8.5" r="1.5"/>
+                        <polyline points="21,15 16,10 5,21"/>
+                      </svg>
+                    </div>
+                  )}
+                </div>
+                <div class="card-content">
+                  <h3 class="card-title">{teardown.data.title}</h3>
+                  <p class="card-description">{teardown.data.description}</p>
+                  <div class="card-meta">
+                    <span class="difficulty difficulty-{teardown.data.difficulty}">
+                      {teardown.data.difficulty}
+                    </span>
+                    <time class="card-date">
+                      {teardown.data.pubDate.toLocaleDateString('en-US', {
+                        year: 'numeric',
+                        month: 'short',
+                        day: 'numeric'
+                      })}
+                    </time>
+                  </div>
+                </div>
+              </a>
+            </article>
+          ))}
+        </div>
+      </section>
+    ) : (
+      <section class="empty-state">
+        <div class="empty-icon">🔍</div>
+        <h3>No teardowns yet</h3>
+        <p>We haven't documented any {type} teardowns yet. Check back soon!</p>
+        <a href="/" class="back-link">← Browse all teardowns</a>
+      </section>
+    )}
+  </div>
+</BaseLayout>
+
+<style>
+  .device-type-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+  }
+  
+  .device-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 2rem 0;
+  }
+  
+  .device-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    display: block;
+  }
+  
+  .device-title {
+    font-size: var(--md-sys-typescale-display-medium-size);
+    font-weight: var(--md-sys-typescale-display-medium-weight);
+    margin-bottom: 1rem;
+    color: var(--md-sys-color-on-surface);
+  }
+  
+  .device-description {
+    font-size: var(--md-sys-typescale-body-large-size);
+    color: var(--md-sys-color-on-surface-variant);
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .device-stats {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .stat {
+    color: var(--md-sys-color-on-surface-variant);
+    font-size: var(--md-sys-typescale-body-medium-size);
+  }
+  
+  .stat strong {
+    color: var(--md-sys-color-primary);
+    font-weight: 600;
+  }
+  
+  .teardowns-section {
+    margin-top: 2rem;
+  }
+  
+  .teardowns-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+  }
+  
+  .teardown-card {
+    background: var(--md-sys-color-surface-container);
+    border-radius: var(--md-sys-shape-corner-large);
+    overflow: hidden;
+    box-shadow: var(--md-sys-elevation-level1);
+    transition: all var(--md-sys-motion-duration-medium) var(--md-sys-motion-easing-standard);
+  }
+  
+  .teardown-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--md-sys-elevation-level3);
+  }
+  
+  .card-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .card-image {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    background: var(--md-sys-color-surface-container-low);
+  }
+  
+  .placeholder-image {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--md-sys-color-surface-container-low);
+    color: var(--md-sys-color-on-surface-variant);
+  }
+  
+  .card-content {
+    padding: 1.5rem;
+  }
+  
+  .card-title {
+    font-size: var(--md-sys-typescale-title-large-size);
+    font-weight: var(--md-sys-typescale-title-large-weight);
+    margin-bottom: 0.75rem;
+    color: var(--md-sys-color-on-surface);
+    line-height: 1.3;
+  }
+  
+  .card-description {
+    font-size: var(--md-sys-typescale-body-medium-size);
+    color: var(--md-sys-color-on-surface-variant);
+    margin-bottom: 1rem;
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .card-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+  
+  .difficulty {
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--md-sys-shape-corner-full);
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-transform: capitalize;
+  }
+  
+  .difficulty-easy {
+    background-color: #2E7D32;
+    color: #E8F5E9;
+  }
+  
+  .difficulty-medium {
+    background-color: #F57C00;
+    color: #FFF3E0;
+  }
+  
+  .difficulty-hard {
+    background-color: #C62828;
+    color: #FFEBEE;
+  }
+  
+  .card-date {
+    color: var(--md-sys-color-on-surface-variant);
+    font-size: 0.875rem;
+  }
+  
+  .empty-state {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: var(--md-sys-color-on-surface-variant);
+  }
+  
+  .empty-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .empty-state h3 {
+    font-size: var(--md-sys-typescale-headline-medium-size);
+    margin-bottom: 1rem;
+    color: var(--md-sys-color-on-surface);
+  }
+  
+  .empty-state p {
+    margin-bottom: 2rem;
+  }
+  
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--md-sys-color-primary);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.75rem 1.25rem;
+    background-color: var(--md-sys-color-surface-container-highest);
+    border-radius: var(--md-sys-shape-corner-full);
+    transition: all var(--md-sys-motion-duration-short) var(--md-sys-motion-easing-standard);
+  }
+  
+  .back-link:hover {
+    background-color: var(--md-sys-color-primary-container);
+    color: var(--md-sys-color-on-primary-container);
+    transform: translateX(-4px);
+  }
+  
+  @media (max-width: 768px) {
+    .device-type-page {
+      padding: 1rem;
+    }
+    
+    .device-header {
+      margin-bottom: 2rem;
+      padding: 1rem 0;
+    }
+    
+    .device-icon {
+      font-size: 3rem;
+    }
+    
+    .device-stats {
+      gap: 1rem;
+    }
+    
+    .teardowns-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    
+    .card-image {
+      height: 200px;
+    }
+  }
+</style>

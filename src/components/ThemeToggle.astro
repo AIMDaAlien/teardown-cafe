@@ -1,0 +1,241 @@
+---
+// ThemeToggle component with splash animation
+---
+
+<div class="theme-toggle-container">
+  <button 
+    id="theme-toggle" 
+    class="theme-toggle"
+    aria-label="Toggle dark/light mode"
+    title="Toggle theme"
+  >
+    <!-- Sun icon for light mode -->
+    <svg class="theme-icon sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <circle cx="12" cy="12" r="5"/>
+      <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+    </svg>
+    
+    <!-- Moon icon for dark mode -->
+    <svg class="theme-icon moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+    </svg>
+  </button>
+  
+  <!-- Splash animation overlay -->
+  <div id="theme-splash" class="theme-splash"></div>
+</div>
+
+<script>
+  class ThemeToggle {
+    private toggle: HTMLElement | null;
+    private splash: HTMLElement | null;
+    private isAnimating: boolean;
+    
+    constructor() {
+      this.toggle = document.getElementById('theme-toggle');
+      this.splash = document.getElementById('theme-splash');
+      this.isAnimating = false;
+      
+      // Initialize theme from localStorage or system preference
+      this.initTheme();
+      
+      // Add click handler
+      this.toggle?.addEventListener('click', () => this.handleToggle());
+      
+      // Listen for system theme changes
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+        if (!localStorage.getItem('theme')) {
+          this.setTheme(e.matches ? 'dark' : 'light', false);
+        }
+      });
+    }
+    
+    initTheme() {
+      const savedTheme = localStorage.getItem('theme');
+      const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
+      this.setTheme(theme, false);
+    }
+    
+    handleToggle() {
+      if (this.isAnimating) return;
+      
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      
+      this.animateThemeChange(newTheme);
+    }
+    
+    animateThemeChange(newTheme: string) {
+      this.isAnimating = true;
+      
+      // Start splash animation
+      this.splash?.classList.add('active');
+      
+      // Change theme at the peak of animation
+      setTimeout(() => {
+        this.setTheme(newTheme, true);
+      }, 500);
+      
+      // Clean up animation
+      setTimeout(() => {
+        this.splash?.classList.remove('active');
+        this.isAnimating = false;
+      }, 1000);
+    }
+    
+    setTheme(theme: string, animated: boolean = true) {
+      document.documentElement.setAttribute('data-theme', theme);
+      localStorage.setItem('theme', theme);
+      
+      // Update button state
+      this.toggle?.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+      
+      // Update icon visibility
+      const sunIcon = this.toggle?.querySelector('.sun-icon');
+      const moonIcon = this.toggle?.querySelector('.moon-icon');
+      
+      if (theme === 'dark') {
+        sunIcon?.classList.add('hidden');
+        moonIcon?.classList.remove('hidden');
+      } else {
+        sunIcon?.classList.remove('hidden');
+        moonIcon?.classList.add('hidden');
+      }
+    }
+  }
+  
+  // Initialize when DOM is ready
+  document.addEventListener('DOMContentLoaded', () => {
+    new ThemeToggle();
+  });
+</script>
+
+<style>
+  .theme-toggle-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .theme-toggle {
+    position: relative;
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 50%;
+    background: var(--md-sys-color-surface-container-highest);
+    color: var(--md-sys-color-on-surface);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: var(--md-sys-elevation-level1);
+    overflow: hidden;
+  }
+  
+  .theme-toggle:hover {
+    background: var(--md-sys-color-surface-container-highest);
+    box-shadow: var(--md-sys-elevation-level2);
+    transform: scale(1.05);
+  }
+  
+  .theme-toggle:active {
+    transform: scale(0.95);
+  }
+  
+  .theme-toggle:focus-visible {
+    outline: 2px solid var(--md-sys-color-primary);
+    outline-offset: 2px;
+  }
+  
+  .theme-icon {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .theme-icon.hidden {
+    opacity: 0;
+    transform: rotate(180deg) scale(0.8);
+  }
+  
+  .theme-icon:not(.hidden) {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+  }
+  
+  /* Splash animation */
+  .theme-splash {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    background: var(--md-sys-color-primary);
+    border-radius: 50%;
+    transform: translate(50%, -50%);
+    z-index: 9999;
+    pointer-events: none;
+    opacity: 0;
+    transition: none;
+  }
+  
+  .theme-splash.active {
+    opacity: 1;
+    animation: splash-expand 1000ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+  
+  @keyframes splash-expand {
+    0% {
+      width: 0;
+      height: 0;
+      transform: translate(50%, -50%);
+    }
+    50% {
+      width: 200vw;
+      height: 200vw;
+      transform: translate(50%, -50%);
+    }
+    100% {
+      width: 200vw;
+      height: 200vw;
+      transform: translate(50%, -50%);
+      opacity: 0;
+    }
+  }
+  
+  /* Dark mode specific adjustments */
+  [data-theme="dark"] .theme-toggle {
+    background: var(--md-sys-color-surface-container-highest);
+    color: var(--md-sys-color-on-surface);
+  }
+  
+  [data-theme="dark"] .theme-splash {
+    background: var(--md-sys-color-primary);
+  }
+  
+  /* Light mode specific adjustments */
+  [data-theme="light"] .theme-toggle {
+    background: var(--md-sys-color-surface-container-highest);
+    color: var(--md-sys-color-on-surface);
+  }
+  
+  [data-theme="light"] .theme-splash {
+    background: var(--md-sys-color-primary);
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .theme-toggle {
+      width: 44px;
+      height: 44px;
+    }
+    
+    .theme-icon {
+      width: 18px;
+      height: 18px;
+    }
+  }
+</style>

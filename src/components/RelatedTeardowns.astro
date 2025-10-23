@@ -1,0 +1,229 @@
+---
+import { getCollection } from 'astro:content';
+import ProgressiveImage from './ProgressiveImage.astro';
+
+interface Props {
+  currentSlug: string;
+  currentDevice: string;
+  limit?: number;
+}
+
+const { currentSlug, currentDevice, limit = 3 } = Astro.props;
+
+// Get all teardowns
+const allTeardowns = await getCollection('teardowns');
+
+// Filter out current teardown and get related ones
+const relatedTeardowns = allTeardowns
+  .filter(teardown => teardown.id !== currentSlug)
+  .filter(teardown => teardown.data.device === currentDevice)
+  .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime())
+  .slice(0, limit);
+
+// If we don't have enough from same device type, fill with other teardowns
+if (relatedTeardowns.length < limit) {
+  const otherTeardowns = allTeardowns
+    .filter(teardown => teardown.id !== currentSlug)
+    .filter(teardown => teardown.data.device !== currentDevice)
+    .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime())
+    .slice(0, limit - relatedTeardowns.length);
+  
+  relatedTeardowns.push(...otherTeardowns);
+}
+---
+
+{relatedTeardowns.length > 0 && (
+  <section class="related-teardowns">
+    <h3 class="section-title">If you liked this, check out...</h3>
+    <div class="teardowns-grid">
+      {relatedTeardowns.map(teardown => (
+        <article class="teardown-card">
+          <a href={`/teardowns/${teardown.id}`} class="card-link">
+            <div class="card-image">
+              {teardown.data.heroImage ? (
+                <ProgressiveImage 
+                  src={teardown.data.heroImage} 
+                  alt={teardown.data.title}
+                  loading="lazy"
+                  class="teardown-hero"
+                />
+              ) : (
+                <div class="placeholder-image">
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                    <circle cx="8.5" cy="8.5" r="1.5"/>
+                    <polyline points="21,15 16,10 5,21"/>
+                  </svg>
+                </div>
+              )}
+            </div>
+            <div class="card-content">
+              <h4 class="card-title">{teardown.data.title}</h4>
+              <p class="card-description">{teardown.data.description}</p>
+              <div class="card-meta">
+                <span class="device-type">{teardown.data.device}</span>
+                <span class="difficulty difficulty-{teardown.data.difficulty}">
+                  {teardown.data.difficulty}
+                </span>
+              </div>
+            </div>
+          </a>
+        </article>
+      ))}
+    </div>
+  </section>
+)}
+
+<style>
+  .related-teardowns {
+    margin: 3rem 0;
+    padding: 2rem 0;
+    border-top: 1px solid var(--md-sys-color-outline-variant);
+  }
+  
+  .section-title {
+    font-size: var(--md-sys-typescale-headline-medium-size);
+    font-weight: var(--md-sys-typescale-headline-medium-weight);
+    margin-bottom: 2rem;
+    color: var(--md-sys-color-on-surface);
+    text-align: center;
+  }
+  
+  .teardowns-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  .teardown-card {
+    background: var(--md-sys-color-surface-container);
+    border-radius: var(--md-sys-shape-corner-large);
+    overflow: hidden;
+    box-shadow: var(--md-sys-elevation-level1);
+    transition: all var(--md-sys-motion-duration-medium) var(--md-sys-motion-easing-standard);
+  }
+  
+  .teardown-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--md-sys-elevation-level3);
+  }
+  
+  .card-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .card-image {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    background: var(--md-sys-color-surface-container-low);
+  }
+  
+  .card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--md-sys-motion-duration-medium) var(--md-sys-motion-easing-standard);
+  }
+  
+  .teardown-card:hover .card-image img {
+    transform: scale(1.05);
+  }
+  
+  .placeholder-image {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--md-sys-color-surface-container-low);
+    color: var(--md-sys-color-on-surface-variant);
+  }
+  
+  .card-content {
+    padding: 1.5rem;
+  }
+  
+  .card-title {
+    font-size: var(--md-sys-typescale-title-medium-size);
+    font-weight: var(--md-sys-typescale-title-medium-weight);
+    margin-bottom: 0.75rem;
+    color: var(--md-sys-color-on-surface);
+    line-height: 1.3;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .card-description {
+    font-size: var(--md-sys-typescale-body-medium-size);
+    color: var(--md-sys-color-on-surface-variant);
+    margin-bottom: 1rem;
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .card-meta {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .device-type {
+    background: var(--md-sys-color-primary-container);
+    color: var(--md-sys-color-on-primary-container);
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--md-sys-shape-corner-full);
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-transform: capitalize;
+  }
+  
+  .difficulty {
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--md-sys-shape-corner-full);
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-transform: capitalize;
+  }
+  
+  .difficulty-easy {
+    background-color: #2E7D32;
+    color: #E8F5E9;
+  }
+  
+  .difficulty-medium {
+    background-color: #F57C00;
+    color: #FFF3E0;
+  }
+  
+  .difficulty-hard {
+    background-color: #C62828;
+    color: #FFEBEE;
+  }
+  
+  @media (max-width: 768px) {
+    .teardowns-grid {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    
+    .card-content {
+      padding: 1rem;
+    }
+    
+    .card-image {
+      height: 160px;
+    }
+  }
+</style>
