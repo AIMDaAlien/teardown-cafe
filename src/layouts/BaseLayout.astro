@@ -6,7 +6,7 @@ interface Props {
   description?: string;
 }
 
-const { title, description = 'A cafe where devices are torn down and analyzed' } = Astro.props;
+const { title, description = 'A cafe where devices are torn down, built, and analyzed' } = Astro.props;
 ---
 
 <!doctype html>
@@ -42,7 +42,7 @@ const { title, description = 'A cafe where devices are torn down and analyzed' }
     <footer class="site-footer">
       <div class="footer-content">
         <p>&copy; {new Date().getFullYear()} Teardown Cafe. Built with Astro.</p>
-        <p>Sipping coffee while taking things apart.</p>
+        <p>Sipping coffee while tinkering.</p>
       </div>
     </footer>
   </body>
@@ -55,7 +55,7 @@ const { title, description = 'A cafe where devices are torn down and analyzed' }
     position: sticky;
     top: 0;
     z-index: 10;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(12  px);
   }
   
   .header-content {

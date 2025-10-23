@@ -24,6 +24,21 @@
 			"**/node_modules/**": true,
 			"**/.git/**": true,
 			"**/.astro/**": true
+		},
+		"workbench.editor.enablePreview": false,
+		"workbench.editor.enablePreviewFromQuickOpen": false,
+		"markdown.preview.breaks": true,
+		"markdown.preview.linkify": true,
+		"files.associations": {
+			"*.md": "markdown"
+		},
+		"editor.quickSuggestions": {
+			"strings": true
+		},
+		"editor.suggest.snippetsPreventQuickSuggestions": false,
+		"workbench.colorCustomizations": {
+			"titleBar.activeBackground": "#1e1e1e",
+			"titleBar.activeForeground": "#ffffff"
 		}
 	},
 	"extensions": {
@@ -34,7 +49,104 @@
 			"ms-vscode.vscode-typescript-next",
 			"yzhang.markdown-all-in-one",
 			"davidanson.vscode-markdownlint",
-			"ms-vscode.vscode-json"
+			"ms-vscode.vscode-json",
+			"ms-vscode.vscode-markdown",
+			"redhat.vscode-yaml"
+		]
+	},
+	"tasks": {
+		"version": "2.0.0",
+		"tasks": [
+			{
+				"label": "Start Session (Cursor)",
+				"type": "shell",
+				"command": "./scripts/session-manager.sh",
+				"args": ["start", "cursor"],
+				"group": "build",
+				"presentation": {
+					"echo": true,
+					"reveal": "always",
+					"focus": false,
+					"panel": "shared"
+				}
+			},
+			{
+				"label": "Start Session (Claude)",
+				"type": "shell",
+				"command": "./scripts/session-manager.sh",
+				"args": ["start", "claude"],
+				"group": "build",
+				"presentation": {
+					"echo": true,
+					"reveal": "always",
+					"focus": false,
+					"panel": "shared"
+				}
+			},
+			{
+				"label": "End Session",
+				"type": "shell",
+				"command": "./scripts/session-manager.sh",
+				"args": ["end"],
+				"group": "build",
+				"presentation": {
+					"echo": true,
+					"reveal": "always",
+					"focus": false,
+					"panel": "shared"
+				}
+			},
+			{
+				"label": "Commit with Session",
+				"type": "shell",
+				"command": "./scripts/commit-with-session.sh",
+				"group": "build",
+				"presentation": {
+					"echo": true,
+					"reveal": "always",
+					"focus": false,
+					"panel": "shared"
+				}
+			},
+			{
+				"label": "Generate Claude Context",
+				"type": "shell",
+				"command": "./scripts/claude-context-generator.sh",
+				"args": ["clipboard"],
+				"group": "build",
+				"presentation": {
+					"echo": true,
+					"reveal": "always",
+					"focus": false,
+					"panel": "shared"
+				}
+			},
+			{
+				"label": "Generate Cursor Context",
+				"type": "shell",
+				"command": "./scripts/cursor-context-generator.sh",
+				"args": ["clipboard"],
+				"group": "build",
+				"presentation": {
+					"echo": true,
+					"reveal": "always",
+					"focus": false,
+					"panel": "shared"
+				}
+			},
+			{
+				"label": "Session Status",
+				"type": "shell",
+				"command": "./scripts/session-manager.sh",
+				"args": ["status"],
+				"group": "build",
+				"presentation": {
+					"echo": true,
+					"reveal": "always",
+					"focus": false,
+					"panel": "shared"
+				}
+			}
 		]
 	}
 }

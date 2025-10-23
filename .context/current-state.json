@@ -1,0 +1,28 @@
+{
+    "last_session": {
+        "id": "2025-10-21-1557-cursor-session",
+        "ai_type": "cursor",
+        "duration_minutes": 0,
+        "timestamp": "2025-10-21 15:57:32"
+    },
+    "git_state": {
+        "branch": "main",
+        "commit": "7b278324b942bcc11bbad5b846d86e426d3ee2f2",
+        "modified_files": 11,
+        "status": "AM .context/session-state.json
+A  CLAUDE-CURSOR-WORKFLOW.md
+A  scripts/claude-context-generator.sh
+A  scripts/commit-with-session.sh
+A  scripts/cursor-context-generator.sh
+AM scripts/session-manager.sh
+M  src/layouts/BaseLayout.astro
+M  teardown-cafe.code-workspace
+?? .context/current-state.json
+?? .context/last-change-summary.md
+?? .context/next-ai-context.md"
+    },
+    "project_state": {
+        "last_updated": "2025-10-21 15:57:32",
+        "context_dir": "/Users/aim/Documents/teardown-cafe/.context"
+    }
+}
