@@ -5,6 +5,8 @@ import CircuitAccents from '../../components/CircuitAccents.astro';
 import WaveDiffusions from '../../components/WaveDiffusions.astro';
 import FloatingParticles from '../../components/FloatingParticles.astro';
 import FocusMode from '../../components/FocusMode.astro';
+import TagCloud from '../../components/TagCloud.astro';
+import RelatedObsidianNotes from '../../components/RelatedObsidianNotes.astro';
 import { getCollection, render } from 'astro:content';
 
 // Astro 5: Generate static paths using entry.id (not entry.slug)
@@ -69,6 +71,26 @@ const { Content } = await render(entry);
     <div class="article-content">
       <Content />
     </div>
+    
+    <!-- Tags and Related Notes -->
+    {entry.data.tags && entry.data.tags.length > 0 && (
+      <>
+        <TagCloud tags={entry.data.tags} />
+        <RelatedObsidianNotes tags={entry.data.tags} slug={entry.id} />
+      </>
+    )}
+    
+    <!-- Existing manual relatedNotes -->
+    {entry.data.relatedNotes && entry.data.relatedNotes.length > 0 && (
+      <section class="related-notes">
+        <h3>📚 Related Notes</h3>
+        <ul>
+          {entry.data.relatedNotes.map(note => (
+            <li><a href={`/notes/${note}`}>{note}</a></li>
+          ))}
+        </ul>
+      </section>
+    )}
     
     <footer class="article-footer">
       <a href="/" class="back-link">← Back to all teardowns</a>
@@ -253,5 +275,35 @@ const { Content } = await render(entry);
     background-color: var(--md-sys-color-primary-container);
     color: var(--md-sys-color-on-primary-container);
     transform: translateX(-4px);
+  }
+  
+  .related-notes {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: var(--md-sys-color-surface-container-low);
+    border-radius: var(--md-sys-shape-corner-large);
+  }
+  
+  .related-notes h3 {
+    margin-bottom: 1rem;
+    color: var(--md-sys-color-on-surface);
+  }
+  
+  .related-notes ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .related-notes a {
+    color: var(--md-sys-color-primary);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  
+  .related-notes a:hover {
+    color: var(--md-sys-color-primary-container);
   }
 </style>

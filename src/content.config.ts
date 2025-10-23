@@ -19,11 +19,14 @@ const teardowns = defineCollection({
       'raspberry-pi',
       'nas',
       'mechanical-keyboard',
+      '3d-printer',
       'other'
     ]),
     difficulty: z.enum(['easy', 'medium', 'hard']),
     heroImage: z.string().optional(),
     video: z.string().optional(),
+    tags: z.array(z.string()).optional(),
+    relatedNotes: z.array(z.string()).optional(),
   }),
 });
 

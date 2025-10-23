@@ -1,0 +1,98 @@
+---
+interface Props {
+  tags: string[];
+  slug: string;
+}
+
+const { tags, slug } = Astro.props;
+
+// Load relationships
+let relationships: Record<string, any> = {};
+try {
+  const data = await fetch('/data/obsidian-relationships.json');
+  relationships = await data.json();
+} catch (e) {
+  // File doesn't exist yet - build will create it
+  relationships = {};
+}
+
+// Find all related notes for these tags
+const relatedNotes = new Map<string, any>();
+
+tags.forEach(tag => {
+  if (relationships[tag]?.obsidianNotes) {
+    relationships[tag].obsidianNotes.forEach((note: any) => {
+      relatedNotes.set(note.path, note);
+    });
+  }
+});
+
+// Check for manual additions
+const manualTag = `manual-${slug}`;
+if (relationships[manualTag]?.obsidianNotes) {
+  relationships[manualTag].obsidianNotes.forEach((note: any) => {
+    relatedNotes.set(note.path, note);
+  });
+}
+
+const notes = Array.from(relatedNotes.values());
+---
+
+{notes.length > 0 && (
+  <section class="related-obsidian">
+    <h3>📝 Related in Knowledge Garden</h3>
+    <ul>
+      {notes.map(note => (
+        <li>
+          <a href={note.url} target="_blank" rel="noopener">
+            {note.title}
+            <svg class="external-link" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/>
+            </svg>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </section>
+)}
+
+<style>
+  .related-obsidian {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: var(--surface-container-low);
+    border-radius: 12px;
+  }
+  
+  .related-obsidian h3 {
+    margin-bottom: 1rem;
+    color: var(--on-surface);
+  }
+  
+  .related-obsidian ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .related-obsidian a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--primary);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  
+  .related-obsidian a:hover {
+    color: var(--primary-container);
+  }
+  
+  .external-link {
+    width: 14px;
+    height: 14px;
+    opacity: 0.6;
+  }
+</style>

@@ -3,6 +3,8 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
+    "prebuild": "node scripts/build-obsidian-links.js",
+    "predev": "node scripts/build-obsidian-links.js",
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
@@ -12,6 +14,8 @@
     "@astrojs/mdx": "^4.3.7",
     "@astrojs/sitemap": "^3.6.0",
     "astro": "^5.14.5",
+    "glob": "^11.0.3",
+    "gray-matter": "^4.0.3",
     "sharp": "^0.34.4"
   }
 }
