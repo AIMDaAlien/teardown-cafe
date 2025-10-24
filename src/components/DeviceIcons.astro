@@ -72,6 +72,17 @@ const { type, class: className = '' } = Astro.props;
   </svg>
 )}
 
+{type === '3d-printer' && (
+  <svg class={className} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="4" y="3" width="16" height="2" rx="1" stroke="currentColor" stroke-width="1.5"/>
+    <path d="M6 5v14h12V5" stroke="currentColor" stroke-width="1.5"/>
+    <rect x="8" y="15" width="8" height="4" rx="0.5" fill="currentColor" opacity="0.3"/>
+    <path d="M10 7h4v6h-4z" stroke="currentColor" stroke-width="1.2" fill="#1A0B2E" opacity="0.6"/>
+    <circle cx="12" cy="9" r="1" fill="#00BCD4"/>
+    <line x1="10" y1="20" x2="14" y2="20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+  </svg>
+)}
+
 {type === 'mechanical-keyboard' && (
   <svg class={className} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
     <rect x="2" y="6" width="20" height="12" rx="1.5" stroke="currentColor" stroke-width="1.5"/>
