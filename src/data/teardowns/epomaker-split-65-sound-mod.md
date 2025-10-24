@@ -2,7 +2,7 @@
 title: "Epomaker Split 65% Sound Mod"
 description: "Sound dampening a split mechanical keyboard with Poron foam and AKKO silent switches for a shared home office space"
 pubDate: 2025-04-05
-device: keyboard
+device: mechanical-keyboard
 difficulty: medium
 heroImage: /images/epomaker-split-65/IMG20250219205819.jpg
 video: /images/epomaker-split-65/20250423_214212.mp4
