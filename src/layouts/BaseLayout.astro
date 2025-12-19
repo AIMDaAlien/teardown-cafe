@@ -2,16 +2,25 @@
 import '../styles/global.css'
 import ThemeToggle from '../components/ThemeToggle.astro'
 import Analytics from '../components/Analytics.astro'
+import Logo from '../components/Logo.astro'
+import Search from '../components/Search.astro'
 
 interface Props {
   title: string
   description?: string
+  image?: string
+  type?: 'website' | 'article'
 }
 
 const {
   title,
   description = 'A cafe where devices are torn down, built, and analyzed',
+  image = '/og-default.png',
+  type = 'website',
 } = Astro.props
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://teardown.cafe')
+const ogImageURL = new URL(image, Astro.site || 'https://teardown.cafe')
 ---
 
 <!doctype html>
@@ -22,6 +31,23 @@ const {
     <meta name="description" content={description} />
     <meta name="generator" content={Astro.generator} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={canonicalURL} />
+    <link rel="alternate" type="application/rss+xml" title="Teardown Cafe RSS" href="/rss.xml" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content={type} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={`${title} | Teardown Cafe`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImageURL} />
+    <meta property="og:site_name" content="Teardown Cafe" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonicalURL} />
+    <meta name="twitter:title" content={`${title} | Teardown Cafe`} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageURL} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -46,14 +72,15 @@ const {
   <body>
     <header class="site-header">
       <div class="header-content">
-        <h1 class="site-title">
-          <a href="/">☕ Teardown Cafe</a>
-        </h1>
+        <a href="/" class="site-title">
+          <Logo showWordmark={true} />
+        </a>
         <div class="header-actions">
           <nav class="site-nav">
             <a href="/" class="nav-link">Home</a>
             <a href="/about" class="nav-link">About</a>
           </nav>
+          <Search />
           <ThemeToggle />
         </div>
       </div>
@@ -83,7 +110,7 @@ const {
     position: sticky;
     top: 0;
     z-index: 10;
-    backdrop-filter: blur(12 px);
+    backdrop-filter: blur(12px);
   }
 
   .header-content {
@@ -103,19 +130,13 @@ const {
   }
 
   .site-title {
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin: 0;
-  }
-
-  .site-title a {
     color: var(--md-sys-color-primary);
     text-decoration: none;
     transition: color var(--md-sys-motion-duration-short)
       var(--md-sys-motion-easing-standard);
   }
 
-  .site-title a:hover {
+  .site-title:hover {
     color: var(--md-sys-color-on-primary-container);
   }
 

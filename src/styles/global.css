@@ -120,6 +120,37 @@
   --md-sys-typescale-body-large-weight: 400;
   --md-sys-typescale-body-large-line-height: 24px;
 
+  /* Medium Typography Variants */
+  --md-sys-typescale-display-medium-font: 'Ubuntu', system-ui, sans-serif;
+  --md-sys-typescale-display-medium-size: 45px;
+  --md-sys-typescale-display-medium-weight: 400;
+  --md-sys-typescale-display-medium-line-height: 52px;
+
+  --md-sys-typescale-headline-medium-font: 'Ubuntu', system-ui, sans-serif;
+  --md-sys-typescale-headline-medium-size: 28px;
+  --md-sys-typescale-headline-medium-weight: 400;
+  --md-sys-typescale-headline-medium-line-height: 36px;
+
+  --md-sys-typescale-title-medium-font: 'Ubuntu', system-ui, sans-serif;
+  --md-sys-typescale-title-medium-size: 16px;
+  --md-sys-typescale-title-medium-weight: 500;
+  --md-sys-typescale-title-medium-line-height: 24px;
+
+  --md-sys-typescale-body-medium-font: 'Ubuntu', system-ui, sans-serif;
+  --md-sys-typescale-body-medium-size: 14px;
+  --md-sys-typescale-body-medium-weight: 400;
+  --md-sys-typescale-body-medium-line-height: 20px;
+
+  --md-sys-typescale-label-large-font: 'Ubuntu', system-ui, sans-serif;
+  --md-sys-typescale-label-large-size: 14px;
+  --md-sys-typescale-label-large-weight: 500;
+  --md-sys-typescale-label-large-line-height: 20px;
+
+  --md-sys-typescale-label-medium-font: 'Ubuntu', system-ui, sans-serif;
+  --md-sys-typescale-label-medium-size: 12px;
+  --md-sys-typescale-label-medium-weight: 500;
+  --md-sys-typescale-label-medium-line-height: 16px;
+
   /* Code Typography */
   --md-sys-typescale-code-font: 'JetBrains Mono', 'Courier New', monospace;
   --md-sys-typescale-code-size: 14px;
@@ -230,6 +261,51 @@ body {
   color: var(--md-sys-color-on-surface);
 }
 
+.display-medium {
+  font-size: var(--md-sys-typescale-display-medium-size);
+  font-weight: var(--md-sys-typescale-display-medium-weight);
+  line-height: var(--md-sys-typescale-display-medium-line-height);
+  color: var(--md-sys-color-on-background);
+}
+
+.headline-medium {
+  font-size: var(--md-sys-typescale-headline-medium-size);
+  font-weight: var(--md-sys-typescale-headline-medium-weight);
+  line-height: var(--md-sys-typescale-headline-medium-line-height);
+  color: var(--md-sys-color-on-background);
+}
+
+.title-medium {
+  font-size: var(--md-sys-typescale-title-medium-size);
+  font-weight: var(--md-sys-typescale-title-medium-weight);
+  line-height: var(--md-sys-typescale-title-medium-line-height);
+  color: var(--md-sys-color-on-surface);
+}
+
+.body-large {
+  font-size: var(--md-sys-typescale-body-large-size);
+  font-weight: var(--md-sys-typescale-body-large-weight);
+  line-height: var(--md-sys-typescale-body-large-line-height);
+}
+
+.body-medium {
+  font-size: var(--md-sys-typescale-body-medium-size);
+  font-weight: var(--md-sys-typescale-body-medium-weight);
+  line-height: var(--md-sys-typescale-body-medium-line-height);
+}
+
+.label-large {
+  font-size: var(--md-sys-typescale-label-large-size);
+  font-weight: var(--md-sys-typescale-label-large-weight);
+  line-height: var(--md-sys-typescale-label-large-line-height);
+}
+
+.label-medium {
+  font-size: var(--md-sys-typescale-label-medium-size);
+  font-weight: var(--md-sys-typescale-label-medium-weight);
+  line-height: var(--md-sys-typescale-label-medium-line-height);
+}
+
 /* Link Styles */
 a {
   color: var(--md-sys-color-primary);
@@ -284,5 +360,101 @@ article img {
   .teardown-content img,
   article img {
     max-height: 400px;
+  }
+}
+
+/* Print Styles */
+@media print {
+  /* Reset colors for print */
+  :root,
+  [data-theme='dark'],
+  [data-theme='light'] {
+    --md-sys-color-background: #ffffff;
+    --md-sys-color-on-background: #000000;
+    --md-sys-color-surface: #ffffff;
+    --md-sys-color-on-surface: #000000;
+    --md-sys-color-primary: #000000;
+    --md-sys-color-on-surface-variant: #333333;
+  }
+
+  body {
+    background: white;
+    color: black;
+  }
+
+  /* Hide non-essential elements */
+  .site-header,
+  .site-footer,
+  .theme-toggle,
+  .focus-mode-toggle,
+  .vertical-progress,
+  .circuit-accents,
+  .wave-diffusions,
+  .floating-particles,
+  .back-link,
+  .related-teardowns,
+  .tag-cloud,
+  nav,
+  button {
+    display: none !important;
+  }
+
+  /* Main content full width */
+  .main-content,
+  .teardown-article {
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  /* Remove shadows and borders */
+  * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  /* Link URLs in print */
+  a[href^='http']::after {
+    content: ' (' attr(href) ')';
+    font-size: 0.8em;
+    color: #666;
+    word-break: break-all;
+  }
+
+  /* Don't show URL for internal links */
+  a[href^='/']::after,
+  a[href^='#']::after {
+    content: '';
+  }
+
+  /* Ensure images print well */
+  img {
+    max-width: 100% !important;
+    page-break-inside: avoid;
+  }
+
+  /* Page break handling */
+  h1,
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+
+  article,
+  section {
+    page-break-before: auto;
+  }
+
+  pre,
+  blockquote {
+    page-break-inside: avoid;
+    border: 1px solid #ccc;
+  }
+
+  /* Code blocks in print */
+  pre,
+  code {
+    background: #f5f5f5 !important;
+    border: 1px solid #ddd;
   }
 }

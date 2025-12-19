@@ -1,0 +1,237 @@
+---
+// Pagefind Search Component
+// Search index is generated at build time via postbuild script
+---
+
+<div class="search-container">
+  <button class="search-trigger" id="search-trigger" aria-label="Open search">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="search-icon">
+      <circle cx="11" cy="11" r="8" />
+      <path d="M21 21l-4.35-4.35" stroke-linecap="round" />
+    </svg>
+    <span class="search-text">Search</span>
+    <kbd class="search-kbd">/</kbd>
+  </button>
+</div>
+
+<!-- Search Modal -->
+<div class="search-modal" id="search-modal">
+  <div class="search-backdrop"></div>
+  <div class="search-dialog">
+    <div id="pagefind-search"></div>
+    <button class="search-close" aria-label="Close search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M18 6L6 18M6 6l12 12" stroke-linecap="round" />
+      </svg>
+    </button>
+  </div>
+</div>
+
+<style>
+  .search-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .search-trigger {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    background: var(--md-sys-color-surface-container-high);
+    border: 1px solid var(--md-sys-color-outline-variant);
+    border-radius: var(--md-sys-shape-corner-full);
+    color: var(--md-sys-color-on-surface-variant);
+    cursor: pointer;
+    transition: all var(--md-sys-motion-duration-short) var(--md-sys-motion-easing-standard);
+  }
+
+  .search-trigger:hover {
+    background: var(--md-sys-color-surface-container-highest);
+    color: var(--md-sys-color-on-surface);
+  }
+
+  .search-icon {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .search-text {
+    font-size: 0.875rem;
+  }
+
+  .search-kbd {
+    padding: 0.125rem 0.375rem;
+    background: var(--md-sys-color-surface-container);
+    border: 1px solid var(--md-sys-color-outline-variant);
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 0.75rem;
+  }
+
+  /* Modal Styles */
+  .search-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+  }
+
+  .search-modal.active {
+    display: block;
+  }
+
+  .search-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+  }
+
+  .search-dialog {
+    position: relative;
+    max-width: 600px;
+    margin: 10vh auto 0;
+    padding: 1.5rem;
+    background: var(--md-sys-color-surface-container);
+    border-radius: var(--md-sys-shape-corner-large);
+    box-shadow: var(--md-sys-elevation-level4);
+  }
+
+  .search-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    color: var(--md-sys-color-on-surface-variant);
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background var(--md-sys-motion-duration-short);
+  }
+
+  .search-close:hover {
+    background: var(--md-sys-color-surface-container-high);
+  }
+
+  .search-close svg {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+
+  /* Pagefind UI Styling Overrides */
+  :global(.pagefind-ui) {
+    --pagefind-ui-scale: 0.9;
+    --pagefind-ui-primary: var(--md-sys-color-primary);
+    --pagefind-ui-text: var(--md-sys-color-on-surface);
+    --pagefind-ui-background: var(--md-sys-color-surface-container);
+    --pagefind-ui-border: var(--md-sys-color-outline-variant);
+    --pagefind-ui-tag: var(--md-sys-color-primary-container);
+    --pagefind-ui-border-width: 1px;
+    --pagefind-ui-border-radius: 8px;
+    --pagefind-ui-font: 'Ubuntu', system-ui, sans-serif;
+  }
+
+  @media (max-width: 640px) {
+    .search-text,
+    .search-kbd {
+      display: none;
+    }
+
+    .search-dialog {
+      margin: 1rem;
+      max-width: calc(100% - 2rem);
+    }
+  }
+</style>
+
+<script is:inline>
+  // Initialize Pagefind
+  async function initPagefind() {
+    const container = document.getElementById('pagefind-search')
+    if (!container) return
+
+    try {
+      // Dynamically import Pagefind UI - use script injection to avoid build issues
+      await new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = '/pagefind/pagefind-ui.js'
+        script.onload = resolve
+        script.onerror = reject
+        document.head.appendChild(script)
+      })
+
+      // Load CSS
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = '/pagefind/pagefind-ui.css'
+      document.head.appendChild(link)
+
+      // Initialize UI
+      new window.PagefindUI({
+        element: '#pagefind-search',
+        showSubResults: true,
+        showImages: false,
+      })
+    } catch (e) {
+      // In dev mode, Pagefind won't be available
+      container.innerHTML =
+        '<p style="color: var(--md-sys-color-on-surface-variant); padding: 1rem;">Search is available after building the site.</p>'
+    }
+  }
+
+  // Modal controls
+  const trigger = document.getElementById('search-trigger')
+  const modal = document.getElementById('search-modal')
+  const backdrop = modal?.querySelector('.search-backdrop')
+  const closeBtn = modal?.querySelector('.search-close')
+
+  let pagefindInitialized = false
+
+  function openSearch() {
+    modal?.classList.add('active')
+    document.body.style.overflow = 'hidden'
+
+    if (!pagefindInitialized) {
+      initPagefind()
+      pagefindInitialized = true
+    }
+
+    // Focus the search input
+    setTimeout(() => {
+      const input = modal?.querySelector('input')
+      input?.focus()
+    }, 100)
+  }
+
+  function closeSearch() {
+    modal?.classList.remove('active')
+    document.body.style.overflow = ''
+  }
+
+  trigger?.addEventListener('click', openSearch)
+  backdrop?.addEventListener('click', closeSearch)
+  closeBtn?.addEventListener('click', closeSearch)
+
+  // Keyboard shortcuts
+  document.addEventListener('keydown', (e) => {
+    // Open with / key
+    if (e.key === '/' && !modal?.classList.contains('active')) {
+      const activeEl = document.activeElement
+      if (activeEl?.tagName !== 'INPUT' && activeEl?.tagName !== 'TEXTAREA') {
+        e.preventDefault()
+        openSearch()
+      }
+    }
+
+    // Close with Escape
+    if (e.key === 'Escape' && modal?.classList.contains('active')) {
+      closeSearch()
+    }
+  })
+</script>

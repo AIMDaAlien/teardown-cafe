@@ -1,0 +1,296 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+
+// Sample discovery data
+const discoveries = [
+    {
+        id: 1,
+        device: 'MacBook Air Early 2015',
+        title: 'Screen Replacement Impossibility',
+        finding:
+            "While trying to teardown the MacBook Air Early 2015 display, I discovered it was made impossible to replace just the screen. You're forced to replace the entire head assembly—attempting to take the screen out will cause inevitable damage. In my case, a good screen got cracked (I just wanted the LED backlighting).",
+        date: new Date('2024-12-19'),
+        category: 'anti-repair', // anti-repair, gotcha, tip, insight
+        icon: '⚠️',
+    },
+]
+---
+
+<BaseLayout title="Discoveries POC 2 - Timeline">
+    <div class="poc-container">
+        <header class="poc-header">
+            <h1>Field Notes</h1>
+            <p class="poc-subtitle">
+                POC 2: Vertical Timeline / Lab Notebook Style
+            </p>
+        </header>
+
+        <section class="timeline-section">
+            <div class="timeline-line" aria-hidden="true"></div>
+            {
+                discoveries.map((discovery, index) => (
+                    <article class="timeline-entry">
+                        <div class="timeline-marker">
+                            <span class="marker-icon">{discovery.icon}</span>
+                            <span class="marker-pulse" />
+                        </div>
+                        <div class="timeline-content">
+                            <div class="content-header">
+                                <span
+                                    class={`category-tag tag-${discovery.category}`}
+                                >
+                                    {discovery.category.replace('-', ' ')}
+                                </span>
+                                <time datetime={discovery.date.toISOString()}>
+                                    {discovery.date.toLocaleDateString(
+                                        'en-US',
+                                        {
+                                            month: 'short',
+                                            day: 'numeric',
+                                            year: 'numeric',
+                                        }
+                                    )}
+                                </time>
+                            </div>
+                            <h2 class="entry-device">{discovery.device}</h2>
+                            <h3 class="entry-title">{discovery.title}</h3>
+                            <blockquote class="entry-finding">
+                                <p>{discovery.finding}</p>
+                            </blockquote>
+                        </div>
+                    </article>
+                ))
+            }
+        </section>
+
+        <div class="poc-nav">
+            <a href="/poc-discoveries-1">← View POC 1: Card Layout</a>
+            <a href="/poc-discoveries-3">→ View POC 3: Micro-Card Grid</a>
+        </div>
+    </div>
+</BaseLayout>
+
+<style>
+    .poc-container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 6rem 2rem;
+    }
+
+    .poc-header {
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+
+    .poc-header h1 {
+        font-size: var(--md-sys-typescale-display-medium-size);
+        font-weight: var(--md-sys-typescale-display-medium-weight);
+        color: var(--md-sys-color-on-background);
+        margin-bottom: 0.5rem;
+    }
+
+    .poc-subtitle {
+        color: var(--md-sys-color-on-surface-variant);
+        font-size: var(--md-sys-typescale-body-large-size);
+    }
+
+    .timeline-section {
+        position: relative;
+        padding-left: 60px;
+    }
+
+    .timeline-line {
+        position: absolute;
+        left: 24px;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: linear-gradient(
+            180deg,
+            var(--md-sys-color-primary),
+            var(--md-sys-color-primary-container) 50%,
+            var(--md-sys-color-outline-variant)
+        );
+        border-radius: 1px;
+    }
+
+    .timeline-entry {
+        position: relative;
+        margin-bottom: 3rem;
+    }
+
+    .timeline-marker {
+        position: absolute;
+        left: -60px;
+        top: 0;
+        width: 48px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--md-sys-color-surface-container-high);
+        border: 3px solid var(--md-sys-color-primary);
+        border-radius: 50%;
+        z-index: 2;
+    }
+
+    .marker-icon {
+        font-size: 1.5rem;
+    }
+
+    .marker-pulse {
+        position: absolute;
+        inset: -4px;
+        border-radius: 50%;
+        border: 2px solid var(--md-sys-color-primary);
+        opacity: 0;
+        animation: pulse 2s ease-out infinite;
+    }
+
+    @keyframes pulse {
+        0% {
+            opacity: 0.5;
+            transform: scale(1);
+        }
+        100% {
+            opacity: 0;
+            transform: scale(1.5);
+        }
+    }
+
+    .timeline-content {
+        background: var(--md-sys-color-surface-container);
+        border-radius: var(--md-sys-shape-corner-large);
+        padding: 1.5rem 2rem;
+        box-shadow: var(--md-sys-elevation-level1);
+        border: 1px solid var(--md-sys-color-outline-variant);
+        transition: all var(--md-sys-motion-duration-medium)
+            var(--md-sys-motion-easing-spring-soft);
+    }
+
+    .timeline-content:hover {
+        box-shadow: var(--md-sys-elevation-level3);
+        border-color: var(--md-sys-color-primary);
+        transform: translateX(8px);
+    }
+
+    .content-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 0.75rem;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .category-tag {
+        padding: 0.25rem 0.75rem;
+        border-radius: var(--md-sys-shape-corner-full);
+        font-size: var(--md-sys-typescale-label-medium-size);
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .tag-anti-repair {
+        background: rgba(255, 82, 82, 0.15);
+        color: #ff6b6b;
+    }
+
+    .tag-gotcha {
+        background: rgba(255, 171, 64, 0.15);
+        color: #ffab40;
+    }
+
+    .tag-tip {
+        background: rgba(102, 187, 106, 0.15);
+        color: #66bb6a;
+    }
+
+    .tag-insight {
+        background: var(--md-sys-color-primary-container);
+        color: var(--md-sys-color-on-primary-container);
+    }
+
+    .content-header time {
+        font-size: var(--md-sys-typescale-label-medium-size);
+        color: var(--md-sys-color-on-surface-variant);
+        font-family: var(--md-sys-typescale-code-font);
+    }
+
+    .entry-device {
+        font-size: var(--md-sys-typescale-title-medium-size);
+        font-weight: 500;
+        color: var(--md-sys-color-primary);
+        margin-bottom: 0.25rem;
+    }
+
+    .entry-title {
+        font-size: var(--md-sys-typescale-headline-medium-size);
+        font-weight: var(--md-sys-typescale-headline-medium-weight);
+        color: var(--md-sys-color-on-surface);
+        margin-bottom: 1rem;
+    }
+
+    .entry-finding {
+        position: relative;
+        padding-left: 1.5rem;
+        border-left: 3px solid var(--md-sys-color-primary-container);
+        margin: 0;
+    }
+
+    .entry-finding p {
+        color: var(--md-sys-color-on-surface-variant);
+        font-size: var(--md-sys-typescale-body-large-size);
+        line-height: 1.7;
+        font-style: italic;
+    }
+
+    .poc-nav {
+        margin-top: 4rem;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .poc-nav a {
+        color: var(--md-sys-color-primary);
+        text-decoration: none;
+        font-size: var(--md-sys-typescale-body-large-size);
+        transition: color var(--md-sys-motion-duration-short)
+            var(--md-sys-motion-easing-standard);
+    }
+
+    .poc-nav a:hover {
+        color: var(--md-sys-color-on-primary-container);
+    }
+
+    @media (max-width: 600px) {
+        .poc-container {
+            padding: 4rem 1rem;
+        }
+
+        .timeline-section {
+            padding-left: 40px;
+        }
+
+        .timeline-line {
+            left: 16px;
+        }
+
+        .timeline-marker {
+            left: -40px;
+            width: 32px;
+            height: 32px;
+        }
+
+        .marker-icon {
+            font-size: 1rem;
+        }
+
+        .timeline-content {
+            padding: 1rem 1.25rem;
+        }
+    }
+</style>

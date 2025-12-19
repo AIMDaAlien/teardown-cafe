@@ -7,6 +7,7 @@
     "predev": "node scripts/build-obsidian-links.js",
     "dev": "astro dev",
     "build": "astro build",
+    "postbuild": "pagefind --site dist --output-path dist/pagefind",
     "preview": "astro preview",
     "astro": "astro",
     "lint": "eslint .",
@@ -14,6 +15,7 @@
   },
   "dependencies": {
     "@astrojs/mdx": "^4.3.7",
+    "@astrojs/rss": "^4.0.14",
     "@astrojs/sitemap": "^3.6.0",
     "astro": "^5.14.5",
     "glob": "^11.0.3",
@@ -24,12 +26,13 @@
     "@eslint/js": "^9.8.0",
     "@types/eslint__js": "^9.5.0",
     "eslint": "^9.8.0",
-    "eslint-plugin-astro": "^1.2.3",
     "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-astro": "^1.2.3",
     "eslint-plugin-prettier": "^5.2.1",
+    "globals": "^15.8.0",
+    "pagefind": "^1.4.0",
     "prettier": "^3.3.3",
     "prettier-plugin-astro": "^0.14.1",
-    "typescript-eslint": "^8.0.0",
-    "globals": "^15.8.0"
+    "typescript-eslint": "^8.0.0"
   }
 }

@@ -1,0 +1,95 @@
+---
+// Teardown Cafe Logo - X-Ray Cup with Chip
+// Lavender accent color matching brand
+interface Props {
+  class?: string
+  showWordmark?: boolean
+}
+
+const { class: className = '', showWordmark = false } = Astro.props
+---
+
+<div class={`logo ${showWordmark ? 'with-wordmark' : ''} ${className}`}>
+  <svg
+    class="logo-icon"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <!-- Cup body -->
+    <path
+      d="M5 7H17V16C17 18.2091 15.2091 20 13 20H9C6.79086 20 5 18.2091 5 16V7Z"
+      stroke="currentColor"
+      stroke-width="1.5"
+    />
+    <!-- Handle -->
+    <path
+      d="M17 10C19.2091 10 21 11.1193 21 12.5C21 13.8807 19.2091 15 17 15"
+      stroke="currentColor"
+      stroke-width="1.5"
+      stroke-linecap="round"
+    />
+    <!-- Steam hints -->
+    <path d="M6 5C6 5 7 4 8 5" stroke="currentColor" stroke-width="1" stroke-linecap="round" opacity="0.4" />
+    <path d="M10 4C10 4 11 3 12 4" stroke="currentColor" stroke-width="1" stroke-linecap="round" opacity="0.4" />
+    <!-- Internal chip - the x-ray reveal -->
+    <rect
+      x="8"
+      y="10"
+      width="6"
+      height="6"
+      rx="0.75"
+      stroke="var(--logo-accent, #d4bcff)"
+      stroke-width="1.2"
+    />
+    <!-- Corner chamfer marker (IC orientation indicator) -->
+    <circle cx="9" cy="11" r="0.6" fill="var(--logo-accent, #d4bcff)" />
+    <!-- Pin rows - left -->
+    <line x1="8" y1="12" x2="7" y2="12" stroke="var(--logo-accent, #d4bcff)" stroke-width="0.8" />
+    <line x1="8" y1="14" x2="7" y2="14" stroke="var(--logo-accent, #d4bcff)" stroke-width="0.8" />
+    <!-- Pin rows - right -->
+    <line x1="14" y1="12" x2="15" y2="12" stroke="var(--logo-accent, #d4bcff)" stroke-width="0.8" />
+    <line x1="14" y1="14" x2="15" y2="14" stroke="var(--logo-accent, #d4bcff)" stroke-width="0.8" />
+    <!-- Center die -->
+    <rect x="9.5" y="11.5" width="3" height="3" rx="0.3" fill="currentColor" opacity="0.2" />
+  </svg>
+  {showWordmark && (
+    <span class="wordmark">teardown cafe</span>
+  )}
+</div>
+
+<style>
+  .logo {
+    display: inline-flex;
+    align-items: center;
+    --logo-accent: var(--md-sys-color-primary, #d4bcff);
+  }
+
+  .logo-icon {
+    width: 28px;
+    height: 28px;
+    color: currentColor;
+  }
+
+  .with-wordmark {
+    gap: 0.6rem;
+  }
+
+  .with-wordmark .logo-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .wordmark {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: currentColor;
+  }
+
+  /* Hover effect */
+  .logo:hover .logo-icon {
+    transform: scale(1.05);
+    transition: transform 0.2s ease;
+  }
+</style>

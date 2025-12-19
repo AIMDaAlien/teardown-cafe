@@ -22,7 +22,7 @@ export async function GET() {
         latestEntry: {
           title: latest.data.title,
           date: latest.data.pubDate.toISOString().split('T')[0],
-          slug: latest.slug,
+          slug: latest.id,
         },
       },
       null,
