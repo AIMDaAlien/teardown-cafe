@@ -1,0 +1,355 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import CircuitAccents from '../components/CircuitAccents.astro'
+import WaveDiffusions from '../components/WaveDiffusions.astro'
+import FloatingParticles from '../components/FloatingParticles.astro'
+import { getCollection } from 'astro:content'
+
+const discoveries = await getCollection('discoveries')
+
+const sortedDiscoveries = discoveries.sort((a, b) => {
+    return b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+})
+---
+
+<BaseLayout title="Discoveries">
+    <!-- Ambient effects -->
+    <CircuitAccents />
+    <WaveDiffusions />
+    <FloatingParticles />
+
+    <div class="discoveries-page">
+        <header class="page-header">
+            <h1 class="display-large">Discoveries</h1>
+            <p class="page-subtitle">
+                Critical findings, hard-learned lessons, and unexpected insights
+                from the bench
+            </p>
+        </header>
+
+        <section class="discoveries-section">
+            {
+                sortedDiscoveries.map(async (discovery) => {
+                    const { Content } = await discovery.render()
+                    return (
+                        <article
+                            class={`discovery-card severity-${discovery.data.severity}`}
+                        >
+                            <div class="card-accent" />
+                            <div class="card-header">
+                                <span class="discovery-icon">
+                                    {discovery.data.icon || '📝'}
+                                </span>
+                                <div class="header-text">
+                                    <span class="device-badge">
+                                        {discovery.data.device}
+                                    </span>
+                                    <time
+                                        datetime={discovery.data.pubDate.toISOString()}
+                                    >
+                                        {discovery.data.pubDate.toLocaleDateString(
+                                            'en-US',
+                                            {
+                                                year: 'numeric',
+                                                month: 'long',
+                                                day: 'numeric',
+                                            }
+                                        )}
+                                    </time>
+                                </div>
+                                <span
+                                    class={`severity-badge ${discovery.data.severity}`}
+                                >
+                                    {discovery.data.severity}
+                                </span>
+                            </div>
+                            <h2 class="discovery-title">
+                                {discovery.data.title}
+                            </h2>
+                            <p class="discovery-finding">
+                                {discovery.data.finding}
+                            </p>
+
+                            <details class="discovery-details">
+                                <summary>Read more</summary>
+                                <div class="discovery-content">
+                                    <Content />
+                                </div>
+                            </details>
+                        </article>
+                    )
+                })
+            }
+        </section>
+
+        {
+            sortedDiscoveries.length === 0 && (
+                <div class="empty-state">
+                    <p>No discoveries documented yet. Check back soon!</p>
+                </div>
+            )
+        }
+    </div>
+</BaseLayout>
+
+<style>
+    .discoveries-page {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 6rem 2rem;
+        position: relative;
+        z-index: 1;
+    }
+
+    .page-header {
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+
+    .page-header h1 {
+        margin-bottom: 1rem;
+        animation: fadeInUp 0.8s var(--md-sys-motion-easing-decelerate) both;
+    }
+
+    .page-subtitle {
+        color: var(--md-sys-color-on-surface-variant);
+        font-size: var(--md-sys-typescale-body-large-size);
+        line-height: 1.6;
+        max-width: 500px;
+        margin: 0 auto;
+        animation: fadeInUp 0.8s var(--md-sys-motion-easing-decelerate) 0.1s
+            both;
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .discoveries-section {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .discovery-card {
+        position: relative;
+        background: var(--md-sys-color-surface-container);
+        border-radius: var(--md-sys-shape-corner-extra-large);
+        padding: 2rem;
+        overflow: hidden;
+        box-shadow: var(--md-sys-elevation-level2);
+        transition: all var(--md-sys-motion-duration-medium)
+            var(--md-sys-motion-easing-spring-soft);
+        animation: cardFadeIn 0.6s var(--md-sys-motion-easing-decelerate)
+            forwards;
+    }
+
+    .discovery-card:hover {
+        transform: translateX(8px);
+        box-shadow: var(--md-sys-elevation-level4);
+    }
+
+    @keyframes cardFadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .card-accent {
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 6px;
+        border-radius: 0 6px 6px 0;
+    }
+
+    .severity-critical .card-accent {
+        background: linear-gradient(180deg, #ff5252, #d32f2f);
+    }
+
+    .severity-warning .card-accent {
+        background: linear-gradient(180deg, #ffab40, #ff9100);
+    }
+
+    .severity-insight .card-accent {
+        background: linear-gradient(
+            180deg,
+            var(--md-sys-color-primary),
+            var(--md-sys-color-primary-container)
+        );
+    }
+
+    .card-header {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
+        flex-wrap: wrap;
+    }
+
+    .discovery-icon {
+        font-size: 2rem;
+        line-height: 1;
+    }
+
+    .header-text {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+
+    .device-badge {
+        font-size: var(--md-sys-typescale-label-large-size);
+        font-weight: var(--md-sys-typescale-label-large-weight);
+        color: var(--md-sys-color-primary);
+    }
+
+    .header-text time {
+        font-size: var(--md-sys-typescale-label-medium-size);
+        color: var(--md-sys-color-on-surface-variant);
+    }
+
+    .severity-badge {
+        padding: 0.35rem 0.85rem;
+        border-radius: var(--md-sys-shape-corner-full);
+        font-size: var(--md-sys-typescale-label-medium-size);
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .severity-badge.critical {
+        background: rgba(255, 82, 82, 0.2);
+        color: #ff5252;
+    }
+
+    .severity-badge.warning {
+        background: rgba(255, 171, 64, 0.2);
+        color: #ffab40;
+    }
+
+    .severity-badge.insight {
+        background: var(--md-sys-color-primary-container);
+        color: var(--md-sys-color-on-primary-container);
+    }
+
+    .discovery-title {
+        font-size: var(--md-sys-typescale-headline-medium-size);
+        font-weight: 500;
+        color: var(--md-sys-color-on-surface);
+        margin-bottom: 1rem;
+    }
+
+    .discovery-finding {
+        color: var(--md-sys-color-on-surface-variant);
+        font-size: var(--md-sys-typescale-body-large-size);
+        line-height: 1.7;
+    }
+
+    .discovery-details {
+        margin-top: 1.5rem;
+        border-top: 1px solid var(--md-sys-color-outline-variant);
+        padding-top: 1rem;
+    }
+
+    .discovery-details summary {
+        cursor: pointer;
+        color: var(--md-sys-color-primary);
+        font-weight: 500;
+        padding: 0.5rem 0;
+        transition: color var(--md-sys-motion-duration-short)
+            var(--md-sys-motion-easing-standard);
+    }
+
+    .discovery-details summary:hover {
+        color: var(--md-sys-color-on-primary-container);
+    }
+
+    .discovery-details[open] summary {
+        margin-bottom: 1rem;
+    }
+
+    .discovery-content {
+        color: var(--md-sys-color-on-surface-variant);
+        font-size: var(--md-sys-typescale-body-medium-size);
+        line-height: 1.7;
+        animation: slideDown 0.3s var(--md-sys-motion-easing-spring-soft);
+    }
+
+    @keyframes slideDown {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .discovery-content :global(h2) {
+        font-size: var(--md-sys-typescale-title-large-size);
+        font-weight: 500;
+        color: var(--md-sys-color-on-surface);
+        margin: 1.5rem 0 0.75rem;
+    }
+
+    .discovery-content :global(h3) {
+        font-size: var(--md-sys-typescale-title-medium-size);
+        font-weight: 500;
+        color: var(--md-sys-color-on-surface);
+        margin: 1.25rem 0 0.5rem;
+    }
+
+    .discovery-content :global(p) {
+        margin-bottom: 1rem;
+    }
+
+    .discovery-content :global(ul) {
+        margin: 0.5rem 0 1rem 1.5rem;
+    }
+
+    .discovery-content :global(li) {
+        margin-bottom: 0.5rem;
+    }
+
+    .empty-state {
+        text-align: center;
+        padding: 4rem 2rem;
+        color: var(--md-sys-color-on-surface-variant);
+        font-size: 1.25rem;
+    }
+
+    @media (max-width: 600px) {
+        .discoveries-page {
+            padding: 4rem 1rem;
+        }
+
+        .discovery-card {
+            padding: 1.5rem;
+        }
+
+        .card-header {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .discovery-icon {
+            font-size: 1.5rem;
+        }
+    }
+</style>

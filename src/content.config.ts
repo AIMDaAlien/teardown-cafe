@@ -30,4 +30,20 @@ const teardowns = defineCollection({
   }),
 })
 
-export const collections = { teardowns }
+const discoveries = defineCollection({
+  loader: glob({
+    pattern: '**/*.{md,mdx}',
+    base: './src/data/discoveries',
+  }),
+  schema: z.object({
+    title: z.string(),
+    device: z.string(),
+    finding: z.string(),
+    pubDate: z.coerce.date(),
+    severity: z.enum(['critical', 'warning', 'insight']),
+    icon: z.string().optional(), // emoji icon
+    relatedTeardown: z.string().optional(), // slug of related teardown
+  }),
+})
+
+export const collections = { teardowns, discoveries }

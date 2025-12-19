@@ -19,7 +19,10 @@ const {
   type = 'website',
 } = Astro.props
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://teardown.cafe')
+const canonicalURL = new URL(
+  Astro.url.pathname,
+  Astro.site || 'https://teardown.cafe'
+)
 const ogImageURL = new URL(image, Astro.site || 'https://teardown.cafe')
 ---
 
@@ -32,7 +35,12 @@ const ogImageURL = new URL(image, Astro.site || 'https://teardown.cafe')
     <meta name="generator" content={Astro.generator} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="canonical" href={canonicalURL} />
-    <link rel="alternate" type="application/rss+xml" title="Teardown Cafe RSS" href="/rss.xml" />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="Teardown Cafe RSS"
+      href="/rss.xml"
+    />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content={type} />
@@ -78,6 +86,7 @@ const ogImageURL = new URL(image, Astro.site || 'https://teardown.cafe')
         <div class="header-actions">
           <nav class="site-nav">
             <a href="/" class="nav-link">Home</a>
+            <a href="/discoveries" class="nav-link">Discoveries</a>
             <a href="/about" class="nav-link">About</a>
           </nav>
           <Search />
