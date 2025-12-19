@@ -1,0 +1,11 @@
+dist
+.astro
+.git
+.context
+.obsidian-notes
+.vscode
+node_modules
+public/data
+package-lock.json
+pnpm-lock.yaml
+yarn.lock

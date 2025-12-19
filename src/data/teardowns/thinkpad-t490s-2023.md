@@ -1,12 +1,12 @@
 ---
-title: "ThinkPad T490s - Under the Hood"
-description: "Quick look inside a Lenovo ThinkPad T490s out of curiosity - documenting what the internals look like"
+title: 'ThinkPad T490s - Under the Hood'
+description: 'Quick look inside a Lenovo ThinkPad T490s out of curiosity - documenting what the internals look like'
 pubDate: 2023-08-30
 device: laptop
 difficulty: easy
 heroImage: /images/thinkpad-t490s-2023/01-internals-overview.jpg
 relatedNotes:
-  - "Hardware/Laptop Repair Techniques"
+  - 'Hardware/Laptop Repair Techniques'
 ---
 
 ## Quick Look Inside
@@ -14,6 +14,7 @@ relatedNotes:
 Opened up a ThinkPad T490s just to see what the internals looked like. No particular repair needed - just curiosity about the component layout and build quality.
 
 **Device:**
+
 - **Model**: Lenovo ThinkPad T490s
 - **Year**: ~2019-2020
 - **Date**: August 2023
@@ -23,6 +24,7 @@ Opened up a ThinkPad T490s just to see what the internals looked like. No partic
 ## What's Visible
 
 **Left side (from this angle):**
+
 - **Battery**: Lenovo Li-ion pack taking up significant space
   - 11.4V nominal voltage marked on label
   - Internal, non-removable design
@@ -32,6 +34,7 @@ Opened up a ThinkPad T490s just to see what the internals looked like. No partic
   - Thermal solution adequate for 15W ultrabook processor
 
 **Center/Right:**
+
 - **Motherboard**: Main logic board with components
   - CPU under heatsink (center area)
   - RAM is **soldered** to motherboard - not upgradeable
@@ -39,6 +42,7 @@ Opened up a ThinkPad T490s just to see what the internals looked like. No partic
 - **Wireless card**: M.2 slot with Wi-Fi module installed
 
 **Ports visible:**
+
 - USB-C ports along edge
 - USB-A ports
 - HDMI connector
@@ -46,6 +50,7 @@ Opened up a ThinkPad T490s just to see what the internals looked like. No partic
 - Various other connectivity (exact layout depends on T490s configuration)
 
 **Build observations:**
+
 - Clean cable routing along channels
 - Single bottom panel removal for access
 - Modular construction where possible (Wi-Fi card, SSD)
@@ -53,11 +58,13 @@ Opened up a ThinkPad T490s just to see what the internals looked like. No partic
 - Magnesium-aluminum chassis construction
 
 **What's NOT upgradeable on T490s:**
+
 - RAM (soldered to motherboard)
 - CPU (soldered)
 - Battery (requires full disassembly to replace)
 
 **What IS replaceable:**
+
 - M.2 NVMe SSD
 - M.2 Wi-Fi card
 - Cooling fan
@@ -68,6 +75,7 @@ Opened up a ThinkPad T490s just to see what the internals looked like. No partic
 The T490s is Lenovo's 14" ultrabook from the business ThinkPad line. This generation marked Lenovo's shift to thinner designs with more soldered components. Unlike older ThinkPads (T420/T430 era), the T490s sacrifices upgradeability for reduced thickness and weight.
 
 **Typical specs:**
+
 - Intel Core i5/i7 (8th or 10th Gen)
 - 8GB or 16GB RAM (soldered)
 - M.2 NVMe storage
@@ -81,5 +89,5 @@ Just wanted to see what's inside a modern ThinkPad ultrabook. The soldered RAM w
 
 ---
 
-*Documented: August 2023*
-*Purpose: Curiosity / Component layout reference*
+_Documented: August 2023_
+_Purpose: Curiosity / Component layout reference_

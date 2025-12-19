@@ -1,12 +1,12 @@
 // Astro 5 Content Layer API Configuration
-import { defineCollection, z } from 'astro:content';
-import { glob } from 'astro/loaders';
+import { defineCollection, z } from 'astro:content'
+import { glob } from 'astro/loaders'
 
 const teardowns = defineCollection({
   // New Content Layer API: uses loader instead of type
   loader: glob({
     pattern: '**/*.{md,mdx}',
-    base: './src/data/teardowns'
+    base: './src/data/teardowns',
   }),
   schema: z.object({
     title: z.string(),
@@ -14,13 +14,13 @@ const teardowns = defineCollection({
     pubDate: z.coerce.date(),
     device: z.enum([
       'monitor',
-      'laptop', 
+      'laptop',
       'smartphone',
       'raspberry-pi',
       'nas',
       'mechanical-keyboard',
       '3d-printer',
-      'other'
+      'other',
     ]),
     difficulty: z.enum(['easy', 'medium', 'hard']),
     heroImage: z.string().optional(),
@@ -28,6 +28,6 @@ const teardowns = defineCollection({
     tags: z.array(z.string()).optional(),
     relatedNotes: z.array(z.string()).optional(),
   }),
-});
+})
 
-export const collections = { teardowns };
+export const collections = { teardowns }

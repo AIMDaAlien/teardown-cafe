@@ -1,11 +1,19 @@
 ---
-title: "Bambu Lab A1 Combo - Upgrade from A1 Mini"
-description: "Upgrading from A1 Mini to A1 Combo - bigger build volume and AMS lite for easy multi-color printing"
+title: 'Bambu Lab A1 Combo - Upgrade from A1 Mini'
+description: 'Upgrading from A1 Mini to A1 Combo - bigger build volume and AMS lite for easy multi-color printing'
 pubDate: 2025-09-13
 device: 3d-printer
 difficulty: easy
 heroImage: /images/bambu-a1-combo/IMG20250727165952.jpg
-tags: [3d-printing, bambu-lab, multicolor-printing, ams-lite, upgrade, workspace-organization]
+tags:
+  [
+    3d-printing,
+    bambu-lab,
+    multicolor-printing,
+    ams-lite,
+    upgrade,
+    workspace-organization,
+  ]
 ---
 
 ## The Upgrade
@@ -17,11 +25,13 @@ Upgraded from the A1 Mini to the **A1 Combo** - mainly for the larger build volu
 ## Key Improvements
 
 **Build Volume:**
+
 - A1 Mini: 180 x 180 x 180mm
 - A1 Combo: 256 x 256 x 256mm
 - **2.2x more volume**
 
 **AMS Lite Benefits:**
+
 - Holds 4 filament spools
 - Automatic filament switching
 - No manual changes during multi-color prints
@@ -41,13 +51,13 @@ The bigger build plate immediately useful for larger organizational prints and m
 
 <div class="specs-table">
 
-| Feature | A1 Mini | A1 Combo |
-|:--------|:-------:|:--------:|
-| Build Volume | 180³mm | 256³mm |
-| AMS Support | External only | AMS lite included |
-| Filament Slots | 1 (4 with AMS) | 4 built-in |
-| Auto Color Switch | Manual/AMS | AMS lite |
-| Price Difference | Base | +$120 |
+| Feature           |    A1 Mini     |     A1 Combo      |
+| :---------------- | :------------: | :---------------: |
+| Build Volume      |     180³mm     |      256³mm       |
+| AMS Support       | External only  | AMS lite included |
+| Filament Slots    | 1 (4 with AMS) |    4 built-in     |
+| Auto Color Switch |   Manual/AMS   |     AMS lite      |
+| Price Difference  |      Base      |       +$120       |
 
 </div>
 
@@ -87,11 +97,13 @@ The bigger build plate immediately useful for larger organizational prints and m
 ## Worth It?
 
 **Yes, if:**
+
 - Need bigger prints
 - Want multi-color without manual swaps
 - Print functional parts requiring larger footprint
 
 **Stick with Mini if:**
+
 - Only printing small items
 - Single-color prints sufficient
 - Budget constrained
@@ -100,5 +112,5 @@ The AMS lite alone justifies the upgrade - set it and forget it for multi-color 
 
 ---
 
-*Upgrade date: July 2025*  
-*Status: Daily driver for workspace organization prints*
+_Upgrade date: July 2025_  
+_Status: Daily driver for workspace organization prints_

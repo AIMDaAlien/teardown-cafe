@@ -39,7 +39,7 @@
     left: 0;
     right: 0;
     height: 0%;
-    background: linear-gradient(to bottom, #D4BCFF, #B8B3FF);
+    background: linear-gradient(to bottom, #d4bcff, #b8b3ff);
     border-radius: 100px;
     box-shadow: 0 0 12px rgba(212, 188, 255, 0.6);
     transition: height 150ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -59,10 +59,12 @@
   .section-text {
     font-size: 11px;
     font-weight: 600;
-    color: #D4BCFF;
+    color: #d4bcff;
     white-space: nowrap;
     opacity: 0;
-    transition: opacity 300ms ease, transform 300ms ease;
+    transition:
+      opacity 300ms ease,
+      transform 300ms ease;
     margin-bottom: 8px;
   }
 
@@ -73,7 +75,7 @@
   .progress-percent {
     font-size: 13px;
     font-weight: 700;
-    color: #B8B3FF;
+    color: #b8b3ff;
     margin-top: 4px;
   }
 
@@ -81,15 +83,15 @@
     .vertical-progress-container {
       right: 12px;
     }
-    
+
     .progress-track {
       width: 4px;
     }
-    
+
     .section-text {
       font-size: 9px;
     }
-    
+
     .progress-percent {
       font-size: 11px;
     }
@@ -99,7 +101,7 @@
     .progress-fill {
       transition: none;
     }
-    
+
     .section-text {
       transition: opacity 150ms ease;
     }
@@ -113,64 +115,75 @@
     { percent: 50, label: 'Components', id: 'components' },
     { percent: 75, label: 'Analysis', id: 'analysis' },
     { percent: 100, label: 'Conclusion', id: 'conclusion' },
-  ];
+  ]
 
-  const progressFill = document.querySelector('.progress-fill');
-  const sectionText = document.querySelector('.section-text');
-  const progressPercent = document.querySelector('.progress-percent');
-  const progressContent = document.querySelector('.progress-content');
+  const progressFill = document.querySelector('.progress-fill')
+  const sectionText = document.querySelector('.section-text')
+  const progressPercent = document.querySelector('.progress-percent')
+  const progressContent = document.querySelector('.progress-content')
 
-  let currentSectionIndex = 0;
-  let isTransitioning = false;
+  let currentSectionIndex = 0
+  let isTransitioning = false
 
   function updateProgress() {
-    const scrollTop = window.scrollY;
-    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const progress = Math.min((scrollTop / docHeight) * 100, 100);
-    
-    progressFill.style.height = `${progress}%`;
-    progressPercent.textContent = `${Math.round(progress)}%`;
-    
+    const scrollTop = window.scrollY
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight
+    const progress = Math.min((scrollTop / docHeight) * 100, 100)
+
+    progressFill.style.height = `${progress}%`
+    progressPercent.textContent = `${Math.round(progress)}%`
+
     // Position content at current progress point
-    progressContent.style.top = `${progress}%`;
-    
+    progressContent.style.top = `${progress}%`
+
     // Determine current section
     const newSectionIndex = sections.findIndex((s, i) => {
-      const nextSection = sections[i + 1];
-      return progress >= s.percent && (!nextSection || progress < nextSection.percent);
-    });
-    
-    if (newSectionIndex !== -1 && newSectionIndex !== currentSectionIndex && !isTransitioning) {
-      isTransitioning = true;
-      
+      const nextSection = sections[i + 1]
+      return (
+        progress >= s.percent &&
+        (!nextSection || progress < nextSection.percent)
+      )
+    })
+
+    if (
+      newSectionIndex !== -1 &&
+      newSectionIndex !== currentSectionIndex &&
+      !isTransitioning
+    ) {
+      isTransitioning = true
+
       // Fade out
-      sectionText.classList.remove('visible');
-      
+      sectionText.classList.remove('visible')
+
       // Wait for fade out, then update and fade in
       setTimeout(() => {
-        sectionText.textContent = sections[newSectionIndex].label;
-        sectionText.classList.add('visible');
-        currentSectionIndex = newSectionIndex;
-        
+        sectionText.textContent = sections[newSectionIndex].label
+        sectionText.classList.add('visible')
+        currentSectionIndex = newSectionIndex
+
         setTimeout(() => {
-          isTransitioning = false;
-        }, 300);
-      }, 300);
+          isTransitioning = false
+        }, 300)
+      }, 300)
     }
   }
 
   // Optimized scroll handler
-  let ticking = false;
-  window.addEventListener('scroll', () => {
-    if (!ticking) {
-      window.requestAnimationFrame(() => {
-        updateProgress();
-        ticking = false;
-      });
-      ticking = true;
-    }
-  }, { passive: true });
+  let ticking = false
+  window.addEventListener(
+    'scroll',
+    () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          updateProgress()
+          ticking = false
+        })
+        ticking = true
+      }
+    },
+    { passive: true }
+  )
 
   // Initial update
-  updateProgress();
+  updateProgress()
 </script>

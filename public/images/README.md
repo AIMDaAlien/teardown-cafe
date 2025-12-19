@@ -22,6 +22,7 @@ cp ~/path/to/your/image.jpg public/images/
 ```
 
 Then reference in markdown frontmatter:
+
 ```yaml
 heroImage: /images/image.jpg
 ```

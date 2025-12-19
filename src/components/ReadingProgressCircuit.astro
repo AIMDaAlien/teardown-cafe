@@ -16,8 +16,7 @@
           y2="32"
           stroke="#C4ACFA"
           stroke-width="3"
-          opacity="0.2"
-        />
+          opacity="0.2"></line>
 
         <!-- Progress line -->
         <line
@@ -30,8 +29,7 @@
           stroke-width="4"
           opacity="0.8"
           stroke-linecap="round"
-          style="filter: drop-shadow(0 0 8px rgba(196, 172, 250, 0.8));"
-        />
+          style="filter: drop-shadow(0 0 8px rgba(196, 172, 250, 0.8));"></line>
 
         <!-- Milestones -->
         <g class="milestone-group"></g>
@@ -117,18 +115,18 @@
   }
 
   .milestone-label:not(.active) .milestone-title {
-    color: #B8B3FF;
+    color: #b8b3ff;
   }
 
   .milestone-label.active .milestone-title {
     background: rgba(196, 172, 250, 0.3);
-    color: #D4BCFF;
+    color: #d4bcff;
     border: 1px solid rgba(196, 172, 250, 0.5);
   }
 
   .milestone-percent {
     font-size: 8px;
-    color: #A78BFF;
+    color: #a78bff;
     margin-top: 3px;
   }
 
@@ -137,12 +135,12 @@
     justify-content: space-between;
     align-items: center;
     font-size: 10px;
-    color: #B8B3FF;
+    color: #b8b3ff;
   }
 
   .progress-percent {
     font-weight: 700;
-    color: #D4BCFF;
+    color: #d4bcff;
   }
 
   @media (max-width: 768px) {
@@ -158,11 +156,11 @@
       font-size: 8px;
       padding: 2px 8px;
     }
-    
+
     .milestone-percent {
       font-size: 7px;
     }
-    
+
     .progress-info {
       font-size: 9px;
     }
@@ -183,147 +181,159 @@
     { percent: 50, label: 'Components', section: 'components' },
     { percent: 75, label: 'Analysis', section: 'analysis' },
     { percent: 100, label: 'Conclusion', section: 'conclusion' },
-  ];
+  ]
 
-  let scrollProgress = 0;
-  let activeMilestone = 0;
+  let scrollProgress = 0
+  let activeMilestone = 0
 
-  const progressLine = document.querySelector('.progress-line');
-  const progressPercent = document.querySelector('.progress-percent');
-  const milestoneGroup = document.querySelector('.milestone-group');
-  const milestoneLabelsContainer = document.querySelector('.milestone-labels');
+  const progressLine = document.querySelector('.progress-line')
+  const progressPercent = document.querySelector('.progress-percent')
+  const milestoneGroup = document.querySelector('.milestone-group')
+  const milestoneLabelsContainer = document.querySelector('.milestone-labels')
 
   // Create milestone nodes and labels
   milestones.forEach((milestone, index) => {
-    const x = (milestone.percent / 100) * 1000;
-    const isEven = index % 2 === 0;
+    const x = (milestone.percent / 100) * 1000
+    const isEven = index % 2 === 0
 
     // SVG node
-    const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
-    
+    const g = document.createElementNS('http://www.w3.org/2000/svg', 'g')
+
     // Connection line
-    const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-    line.setAttribute('x1', x);
-    line.setAttribute('y1', '32');
-    line.setAttribute('x2', x);
-    line.setAttribute('y2', isEven ? '8' : '56');
-    line.setAttribute('stroke', '#A78BFF');
-    line.setAttribute('stroke-width', '2');
-    line.setAttribute('opacity', '0.3');
-    line.classList.add(`milestone-line-${index}`);
+    const line = document.createElementNS('http://www.w3.org/2000/svg', 'line')
+    line.setAttribute('x1', x)
+    line.setAttribute('y1', '32')
+    line.setAttribute('x2', x)
+    line.setAttribute('y2', isEven ? '8' : '56')
+    line.setAttribute('stroke', '#A78BFF')
+    line.setAttribute('stroke-width', '2')
+    line.setAttribute('opacity', '0.3')
+    line.classList.add(`milestone-line-${index}`)
 
     // Node circle
-    const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-    circle.setAttribute('cx', x);
-    circle.setAttribute('cy', '32');
-    circle.setAttribute('r', '6');
-    circle.setAttribute('fill', '#1A0B2E');
-    circle.setAttribute('stroke', '#A78BFF');
-    circle.setAttribute('stroke-width', '2');
-    circle.classList.add(`milestone-node-${index}`);
+    const circle = document.createElementNS(
+      'http://www.w3.org/2000/svg',
+      'circle'
+    )
+    circle.setAttribute('cx', x)
+    circle.setAttribute('cy', '32')
+    circle.setAttribute('r', '6')
+    circle.setAttribute('fill', '#1A0B2E')
+    circle.setAttribute('stroke', '#A78BFF')
+    circle.setAttribute('stroke-width', '2')
+    circle.classList.add(`milestone-node-${index}`)
 
     // Pulse ring for active
-    const pulseRing = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-    pulseRing.setAttribute('cx', x);
-    pulseRing.setAttribute('cy', '32');
-    pulseRing.setAttribute('r', '8');
-    pulseRing.setAttribute('fill', 'none');
-    pulseRing.setAttribute('stroke', '#D4BCFF');
-    pulseRing.setAttribute('stroke-width', '2');
-    pulseRing.setAttribute('opacity', '0');
-    pulseRing.classList.add(`milestone-pulse-${index}`);
+    const pulseRing = document.createElementNS(
+      'http://www.w3.org/2000/svg',
+      'circle'
+    )
+    pulseRing.setAttribute('cx', x)
+    pulseRing.setAttribute('cy', '32')
+    pulseRing.setAttribute('r', '8')
+    pulseRing.setAttribute('fill', 'none')
+    pulseRing.setAttribute('stroke', '#D4BCFF')
+    pulseRing.setAttribute('stroke-width', '2')
+    pulseRing.setAttribute('opacity', '0')
+    pulseRing.classList.add(`milestone-pulse-${index}`)
 
-    g.appendChild(line);
-    g.appendChild(circle);
-    g.appendChild(pulseRing);
-    milestoneGroup.appendChild(g);
+    g.appendChild(line)
+    g.appendChild(circle)
+    g.appendChild(pulseRing)
+    milestoneGroup.appendChild(g)
 
     // Label
-    const label = document.createElement('div');
-    label.className = 'milestone-label';
-    label.style.position = 'absolute';
-    label.style.left = `calc(${milestone.percent}% - 50px)`;
-    label.style[isEven ? 'top' : 'bottom'] = isEven ? '-50px' : '-50px';
-    
+    const label = document.createElement('div')
+    label.className = 'milestone-label'
+    label.style.position = 'absolute'
+    label.style.left = `calc(${milestone.percent}% - 50px)`
+    label.style[isEven ? 'top' : 'bottom'] = isEven ? '-50px' : '-50px'
+
     label.innerHTML = `
       <span class="milestone-title">${milestone.label}</span>
       <span class="milestone-percent">${milestone.percent}%</span>
-    `;
+    `
 
-    milestoneLabelsContainer.appendChild(label);
-  });
+    milestoneLabelsContainer.appendChild(label)
+  })
 
   function updateProgress() {
-    const scrollTop = window.scrollY;
-    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const progress = Math.min((scrollTop / docHeight) * 100, 100);
-    
-    scrollProgress = progress;
-    progressLine.setAttribute('x2', (progress / 100) * 1000);
-    progressPercent.textContent = `${Math.round(progress)}%`;
+    const scrollTop = window.scrollY
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight
+    const progress = Math.min((scrollTop / docHeight) * 100, 100)
+
+    scrollProgress = progress
+    progressLine.setAttribute('x2', (progress / 100) * 1000)
+    progressPercent.textContent = `${Math.round(progress)}%`
 
     // Update active milestone
-    const current = milestones.findIndex(m => progress < m.percent);
-    activeMilestone = current === -1 ? milestones.length - 1 : Math.max(0, current - 1);
+    const current = milestones.findIndex((m) => progress < m.percent)
+    activeMilestone =
+      current === -1 ? milestones.length - 1 : Math.max(0, current - 1)
 
     // Update milestone styles
     milestones.forEach((milestone, index) => {
-      const isActive = scrollProgress >= milestone.percent;
-      const isCurrent = index === activeMilestone;
-      
-      const line = document.querySelector(`.milestone-line-${index}`);
-      const node = document.querySelector(`.milestone-node-${index}`);
-      const pulse = document.querySelector(`.milestone-pulse-${index}`);
-      const label = milestoneLabelsContainer.children[index];
+      const isActive = scrollProgress >= milestone.percent
+      const isCurrent = index === activeMilestone
+
+      const line = document.querySelector(`.milestone-line-${index}`)
+      const node = document.querySelector(`.milestone-node-${index}`)
+      const pulse = document.querySelector(`.milestone-pulse-${index}`)
+      const label = milestoneLabelsContainer.children[index]
 
       // Show label only when it's the current active section (fade in/out 300ms)
       if (isCurrent) {
-        label.classList.add('visible');
-        label.classList.add('active');
+        label.classList.add('visible')
+        label.classList.add('active')
       } else {
-        label.classList.remove('visible');
-        label.classList.remove('active');
+        label.classList.remove('visible')
+        label.classList.remove('active')
       }
 
       // Update SVG styles
       if (line && node) {
-        line.setAttribute('stroke', isActive ? '#C4ACFA' : '#A78BFF');
-        line.setAttribute('opacity', isActive ? '0.6' : '0.3');
-        
-        node.setAttribute('fill', isActive ? '#C4ACFA' : '#1A0B2E');
-        node.setAttribute('stroke', isActive ? '#D4BCFF' : '#A78BFF');
-        node.setAttribute('r', isCurrent ? '8' : '6');
-        
+        line.setAttribute('stroke', isActive ? '#C4ACFA' : '#A78BFF')
+        line.setAttribute('opacity', isActive ? '0.6' : '0.3')
+
+        node.setAttribute('fill', isActive ? '#C4ACFA' : '#1A0B2E')
+        node.setAttribute('stroke', isActive ? '#D4BCFF' : '#A78BFF')
+        node.setAttribute('r', isCurrent ? '8' : '6')
+
         if (isCurrent) {
-          node.style.filter = 'drop-shadow(0 0 12px rgba(212, 188, 255, 0.9))';
-          pulse.setAttribute('opacity', '0.6');
-          pulse.style.animation = 'pulseRing 2s cubic-bezier(0.4, 0, 0.6, 1) infinite';
+          node.style.filter = 'drop-shadow(0 0 12px rgba(212, 188, 255, 0.9))'
+          pulse.setAttribute('opacity', '0.6')
+          pulse.style.animation =
+            'pulseRing 2s cubic-bezier(0.4, 0, 0.6, 1) infinite'
         } else {
-          node.style.filter = 'none';
-          pulse.setAttribute('opacity', '0');
-          pulse.style.animation = 'none';
+          node.style.filter = 'none'
+          pulse.setAttribute('opacity', '0')
+          pulse.style.animation = 'none'
         }
       }
-    });
+    })
   }
 
   // Optimized scroll handler
-  let ticking = false;
-  window.addEventListener('scroll', () => {
-    if (!ticking) {
-      window.requestAnimationFrame(() => {
-        updateProgress();
-        ticking = false;
-      });
-      ticking = true;
-    }
-  }, { passive: true });
+  let ticking = false
+  window.addEventListener(
+    'scroll',
+    () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          updateProgress()
+          ticking = false
+        })
+        ticking = true
+      }
+    },
+    { passive: true }
+  )
 
   // Initial update
-  updateProgress();
+  updateProgress()
 
   // Add pulse animation
-  const style = document.createElement('style');
+  const style = document.createElement('style')
   style.textContent = `
     @keyframes pulseRing {
       0% {
@@ -335,6 +345,6 @@
         opacity: 0;
       }
     }
-  `;
-  document.head.appendChild(style);
+  `
+  document.head.appendChild(style)
 </script>

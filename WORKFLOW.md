@@ -28,6 +28,7 @@ chmod +x sync-to-obsidian.sh
 ### Phase 1: Image Organization
 
 **Images from this chat are named:**
+
 - `IMG20251015184233.jpg` → Components overview
 - `IMG20251015192501.jpg` → Device ports/details
 - `IMG20251015192851.jpg` → Assembly step
@@ -48,6 +49,7 @@ chmod +x organize-images.sh
 ```
 
 **Expected output:**
+
 ```
 ✓ Copied: IMG20251015184233.jpg → 01-components-overview.jpg
 ✓ Copied: IMG20251015192501.jpg → 02-raspberry-pi-5-ports.jpg
@@ -60,6 +62,7 @@ chmod +x organize-images.sh
 ### Phase 2: Verify Content
 
 **Start dev server:**
+
 ```bash
 npm run dev
 ```
@@ -67,6 +70,7 @@ npm run dev
 **Navigate to:** `http://localhost:4321`
 
 **Check:**
+
 - ✅ New teardown card appears on homepage
 - ✅ Click card → full teardown page loads
 - ✅ All images display correctly
@@ -75,6 +79,7 @@ npm run dev
 ### Phase 3: Git Commit
 
 **Commit your changes:**
+
 ```bash
 git add -A
 git commit -m "Add teardown: Raspberry Pi 5 NVMe Build
@@ -98,6 +103,7 @@ chmod +x sync-to-obsidian.sh
 ```
 
 **This script:**
+
 1. Scans all teardown markdown files
 2. Extracts metadata (title, date, device, difficulty)
 3. Generates statistics (device types, difficulty breakdown)
@@ -105,6 +111,7 @@ chmod +x sync-to-obsidian.sh
 5. Creates bidirectional links
 
 **Obsidian note location:**
+
 ```
 Obsidian Notes Vault/
 └── Projects/
@@ -142,20 +149,26 @@ Now every `git commit` automatically updates your Obsidian vault!
 ### Bidirectional Linking
 
 **From Teardown Cafe → Obsidian:**
+
 ```markdown
 relatedNotes:
-  - "Homelab/Pi-hole Setup"
-  - "Projects/Raspberry Pi NVMe Configuration"
+
+- "Homelab/Pi-hole Setup"
+- "Projects/Raspberry Pi NVMe Configuration"
 ```
 
 Renders as clickable links:
+
 ```html
-<a href="https://aimdaalien.github.io/knowledge-garden-vault/?note=Homelab/Pi-hole%20Setup">
+<a
+  href="https://aimdaalien.github.io/knowledge-garden-vault/?note=Homelab/Pi-hole%20Setup"
+>
   Pi-hole Setup
 </a>
 ```
 
 **From Obsidian → Teardown Cafe:**
+
 ```markdown
 # Pi-hole Setup
 
@@ -170,17 +183,20 @@ The auto-generated `Teardowns Index.md` contains:
 # 🔧 Teardowns Index
 
 ## Active Projects
+
 - Individual teardown entries
 - Quick summaries
 - Related note links
 - Direct links to full teardowns
 
 ## Teardown Statistics
+
 - Total count
 - Difficulty breakdown
 - Device type categories
 
 ## Categories
+
 - By Device Type
 - By Difficulty
 ```
@@ -204,6 +220,7 @@ rm *_original
 ```
 
 **Automated script:**
+
 ```bash
 # Add to organize-images.sh after copying
 exiftool -all= "$DEST_DIR"/*.jpg
@@ -215,11 +232,13 @@ rm "$DEST_DIR"/*_original
 ### Images not appearing
 
 **Check paths:**
+
 ```bash
 ls ~/Documents/teardown-cafe/public/images/raspberry-pi-5-nvme/
 ```
 
 Should show:
+
 ```
 01-components-overview.jpg
 02-raspberry-pi-5-ports.jpg
@@ -232,6 +251,7 @@ Should show:
 **Hard refresh browser:** `Cmd + Shift + R`
 
 **Restart dev server:**
+
 ```bash
 # Press Ctrl+C in terminal
 npm run dev
@@ -240,17 +260,20 @@ npm run dev
 ### Obsidian sync fails
 
 **Verify vault path:**
+
 ```bash
 ls "$HOME/Documents/Obsidian Notes Vault"
 ```
 
 **Update script if needed:**
+
 ```bash
 nano sync-to-obsidian.sh
 # Change line 13: OBSIDIAN_VAULT="/path/to/your/vault"
 ```
 
 **Run manually:**
+
 ```bash
 ./sync-to-obsidian.sh
 ```
@@ -258,6 +281,7 @@ nano sync-to-obsidian.sh
 ### Git push fails
 
 **Set remote if not configured:**
+
 ```bash
 # Create repo on GitHub first, then:
 git remote add origin https://github.com/YOUR-USERNAME/teardown-cafe.git
@@ -282,15 +306,16 @@ For your next teardown, the process is even simpler:
 
 ## Scripts Summary
 
-| Script | Purpose | When to Run |
-|--------|---------|-------------|
-| `organize-images.sh` | Copy & rename images | After downloading from chat |
-| `sync-to-obsidian.sh` | Update Obsidian index | After git commit |
-| `npm run dev` | Preview changes | Before committing |
+| Script                | Purpose               | When to Run                 |
+| --------------------- | --------------------- | --------------------------- |
+| `organize-images.sh`  | Copy & rename images  | After downloading from chat |
+| `sync-to-obsidian.sh` | Update Obsidian index | After git commit            |
+| `npm run dev`         | Preview changes       | Before committing           |
 
 ## File Naming Convention
 
 **Images:**
+
 ```
 [number]-[descriptive-name].jpg
 
@@ -301,6 +326,7 @@ Examples:
 ```
 
 **Markdown:**
+
 ```
 [device-name-with-hyphens].md
 

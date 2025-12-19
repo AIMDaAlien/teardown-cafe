@@ -1,93 +1,95 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import { getCollection } from 'astro:content';
-import ProgressiveImage from '../../components/ProgressiveImage.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import { getCollection } from 'astro:content'
+import ProgressiveImage from '../../components/ProgressiveImage.astro'
 
 export async function getStaticPaths() {
   const deviceTypes = [
     'laptop',
-    'smartphone', 
+    'smartphone',
     'raspberry-pi',
     'nas',
     '3d-printer',
     'mechanical-keyboard',
     'monitor',
-    'other'
-  ];
-  
+    'other',
+  ]
+
   return deviceTypes.map((type) => ({
     params: { type },
-    props: { type }
-  }));
+    props: { type },
+  }))
 }
 
-const { type } = Astro.props;
+const { type } = Astro.props
 
 // Get all teardowns for this device type
-const allTeardowns = await getCollection('teardowns');
+const allTeardowns = await getCollection('teardowns')
 const deviceTeardowns = allTeardowns
-  .filter(teardown => teardown.data.device === type)
-  .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
+  .filter((teardown) => teardown.data.device === type)
+  .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime())
 
 // Device type metadata
 const deviceMetadata = {
-  'laptop': {
+  laptop: {
     title: 'Laptop Teardowns',
-    description: 'Detailed disassembly and analysis of laptops, from ultrabooks to gaming machines',
+    description:
+      'Detailed disassembly and analysis of laptops, from ultrabooks to gaming machines',
     icon: '💻',
-    color: 'var(--md-sys-color-primary)'
+    color: 'var(--md-sys-color-primary)',
   },
-  'smartphone': {
-    title: 'Smartphone Teardowns', 
-    description: 'Inside look at smartphone internals, repair guides, and component analysis',
+  smartphone: {
+    title: 'Smartphone Teardowns',
+    description:
+      'Inside look at smartphone internals, repair guides, and component analysis',
     icon: '📱',
-    color: 'var(--md-sys-color-secondary)'
+    color: 'var(--md-sys-color-secondary)',
   },
   'raspberry-pi': {
     title: 'Raspberry Pi Projects',
-    description: 'Single-board computer builds, modifications, and performance analysis',
+    description:
+      'Single-board computer builds, modifications, and performance analysis',
     icon: '🍓',
-    color: 'var(--md-sys-color-tertiary)'
+    color: 'var(--md-sys-color-tertiary)',
   },
-  'nas': {
+  nas: {
     title: 'NAS & Storage Builds',
-    description: 'Network-attached storage systems, drive configurations, and homelab setups',
+    description:
+      'Network-attached storage systems, drive configurations, and homelab setups',
     icon: '💾',
-    color: 'var(--md-sys-color-accent-teal)'
+    color: 'var(--md-sys-color-accent-teal)',
   },
   '3d-printer': {
     title: '3D Printer Teardowns',
     description: '3D printer setup, calibration, and hardware analysis',
     icon: '🖨️',
-    color: 'var(--md-sys-color-accent-amber)'
+    color: 'var(--md-sys-color-accent-amber)',
   },
   'mechanical-keyboard': {
     title: 'Keyboard Teardowns',
-    description: 'Mechanical keyboard disassembly, switch analysis, and modifications',
+    description:
+      'Mechanical keyboard disassembly, switch analysis, and modifications',
     icon: '⌨️',
-    color: 'var(--md-sys-color-accent-green)'
+    color: 'var(--md-sys-color-accent-green)',
   },
-  'monitor': {
+  monitor: {
     title: 'Monitor Analysis',
     description: 'Display technology, panel analysis, and calibration guides',
     icon: '🖥️',
-    color: 'var(--md-sys-color-primary-container)'
+    color: 'var(--md-sys-color-primary-container)',
   },
-  'other': {
+  other: {
     title: 'Other Devices',
     description: 'Miscellaneous hardware teardowns and analysis',
     icon: '🔧',
-    color: 'var(--md-sys-color-surface-variant)'
-  }
-};
+    color: 'var(--md-sys-color-surface-variant)',
+  },
+}
 
-const metadata = deviceMetadata[type] || deviceMetadata['other'];
+const metadata = deviceMetadata[type] || deviceMetadata['other']
 ---
 
-<BaseLayout 
-  title={metadata.title}
-  description={metadata.description}
->
+<BaseLayout title={metadata.title} description={metadata.description}>
   <div class="device-type-page">
     <header class="device-header">
       <div class="device-icon" style={`color: ${metadata.color}`}>
@@ -100,64 +102,88 @@ const metadata = deviceMetadata[type] || deviceMetadata['other'];
           <strong>{deviceTeardowns.length}</strong> teardowns
         </span>
         <span class="stat">
-          <strong>{new Set(deviceTeardowns.map(t => t.data.difficulty)).size}</strong> difficulty levels
+          <strong
+            >{
+              new Set(deviceTeardowns.map((t) => t.data.difficulty)).size
+            }</strong
+          > difficulty levels
         </span>
       </div>
     </header>
-    
-    {deviceTeardowns.length > 0 ? (
-      <section class="teardowns-section">
-        <div class="teardowns-grid">
-          {deviceTeardowns.map(teardown => (
-            <article class="teardown-card">
-              <a href={`/teardowns/${teardown.id}`} class="card-link">
-                <div class="card-image">
-                  {teardown.data.heroImage ? (
-                    <ProgressiveImage 
-                      src={teardown.data.heroImage} 
-                      alt={teardown.data.title}
-                      loading="lazy"
-                      class="teardown-hero"
-                    />
-                  ) : (
-                    <div class="placeholder-image">
-                      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-                        <circle cx="8.5" cy="8.5" r="1.5"/>
-                        <polyline points="21,15 16,10 5,21"/>
-                      </svg>
-                    </div>
-                  )}
-                </div>
-                <div class="card-content">
-                  <h3 class="card-title">{teardown.data.title}</h3>
-                  <p class="card-description">{teardown.data.description}</p>
-                  <div class="card-meta">
-                    <span class="difficulty difficulty-{teardown.data.difficulty}">
-                      {teardown.data.difficulty}
-                    </span>
-                    <time class="card-date">
-                      {teardown.data.pubDate.toLocaleDateString('en-US', {
-                        year: 'numeric',
-                        month: 'short',
-                        day: 'numeric'
-                      })}
-                    </time>
+
+    {
+      deviceTeardowns.length > 0 ? (
+        <section class="teardowns-section">
+          <div class="teardowns-grid">
+            {deviceTeardowns.map((teardown) => (
+              <article class="teardown-card">
+                <a href={`/teardowns/${teardown.id}`} class="card-link">
+                  <div class="card-image">
+                    {teardown.data.heroImage ? (
+                      <ProgressiveImage
+                        src={teardown.data.heroImage}
+                        alt={teardown.data.title}
+                        loading="lazy"
+                        class="teardown-hero"
+                      />
+                    ) : (
+                      <div class="placeholder-image">
+                        <svg
+                          width="48"
+                          height="48"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="1.5"
+                        >
+                          <rect
+                            x="3"
+                            y="3"
+                            width="18"
+                            height="18"
+                            rx="2"
+                            ry="2"
+                          />
+                          <circle cx="8.5" cy="8.5" r="1.5" />
+                          <polyline points="21,15 16,10 5,21" />
+                        </svg>
+                      </div>
+                    )}
                   </div>
-                </div>
-              </a>
-            </article>
-          ))}
-        </div>
-      </section>
-    ) : (
-      <section class="empty-state">
-        <div class="empty-icon">🔍</div>
-        <h3>No teardowns yet</h3>
-        <p>We haven't documented any {type} teardowns yet. Check back soon!</p>
-        <a href="/" class="back-link">← Browse all teardowns</a>
-      </section>
-    )}
+                  <div class="card-content">
+                    <h3 class="card-title">{teardown.data.title}</h3>
+                    <p class="card-description">{teardown.data.description}</p>
+                    <div class="card-meta">
+                      <span class="difficulty difficulty-{teardown.data.difficulty}">
+                        {teardown.data.difficulty}
+                      </span>
+                      <time class="card-date">
+                        {teardown.data.pubDate.toLocaleDateString('en-US', {
+                          year: 'numeric',
+                          month: 'short',
+                          day: 'numeric',
+                        })}
+                      </time>
+                    </div>
+                  </div>
+                </a>
+              </article>
+            ))}
+          </div>
+        </section>
+      ) : (
+        <section class="empty-state">
+          <div class="empty-icon">🔍</div>
+          <h3>No teardowns yet</h3>
+          <p>
+            We haven't documented any {type} teardowns yet. Check back soon!
+          </p>
+          <a href="/" class="back-link">
+            ← Browse all teardowns
+          </a>
+        </section>
+      )
+    }
   </div>
 </BaseLayout>
 
@@ -167,26 +193,26 @@ const metadata = deviceMetadata[type] || deviceMetadata['other'];
     margin: 0 auto;
     padding: 2rem 1.5rem;
   }
-  
+
   .device-header {
     text-align: center;
     margin-bottom: 3rem;
     padding: 2rem 0;
   }
-  
+
   .device-icon {
     font-size: 4rem;
     margin-bottom: 1rem;
     display: block;
   }
-  
+
   .device-title {
     font-size: var(--md-sys-typescale-display-medium-size);
     font-weight: var(--md-sys-typescale-display-medium-weight);
     margin-bottom: 1rem;
     color: var(--md-sys-color-on-surface);
   }
-  
+
   .device-description {
     font-size: var(--md-sys-typescale-body-large-size);
     color: var(--md-sys-color-on-surface-variant);
@@ -195,53 +221,54 @@ const metadata = deviceMetadata[type] || deviceMetadata['other'];
     margin-left: auto;
     margin-right: auto;
   }
-  
+
   .device-stats {
     display: flex;
     gap: 2rem;
     justify-content: center;
     flex-wrap: wrap;
   }
-  
+
   .stat {
     color: var(--md-sys-color-on-surface-variant);
     font-size: var(--md-sys-typescale-body-medium-size);
   }
-  
+
   .stat strong {
     color: var(--md-sys-color-primary);
     font-weight: 600;
   }
-  
+
   .teardowns-section {
     margin-top: 2rem;
   }
-  
+
   .teardowns-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     gap: 2rem;
   }
-  
+
   .teardown-card {
     background: var(--md-sys-color-surface-container);
     border-radius: var(--md-sys-shape-corner-large);
     overflow: hidden;
     box-shadow: var(--md-sys-elevation-level1);
-    transition: all var(--md-sys-motion-duration-medium) var(--md-sys-motion-easing-standard);
+    transition: all var(--md-sys-motion-duration-medium)
+      var(--md-sys-motion-easing-standard);
   }
-  
+
   .teardown-card:hover {
     transform: translateY(-4px);
     box-shadow: var(--md-sys-elevation-level3);
   }
-  
+
   .card-link {
     display: block;
     text-decoration: none;
     color: inherit;
   }
-  
+
   .card-image {
     position: relative;
     width: 100%;
@@ -249,7 +276,7 @@ const metadata = deviceMetadata[type] || deviceMetadata['other'];
     overflow: hidden;
     background: var(--md-sys-color-surface-container-low);
   }
-  
+
   .placeholder-image {
     width: 100%;
     height: 100%;
@@ -259,11 +286,11 @@ const metadata = deviceMetadata[type] || deviceMetadata['other'];
     background: var(--md-sys-color-surface-container-low);
     color: var(--md-sys-color-on-surface-variant);
   }
-  
+
   .card-content {
     padding: 1.5rem;
   }
-  
+
   .card-title {
     font-size: var(--md-sys-typescale-title-large-size);
     font-weight: var(--md-sys-typescale-title-large-weight);
@@ -271,7 +298,7 @@ const metadata = deviceMetadata[type] || deviceMetadata['other'];
     color: var(--md-sys-color-on-surface);
     line-height: 1.3;
   }
-  
+
   .card-description {
     font-size: var(--md-sys-typescale-body-medium-size);
     color: var(--md-sys-color-on-surface-variant);
@@ -282,7 +309,7 @@ const metadata = deviceMetadata[type] || deviceMetadata['other'];
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
-  
+
   .card-meta {
     display: flex;
     justify-content: space-between;
@@ -290,7 +317,7 @@ const metadata = deviceMetadata[type] || deviceMetadata['other'];
     flex-wrap: wrap;
     gap: 0.75rem;
   }
-  
+
   .difficulty {
     padding: 0.25rem 0.75rem;
     border-radius: var(--md-sys-shape-corner-full);
@@ -298,48 +325,48 @@ const metadata = deviceMetadata[type] || deviceMetadata['other'];
     font-weight: 500;
     text-transform: capitalize;
   }
-  
+
   .difficulty-easy {
-    background-color: #2E7D32;
-    color: #E8F5E9;
+    background-color: #2e7d32;
+    color: #e8f5e9;
   }
-  
+
   .difficulty-medium {
-    background-color: #F57C00;
-    color: #FFF3E0;
+    background-color: #f57c00;
+    color: #fff3e0;
   }
-  
+
   .difficulty-hard {
-    background-color: #C62828;
-    color: #FFEBEE;
+    background-color: #c62828;
+    color: #ffebee;
   }
-  
+
   .card-date {
     color: var(--md-sys-color-on-surface-variant);
     font-size: 0.875rem;
   }
-  
+
   .empty-state {
     text-align: center;
     padding: 4rem 2rem;
     color: var(--md-sys-color-on-surface-variant);
   }
-  
+
   .empty-icon {
     font-size: 3rem;
     margin-bottom: 1rem;
   }
-  
+
   .empty-state h3 {
     font-size: var(--md-sys-typescale-headline-medium-size);
     margin-bottom: 1rem;
     color: var(--md-sys-color-on-surface);
   }
-  
+
   .empty-state p {
     margin-bottom: 2rem;
   }
-  
+
   .back-link {
     display: inline-flex;
     align-items: center;
@@ -350,38 +377,39 @@ const metadata = deviceMetadata[type] || deviceMetadata['other'];
     padding: 0.75rem 1.25rem;
     background-color: var(--md-sys-color-surface-container-highest);
     border-radius: var(--md-sys-shape-corner-full);
-    transition: all var(--md-sys-motion-duration-short) var(--md-sys-motion-easing-standard);
+    transition: all var(--md-sys-motion-duration-short)
+      var(--md-sys-motion-easing-standard);
   }
-  
+
   .back-link:hover {
     background-color: var(--md-sys-color-primary-container);
     color: var(--md-sys-color-on-primary-container);
     transform: translateX(-4px);
   }
-  
+
   @media (max-width: 768px) {
     .device-type-page {
       padding: 1rem;
     }
-    
+
     .device-header {
       margin-bottom: 2rem;
       padding: 1rem 0;
     }
-    
+
     .device-icon {
       font-size: 3rem;
     }
-    
+
     .device-stats {
       gap: 1rem;
     }
-    
+
     .teardowns-grid {
       grid-template-columns: 1fr;
       gap: 1.5rem;
     }
-    
+
     .card-image {
       height: 200px;
     }

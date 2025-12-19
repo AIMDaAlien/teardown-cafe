@@ -1,11 +1,25 @@
 ---
-title: "MacBook Pro 2010 - From Mac OS Lion to Sequoia"
-description: "Testing OpenCore limits: upgrading a 2010 MacBook Pro from Mac OS Lion through High Sierra to unsupported Monterey and Sequoia"
+title: 'MacBook Pro 2010 - From Mac OS Lion to Sequoia'
+description: 'Testing OpenCore limits: upgrading a 2010 MacBook Pro from Mac OS Lion through High Sierra to unsupported Monterey and Sequoia'
 pubDate: 2025-03-07
 device: laptop
 difficulty: medium
 heroImage: /images/macbook-pro-2010-upgrades/IMG20250328232505.jpg
-tags: [macbook, legacy-hardware, macos-upgrade, opencore, firmware, apple-hardware, performance-limits, mac-os-lion, high-sierra, monterey, sequoia, obsolescence]
+tags:
+  [
+    macbook,
+    legacy-hardware,
+    macos-upgrade,
+    opencore,
+    firmware,
+    apple-hardware,
+    performance-limits,
+    mac-os-lion,
+    high-sierra,
+    monterey,
+    sequoia,
+    obsolescence,
+  ]
 ---
 
 ## The Problem
@@ -50,12 +64,12 @@ Complete performance collapse. 4-5 minute boots, significant UI lag, fan maxed c
 
 <div class="performance-table">
 
-| macOS Version | Boot Time | UI Response | Fan Noise | Usability |
-|:--------------|:---------:|:-----------:|:---------:|:----------|
-| Lion (10.7) | 30s | Instant | Silent | Internet broken |
-| High Sierra (10.13) | 45s | Instant | Quiet | Limited web |
-| Monterey (12.x) | 2-3min | Slow | Moderate | Acceptable |
-| Sequoia (15.x) | 4-5min | Very slow | Maxed | Impractical |
+| macOS Version       | Boot Time | UI Response | Fan Noise | Usability       |
+| :------------------ | :-------: | :---------: | :-------: | :-------------- |
+| Lion (10.7)         |    30s    |   Instant   |  Silent   | Internet broken |
+| High Sierra (10.13) |    45s    |   Instant   |   Quiet   | Limited web     |
+| Monterey (12.x)     |  2-3min   |    Slow     | Moderate  | Acceptable      |
+| Sequoia (15.x)      |  4-5min   |  Very slow  |   Maxed   | Impractical     |
 
 </div>
 
@@ -97,12 +111,14 @@ Complete performance collapse. 4-5 minute boots, significant UI lag, fan maxed c
 ## Hardware Specs
 
 **MacBook Pro 13-inch, Mid-2010**
+
 - Intel Core 2 Duo P8600 @ 2.4GHz (2 cores)
 - 4GB DDR3-1066 (upgraded to 8GB)
 - 250GB HDD → SSD upgrade
 - NVIDIA GeForce 320M (256MB)
 
 **OS Compatibility:**
+
 - Official: Mac OS X 10.6 → macOS 10.13 High Sierra
 - OpenCore: Up to macOS 15 Sequoia (technically)
 - Practical limit: macOS 12 Monterey
@@ -114,6 +130,7 @@ Complete performance collapse. 4-5 minute boots, significant UI lag, fan maxed c
 **High Sierra = sweet spot** for this hardware. Modern enough for most tasks, light enough to run smoothly.
 
 **This machine sparked my Apple laptop journey:**
+
 1. 2010 MacBook Pro (learning OpenCore)
 2. M1 MacBook Air (first Apple Silicon)
 3. M4 MacBook Air (current daily driver)
@@ -121,6 +138,7 @@ Complete performance collapse. 4-5 minute boots, significant UI lag, fan maxed c
 ## Recommendations
 
 **For 2010-2012 MacBooks:**
+
 - High Sierra for best balance
 - Monterey if you need modern browsers
 - Don't attempt anything newer
@@ -128,6 +146,7 @@ Complete performance collapse. 4-5 minute boots, significant UI lag, fan maxed c
 - Max out RAM to 8GB
 
 **OpenCore resources:**
+
 - [OpenCore Legacy Patcher](https://dortania.github.io/OpenCore-Legacy-Patcher/)
 
 ## Difficulty: Medium
@@ -141,6 +160,6 @@ Complete performance collapse. 4-5 minute boots, significant UI lag, fan maxed c
 
 ---
 
-*Project: March 2025*  
-*Final OS: macOS Monterey 12.x*  
-*Status: Retired for M4 Air*
+_Project: March 2025_  
+_Final OS: macOS Monterey 12.x_  
+_Status: Retired for M4 Air_

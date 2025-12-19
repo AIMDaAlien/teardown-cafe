@@ -1,14 +1,14 @@
 ---
-title: "Raspberry Pi 5 NVMe Build"
-description: "Building a high-performance Pi 5 with PCIe NVMe storage using a HAT adapter, featuring active cooling and modified 3D printed case"
+title: 'Raspberry Pi 5 NVMe Build'
+description: 'Building a high-performance Pi 5 with PCIe NVMe storage using a HAT adapter, featuring active cooling and modified 3D printed case'
 pubDate: 2025-10-15
 device: raspberry-pi
 difficulty: easy
 heroImage: /images/raspberry-pi-5-nvme/01-components-overview.jpg
 relatedNotes:
-  - "Homelab/Pi-hole Setup"
-  - "Projects/Raspberry Pi NVMe Configuration"
-  - "Systems/ARM Architecture"
+  - 'Homelab/Pi-hole Setup'
+  - 'Projects/Raspberry Pi NVMe Configuration'
+  - 'Systems/ARM Architecture'
 ---
 
 ## Project Overview
@@ -16,6 +16,7 @@ relatedNotes:
 This build documents the assembly of a Raspberry Pi 5 with NVMe SSD storage using a PCIe HAT adapter. The goal is to create a high-performance homelab server running Pi-hole for network-wide ad blocking, with Prometheus and Grafana for system monitoring.
 
 **Planned Services:**
+
 - **Pi-hole**: Network-level ad blocking
 - **Prometheus**: Metrics collection and monitoring
 - **Grafana**: Visualization and dashboards
@@ -57,6 +58,7 @@ This build documents the assembly of a Raspberry Pi 5 with NVMe SSD storage usin
 ![Component Layout](/images/raspberry-pi-5-nvme/01-components-overview.jpg)
 
 All components laid out on the iFixit magnetic work mat:
+
 - Raspberry Pi 5 board
 - PCIe HAT adapter with mounting hardware
 - ORICO NVMe SSD
@@ -70,6 +72,7 @@ All components laid out on the iFixit magnetic work mat:
 ![Raspberry Pi 5 Ports](/images/raspberry-pi-5-nvme/02-raspberry-pi-5-ports.jpg)
 
 The Raspberry Pi 5 features improved connectivity over previous generations:
+
 - **Dual micro-HDMI ports** supporting 4K60 output
 - **USB 3.0 ports** (2x) for high-speed peripherals
 - **USB 2.0 ports** (2x) for keyboards/mice
@@ -89,6 +92,7 @@ The PCIe 2.0 x1 interface provides approximately 500MB/s bandwidth, a massive im
 3. **Cooling Solution**: Active fan mounts on the HAT to manage thermal load from both Pi 5 SoC and NVMe controller
 
 **Thermal Considerations:**
+
 - NVMe SSDs generate heat under load
 - Pi 5 SoC can throttle without cooling
 - Active fan solution addresses both components
@@ -101,6 +105,7 @@ The PCIe 2.0 x1 interface provides approximately 500MB/s bandwidth, a massive im
 **Problem Encountered:** Standard 3D printed Raspberry Pi cases don't account for the HAT's additional height. The PCIe HAT adds approximately 25mm to the overall assembly.
 
 **Solution Exploration:**
+
 - Tested multiple case designs
 - Raspberry Pi logo cutout cases looked great but lacked clearance
 - Vertical mounting considered but stability concerns
@@ -110,6 +115,7 @@ The PCIe 2.0 x1 interface provides approximately 500MB/s bandwidth, a massive im
 ![HAT Assembly Layers](/images/raspberry-pi-5-nvme/05-hat-assembly-layers.jpg)
 
 The layer stack from bottom to top:
+
 1. Raspberry Pi 5 PCB
 2. GPIO/PCIe interface connector
 3. HAT adapter board
@@ -123,6 +129,7 @@ Total height: ~40mm (including fan)
 ![Completed Build](/images/raspberry-pi-5-nvme/06-final-assembly.jpg)
 
 **Final configuration:**
+
 - Modified case with adequate HAT clearance
 - Decorative build plate serving as improvised top panel
 - All ports remain accessible
@@ -130,6 +137,7 @@ Total height: ~40mm (including fan)
 - Stable footprint for rack/shelf mounting despite non-optimal case fit
 
 The case assembly features:
+
 - **Port cutouts** for HDMI, USB, Ethernet, power
 - **Ventilation slots** along sides for airflow
 - **Raspberry Pi logo** visible on decorative build plate
@@ -142,14 +150,15 @@ The case assembly features:
 
 Expected performance compared to SD card:
 
-| Metric | SD Card (Class 10) | NVMe SSD (PCIe 2.0 x1) | Improvement |
-|--------|-------------------|------------------------|-------------|
-| Sequential Read | ~50 MB/s | ~450 MB/s | **9x faster** |
-| Sequential Write | ~30 MB/s | ~400 MB/s | **13x faster** |
-| Random IOPS | ~500 | ~15,000 | **30x faster** |
-| Boot Time | ~45s | ~12s | **3.75x faster** |
+| Metric           | SD Card (Class 10) | NVMe SSD (PCIe 2.0 x1) | Improvement      |
+| ---------------- | ------------------ | ---------------------- | ---------------- |
+| Sequential Read  | ~50 MB/s           | ~450 MB/s              | **9x faster**    |
+| Sequential Write | ~30 MB/s           | ~400 MB/s              | **13x faster**   |
+| Random IOPS      | ~500               | ~15,000                | **30x faster**   |
+| Boot Time        | ~45s               | ~12s                   | **3.75x faster** |
 
 These improvements significantly benefit:
+
 - **Docker container performance** (Prometheus, Grafana)
 - **Database operations** (Pi-hole query logs)
 - **System responsiveness** (apt updates, package installs)
@@ -167,6 +176,7 @@ These improvements significantly benefit:
 ### Operating System
 
 **Raspberry Pi OS Lite (64-bit)**
+
 - Headless server configuration
 - Systemd-based service management
 - Automatic updates enabled
@@ -174,28 +184,34 @@ These improvements significantly benefit:
 ### Service Stack
 
 **1. Pi-hole (Primary DNS)**
+
 ```bash
 # Installation planned via one-line installer
 curl -sSL https://install.pi-hole.net | bash
 ```
+
 - Network-wide ad blocking
 - DHCP server capability
 - Query logging and statistics
 - Web interface for management
 
 **2. Prometheus (Metrics Collection)**
+
 ```bash
 # Node Exporter for system metrics
 # Pi-hole Exporter for DNS statistics
 ```
+
 - System resource monitoring (CPU, RAM, disk I/O)
 - Pi-hole query metrics
 - Network throughput tracking
 
 **3. Grafana (Visualization)**
+
 ```bash
 # Dashboards for Pi-hole and system health
 ```
+
 - Real-time dashboard
 - Historical trend analysis
 - Alert configuration
@@ -203,17 +219,19 @@ curl -sSL https://install.pi-hole.net | bash
 ## Build Quality Assessment
 
 ### Pros
+
 ✅ **Excellent performance upgrade** - NVMe significantly faster than SD  
 ✅ **Proper thermal management** - Active cooling prevents throttling  
 ✅ **Clean assembly** - Professional-looking final product  
 ✅ **Easy installation** - No soldering or complex modifications  
-✅ **Future-proof** - PCIe interface ready for other expansions  
+✅ **Future-proof** - PCIe interface ready for other expansions
 
 ### Cons
+
 ❌ **Case compatibility** - Limited off-the-shelf options for HAT height  
 ❌ **Cost factor** - HAT + NVMe adds ~$60-80 to base Pi cost  
 ❌ **Power requirements** - Needs quality 5V/5A PSU (official recommended)  
-⚠️ **PCIe bandwidth** - Gen 2.0 x1 limits high-end NVMe performance  
+⚠️ **PCIe bandwidth** - Gen 2.0 x1 limits high-end NVMe performance
 
 ### Repairability: 9/10
 
@@ -228,13 +246,16 @@ curl -sSL https://install.pi-hole.net | bash
 ### NVMe Configuration
 
 **Enable PCIe Gen 3 mode** (experimental):
+
 ```bash
 # Add to /boot/firmware/config.txt
 dtparam=pciex1_gen=3
 ```
-*Note: Not all NVMe drives stable at Gen 3 on Pi 5*
+
+_Note: Not all NVMe drives stable at Gen 3 on Pi 5_
 
 **Disable USB boot timeout:**
+
 ```bash
 # Speeds up boot when NVMe is primary
 BOOT_ORDER=0xf416
@@ -243,6 +264,7 @@ BOOT_ORDER=0xf416
 ### Thermal Management
 
 - **Monitor temperatures:**
+
 ```bash
 vcgencmd measure_temp  # SoC
 nvme smart-log /dev/nvme0n1  # NVMe
@@ -279,6 +301,7 @@ The Raspberry Pi 5 with NVMe storage represents a significant leap in single-boa
 The case fitment challenge was the only notable complication, easily resolved with a modified design. The final build is both functional and aesthetically pleasing, ready for deployment as a core homelab infrastructure component.
 
 **Overall Assessment:**
+
 - **Build Difficulty:** Easy (1-2 hours)
 - **Performance Gain:** Exceptional (9x-30x improvement)
 - **Value Proposition:** Excellent (significant capability increase)

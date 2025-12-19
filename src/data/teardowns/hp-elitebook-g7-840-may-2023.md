@@ -1,13 +1,13 @@
 ---
-title: "HP EliteBook 840 G7 Teardown → Frankenstein AIO"
-description: "Converting a broken-screen HP EliteBook 840 G7 into a makeshift all-in-one computer - upgrading RAM/SSD, extracting WiFi antenna, and mounting the motherboard behind a monitor"
+title: 'HP EliteBook 840 G7 Teardown → Frankenstein AIO'
+description: 'Converting a broken-screen HP EliteBook 840 G7 into a makeshift all-in-one computer - upgrading RAM/SSD, extracting WiFi antenna, and mounting the motherboard behind a monitor'
 pubDate: 2023-05-18
 device: laptop
 difficulty: medium
 heroImage: /images/hp-elitebook-g7-840/04-laptop-disassembled.jpg
 relatedNotes:
-  - "Hardware/Laptop Repair Techniques"
-  - "Projects/Teardown Cafe Workspace Evolution"
+  - 'Hardware/Laptop Repair Techniques'
+  - 'Projects/Teardown Cafe Workspace Evolution'
 ---
 
 ## Project Overview
@@ -15,6 +15,7 @@ relatedNotes:
 An HP EliteBook 840 G7 with a cracked screen (only 30% viewable) got converted into a frankenstein all-in-one computer. Instead of scrapping it or paying for an expensive screen replacement, I tore it down, upgraded the internals, and eventually mounted the entire motherboard assembly to the back of an external monitor.
 
 **Device Specifications:**
+
 - **Model**: HP EliteBook 840 G7
 - **Processor**: Intel Core i5 (10th Gen)
 - **RAM**: Upgraded during teardown
@@ -48,11 +49,13 @@ The overlapping keyboards show the space constraints I was dealing with. This cr
 Full workspace during the project:
 
 **Display Setup:**
+
 - **Primary monitor**: 27" external display (desktop riser)
 - **Secondary display**: Large TV mounted above
 - **Laptop**: EliteBook with cracked screen (eventually just used external monitors)
 
 **Organization:**
+
 - **Upper shelf**: Notebooks, tissues, desk stuff
 - **Drawer unit**: Screws and small parts
 - **Lower drawer**: Documents and tools
@@ -69,6 +72,7 @@ Different angle showing workspace details:
 **Lighting:** Green-tinted ambient lighting (terrible for precision work - probably from the AC unit)
 
 **Tools visible:**
+
 - Notebook for handwritten notes
 - Yellow folder with reference materials
 - Screwdriver set
@@ -81,11 +85,13 @@ Different angle showing workspace details:
 ![Laptop Disassembled - Component Overview](/images/hp-elitebook-g7-840/04-laptop-disassembled.jpg)
 
 **Tools used:**
+
 - iFixit precision screwdriver set (yellow/black visible here)
 - Plastic opening tools
 - Magnetic parts tray (upper left)
 
 **Components visible:**
+
 - **Bottom case panel** (right) - Screw locations marked
 - **Internal flex cables** (upper left) - Laid out to avoid tangling
 - **Motherboard** (center) - With cooling solution
@@ -93,6 +99,7 @@ Different angle showing workspace details:
 - **WiFi antenna** - Copper-looking wire extracted because WiFi felt slow
 
 **Organization:**
+
 - Screws organized by removal order
 - Cables laid flat
 - Case panel showing screw boss locations
@@ -116,6 +123,7 @@ After the teardown and upgrades, I initially just used the laptop with a 75Hz ex
 ### Final All-in-One Configuration
 
 Eventually I took it further:
+
 1. Removed the motherboard with CPU, RAM, cooling, and storage still attached
 2. Superglued the motherboard assembly to the back of the 75Hz monitor
 3. Left the speakers hanging at the bottom of the monitor
@@ -124,6 +132,7 @@ Eventually I took it further:
 This created a makeshift all-in-one desktop computer. Not pretty, but functional - and kept a laptop with a broken screen from becoming e-waste.
 
 **Why this worked:**
+
 - Motherboard still had all functional components
 - External monitor was already being used
 - Laptop speakers could hang freely (not great acoustics, but functional)
@@ -135,28 +144,33 @@ This created a makeshift all-in-one desktop computer. Not pretty, but functional
 ### HP EliteBook 840 G7 Details
 
 **Processor:**
+
 - Intel Core i5-10210U (Comet Lake, 10th Gen)
 - 4 cores / 8 threads
 - 1.6GHz base, 4.2GHz turbo
 - 15W TDP (configurable to 25W)
 
 **Memory (Upgraded):**
+
 - DDR4-3200 SO-DIMM
 - Dual-channel
 - Upgraded to maximum supported capacity
 
 **Storage (Upgraded):**
+
 - 512GB NVMe SSD (upgraded from original)
 - M.2 2280 slot
 - PCIe 3.0 x4 interface
 
 **Display (Original - Broken):**
+
 - 14" diagonal
 - 1920x1080 (Full HD)
 - Cracked (only ~30% viewable)
 - Replaced with external 75Hz monitor
 
 **Connectivity:**
+
 - Intel Wi-Fi 6 AX201 (antenna extracted externally)
 - Bluetooth 5.0
 - 2x USB-C with Thunderbolt 3
@@ -164,6 +178,7 @@ This created a makeshift all-in-one desktop computer. Not pretty, but functional
 - HDMI 2.0 (used for external monitor)
 
 **Physical:**
+
 - Dimensions: 12.7" x 8.5" x 0.7" (323mm x 217mm x 17.9mm)
 - Weight: ~3.0 lbs (1.36 kg) - irrelevant after supergluing to monitor
 - Chassis: Aluminum with magnesium reinforcement
@@ -187,6 +202,7 @@ This project captured workspace evolution during travel:
 ✅ **Travel teardowns possible**: Quality work in non-ideal conditions
 
 **Timeline:**
+
 - **May 2023**: This project (Bangladesh)
 - **August 2023**: Refined workspace post-travel
 - **October 2025**: Current dedicated teardown station
@@ -240,17 +256,20 @@ This project captured workspace evolution during travel:
 **Problem solved:** Cracked screen bypassed with external monitor, then full frankenstein AIO conversion
 
 **Upgrades completed:**
+
 - RAM maxed out
 - 512GB SSD installed
 - WiFi antenna externalized (copper wire visible in photos)
 
 **Final configuration:**
+
 - Motherboard superglued to back of 75Hz monitor
 - Speakers hanging at bottom
 - External WiFi antenna for better signal
 - Functional desktop from broken laptop
 
 **What I learned:**
+
 - Screen damage doesn't mean laptop is dead
 - External monitors make broken screens irrelevant
 - Frankenstein builds are viable with proper planning
@@ -274,6 +293,7 @@ This HP EliteBook 840 G7 went from "cracked screen paperweight" to functional fr
 The hanging speakers at the bottom of the monitor aren't pretty, but they work. The external WiFi antenna (that copper wire visible in the teardown photos) actually improved signal. The 75Hz monitor made it feel more responsive than the original 60Hz laptop screen anyway.
 
 **Final assessment:**
+
 - **Project difficulty**: Medium (basic disassembly, creative mounting)
 - **Cost savings**: Avoided expensive screen replacement
 - **Functionality**: Full desktop functionality from broken laptop
@@ -290,6 +310,6 @@ The completed frankenstein build - motherboard mounted behind the monitor, speak
 
 ---
 
-*Project completed: May 2023 (Dhaka, Bangladesh)*
-*Current status: Functional frankenstein AIO*
-*Documentation: October 2025*
+_Project completed: May 2023 (Dhaka, Bangladesh)_
+_Current status: Functional frankenstein AIO_
+_Documentation: October 2025_

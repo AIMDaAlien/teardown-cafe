@@ -1,32 +1,55 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro'
 
 // Timeline-based print organization
 const printTimeline = [
   {
     date: 'September 2025',
     prints: [
-      { image: '/images/bambu-a1-combo/IMG20250910221256.jpg', title: 'Large workspace organizer', printer: 'A1 Combo' },
-      { image: '/images/bambu-a1-combo/IMG20250912221351.jpg', title: 'Multi-color cable holders', printer: 'A1 Combo' },
-    ]
+      {
+        image: '/images/bambu-a1-combo/IMG20250910221256.jpg',
+        title: 'Large workspace organizer',
+        printer: 'A1 Combo',
+      },
+      {
+        image: '/images/bambu-a1-combo/IMG20250912221351.jpg',
+        title: 'Multi-color cable holders',
+        printer: 'A1 Combo',
+      },
+    ],
   },
   {
     date: 'August 2025',
     prints: [
-      { image: '/images/bambu-a1-combo/IMG20250819142955.jpg', title: 'OpenGrid bases', printer: 'A1 Combo' },
-      { image: '/images/bambu-a1-mini/IMG20250803142849.jpg', title: 'Pen holders', printer: 'A1 Mini' },
-    ]
+      {
+        image: '/images/bambu-a1-combo/IMG20250819142955.jpg',
+        title: 'OpenGrid bases',
+        printer: 'A1 Combo',
+      },
+      {
+        image: '/images/bambu-a1-mini/IMG20250803142849.jpg',
+        title: 'Pen holders',
+        printer: 'A1 Mini',
+      },
+    ],
   },
   {
     date: 'July 2025',
     prints: [
-      { image: '/images/bambu-a1-mini/IMG20250731124342.jpg', title: 'Initial workspace prints', printer: 'A1 Mini' },
-    ]
-  }
-];
+      {
+        image: '/images/bambu-a1-mini/IMG20250731124342.jpg',
+        title: 'Initial workspace prints',
+        printer: 'A1 Mini',
+      },
+    ],
+  },
+]
 ---
 
-<BaseLayout title="3D Prints Timeline" description="Chronological view of all prints">
+<BaseLayout
+  title="3D Prints Timeline"
+  description="Chronological view of all prints"
+>
   <main class="timeline-container">
     <header>
       <h1>📅 Prints Timeline</h1>
@@ -34,22 +57,24 @@ const printTimeline = [
     </header>
 
     <div class="timeline">
-      {printTimeline.map(period => (
-        <div class="timeline-period">
-          <h2 class="period-date">{period.date}</h2>
-          <div class="period-prints">
-            {period.prints.map(print => (
-              <div class="timeline-print">
-                <img src={print.image} alt={print.title} loading="lazy" />
-                <div class="print-details">
-                  <h3>{print.title}</h3>
-                  <span class="printer-badge">{print.printer}</span>
+      {
+        printTimeline.map((period) => (
+          <div class="timeline-period">
+            <h2 class="period-date">{period.date}</h2>
+            <div class="period-prints">
+              {period.prints.map((print) => (
+                <div class="timeline-print">
+                  <img src={print.image} alt={print.title} loading="lazy" />
+                  <div class="print-details">
+                    <h3>{print.title}</h3>
+                    <span class="printer-badge">{print.printer}</span>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
-      ))}
+        ))
+      }
     </div>
   </main>
 </BaseLayout>
@@ -165,4 +190,3 @@ const printTimeline = [
     }
   }
 </style>
-</BaseLayout>

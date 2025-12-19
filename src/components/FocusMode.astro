@@ -3,19 +3,38 @@
 // Disables animations and background effects for distraction-free reading
 ---
 
-<button 
-  id="focus-mode-toggle" 
+<button
+  id="focus-mode-toggle"
   class="focus-toggle"
   aria-label="Toggle focus mode"
   title="Focus Mode: Reduce distractions"
 >
-  <svg class="icon-focus-off" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
-    <path d="M12 5v2M12 17v2M5 12h2M17 12h2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+  <svg
+    class="icon-focus-off"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"
+    ></circle>
+    <path
+      d="M12 5v2M12 17v2M5 12h2M17 12h2"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"></path>
   </svg>
-  <svg class="icon-focus-on" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="12" cy="12" r="3" fill="currentColor"/>
-    <path d="M12 5v2M12 17v2M5 12h2M17 12h2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+  <svg
+    class="icon-focus-on"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <circle cx="12" cy="12" r="3" fill="currentColor"></circle>
+    <path
+      d="M12 5v2M12 17v2M5 12h2M17 12h2"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"></path>
   </svg>
   <span class="toggle-label">Focus</span>
 </button>
@@ -78,21 +97,21 @@
   }
 
   /* Focus mode styles applied to body */
-  :global(body[data-focus-mode="true"]) :global(.circuit-accents),
-  :global(body[data-focus-mode="true"]) :global(.wave-diffusions),
-  :global(body[data-focus-mode="true"]) :global(.floating-particles) {
+  :global(body[data-focus-mode='true']) :global(.circuit-accents),
+  :global(body[data-focus-mode='true']) :global(.wave-diffusions),
+  :global(body[data-focus-mode='true']) :global(.floating-particles) {
     display: none !important;
   }
 
-  :global(body[data-focus-mode="true"]) * {
+  :global(body[data-focus-mode='true']) * {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
 
-  :global(body[data-focus-mode="true"]) :global(.teardown-card),
-  :global(body[data-focus-mode="true"]) :global(.device-type),
-  :global(body[data-focus-mode="true"]) :global(.difficulty) {
+  :global(body[data-focus-mode='true']) :global(.teardown-card),
+  :global(body[data-focus-mode='true']) :global(.device-type),
+  :global(body[data-focus-mode='true']) :global(.difficulty) {
     transform: none !important;
   }
 
@@ -116,27 +135,27 @@
 </style>
 
 <script>
-  const toggle = document.getElementById('focus-mode-toggle');
-  
+  const toggle = document.getElementById('focus-mode-toggle')
+
   // Check saved preference
-  const focusMode = localStorage.getItem('focus-mode') === 'true';
-  
+  const focusMode = localStorage.getItem('focus-mode') === 'true'
+
   if (focusMode) {
-    document.body.setAttribute('data-focus-mode', 'true');
-    toggle?.classList.add('active');
+    document.body.setAttribute('data-focus-mode', 'true')
+    toggle?.classList.add('active')
   }
 
   toggle?.addEventListener('click', () => {
-    const isActive = document.body.getAttribute('data-focus-mode') === 'true';
-    
+    const isActive = document.body.getAttribute('data-focus-mode') === 'true'
+
     if (isActive) {
-      document.body.removeAttribute('data-focus-mode');
-      toggle.classList.remove('active');
-      localStorage.setItem('focus-mode', 'false');
+      document.body.removeAttribute('data-focus-mode')
+      toggle.classList.remove('active')
+      localStorage.setItem('focus-mode', 'false')
     } else {
-      document.body.setAttribute('data-focus-mode', 'true');
-      toggle.classList.add('active');
-      localStorage.setItem('focus-mode', 'true');
+      document.body.setAttribute('data-focus-mode', 'true')
+      toggle.classList.add('active')
+      localStorage.setItem('focus-mode', 'true')
     }
-  });
+  })
 </script>

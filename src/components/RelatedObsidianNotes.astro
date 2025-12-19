@@ -1,60 +1,79 @@
 ---
 interface Props {
-  tags: string[];
-  slug: string;
+  tags: string[]
+  slug: string
 }
 
-const { tags, slug } = Astro.props;
+interface Note {
+  path: string
+  title: string
+  url: string
+}
+
+interface Relationship {
+  obsidianNotes: Note[]
+}
+
+const { tags, slug } = Astro.props
 
 // Load relationships
-let relationships: Record<string, any> = {};
+let relationships: Record<string, Relationship> = {}
 try {
-  const data = await fetch('/data/obsidian-relationships.json');
-  relationships = await data.json();
-} catch (e) {
+  const data = await fetch('/data/obsidian-relationships.json')
+  relationships = await data.json()
+} catch {
   // File doesn't exist yet - build will create it
-  relationships = {};
+  relationships = {}
 }
 
 // Find all related notes for these tags
-const relatedNotes = new Map<string, any>();
+const relatedNotes = new Map<string, Note>()
 
-tags.forEach(tag => {
+tags.forEach((tag) => {
   if (relationships[tag]?.obsidianNotes) {
-    relationships[tag].obsidianNotes.forEach((note: any) => {
-      relatedNotes.set(note.path, note);
-    });
+    relationships[tag].obsidianNotes.forEach((note) => {
+      relatedNotes.set(note.path, note)
+    })
   }
-});
+})
 
 // Check for manual additions
-const manualTag = `manual-${slug}`;
+const manualTag = `manual-${slug}`
 if (relationships[manualTag]?.obsidianNotes) {
-  relationships[manualTag].obsidianNotes.forEach((note: any) => {
-    relatedNotes.set(note.path, note);
-  });
+  relationships[manualTag].obsidianNotes.forEach((note) => {
+    relatedNotes.set(note.path, note)
+  })
 }
 
-const notes = Array.from(relatedNotes.values());
+const notes = Array.from(relatedNotes.values())
 ---
 
-{notes.length > 0 && (
-  <section class="related-obsidian">
-    <h3>📝 Related in Knowledge Garden</h3>
-    <ul>
-      {notes.map(note => (
-        <li>
-          <a href={note.url} target="_blank" rel="noopener">
-            {note.title}
-            <svg class="external-link" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/>
-            </svg>
-          </a>
-        </li>
-      ))}
-    </ul>
-  </section>
-)}
+{
+  notes.length > 0 && (
+    <section class="related-obsidian">
+      <h3>📝 Related in Knowledge Garden</h3>
+      <ul>
+        {notes.map((note) => (
+          <li>
+            <a href={note.url} target="_blank" rel="noopener">
+              {note.title}
+              <svg
+                class="external-link"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+              >
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3" />
+              </svg>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )
+}
 
 <style>
   .related-obsidian {
@@ -63,12 +82,12 @@ const notes = Array.from(relatedNotes.values());
     background: var(--surface-container-low);
     border-radius: 12px;
   }
-  
+
   .related-obsidian h3 {
     margin-bottom: 1rem;
     color: var(--on-surface);
   }
-  
+
   .related-obsidian ul {
     list-style: none;
     padding: 0;
@@ -76,7 +95,7 @@ const notes = Array.from(relatedNotes.values());
     flex-direction: column;
     gap: 0.75rem;
   }
-  
+
   .related-obsidian a {
     display: flex;
     align-items: center;
@@ -85,11 +104,11 @@ const notes = Array.from(relatedNotes.values());
     text-decoration: none;
     transition: color 0.2s;
   }
-  
+
   .related-obsidian a:hover {
     color: var(--primary-container);
   }
-  
+
   .external-link {
     width: 14px;
     height: 14px;

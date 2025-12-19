@@ -1,25 +1,25 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import CircuitAccents from '../components/CircuitAccents.astro';
-import WaveDiffusions from '../components/WaveDiffusions.astro';
-import FloatingParticles from '../components/FloatingParticles.astro';
-import DeviceIcons from '../components/DeviceIcons.astro';
-import FocusMode from '../components/FocusMode.astro';
-import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro'
+import CircuitAccents from '../components/CircuitAccents.astro'
+import WaveDiffusions from '../components/WaveDiffusions.astro'
+import FloatingParticles from '../components/FloatingParticles.astro'
+import DeviceIcons from '../components/DeviceIcons.astro'
+import FocusMode from '../components/FocusMode.astro'
+import { getCollection } from 'astro:content'
 
-const teardowns = await getCollection('teardowns');
+const teardowns = await getCollection('teardowns')
 
 const sortedTeardowns = teardowns.sort((a, b) => {
-  return b.data.pubDate.valueOf() - a.data.pubDate.valueOf();
-});
+  return b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+})
 ---
 
 <BaseLayout title="Home">
-<!-- Ambient effects -->
+  <!-- Ambient effects -->
   <CircuitAccents />
   <WaveDiffusions />
   <FloatingParticles />
-  
+
   <!-- Focus Mode Toggle -->
   <FocusMode />
 
@@ -27,26 +27,80 @@ const sortedTeardowns = teardowns.sort((a, b) => {
   <div class="content-wrapper">
     <section class="hero" id="intro">
       <div class="logo-wrapper">
-        <svg class="cafe-logo" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg
+          class="cafe-logo"
+          viewBox="0 0 48 48"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
           <!-- Coffee cup -->
-          <path d="M10 16h24v18a4 4 0 0 1-4 4H14a4 4 0 0 1-4-4V16Z" stroke="var(--md-sys-color-primary)" stroke-width="2" fill="var(--md-sys-color-primary-container)"/>
-          <path d="M34 20h4a4 4 0 0 1 4 4v2a4 4 0 0 1-4 4h-4" stroke="var(--md-sys-color-primary)" stroke-width="2"/>
-          <line x1="10" y1="16" x2="34" y2="16" stroke="var(--md-sys-color-primary)" stroke-width="2"/>
+          <path
+            d="M10 16h24v18a4 4 0 0 1-4 4H14a4 4 0 0 1-4-4V16Z"
+            stroke="var(--md-sys-color-primary)"
+            stroke-width="2"
+            fill="var(--md-sys-color-primary-container)"></path>
+          <path
+            d="M34 20h4a4 4 0 0 1 4 4v2a4 4 0 0 1-4 4h-4"
+            stroke="var(--md-sys-color-primary)"
+            stroke-width="2"></path>
+          <line
+            x1="10"
+            y1="16"
+            x2="34"
+            y2="16"
+            stroke="var(--md-sys-color-primary)"
+            stroke-width="2"></line>
           <!-- Wrench overlay -->
-          <path d="M20 8 L24 12 L18 18 L16 20 L14 18 L16 16 Z" stroke="var(--md-sys-color-tertiary)" stroke-width="1.5" fill="var(--md-sys-color-tertiary-container)" stroke-linejoin="round"/>
-          <circle cx="15" cy="19" r="0.8" fill="var(--md-sys-color-tertiary)"/>
-          <path d="M10 22 L14 18" stroke="var(--md-sys-color-tertiary)" stroke-width="1.5" stroke-linecap="round"/>
+          <path
+            d="M20 8 L24 12 L18 18 L16 20 L14 18 L16 16 Z"
+            stroke="var(--md-sys-color-tertiary)"
+            stroke-width="1.5"
+            fill="var(--md-sys-color-tertiary-container)"
+            stroke-linejoin="round"></path>
+          <circle cx="15" cy="19" r="0.8" fill="var(--md-sys-color-tertiary)"
+          ></circle>
+          <path
+            d="M10 22 L14 18"
+            stroke="var(--md-sys-color-tertiary)"
+            stroke-width="1.5"
+            stroke-linecap="round"></path>
           <!-- Steam lines -->
-          <path d="M16 8 Q16 6 18 6" stroke="var(--md-sys-color-primary)" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
-          <path d="M22 6 Q22 4 24 4" stroke="var(--md-sys-color-primary)" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
-          <path d="M28 8 Q28 6 30 6" stroke="var(--md-sys-color-primary)" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+          <path
+            d="M16 8 Q16 6 18 6"
+            stroke="var(--md-sys-color-primary)"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            opacity="0.6"></path>
+          <path
+            d="M22 6 Q22 4 24 4"
+            stroke="var(--md-sys-color-primary)"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            opacity="0.6"></path>
+          <path
+            d="M28 8 Q28 6 30 6"
+            stroke="var(--md-sys-color-primary)"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            opacity="0.6"></path>
         </svg>
       </div>
       <h1 class="display-large">Teardown Cafe</h1>
       <p class="hero-subtitle">
-        Curiosity meets caffeine. Constructing and deconstructing is either screwing or unscrewing
-        <svg class="inline-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" stroke="var(--md-sys-color-tertiary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        Curiosity meets caffeine. Constructing and deconstructing is either
+        screwing or unscrewing
+        <svg
+          class="inline-icon"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"
+            stroke="var(--md-sys-color-tertiary)"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"></path>
         </svg>
       </p>
     </section>
@@ -56,71 +110,260 @@ const sortedTeardowns = teardowns.sort((a, b) => {
       <h2 class="section-title">Browse by Device Type</h2>
       <div class="device-grid">
         <a href="/device/laptop" class="device-card">
-          <svg class="device-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M4 5h16a1 1 0 0 1 1 1v10H3V6a1 1 0 0 1 1-1Z" stroke="currentColor" stroke-width="1.5"/>
-            <path d="M2 16h20v2a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-2Z" stroke="currentColor" stroke-width="1.5"/>
-            <rect x="6" y="8" width="12" height="6" rx="0.5" fill="#1A0B2E" stroke="currentColor" stroke-width="1" opacity="0.6"/>
-            <circle cx="12" cy="17.5" r="0.5" fill="#00BCD4"/>
+          <svg
+            class="device-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M4 5h16a1 1 0 0 1 1 1v10H3V6a1 1 0 0 1 1-1Z"
+              stroke="currentColor"
+              stroke-width="1.5"></path>
+            <path
+              d="M2 16h20v2a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-2Z"
+              stroke="currentColor"
+              stroke-width="1.5"></path>
+            <rect
+              x="6"
+              y="8"
+              width="12"
+              height="6"
+              rx="0.5"
+              fill="#1A0B2E"
+              stroke="currentColor"
+              stroke-width="1"
+              opacity="0.6"></rect>
+            <circle cx="12" cy="17.5" r="0.5" fill="#00BCD4"></circle>
           </svg>
           <h3>Laptops</h3>
           <p>Ultrabooks, gaming machines, and everything in between</p>
         </a>
         <a href="/device/3d-printer" class="device-card">
-          <svg class="device-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="4" y="3" width="16" height="2" rx="1" stroke="currentColor" stroke-width="1.5"/>
-            <path d="M6 5v14h12V5" stroke="currentColor" stroke-width="1.5"/>
-            <rect x="8" y="15" width="8" height="4" rx="0.5" fill="currentColor" opacity="0.3"/>
-            <path d="M10 7h4v6h-4z" stroke="currentColor" stroke-width="1.2" fill="#1A0B2E" opacity="0.6"/>
-            <circle cx="12" cy="9" r="1" fill="#00BCD4"/>
-            <line x1="10" y1="20" x2="14" y2="20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <svg
+            class="device-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect
+              x="4"
+              y="3"
+              width="16"
+              height="2"
+              rx="1"
+              stroke="currentColor"
+              stroke-width="1.5"></rect>
+            <path d="M6 5v14h12V5" stroke="currentColor" stroke-width="1.5"
+            ></path>
+            <rect
+              x="8"
+              y="15"
+              width="8"
+              height="4"
+              rx="0.5"
+              fill="currentColor"
+              opacity="0.3"></rect>
+            <path
+              d="M10 7h4v6h-4z"
+              stroke="currentColor"
+              stroke-width="1.2"
+              fill="#1A0B2E"
+              opacity="0.6"></path>
+            <circle cx="12" cy="9" r="1" fill="#00BCD4"></circle>
+            <line
+              x1="10"
+              y1="20"
+              x2="14"
+              y2="20"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"></line>
           </svg>
           <h3>3D Printers</h3>
           <p>Setup, calibration, and hardware analysis</p>
         </a>
         <a href="/device/raspberry-pi" class="device-card">
-          <svg class="device-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="4" y="4" width="16" height="16" rx="1.5" stroke="currentColor" stroke-width="1.5"/>
-            <rect x="6" y="6" width="12" height="12" rx="0.5" fill="#1A0B2E" stroke="currentColor" stroke-width="1" opacity="0.6"/>
-            <circle cx="8" cy="8" r="1" fill="#00BCD4"/>
-            <circle cx="16" cy="8" r="1" fill="#00BCD4"/>
-            <circle cx="8" cy="16" r="1" fill="#00BCD4"/>
-            <circle cx="16" cy="16" r="1" fill="#00BCD4"/>
-            <rect x="10" y="10" width="4" height="4" rx="0.3" fill="currentColor" opacity="0.3"/>
+          <svg
+            class="device-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect
+              x="4"
+              y="4"
+              width="16"
+              height="16"
+              rx="1.5"
+              stroke="currentColor"
+              stroke-width="1.5"></rect>
+            <rect
+              x="6"
+              y="6"
+              width="12"
+              height="12"
+              rx="0.5"
+              fill="#1A0B2E"
+              stroke="currentColor"
+              stroke-width="1"
+              opacity="0.6"></rect>
+            <circle cx="8" cy="8" r="1" fill="#00BCD4"></circle>
+            <circle cx="16" cy="8" r="1" fill="#00BCD4"></circle>
+            <circle cx="8" cy="16" r="1" fill="#00BCD4"></circle>
+            <circle cx="16" cy="16" r="1" fill="#00BCD4"></circle>
+            <rect
+              x="10"
+              y="10"
+              width="4"
+              height="4"
+              rx="0.3"
+              fill="currentColor"
+              opacity="0.3"></rect>
           </svg>
           <h3>Raspberry Pi</h3>
           <p>SBC builds, modifications, and projects</p>
         </a>
         <a href="/device/nas" class="device-card">
-          <svg class="device-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="4" y="3" width="16" height="5" rx="1" stroke="currentColor" stroke-width="1.5"/>
-            <rect x="4" y="9.5" width="16" height="5" rx="1" stroke="currentColor" stroke-width="1.5"/>
-            <rect x="4" y="16" width="16" height="5" rx="1" stroke="currentColor" stroke-width="1.5"/>
-            <circle cx="17" cy="5.5" r="0.8" fill="#00BCD4"/>
-            <circle cx="17" cy="12" r="0.8" fill="#00BCD4"/>
-            <circle cx="17" cy="18.5" r="0.8" fill="#00BCD4"/>
-            <rect x="6" y="4.5" width="8" height="2" rx="0.3" fill="currentColor" opacity="0.3"/>
+          <svg
+            class="device-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect
+              x="4"
+              y="3"
+              width="16"
+              height="5"
+              rx="1"
+              stroke="currentColor"
+              stroke-width="1.5"></rect>
+            <rect
+              x="4"
+              y="9.5"
+              width="16"
+              height="5"
+              rx="1"
+              stroke="currentColor"
+              stroke-width="1.5"></rect>
+            <rect
+              x="4"
+              y="16"
+              width="16"
+              height="5"
+              rx="1"
+              stroke="currentColor"
+              stroke-width="1.5"></rect>
+            <circle cx="17" cy="5.5" r="0.8" fill="#00BCD4"></circle>
+            <circle cx="17" cy="12" r="0.8" fill="#00BCD4"></circle>
+            <circle cx="17" cy="18.5" r="0.8" fill="#00BCD4"></circle>
+            <rect
+              x="6"
+              y="4.5"
+              width="8"
+              height="2"
+              rx="0.3"
+              fill="currentColor"
+              opacity="0.3"></rect>
           </svg>
           <h3>NAS & Storage</h3>
           <p>Network storage and homelab setups</p>
         </a>
         <a href="/device/smartphone" class="device-card">
-          <svg class="device-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="6" y="2" width="12" height="20" rx="2" stroke="currentColor" stroke-width="1.5"/>
-            <line x1="9" y1="4.5" x2="15" y2="4.5" stroke="currentColor" stroke-width="1" stroke-linecap="round" opacity="0.5"/>
-            <rect x="8" y="6" width="8" height="13" rx="0.5" fill="#1A0B2E" stroke="currentColor" stroke-width="0.8" opacity="0.6"/>
-            <circle cx="12" cy="20" r="0.8" fill="#00BCD4"/>
+          <svg
+            class="device-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect
+              x="6"
+              y="2"
+              width="12"
+              height="20"
+              rx="2"
+              stroke="currentColor"
+              stroke-width="1.5"></rect>
+            <line
+              x1="9"
+              y1="4.5"
+              x2="15"
+              y2="4.5"
+              stroke="currentColor"
+              stroke-width="1"
+              stroke-linecap="round"
+              opacity="0.5"></line>
+            <rect
+              x="8"
+              y="6"
+              width="8"
+              height="13"
+              rx="0.5"
+              fill="#1A0B2E"
+              stroke="currentColor"
+              stroke-width="0.8"
+              opacity="0.6"></rect>
+            <circle cx="12" cy="20" r="0.8" fill="#00BCD4"></circle>
           </svg>
           <h3>Smartphones</h3>
           <p>Repair guides and component analysis</p>
         </a>
         <a href="/device/mechanical-keyboard" class="device-card">
-          <svg class="device-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="2" y="6" width="20" height="12" rx="1.5" stroke="currentColor" stroke-width="1.5"/>
-            <rect x="4" y="8" width="2" height="2" rx="0.3" fill="currentColor" opacity="0.5"/>
-            <rect x="7" y="8" width="2" height="2" rx="0.3" fill="currentColor" opacity="0.5"/>
-            <rect x="10" y="8" width="2" height="2" rx="0.3" fill="currentColor" opacity="0.5"/>
-            <rect x="13" y="8" width="2" height="2" rx="0.3" fill="currentColor" opacity="0.5"/>
-            <rect x="5" y="14" width="10" height="2" rx="0.3" fill="#00BCD4" opacity="0.6"/>
+          <svg
+            class="device-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect
+              x="2"
+              y="6"
+              width="20"
+              height="12"
+              rx="1.5"
+              stroke="currentColor"
+              stroke-width="1.5"></rect>
+            <rect
+              x="4"
+              y="8"
+              width="2"
+              height="2"
+              rx="0.3"
+              fill="currentColor"
+              opacity="0.5"></rect>
+            <rect
+              x="7"
+              y="8"
+              width="2"
+              height="2"
+              rx="0.3"
+              fill="currentColor"
+              opacity="0.5"></rect>
+            <rect
+              x="10"
+              y="8"
+              width="2"
+              height="2"
+              rx="0.3"
+              fill="currentColor"
+              opacity="0.5"></rect>
+            <rect
+              x="13"
+              y="8"
+              width="2"
+              height="2"
+              rx="0.3"
+              fill="currentColor"
+              opacity="0.5"></rect>
+            <rect
+              x="5"
+              y="14"
+              width="10"
+              height="2"
+              rx="0.3"
+              fill="#00BCD4"
+              opacity="0.6"></rect>
           </svg>
           <h3>Keyboards</h3>
           <p>Mechanical keyboard disassembly and mods</p>
@@ -129,51 +372,65 @@ const sortedTeardowns = teardowns.sort((a, b) => {
     </section>
 
     <section class="teardowns-grid" id="components">
-      {sortedTeardowns.map((teardown, index) => (
-        <article class="teardown-card" style={`--card-index: ${index};`} data-card-index={index}>
-          <a href={`/teardowns/${teardown.id}`} class="card-link">
-            {teardown.data.heroImage && (
-              <div class="card-image">
-                <img 
-                  src={teardown.data.heroImage} 
-                  alt={teardown.data.title}
-                  loading="lazy"
-                />
-                <div class="image-overlay" aria-hidden="true"></div>
-              </div>
-            )}
-            <div class="card-content">
-              <div class="card-meta">
-                <span class="device-type">
-                  <span class="device-icon" aria-hidden="true">
-                    <DeviceIcons type={teardown.data.device} class="icon-svg" />
+      {
+        sortedTeardowns.map((teardown, index) => (
+          <article
+            class="teardown-card"
+            style={`--card-index: ${index};`}
+            data-card-index={index}
+          >
+            <a href={`/teardowns/${teardown.id}`} class="card-link">
+              {teardown.data.heroImage && (
+                <div class="card-image">
+                  <img
+                    src={teardown.data.heroImage}
+                    alt={teardown.data.title}
+                    loading="lazy"
+                  />
+                  <div class="image-overlay" aria-hidden="true" />
+                </div>
+              )}
+              <div class="card-content">
+                <div class="card-meta">
+                  <span class="device-type">
+                    <span class="device-icon" aria-hidden="true">
+                      <DeviceIcons
+                        type={teardown.data.device}
+                        class="icon-svg"
+                      />
+                    </span>
+                    {teardown.data.device}
                   </span>
-                  {teardown.data.device}
-                </span>
-                <span class="difficulty difficulty-{teardown.data.difficulty}">
-                  {teardown.data.difficulty}
-                </span>
+                  <span class="difficulty difficulty-{teardown.data.difficulty}">
+                    {teardown.data.difficulty}
+                  </span>
+                </div>
+                <h2 class="title-large">{teardown.data.title}</h2>
+                <p class="card-description">{teardown.data.description}</p>
+                <time
+                  class="card-date"
+                  datetime={teardown.data.pubDate.toISOString()}
+                >
+                  {teardown.data.pubDate.toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                  })}
+                </time>
               </div>
-              <h2 class="title-large">{teardown.data.title}</h2>
-              <p class="card-description">{teardown.data.description}</p>
-              <time class="card-date" datetime={teardown.data.pubDate.toISOString()}>
-                {teardown.data.pubDate.toLocaleDateString('en-US', {
-                  year: 'numeric',
-                  month: 'long',
-                  day: 'numeric'
-                })}
-              </time>
-            </div>
-          </a>
-        </article>
-      ))}
+            </a>
+          </article>
+        ))
+      }
     </section>
 
-    {sortedTeardowns.length === 0 && (
-      <div class="empty-state" id="analysis">
-        <p>No teardowns yet. Check back soon!</p>
-      </div>
-    )}
+    {
+      sortedTeardowns.length === 0 && (
+        <div class="empty-state" id="analysis">
+          <p>No teardowns yet. Check back soon!</p>
+        </div>
+      )
+    }
 
     <!-- Footer/conclusion section -->
     <section class="site-footer" id="conclusion">
@@ -200,14 +457,14 @@ const sortedTeardowns = teardowns.sort((a, b) => {
     flex-direction: column;
     justify-content: center;
   }
-  
+
   .hero-subtitle {
     font-size: 1.25rem;
     color: var(--md-sys-color-on-surface-variant);
     margin-top: 1rem;
     animation: fadeInUp 0.8s var(--md-sys-motion-easing-decelerate) 0.2s both;
   }
-  
+
   .display-large {
     animation: fadeInUp 0.8s var(--md-sys-motion-easing-decelerate) both;
   }
@@ -222,7 +479,7 @@ const sortedTeardowns = teardowns.sort((a, b) => {
       transform: translateY(0);
     }
   }
-  
+
   .teardowns-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -231,12 +488,13 @@ const sortedTeardowns = teardowns.sort((a, b) => {
     position: relative;
     z-index: 2;
   }
-  
+
   .teardown-card {
     background-color: var(--md-sys-color-surface-container);
     border-radius: var(--md-sys-shape-corner-large);
     overflow: hidden;
-    transition: box-shadow var(--md-sys-motion-duration-medium) var(--md-sys-motion-easing-spring-soft);
+    transition: box-shadow var(--md-sys-motion-duration-medium)
+      var(--md-sys-motion-easing-spring-soft);
     box-shadow: var(--md-sys-elevation-level1);
     opacity: 0;
     animation: cardFadeIn 0.6s var(--md-sys-motion-easing-decelerate) forwards;
@@ -255,7 +513,7 @@ const sortedTeardowns = teardowns.sort((a, b) => {
       transform: translateY(0) scale(1);
     }
   }
-  
+
   .teardown-card:hover {
     box-shadow: var(--md-sys-elevation-level4);
   }
@@ -266,7 +524,8 @@ const sortedTeardowns = teardowns.sort((a, b) => {
     inset: 0;
     background: var(--md-sys-color-surface-container-high);
     opacity: 0;
-    transition: opacity var(--md-sys-motion-duration-medium) var(--md-sys-motion-easing-standard);
+    transition: opacity var(--md-sys-motion-duration-medium)
+      var(--md-sys-motion-easing-standard);
     backdrop-filter: blur(0px);
     z-index: -1;
   }
@@ -275,13 +534,13 @@ const sortedTeardowns = teardowns.sort((a, b) => {
     opacity: 0.3;
     backdrop-filter: blur(8px);
   }
-  
+
   .card-link {
     text-decoration: none;
     color: inherit;
     display: block;
   }
-  
+
   .card-image {
     position: relative;
     width: 100%;
@@ -289,7 +548,7 @@ const sortedTeardowns = teardowns.sort((a, b) => {
     background-color: var(--md-sys-color-surface-container-highest);
     overflow: hidden;
   }
-  
+
   .card-image img {
     position: absolute;
     top: 0;
@@ -297,9 +556,10 @@ const sortedTeardowns = teardowns.sort((a, b) => {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform var(--md-sys-motion-duration-medium) var(--md-sys-motion-easing-spring);
+    transition: transform var(--md-sys-motion-duration-medium)
+      var(--md-sys-motion-easing-spring);
   }
-  
+
   .teardown-card:hover .card-image img {
     transform: scale(1.12);
   }
@@ -307,28 +567,33 @@ const sortedTeardowns = teardowns.sort((a, b) => {
   .image-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, transparent 0%, rgba(19, 18, 24, 0.4) 100%);
+    background: linear-gradient(
+      180deg,
+      transparent 0%,
+      rgba(19, 18, 24, 0.4) 100%
+    );
     opacity: 0;
-    transition: opacity var(--md-sys-motion-duration-short) var(--md-sys-motion-easing-standard);
+    transition: opacity var(--md-sys-motion-duration-short)
+      var(--md-sys-motion-easing-standard);
   }
 
   .teardown-card:hover .image-overlay {
     opacity: 1;
   }
-  
+
   .card-content {
     padding: 1.5rem;
     position: relative;
     background: var(--md-sys-color-surface-container);
   }
-  
+
   .card-meta {
     display: flex;
     gap: 0.75rem;
     margin-bottom: 0.75rem;
     flex-wrap: wrap;
   }
-  
+
   .device-type {
     background-color: var(--md-sys-color-primary-container);
     color: var(--md-sys-color-on-primary-container);
@@ -340,7 +605,8 @@ const sortedTeardowns = teardowns.sort((a, b) => {
     display: inline-flex;
     align-items: center;
     gap: 0.35rem;
-    transition: all var(--md-sys-motion-duration-short) var(--md-sys-motion-easing-spring-soft);
+    transition: all var(--md-sys-motion-duration-short)
+      var(--md-sys-motion-easing-spring-soft);
   }
 
   .device-icon {
@@ -361,58 +627,60 @@ const sortedTeardowns = teardowns.sort((a, b) => {
     background-color: var(--md-sys-color-primary);
     color: var(--md-sys-color-on-primary);
   }
-  
+
   .difficulty {
     padding: 0.35rem 0.85rem;
     border-radius: var(--md-sys-shape-corner-full);
     font-size: 0.875rem;
     font-weight: 500;
     text-transform: capitalize;
-    transition: transform var(--md-sys-motion-duration-short) var(--md-sys-motion-easing-spring-soft);
+    transition: transform var(--md-sys-motion-duration-short)
+      var(--md-sys-motion-easing-spring-soft);
   }
 
   .teardown-card:hover .difficulty {
     transform: scale(1.05);
   }
-  
+
   .difficulty-easy {
     background-color: var(--md-sys-color-accent-green);
-    color: #1B5E20;
+    color: #1b5e20;
   }
-  
+
   .difficulty-medium {
     background-color: var(--md-sys-color-accent-amber);
-    color: #E65100;
+    color: #e65100;
   }
-  
+
   .difficulty-hard {
-    background-color: #EF5350;
-    color: #FFEBEE;
+    background-color: #ef5350;
+    color: #ffebee;
   }
-  
+
   .card-content h2 {
     margin: 0.5rem 0;
     color: var(--md-sys-color-on-surface);
-    transition: color var(--md-sys-motion-duration-short) var(--md-sys-motion-easing-standard);
+    transition: color var(--md-sys-motion-duration-short)
+      var(--md-sys-motion-easing-standard);
   }
 
   .teardown-card:hover .card-content h2 {
     color: var(--md-sys-color-primary);
   }
-  
+
   .card-description {
     color: var(--md-sys-color-on-surface-variant);
     margin: 0.75rem 0;
     line-height: 1.5;
   }
-  
+
   .card-date {
     display: block;
     font-size: 0.875rem;
     color: var(--md-sys-color-on-surface-variant);
     margin-top: 0.75rem;
   }
-  
+
   .empty-state {
     text-align: center;
     padding: 4rem 2rem;
@@ -465,7 +733,8 @@ const sortedTeardowns = teardowns.sort((a, b) => {
     padding: 1.4rem 1.05rem;
     text-decoration: none;
     color: inherit;
-    transition: all var(--md-sys-motion-duration-medium) var(--md-sys-motion-easing-standard);
+    transition: all var(--md-sys-motion-duration-medium)
+      var(--md-sys-motion-easing-standard);
     box-shadow: var(--md-sys-elevation-level1);
     border: 1px solid var(--md-sys-color-outline-variant);
   }
@@ -503,7 +772,8 @@ const sortedTeardowns = teardowns.sort((a, b) => {
     margin: 0 auto 0.7rem;
     display: block;
     color: var(--md-sys-color-primary);
-    transition: all var(--md-sys-motion-duration-medium) var(--md-sys-motion-easing-standard);
+    transition: all var(--md-sys-motion-duration-medium)
+      var(--md-sys-motion-easing-standard);
   }
 
   .device-card:hover .device-icon {
@@ -532,8 +802,12 @@ const sortedTeardowns = teardowns.sort((a, b) => {
     }
 
     @keyframes fadeInSimple {
-      from { opacity: 0; }
-      to { opacity: 1; }
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
     }
 
     .teardown-card:hover {
@@ -549,7 +823,7 @@ const sortedTeardowns = teardowns.sort((a, b) => {
       transform: none;
     }
   }
-  
+
   @media (max-width: 768px) {
     .content-wrapper {
       padding-top: 100px;
@@ -569,24 +843,28 @@ const sortedTeardowns = teardowns.sort((a, b) => {
 </style>
 
 <script>
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  
+  const prefersReducedMotion = window.matchMedia(
+    '(prefers-reduced-motion: reduce)'
+  ).matches
+
   if (!prefersReducedMotion) {
-    const cards = document.querySelectorAll('.teardown-card') as NodeListOf<HTMLElement>;
-    
+    const cards = document.querySelectorAll(
+      '.teardown-card'
+    ) as NodeListOf<HTMLElement>
+
     interface CardPhysicsState {
-      x: number;
-      y: number;
-      rotation: number;
-      velocityX: number;
-      velocityY: number;
-      velocityRotation: number;
-      isHovered: boolean;
-      targetX: number;
-      targetY: number;
-      targetRotation: number;
+      x: number
+      y: number
+      rotation: number
+      velocityX: number
+      velocityY: number
+      velocityRotation: number
+      isHovered: boolean
+      targetX: number
+      targetY: number
+      targetRotation: number
     }
-    
+
     const cardStates: CardPhysicsState[] = Array.from(cards).map(() => ({
       x: 0,
       y: -12,
@@ -597,93 +875,96 @@ const sortedTeardowns = teardowns.sort((a, b) => {
       isHovered: false,
       targetX: 0,
       targetY: -12,
-      targetRotation: 0
-    }));
-    
-    const SPRING_TENSION = 0.18;
-    const SPRING_FRICTION = 0.22;
-    const GRAVITY = 0.6;
-    const LIFT_HEIGHT = 12;
-    const ROTATION_MAX = 2;
-    
-    let rafId: number | null = null;
-    
+      targetRotation: 0,
+    }))
+
+    const SPRING_TENSION = 0.18
+    const SPRING_FRICTION = 0.22
+    const GRAVITY = 0.6
+    const LIFT_HEIGHT = 12
+    const ROTATION_MAX = 2
+
+    let rafId: number | null = null
+
     function updateCardPhysics() {
-      let needsUpdate = false;
-      
+      let needsUpdate = false
+
       cards.forEach((card, index) => {
-        const state = cardStates[index];
-        
+        const state = cardStates[index]
+
         if (state.isHovered) {
-          const dx = state.targetX - state.x;
-          const dy = state.targetY - state.y;
-          const dRot = state.targetRotation - state.rotation;
-          
-          state.velocityX += dx * SPRING_TENSION;
-          state.velocityY += dy * SPRING_TENSION;
-          state.velocityRotation += dRot * SPRING_TENSION;
+          const dx = state.targetX - state.x
+          const dy = state.targetY - state.y
+          const dRot = state.targetRotation - state.rotation
+
+          state.velocityX += dx * SPRING_TENSION
+          state.velocityY += dy * SPRING_TENSION
+          state.velocityRotation += dRot * SPRING_TENSION
         } else {
-          state.velocityX += (0 - state.x) * SPRING_TENSION;
-          state.velocityY += (0 - state.y) * SPRING_TENSION + GRAVITY;
-          state.velocityRotation += (0 - state.rotation) * SPRING_TENSION;
+          state.velocityX += (0 - state.x) * SPRING_TENSION
+          state.velocityY += (0 - state.y) * SPRING_TENSION + GRAVITY
+          state.velocityRotation += (0 - state.rotation) * SPRING_TENSION
         }
-        
-        state.velocityX *= (1 - SPRING_FRICTION);
-        state.velocityY *= (1 - SPRING_FRICTION);
-        state.velocityRotation *= (1 - SPRING_FRICTION);
-        
-        state.x += state.velocityX;
-        state.y += state.velocityY;
-        state.rotation += state.velocityRotation;
-        
-        card.style.transform = `translate3d(${state.x}px, ${state.y}px, 0) rotate(${state.rotation}deg) scale(${state.isHovered ? 1.03 : 1})`;
-        
-        if (Math.abs(state.velocityX) > 0.01 || Math.abs(state.velocityY) > 0.01 || Math.abs(state.velocityRotation) > 0.01) {
-          needsUpdate = true;
+
+        state.velocityX *= 1 - SPRING_FRICTION
+        state.velocityY *= 1 - SPRING_FRICTION
+        state.velocityRotation *= 1 - SPRING_FRICTION
+
+        state.x += state.velocityX
+        state.y += state.velocityY
+        state.rotation += state.velocityRotation
+
+        card.style.transform = `translate3d(${state.x}px, ${state.y}px, 0) rotate(${state.rotation}deg) scale(${state.isHovered ? 1.03 : 1})`
+
+        if (
+          Math.abs(state.velocityX) > 0.01 ||
+          Math.abs(state.velocityY) > 0.01 ||
+          Math.abs(state.velocityRotation) > 0.01
+        ) {
+          needsUpdate = true
         }
-      });
-      
+      })
+
       if (needsUpdate) {
-        rafId = requestAnimationFrame(updateCardPhysics);
+        rafId = requestAnimationFrame(updateCardPhysics)
       } else {
-        rafId = null;
+        rafId = null
       }
     }
-    
+
     cards.forEach((card, index) => {
       card.addEventListener('mouseenter', () => {
-        cardStates[index].isHovered = true;
-        cardStates[index].targetY = -LIFT_HEIGHT;
-        
+        cardStates[index].isHovered = true
+        cardStates[index].targetY = -LIFT_HEIGHT
+
         if (rafId === null) {
-          rafId = requestAnimationFrame(updateCardPhysics);
+          rafId = requestAnimationFrame(updateCardPhysics)
         }
-      });
-      
+      })
+
       card.addEventListener('mouseleave', () => {
-        cardStates[index].isHovered = false;
-        cardStates[index].targetX = 0;
-        cardStates[index].targetY = 0;
-        cardStates[index].targetRotation = 0;
-        
+        cardStates[index].isHovered = false
+        cardStates[index].targetX = 0
+        cardStates[index].targetY = 0
+        cardStates[index].targetRotation = 0
+
         if (rafId === null) {
-          rafId = requestAnimationFrame(updateCardPhysics);
+          rafId = requestAnimationFrame(updateCardPhysics)
         }
-      });
-      
+      })
+
       card.addEventListener('mousemove', (e: MouseEvent) => {
         if (cardStates[index].isHovered) {
-          const rect = card.getBoundingClientRect();
-          const centerX = rect.left + rect.width / 2;
-          const centerY = rect.top + rect.height / 2;
-          
-          const relativeX = e.clientX - centerX;
-          const relativeY = e.clientY - centerY;
-          
-          cardStates[index].targetRotation = (relativeX / rect.width) * ROTATION_MAX;
-          cardStates[index].targetX = (relativeX / rect.width) * 4;
+          const rect = card.getBoundingClientRect()
+          const centerX = rect.left + rect.width / 2
+
+          const relativeX = e.clientX - centerX
+
+          cardStates[index].targetRotation =
+            (relativeX / rect.width) * ROTATION_MAX
+          cardStates[index].targetX = (relativeX / rect.width) * 4
         }
-      });
-    });
+      })
+    })
   }
 </script>

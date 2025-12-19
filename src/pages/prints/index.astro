@@ -1,40 +1,43 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro'
 
 // Mock print data - replace with actual collection later
 const prints = [
-  { 
-    id: 1, 
+  {
+    id: 1,
     image: '/images/bambu-a1-mini/IMG20250731124342.jpg',
     title: 'Cable Organizers',
     printer: 'A1 Mini',
     material: 'PLA',
-    category: 'workspace'
+    category: 'workspace',
   },
-  { 
-    id: 2, 
+  {
+    id: 2,
     image: '/images/bambu-a1-mini/IMG20250803142849.jpg',
     title: 'Pen Holders',
     printer: 'A1 Mini',
     material: 'PLA',
-    category: 'workspace'
+    category: 'workspace',
   },
-  { 
-    id: 3, 
+  {
+    id: 3,
     image: '/images/bambu-a1-combo/IMG20250814220937.jpg',
     title: 'Multiboard Accessories',
     printer: 'A1 Combo',
     material: 'PETG',
-    category: 'workspace'
+    category: 'workspace',
   },
   // Add more prints here
-];
+]
 
-const categories = [...new Set(prints.map(p => p.category))];
-const printers = [...new Set(prints.map(p => p.printer))];
+const categories = [...new Set(prints.map((p) => p.category))]
+const printers = [...new Set(prints.map((p) => p.printer))]
 ---
 
-<BaseLayout title="3D Prints Gallery" description="All prints made with Bambu Lab printers">
+<BaseLayout
+  title="3D Prints Gallery"
+  description="All prints made with Bambu Lab printers"
+>
   <main class="gallery-container">
     <header class="gallery-header">
       <h1>🖨️ 3D Prints Gallery</h1>
@@ -46,37 +49,39 @@ const printers = [...new Set(prints.map(p => p.printer))];
         <label>Printer:</label>
         <select id="printer-filter">
           <option value="all">All</option>
-          {printers.map(p => <option value={p}>{p}</option>)}
+          {printers.map((p) => <option value={p}>{p}</option>)}
         </select>
       </div>
-      
+
       <div class="filter-group">
         <label>Category:</label>
         <select id="category-filter">
           <option value="all">All</option>
-          {categories.map(c => <option value={c}>{c}</option>)}
+          {categories.map((c) => <option value={c}>{c}</option>)}
         </select>
       </div>
     </div>
 
     <div class="prints-grid" id="prints-grid">
-      {prints.map(print => (
-        <div 
-          class="print-card" 
-          data-printer={print.printer}
-          data-category={print.category}
-          data-id={print.id}
-        >
-          <img src={print.image} alt={print.title} loading="lazy" />
-          <div class="print-info">
-            <h3>{print.title}</h3>
-            <div class="meta">
-              <span class="badge">{print.printer}</span>
-              <span class="badge">{print.material}</span>
+      {
+        prints.map((print) => (
+          <div
+            class="print-card"
+            data-printer={print.printer}
+            data-category={print.category}
+            data-id={print.id}
+          >
+            <img src={print.image} alt={print.title} loading="lazy" />
+            <div class="print-info">
+              <h3>{print.title}</h3>
+              <div class="meta">
+                <span class="badge">{print.printer}</span>
+                <span class="badge">{print.material}</span>
+              </div>
             </div>
           </div>
-        </div>
-      ))}
+        ))
+      }
     </div>
 
     <!-- Lightbox -->
@@ -140,12 +145,14 @@ const printers = [...new Set(prints.map(p => p.printer))];
     border-radius: 12px;
     overflow: hidden;
     cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition:
+      transform 0.2s,
+      box-shadow 0.2s;
   }
 
   .print-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
   }
 
   .print-card img {
@@ -185,7 +192,7 @@ const printers = [...new Set(prints.map(p => p.printer))];
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.95);
+    background: rgba(0, 0, 0, 0.95);
     z-index: 1000;
     align-items: center;
     justify-content: center;
@@ -225,54 +232,55 @@ const printers = [...new Set(prints.map(p => p.printer))];
 
 <script>
   // Filtering
-  const printerFilter = document.getElementById('printer-filter');
-  const categoryFilter = document.getElementById('category-filter');
-  const grid = document.getElementById('prints-grid');
+  const printerFilter = document.getElementById('printer-filter')
+  const categoryFilter = document.getElementById('category-filter')
+  const grid = document.getElementById('prints-grid')
 
   function filterPrints() {
-    const printer = printerFilter.value;
-    const category = categoryFilter.value;
-    const cards = grid.querySelectorAll('.print-card');
+    const printer = printerFilter.value
+    const category = categoryFilter.value
+    const cards = grid.querySelectorAll('.print-card')
 
-    cards.forEach(card => {
-      const matchPrinter = printer === 'all' || card.dataset.printer === printer;
-      const matchCategory = category === 'all' || card.dataset.category === category;
-      
-      card.style.display = matchPrinter && matchCategory ? 'block' : 'none';
-    });
+    cards.forEach((card) => {
+      const matchPrinter = printer === 'all' || card.dataset.printer === printer
+      const matchCategory =
+        category === 'all' || card.dataset.category === category
+
+      card.style.display = matchPrinter && matchCategory ? 'block' : 'none'
+    })
   }
 
-  printerFilter.addEventListener('change', filterPrints);
-  categoryFilter.addEventListener('change', filterPrints);
+  printerFilter.addEventListener('change', filterPrints)
+  categoryFilter.addEventListener('change', filterPrints)
 
   // Lightbox
-  const lightbox = document.getElementById('lightbox');
-  const lightboxImg = document.getElementById('lightbox-img');
-  const lightboxTitle = document.getElementById('lightbox-title');
-  const lightboxMeta = document.getElementById('lightbox-meta');
+  const lightbox = document.getElementById('lightbox')
+  const lightboxImg = document.getElementById('lightbox-img')
+  const lightboxTitle = document.getElementById('lightbox-title')
+  const lightboxMeta = document.getElementById('lightbox-meta')
 
-  document.querySelectorAll('.print-card').forEach(card => {
+  document.querySelectorAll('.print-card').forEach((card) => {
     card.addEventListener('click', () => {
-      const img = card.querySelector('img');
-      const title = card.querySelector('h3').textContent;
+      const img = card.querySelector('img')
+      const title = card.querySelector('h3').textContent
       const badges = Array.from(card.querySelectorAll('.badge'))
-        .map(b => b.textContent).join(' • ');
+        .map((b) => b.textContent)
+        .join(' • ')
 
-      lightboxImg.src = img.src;
-      lightboxTitle.textContent = title;
-      lightboxMeta.textContent = badges;
-      lightbox.classList.add('active');
-    });
-  });
+      lightboxImg.src = img.src
+      lightboxTitle.textContent = title
+      lightboxMeta.textContent = badges
+      lightbox.classList.add('active')
+    })
+  })
 
   document.querySelector('.close').addEventListener('click', () => {
-    lightbox.classList.remove('active');
-  });
+    lightbox.classList.remove('active')
+  })
 
   lightbox.addEventListener('click', (e) => {
     if (e.target === lightbox) {
-      lightbox.classList.remove('active');
+      lightbox.classList.remove('active')
     }
-  });
+  })
 </script>
-</BaseLayout>
