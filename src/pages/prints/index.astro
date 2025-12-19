@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro'
+import DeviceIcons from '../../components/DeviceIcons.astro'
 
 // Mock print data - replace with actual collection later
 const prints = [
@@ -40,7 +41,10 @@ const printers = [...new Set(prints.map((p) => p.printer))]
 >
   <main class="gallery-container">
     <header class="gallery-header">
-      <h1>🖨️ 3D Prints Gallery</h1>
+      <h1 class="gallery-title">
+        <DeviceIcons type="3d-printer" class="gallery-icon" />
+        3D Prints Gallery
+      </h1>
       <p>{prints.length} prints and counting</p>
     </header>
 
@@ -111,6 +115,19 @@ const printers = [...new Set(prints.map((p) => p.printer))]
   .gallery-header h1 {
     font-size: 2.5rem;
     margin-bottom: 0.5rem;
+  }
+
+  .gallery-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+  }
+
+  .gallery-title :global(.gallery-icon) {
+    width: 2.5rem;
+    height: 2.5rem;
+    color: var(--md-sys-color-primary);
   }
 
   .filters {

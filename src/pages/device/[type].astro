@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro'
 import { getCollection } from 'astro:content'
 import ProgressiveImage from '../../components/ProgressiveImage.astro'
+import DeviceIcons from '../../components/DeviceIcons.astro'
 
 export async function getStaticPaths() {
   const deviceTypes = [
@@ -30,59 +31,43 @@ const deviceTeardowns = allTeardowns
   .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime())
 
 // Device type metadata
-const deviceMetadata = {
+const deviceMetadata: Record<string, { title: string; description: string }> = {
   laptop: {
     title: 'Laptop Teardowns',
     description:
       'Detailed disassembly and analysis of laptops, from ultrabooks to gaming machines',
-    icon: '💻',
-    color: 'var(--md-sys-color-primary)',
   },
   smartphone: {
     title: 'Smartphone Teardowns',
     description:
       'Inside look at smartphone internals, repair guides, and component analysis',
-    icon: '📱',
-    color: 'var(--md-sys-color-secondary)',
   },
   'raspberry-pi': {
     title: 'Raspberry Pi Projects',
     description:
       'Single-board computer builds, modifications, and performance analysis',
-    icon: '🍓',
-    color: 'var(--md-sys-color-tertiary)',
   },
   nas: {
     title: 'NAS & Storage Builds',
     description:
       'Network-attached storage systems, drive configurations, and homelab setups',
-    icon: '💾',
-    color: 'var(--md-sys-color-accent-teal)',
   },
   '3d-printer': {
     title: '3D Printer Teardowns',
     description: '3D printer setup, calibration, and hardware analysis',
-    icon: '🖨️',
-    color: 'var(--md-sys-color-accent-amber)',
   },
   'mechanical-keyboard': {
     title: 'Keyboard Teardowns',
     description:
       'Mechanical keyboard disassembly, switch analysis, and modifications',
-    icon: '⌨️',
-    color: 'var(--md-sys-color-accent-green)',
   },
   monitor: {
     title: 'Monitor Analysis',
     description: 'Display technology, panel analysis, and calibration guides',
-    icon: '🖥️',
-    color: 'var(--md-sys-color-primary-container)',
   },
   other: {
     title: 'Other Devices',
     description: 'Miscellaneous hardware teardowns and analysis',
-    icon: '🔧',
-    color: 'var(--md-sys-color-surface-variant)',
   },
 }
 
@@ -92,8 +77,8 @@ const metadata = deviceMetadata[type] || deviceMetadata['other']
 <BaseLayout title={metadata.title} description={metadata.description}>
   <div class="device-type-page">
     <header class="device-header">
-      <div class="device-icon" style={`color: ${metadata.color}`}>
-        {metadata.icon}
+      <div class="device-icon">
+        <DeviceIcons type={type} class="device-icon-svg" />
       </div>
       <h1 class="device-title">{metadata.title}</h1>
       <p class="device-description">{metadata.description}</p>
@@ -173,7 +158,12 @@ const metadata = deviceMetadata[type] || deviceMetadata['other']
         </section>
       ) : (
         <section class="empty-state">
-          <div class="empty-icon">🔍</div>
+          <div class="empty-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="search-icon">
+              <circle cx="11" cy="11" r="8" />
+              <path d="M21 21l-4.35-4.35" stroke-linecap="round" />
+            </svg>
+          </div>
           <h3>No teardowns yet</h3>
           <p>
             We haven't documented any {type} teardowns yet. Check back soon!
@@ -201,9 +191,15 @@ const metadata = deviceMetadata[type] || deviceMetadata['other']
   }
 
   .device-icon {
-    font-size: 4rem;
     margin-bottom: 1rem;
-    display: block;
+    display: flex;
+    justify-content: center;
+  }
+
+  .device-icon :global(.device-icon-svg) {
+    width: 4rem;
+    height: 4rem;
+    color: var(--md-sys-color-primary);
   }
 
   .device-title {
@@ -353,8 +349,15 @@ const metadata = deviceMetadata[type] || deviceMetadata['other']
   }
 
   .empty-icon {
-    font-size: 3rem;
     margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  .empty-icon .search-icon {
+    width: 3rem;
+    height: 3rem;
+    color: var(--md-sys-color-on-surface-variant);
   }
 
   .empty-state h3 {
@@ -397,8 +400,9 @@ const metadata = deviceMetadata[type] || deviceMetadata['other']
       padding: 1rem 0;
     }
 
-    .device-icon {
-      font-size: 3rem;
+    .device-icon :global(.device-icon-svg) {
+      width: 3rem;
+      height: 3rem;
     }
 
     .device-stats {
