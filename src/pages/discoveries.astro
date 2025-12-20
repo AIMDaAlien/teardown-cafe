@@ -3,7 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro'
 import CircuitAccents from '../components/CircuitAccents.astro'
 import WaveDiffusions from '../components/WaveDiffusions.astro'
 import FloatingParticles from '../components/FloatingParticles.astro'
-import { getCollection } from 'astro:content'
+import { getCollection, render } from 'astro:content'
 
 const discoveries = await getCollection('discoveries')
 
@@ -30,7 +30,7 @@ const sortedDiscoveries = discoveries.sort((a, b) => {
         <section class="discoveries-section">
             {
                 sortedDiscoveries.map(async (discovery) => {
-                    const { Content } = await discovery.render()
+                    const { Content } = await render(discovery)
                     return (
                         <article
                             class={`discovery-card severity-${discovery.data.severity}`}
