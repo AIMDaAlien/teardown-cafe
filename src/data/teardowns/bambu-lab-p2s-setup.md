@@ -1,7 +1,7 @@
 ---
 title: 'Bambu Lab P2S - Enclosed Printer Setup'
 description: 'Setting up the Bambu Lab P2S enclosed 3D printer - minimal effort, maximum capability'
-pubDate: 2025-12-09
+pubDate: 2025-12-12
 device: 3d-printer
 difficulty: easy
 heroImage: /images/bambu-p2s/IMG20251209155004.webp
