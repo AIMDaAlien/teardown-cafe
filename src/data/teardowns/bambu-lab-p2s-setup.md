@@ -66,7 +66,14 @@ Connect to WiFi, bind to your Bambu account, and let the automatic calibration r
 
 [![Custom screen bumper installed](/images/bambu-p2s/IMG20251219093302.webp)](/images/bambu-p2s/IMG20251219093302.webp)
 
-First print priority: a custom screen bumper. Because if you're going to stare at a printer, it should look good.
+Made it mine with a periwinkle theme and some functional mods:
+
+- **Screen nameplate** - Custom bumper with "AIM'S 3D Print Shoppe" branding
+- **Extruder fan honeycomb** - Airflow mod that looks better than the stock grille
+- **Hole covers** - Plugged various openings inside the chamber to keep debris out
+- **Color coordination** - All accent pieces printed in matching periwinkle
+
+The P2S has several maintenance holes and cable routing gaps that can collect dust and filament scraps over time. A few printed covers keeps the internals cleaner.
 
 ## Quick Specs
 
