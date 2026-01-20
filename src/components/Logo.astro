@@ -14,8 +14,8 @@ const { class: className = '', showWordmark = false } = Astro.props
     class="logo-icon"
     src="/logo.png"
     alt="Teardown Cafe"
-    width="28"
-    height="28"
+    width="56"
+    height="56"
   />
   {showWordmark && <span class="wordmark">teardown cafe</span>}
 </div>
@@ -27,9 +27,10 @@ const { class: className = '', showWordmark = false } = Astro.props
   }
 
   .logo-icon {
-    width: 28px;
-    height: 28px;
+    width: 56px;
+    height: 56px;
     object-fit: contain;
+    opacity: 0.75;
   }
 
   .with-wordmark {
@@ -37,8 +38,8 @@ const { class: className = '', showWordmark = false } = Astro.props
   }
 
   .with-wordmark .logo-icon {
-    width: 32px;
-    height: 32px;
+    width: 64px;
+    height: 64px;
   }
 
   .wordmark {
