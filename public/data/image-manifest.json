@@ -645,196 +645,6 @@
       }
     ]
   },
-  "/images/macbook-air-m1-ideation/05-battery-removed.webp": {
-    "original": "/images/macbook-air-m1-ideation/05-battery-removed-cleaned.webp",
-    "width": 1024,
-    "height": 768,
-    "variants": [
-      {
-        "width": 400,
-        "path": "/images/macbook-air-m1-ideation/05-battery-removed-400w.webp"
-      },
-      {
-        "width": 800,
-        "path": "/images/macbook-air-m1-ideation/05-battery-removed-800w.webp"
-      },
-      {
-        "width": 1200,
-        "path": "/images/macbook-air-m1-ideation/05-battery-removed-1200w.webp"
-      }
-    ]
-  },
-  "/images/macbook-air-m1-ideation/05-battery-removed.jpg": {
-    "original": "/images/macbook-air-m1-ideation/05-battery-removed-cleaned.jpg",
-    "width": 1024,
-    "height": 768,
-    "variants": [
-      {
-        "width": 400,
-        "path": "/images/macbook-air-m1-ideation/05-battery-removed-400w.webp"
-      },
-      {
-        "width": 800,
-        "path": "/images/macbook-air-m1-ideation/05-battery-removed-800w.webp"
-      },
-      {
-        "width": 1200,
-        "path": "/images/macbook-air-m1-ideation/05-battery-removed-1200w.webp"
-      }
-    ]
-  },
-  "/images/macbook-air-m1-ideation/04-usbc-daughterboard.webp": {
-    "original": "/images/macbook-air-m1-ideation/04-usbc-daughterboard-cleaned.webp",
-    "width": 768,
-    "height": 1024,
-    "variants": [
-      {
-        "width": 400,
-        "path": "/images/macbook-air-m1-ideation/04-usbc-daughterboard-400w.webp"
-      },
-      {
-        "width": 800,
-        "path": "/images/macbook-air-m1-ideation/04-usbc-daughterboard-800w.webp"
-      },
-      {
-        "width": 1200,
-        "path": "/images/macbook-air-m1-ideation/04-usbc-daughterboard-1200w.webp"
-      }
-    ]
-  },
-  "/images/macbook-air-m1-ideation/04-usbc-daughterboard.jpg": {
-    "original": "/images/macbook-air-m1-ideation/04-usbc-daughterboard-cleaned.jpg",
-    "width": 768,
-    "height": 1024,
-    "variants": [
-      {
-        "width": 400,
-        "path": "/images/macbook-air-m1-ideation/04-usbc-daughterboard-400w.webp"
-      },
-      {
-        "width": 800,
-        "path": "/images/macbook-air-m1-ideation/04-usbc-daughterboard-800w.webp"
-      },
-      {
-        "width": 1200,
-        "path": "/images/macbook-air-m1-ideation/04-usbc-daughterboard-1200w.webp"
-      }
-    ]
-  },
-  "/images/macbook-air-m1-ideation/03-logic-board-closeup.webp": {
-    "original": "/images/macbook-air-m1-ideation/03-logic-board-closeup-cleaned.webp",
-    "width": 1024,
-    "height": 768,
-    "variants": [
-      {
-        "width": 400,
-        "path": "/images/macbook-air-m1-ideation/03-logic-board-closeup-400w.webp"
-      },
-      {
-        "width": 800,
-        "path": "/images/macbook-air-m1-ideation/03-logic-board-closeup-800w.webp"
-      },
-      {
-        "width": 1200,
-        "path": "/images/macbook-air-m1-ideation/03-logic-board-closeup-1200w.webp"
-      }
-    ]
-  },
-  "/images/macbook-air-m1-ideation/03-logic-board-closeup.jpg": {
-    "original": "/images/macbook-air-m1-ideation/03-logic-board-closeup-cleaned.jpg",
-    "width": 1024,
-    "height": 768,
-    "variants": [
-      {
-        "width": 400,
-        "path": "/images/macbook-air-m1-ideation/03-logic-board-closeup-400w.webp"
-      },
-      {
-        "width": 800,
-        "path": "/images/macbook-air-m1-ideation/03-logic-board-closeup-800w.webp"
-      },
-      {
-        "width": 1200,
-        "path": "/images/macbook-air-m1-ideation/03-logic-board-closeup-1200w.webp"
-      }
-    ]
-  },
-  "/images/macbook-air-m1-ideation/02-logic-board-lifting.webp": {
-    "original": "/images/macbook-air-m1-ideation/02-logic-board-lifting-cleaned.webp",
-    "width": 1024,
-    "height": 768,
-    "variants": [
-      {
-        "width": 400,
-        "path": "/images/macbook-air-m1-ideation/02-logic-board-lifting-400w.webp"
-      },
-      {
-        "width": 800,
-        "path": "/images/macbook-air-m1-ideation/02-logic-board-lifting-800w.webp"
-      },
-      {
-        "width": 1200,
-        "path": "/images/macbook-air-m1-ideation/02-logic-board-lifting-1200w.webp"
-      }
-    ]
-  },
-  "/images/macbook-air-m1-ideation/02-logic-board-lifting.jpg": {
-    "original": "/images/macbook-air-m1-ideation/02-logic-board-lifting-cleaned.jpg",
-    "width": 1024,
-    "height": 768,
-    "variants": [
-      {
-        "width": 400,
-        "path": "/images/macbook-air-m1-ideation/02-logic-board-lifting-400w.webp"
-      },
-      {
-        "width": 800,
-        "path": "/images/macbook-air-m1-ideation/02-logic-board-lifting-800w.webp"
-      },
-      {
-        "width": 1200,
-        "path": "/images/macbook-air-m1-ideation/02-logic-board-lifting-1200w.webp"
-      }
-    ]
-  },
-  "/images/macbook-air-m1-ideation/01-internal-overview.webp": {
-    "original": "/images/macbook-air-m1-ideation/01-internal-overview-cleaned.webp",
-    "width": 1024,
-    "height": 768,
-    "variants": [
-      {
-        "width": 400,
-        "path": "/images/macbook-air-m1-ideation/01-internal-overview-400w.webp"
-      },
-      {
-        "width": 800,
-        "path": "/images/macbook-air-m1-ideation/01-internal-overview-800w.webp"
-      },
-      {
-        "width": 1200,
-        "path": "/images/macbook-air-m1-ideation/01-internal-overview-1200w.webp"
-      }
-    ]
-  },
-  "/images/macbook-air-m1-ideation/01-internal-overview.jpg": {
-    "original": "/images/macbook-air-m1-ideation/01-internal-overview-cleaned.jpg",
-    "width": 1024,
-    "height": 768,
-    "variants": [
-      {
-        "width": 400,
-        "path": "/images/macbook-air-m1-ideation/01-internal-overview-400w.webp"
-      },
-      {
-        "width": 800,
-        "path": "/images/macbook-air-m1-ideation/01-internal-overview-800w.webp"
-      },
-      {
-        "width": 1200,
-        "path": "/images/macbook-air-m1-ideation/01-internal-overview-1200w.webp"
-      }
-    ]
-  },
   "/images/macbook-pro-2010-upgrades/IMG20250328232505.webp": {
     "original": "/images/macbook-pro-2010-upgrades/IMG20250328232505-cleaned.webp",
     "width": 1200,
@@ -1060,6 +870,196 @@
       {
         "width": 1200,
         "path": "/images/macbook-pro-2010-upgrades/20250325_045100-1200w.webp"
+      }
+    ]
+  },
+  "/images/macbook-air-m1-ideation/05-battery-removed.webp": {
+    "original": "/images/macbook-air-m1-ideation/05-battery-removed-cleaned.webp",
+    "width": 1024,
+    "height": 768,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/macbook-air-m1-ideation/05-battery-removed-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/macbook-air-m1-ideation/05-battery-removed-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/macbook-air-m1-ideation/05-battery-removed-1200w.webp"
+      }
+    ]
+  },
+  "/images/macbook-air-m1-ideation/05-battery-removed.jpg": {
+    "original": "/images/macbook-air-m1-ideation/05-battery-removed-cleaned.jpg",
+    "width": 1024,
+    "height": 768,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/macbook-air-m1-ideation/05-battery-removed-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/macbook-air-m1-ideation/05-battery-removed-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/macbook-air-m1-ideation/05-battery-removed-1200w.webp"
+      }
+    ]
+  },
+  "/images/macbook-air-m1-ideation/04-usbc-daughterboard.webp": {
+    "original": "/images/macbook-air-m1-ideation/04-usbc-daughterboard-cleaned.webp",
+    "width": 768,
+    "height": 1024,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/macbook-air-m1-ideation/04-usbc-daughterboard-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/macbook-air-m1-ideation/04-usbc-daughterboard-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/macbook-air-m1-ideation/04-usbc-daughterboard-1200w.webp"
+      }
+    ]
+  },
+  "/images/macbook-air-m1-ideation/04-usbc-daughterboard.jpg": {
+    "original": "/images/macbook-air-m1-ideation/04-usbc-daughterboard-cleaned.jpg",
+    "width": 768,
+    "height": 1024,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/macbook-air-m1-ideation/04-usbc-daughterboard-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/macbook-air-m1-ideation/04-usbc-daughterboard-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/macbook-air-m1-ideation/04-usbc-daughterboard-1200w.webp"
+      }
+    ]
+  },
+  "/images/macbook-air-m1-ideation/03-logic-board-closeup.webp": {
+    "original": "/images/macbook-air-m1-ideation/03-logic-board-closeup-cleaned.webp",
+    "width": 1024,
+    "height": 768,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/macbook-air-m1-ideation/03-logic-board-closeup-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/macbook-air-m1-ideation/03-logic-board-closeup-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/macbook-air-m1-ideation/03-logic-board-closeup-1200w.webp"
+      }
+    ]
+  },
+  "/images/macbook-air-m1-ideation/03-logic-board-closeup.jpg": {
+    "original": "/images/macbook-air-m1-ideation/03-logic-board-closeup-cleaned.jpg",
+    "width": 1024,
+    "height": 768,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/macbook-air-m1-ideation/03-logic-board-closeup-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/macbook-air-m1-ideation/03-logic-board-closeup-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/macbook-air-m1-ideation/03-logic-board-closeup-1200w.webp"
+      }
+    ]
+  },
+  "/images/macbook-air-m1-ideation/02-logic-board-lifting.webp": {
+    "original": "/images/macbook-air-m1-ideation/02-logic-board-lifting-cleaned.webp",
+    "width": 1024,
+    "height": 768,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/macbook-air-m1-ideation/02-logic-board-lifting-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/macbook-air-m1-ideation/02-logic-board-lifting-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/macbook-air-m1-ideation/02-logic-board-lifting-1200w.webp"
+      }
+    ]
+  },
+  "/images/macbook-air-m1-ideation/02-logic-board-lifting.jpg": {
+    "original": "/images/macbook-air-m1-ideation/02-logic-board-lifting-cleaned.jpg",
+    "width": 1024,
+    "height": 768,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/macbook-air-m1-ideation/02-logic-board-lifting-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/macbook-air-m1-ideation/02-logic-board-lifting-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/macbook-air-m1-ideation/02-logic-board-lifting-1200w.webp"
+      }
+    ]
+  },
+  "/images/macbook-air-m1-ideation/01-internal-overview.webp": {
+    "original": "/images/macbook-air-m1-ideation/01-internal-overview-cleaned.webp",
+    "width": 1024,
+    "height": 768,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/macbook-air-m1-ideation/01-internal-overview-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/macbook-air-m1-ideation/01-internal-overview-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/macbook-air-m1-ideation/01-internal-overview-1200w.webp"
+      }
+    ]
+  },
+  "/images/macbook-air-m1-ideation/01-internal-overview.jpg": {
+    "original": "/images/macbook-air-m1-ideation/01-internal-overview-cleaned.jpg",
+    "width": 1024,
+    "height": 768,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/macbook-air-m1-ideation/01-internal-overview-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/macbook-air-m1-ideation/01-internal-overview-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/macbook-air-m1-ideation/01-internal-overview-1200w.webp"
       }
     ]
   },
@@ -1671,6 +1671,424 @@
       }
     ]
   },
+  "/images/bambu-a1-combo/IMG20250912221351.webp": {
+    "original": "/images/bambu-a1-combo/IMG20250912221351-cleaned.webp",
+    "width": 1200,
+    "height": 1600,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-a1-combo/IMG20250912221351-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-a1-combo/IMG20250912221351-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-a1-combo/IMG20250912221351-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-a1-combo/IMG20250912221351.jpg": {
+    "original": "/images/bambu-a1-combo/IMG20250912221351-cleaned.jpg",
+    "width": 1440,
+    "height": 1920,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-a1-combo/IMG20250912221351-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-a1-combo/IMG20250912221351-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-a1-combo/IMG20250912221351-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-a1-combo/IMG20250910221256.webp": {
+    "original": "/images/bambu-a1-combo/IMG20250910221256-cleaned.webp",
+    "width": 1200,
+    "height": 1600,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-a1-combo/IMG20250910221256-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-a1-combo/IMG20250910221256-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-a1-combo/IMG20250910221256-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-a1-combo/IMG20250910221256.jpg": {
+    "original": "/images/bambu-a1-combo/IMG20250910221256-cleaned.jpg",
+    "width": 1440,
+    "height": 1920,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-a1-combo/IMG20250910221256-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-a1-combo/IMG20250910221256-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-a1-combo/IMG20250910221256-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-a1-combo/IMG20250819142955.webp": {
+    "original": "/images/bambu-a1-combo/IMG20250819142955-cleaned.webp",
+    "width": 1200,
+    "height": 1600,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-a1-combo/IMG20250819142955-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-a1-combo/IMG20250819142955-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-a1-combo/IMG20250819142955-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-a1-combo/IMG20250819142955.jpg": {
+    "original": "/images/bambu-a1-combo/IMG20250819142955-cleaned.jpg",
+    "width": 1440,
+    "height": 1920,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-a1-combo/IMG20250819142955-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-a1-combo/IMG20250819142955-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-a1-combo/IMG20250819142955-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-a1-combo/IMG20250814220937.webp": {
+    "original": "/images/bambu-a1-combo/IMG20250814220937-cleaned.webp",
+    "width": 1200,
+    "height": 1600,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-a1-combo/IMG20250814220937-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-a1-combo/IMG20250814220937-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-a1-combo/IMG20250814220937-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-a1-combo/IMG20250814220937.jpg": {
+    "original": "/images/bambu-a1-combo/IMG20250814220937-cleaned.jpg",
+    "width": 1440,
+    "height": 1920,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-a1-combo/IMG20250814220937-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-a1-combo/IMG20250814220937-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-a1-combo/IMG20250814220937-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-a1-combo/IMG20250809222734.webp": {
+    "original": "/images/bambu-a1-combo/IMG20250809222734-cleaned.webp",
+    "width": 1200,
+    "height": 1600,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-a1-combo/IMG20250809222734-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-a1-combo/IMG20250809222734-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-a1-combo/IMG20250809222734-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-a1-combo/IMG20250809222734.jpg": {
+    "original": "/images/bambu-a1-combo/IMG20250809222734-cleaned.jpg",
+    "width": 1440,
+    "height": 1920,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-a1-combo/IMG20250809222734-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-a1-combo/IMG20250809222734-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-a1-combo/IMG20250809222734-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-a1-combo/IMG20250806151909.webp": {
+    "original": "/images/bambu-a1-combo/IMG20250806151909-cleaned.webp",
+    "width": 1200,
+    "height": 1600,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-a1-combo/IMG20250806151909-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-a1-combo/IMG20250806151909-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-a1-combo/IMG20250806151909-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-a1-combo/IMG20250806151909.jpg": {
+    "original": "/images/bambu-a1-combo/IMG20250806151909-cleaned.jpg",
+    "width": 1440,
+    "height": 1920,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-a1-combo/IMG20250806151909-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-a1-combo/IMG20250806151909-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-a1-combo/IMG20250806151909-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-a1-combo/IMG20250727165952.webp": {
+    "original": "/images/bambu-a1-combo/IMG20250727165952-cleaned.webp",
+    "width": 1200,
+    "height": 1600,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-a1-combo/IMG20250727165952-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-a1-combo/IMG20250727165952-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-a1-combo/IMG20250727165952-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-a1-combo/IMG20250727165952.jpg": {
+    "original": "/images/bambu-a1-combo/IMG20250727165952-cleaned.jpg",
+    "width": 1440,
+    "height": 1920,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-a1-combo/IMG20250727165952-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-a1-combo/IMG20250727165952-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-a1-combo/IMG20250727165952-1200w.webp"
+      }
+    ]
+  },
+  "/images/3d-printed-micro-atx-case-build/08-front-with-4090-scale.jpg": {
+    "original": "/images/3d-printed-micro-atx-case-build/08-front-with-4090-scale-cleaned.jpg",
+    "width": 3072,
+    "height": 4096,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/3d-printed-micro-atx-case-build/08-front-with-4090-scale-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/3d-printed-micro-atx-case-build/08-front-with-4090-scale-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/3d-printed-micro-atx-case-build/08-front-with-4090-scale-1200w.webp"
+      }
+    ]
+  },
+  "/images/3d-printed-micro-atx-case-build/07-final-back-view.jpg": {
+    "original": "/images/3d-printed-micro-atx-case-build/07-final-back-view-cleaned.jpg",
+    "width": 3072,
+    "height": 3072,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/3d-printed-micro-atx-case-build/07-final-back-view-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/3d-printed-micro-atx-case-build/07-final-back-view-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/3d-printed-micro-atx-case-build/07-final-back-view-1200w.webp"
+      }
+    ]
+  },
+  "/images/3d-printed-micro-atx-case-build/06-wavy-3d-printed-panels.jpg": {
+    "original": "/images/3d-printed-micro-atx-case-build/06-wavy-3d-printed-panels-cleaned.jpg",
+    "width": 3072,
+    "height": 3072,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/3d-printed-micro-atx-case-build/06-wavy-3d-printed-panels-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/3d-printed-micro-atx-case-build/06-wavy-3d-printed-panels-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/3d-printed-micro-atx-case-build/06-wavy-3d-printed-panels-1200w.webp"
+      }
+    ]
+  },
+  "/images/3d-printed-micro-atx-case-build/05-ssd-cable-routing.jpg": {
+    "original": "/images/3d-printed-micro-atx-case-build/05-ssd-cable-routing-cleaned.jpg",
+    "width": 3072,
+    "height": 3072,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/3d-printed-micro-atx-case-build/05-ssd-cable-routing-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/3d-printed-micro-atx-case-build/05-ssd-cable-routing-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/3d-printed-micro-atx-case-build/05-ssd-cable-routing-1200w.webp"
+      }
+    ]
+  },
+  "/images/3d-printed-micro-atx-case-build/04-gpu-psu-installed.jpg": {
+    "original": "/images/3d-printed-micro-atx-case-build/04-gpu-psu-installed-cleaned.jpg",
+    "width": 3072,
+    "height": 3072,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/3d-printed-micro-atx-case-build/04-gpu-psu-installed-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/3d-printed-micro-atx-case-build/04-gpu-psu-installed-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/3d-printed-micro-atx-case-build/04-gpu-psu-installed-1200w.webp"
+      }
+    ]
+  },
+  "/images/3d-printed-micro-atx-case-build/03-side-view-cooler-mount.jpg": {
+    "original": "/images/3d-printed-micro-atx-case-build/03-side-view-cooler-mount-cleaned.jpg",
+    "width": 3072,
+    "height": 3072,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/3d-printed-micro-atx-case-build/03-side-view-cooler-mount-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/3d-printed-micro-atx-case-build/03-side-view-cooler-mount-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/3d-printed-micro-atx-case-build/03-side-view-cooler-mount-1200w.webp"
+      }
+    ]
+  },
+  "/images/3d-printed-micro-atx-case-build/02-motherboard-cooler-fit.jpg": {
+    "original": "/images/3d-printed-micro-atx-case-build/02-motherboard-cooler-fit-cleaned.jpg",
+    "width": 3072,
+    "height": 3072,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/3d-printed-micro-atx-case-build/02-motherboard-cooler-fit-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/3d-printed-micro-atx-case-build/02-motherboard-cooler-fit-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/3d-printed-micro-atx-case-build/02-motherboard-cooler-fit-1200w.webp"
+      }
+    ]
+  },
+  "/images/3d-printed-micro-atx-case-build/01-premigration-bulky-case.jpg": {
+    "original": "/images/3d-printed-micro-atx-case-build/01-premigration-bulky-case-cleaned.jpg",
+    "width": 2304,
+    "height": 4096,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/3d-printed-micro-atx-case-build/01-premigration-bulky-case-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/3d-printed-micro-atx-case-build/01-premigration-bulky-case-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/3d-printed-micro-atx-case-build/01-premigration-bulky-case-1200w.webp"
+      }
+    ]
+  },
   "/images/bambu-p2s/IMG20251219093302.webp": {
     "original": "/images/bambu-p2s/IMG20251219093302-cleaned.webp",
     "width": 1200,
@@ -1972,272 +2390,6 @@
       {
         "width": 1200,
         "path": "/images/bambu-p2s/IMG20251209155004-1200w.webp"
-      }
-    ]
-  },
-  "/images/bambu-a1-combo/IMG20250912221351.webp": {
-    "original": "/images/bambu-a1-combo/IMG20250912221351-cleaned.webp",
-    "width": 1200,
-    "height": 1600,
-    "variants": [
-      {
-        "width": 400,
-        "path": "/images/bambu-a1-combo/IMG20250912221351-400w.webp"
-      },
-      {
-        "width": 800,
-        "path": "/images/bambu-a1-combo/IMG20250912221351-800w.webp"
-      },
-      {
-        "width": 1200,
-        "path": "/images/bambu-a1-combo/IMG20250912221351-1200w.webp"
-      }
-    ]
-  },
-  "/images/bambu-a1-combo/IMG20250912221351.jpg": {
-    "original": "/images/bambu-a1-combo/IMG20250912221351-cleaned.jpg",
-    "width": 1440,
-    "height": 1920,
-    "variants": [
-      {
-        "width": 400,
-        "path": "/images/bambu-a1-combo/IMG20250912221351-400w.webp"
-      },
-      {
-        "width": 800,
-        "path": "/images/bambu-a1-combo/IMG20250912221351-800w.webp"
-      },
-      {
-        "width": 1200,
-        "path": "/images/bambu-a1-combo/IMG20250912221351-1200w.webp"
-      }
-    ]
-  },
-  "/images/bambu-a1-combo/IMG20250910221256.webp": {
-    "original": "/images/bambu-a1-combo/IMG20250910221256-cleaned.webp",
-    "width": 1200,
-    "height": 1600,
-    "variants": [
-      {
-        "width": 400,
-        "path": "/images/bambu-a1-combo/IMG20250910221256-400w.webp"
-      },
-      {
-        "width": 800,
-        "path": "/images/bambu-a1-combo/IMG20250910221256-800w.webp"
-      },
-      {
-        "width": 1200,
-        "path": "/images/bambu-a1-combo/IMG20250910221256-1200w.webp"
-      }
-    ]
-  },
-  "/images/bambu-a1-combo/IMG20250910221256.jpg": {
-    "original": "/images/bambu-a1-combo/IMG20250910221256-cleaned.jpg",
-    "width": 1440,
-    "height": 1920,
-    "variants": [
-      {
-        "width": 400,
-        "path": "/images/bambu-a1-combo/IMG20250910221256-400w.webp"
-      },
-      {
-        "width": 800,
-        "path": "/images/bambu-a1-combo/IMG20250910221256-800w.webp"
-      },
-      {
-        "width": 1200,
-        "path": "/images/bambu-a1-combo/IMG20250910221256-1200w.webp"
-      }
-    ]
-  },
-  "/images/bambu-a1-combo/IMG20250819142955.webp": {
-    "original": "/images/bambu-a1-combo/IMG20250819142955-cleaned.webp",
-    "width": 1200,
-    "height": 1600,
-    "variants": [
-      {
-        "width": 400,
-        "path": "/images/bambu-a1-combo/IMG20250819142955-400w.webp"
-      },
-      {
-        "width": 800,
-        "path": "/images/bambu-a1-combo/IMG20250819142955-800w.webp"
-      },
-      {
-        "width": 1200,
-        "path": "/images/bambu-a1-combo/IMG20250819142955-1200w.webp"
-      }
-    ]
-  },
-  "/images/bambu-a1-combo/IMG20250819142955.jpg": {
-    "original": "/images/bambu-a1-combo/IMG20250819142955-cleaned.jpg",
-    "width": 1440,
-    "height": 1920,
-    "variants": [
-      {
-        "width": 400,
-        "path": "/images/bambu-a1-combo/IMG20250819142955-400w.webp"
-      },
-      {
-        "width": 800,
-        "path": "/images/bambu-a1-combo/IMG20250819142955-800w.webp"
-      },
-      {
-        "width": 1200,
-        "path": "/images/bambu-a1-combo/IMG20250819142955-1200w.webp"
-      }
-    ]
-  },
-  "/images/bambu-a1-combo/IMG20250814220937.webp": {
-    "original": "/images/bambu-a1-combo/IMG20250814220937-cleaned.webp",
-    "width": 1200,
-    "height": 1600,
-    "variants": [
-      {
-        "width": 400,
-        "path": "/images/bambu-a1-combo/IMG20250814220937-400w.webp"
-      },
-      {
-        "width": 800,
-        "path": "/images/bambu-a1-combo/IMG20250814220937-800w.webp"
-      },
-      {
-        "width": 1200,
-        "path": "/images/bambu-a1-combo/IMG20250814220937-1200w.webp"
-      }
-    ]
-  },
-  "/images/bambu-a1-combo/IMG20250814220937.jpg": {
-    "original": "/images/bambu-a1-combo/IMG20250814220937-cleaned.jpg",
-    "width": 1440,
-    "height": 1920,
-    "variants": [
-      {
-        "width": 400,
-        "path": "/images/bambu-a1-combo/IMG20250814220937-400w.webp"
-      },
-      {
-        "width": 800,
-        "path": "/images/bambu-a1-combo/IMG20250814220937-800w.webp"
-      },
-      {
-        "width": 1200,
-        "path": "/images/bambu-a1-combo/IMG20250814220937-1200w.webp"
-      }
-    ]
-  },
-  "/images/bambu-a1-combo/IMG20250809222734.webp": {
-    "original": "/images/bambu-a1-combo/IMG20250809222734-cleaned.webp",
-    "width": 1200,
-    "height": 1600,
-    "variants": [
-      {
-        "width": 400,
-        "path": "/images/bambu-a1-combo/IMG20250809222734-400w.webp"
-      },
-      {
-        "width": 800,
-        "path": "/images/bambu-a1-combo/IMG20250809222734-800w.webp"
-      },
-      {
-        "width": 1200,
-        "path": "/images/bambu-a1-combo/IMG20250809222734-1200w.webp"
-      }
-    ]
-  },
-  "/images/bambu-a1-combo/IMG20250809222734.jpg": {
-    "original": "/images/bambu-a1-combo/IMG20250809222734-cleaned.jpg",
-    "width": 1440,
-    "height": 1920,
-    "variants": [
-      {
-        "width": 400,
-        "path": "/images/bambu-a1-combo/IMG20250809222734-400w.webp"
-      },
-      {
-        "width": 800,
-        "path": "/images/bambu-a1-combo/IMG20250809222734-800w.webp"
-      },
-      {
-        "width": 1200,
-        "path": "/images/bambu-a1-combo/IMG20250809222734-1200w.webp"
-      }
-    ]
-  },
-  "/images/bambu-a1-combo/IMG20250806151909.webp": {
-    "original": "/images/bambu-a1-combo/IMG20250806151909-cleaned.webp",
-    "width": 1200,
-    "height": 1600,
-    "variants": [
-      {
-        "width": 400,
-        "path": "/images/bambu-a1-combo/IMG20250806151909-400w.webp"
-      },
-      {
-        "width": 800,
-        "path": "/images/bambu-a1-combo/IMG20250806151909-800w.webp"
-      },
-      {
-        "width": 1200,
-        "path": "/images/bambu-a1-combo/IMG20250806151909-1200w.webp"
-      }
-    ]
-  },
-  "/images/bambu-a1-combo/IMG20250806151909.jpg": {
-    "original": "/images/bambu-a1-combo/IMG20250806151909-cleaned.jpg",
-    "width": 1440,
-    "height": 1920,
-    "variants": [
-      {
-        "width": 400,
-        "path": "/images/bambu-a1-combo/IMG20250806151909-400w.webp"
-      },
-      {
-        "width": 800,
-        "path": "/images/bambu-a1-combo/IMG20250806151909-800w.webp"
-      },
-      {
-        "width": 1200,
-        "path": "/images/bambu-a1-combo/IMG20250806151909-1200w.webp"
-      }
-    ]
-  },
-  "/images/bambu-a1-combo/IMG20250727165952.webp": {
-    "original": "/images/bambu-a1-combo/IMG20250727165952-cleaned.webp",
-    "width": 1200,
-    "height": 1600,
-    "variants": [
-      {
-        "width": 400,
-        "path": "/images/bambu-a1-combo/IMG20250727165952-400w.webp"
-      },
-      {
-        "width": 800,
-        "path": "/images/bambu-a1-combo/IMG20250727165952-800w.webp"
-      },
-      {
-        "width": 1200,
-        "path": "/images/bambu-a1-combo/IMG20250727165952-1200w.webp"
-      }
-    ]
-  },
-  "/images/bambu-a1-combo/IMG20250727165952.jpg": {
-    "original": "/images/bambu-a1-combo/IMG20250727165952-cleaned.jpg",
-    "width": 1440,
-    "height": 1920,
-    "variants": [
-      {
-        "width": 400,
-        "path": "/images/bambu-a1-combo/IMG20250727165952-400w.webp"
-      },
-      {
-        "width": 800,
-        "path": "/images/bambu-a1-combo/IMG20250727165952-800w.webp"
-      },
-      {
-        "width": 1200,
-        "path": "/images/bambu-a1-combo/IMG20250727165952-1200w.webp"
       }
     ]
   },
