@@ -30,26 +30,26 @@
 
 <script>
   const container = document.querySelector('.floating-particles')
-  const particleCount = 20
+  const particleCount = 12
   const colors = ['#D4BCFF', '#C4ACFA', '#B8B3FF', '#A78BFF']
 
   const particles = Array.from({ length: particleCount }, (_) => {
     const particle = document.createElement('div')
     particle.className = 'particle'
 
-    const size = Math.random() * 4 + 2
+    const size = Math.random() * 3 + 2
     const x = Math.random() * window.innerWidth
     const y = Math.random() * window.innerHeight
-    const speedX = (Math.random() - 0.5) * 0.5
-    const speedY = (Math.random() - 0.5) * 0.5
-    const opacity = Math.random() * 0.5 + 0.3
+    const speedX = (Math.random() - 0.5) * 0.3
+    const speedY = (Math.random() - 0.5) * 0.3
+    const opacity = Math.random() * 0.4 + 0.2
     const color = colors[Math.floor(Math.random() * colors.length)]
 
     particle.style.width = `${size}px`
     particle.style.height = `${size}px`
     particle.style.backgroundColor = color
     particle.style.opacity = opacity.toString()
-    particle.style.boxShadow = `0 0 ${size * 3}px ${color}`
+    particle.style.boxShadow = `0 0 ${size * 2}px ${color}`
     particle.style.transform = `translate(${x}px, ${y}px)`
 
     container.appendChild(particle)
@@ -63,13 +63,16 @@
     }
   })
 
-  // Optimized animation loop
+  let animating = true
+  let rafId: number | null = null
+
   function animateParticles() {
+    if (!animating) return
+
     particles.forEach((p) => {
       p.x += p.speedX
       p.y += p.speedY
 
-      // Wrap around screen edges
       if (p.x < 0) p.x = window.innerWidth
       if (p.x > window.innerWidth) p.x = 0
       if (p.y < 0) p.y = window.innerHeight
@@ -78,11 +81,22 @@
       p.element.style.transform = `translate(${p.x}px, ${p.y}px)`
     })
 
-    requestAnimationFrame(animateParticles)
+    rafId = requestAnimationFrame(animateParticles)
   }
+
+  // Pause when tab is hidden
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      animating = false
+      if (rafId) cancelAnimationFrame(rafId)
+    } else {
+      animating = true
+      rafId = requestAnimationFrame(animateParticles)
+    }
+  })
 
   // Check reduced motion preference
   if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    animateParticles()
+    rafId = requestAnimationFrame(animateParticles)
   }
 </script>

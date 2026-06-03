@@ -58,7 +58,7 @@ const sortedDiscoveries = discoveries.sort((a, b) => {
                                     </time>
                                 </div>
                                 <span
-                                    class={`severity-badge ${discovery.data.severity}`}
+                                    class={`severity-badge badge-severity-${discovery.data.severity}`}
                                 >
                                     {discovery.data.severity}
                                 </span>
@@ -146,7 +146,7 @@ const sortedDiscoveries = discoveries.sort((a, b) => {
         overflow: hidden;
         box-shadow: var(--md-sys-elevation-level2);
         transition: all var(--md-sys-motion-duration-medium)
-            var(--md-sys-motion-easing-spring-soft);
+            var(--md-sys-motion-easing-emphasized-decel);
         animation: cardFadeIn 0.6s var(--md-sys-motion-easing-decelerate)
             forwards;
     }
@@ -232,19 +232,13 @@ const sortedDiscoveries = discoveries.sort((a, b) => {
         letter-spacing: 0.5px;
     }
 
-    .severity-badge.critical {
-        background: rgba(255, 82, 82, 0.2);
-        color: #ff5252;
-    }
-
-    .severity-badge.warning {
-        background: rgba(255, 171, 64, 0.2);
-        color: #ffab40;
-    }
-
-    .severity-badge.insight {
-        background: var(--md-sys-color-primary-container);
-        color: var(--md-sys-color-on-primary-container);
+    .severity-badge {
+        padding: 0.35rem 0.85rem;
+        border-radius: var(--md-sys-shape-corner-full);
+        font-size: var(--md-sys-typescale-label-medium-size);
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
     }
 
     .discovery-title {
@@ -287,7 +281,7 @@ const sortedDiscoveries = discoveries.sort((a, b) => {
         color: var(--md-sys-color-on-surface-variant);
         font-size: var(--md-sys-typescale-body-medium-size);
         line-height: 1.7;
-        animation: slideDown 0.3s var(--md-sys-motion-easing-spring-soft);
+        animation: slideDown 0.3s var(--md-sys-motion-easing-emphasized-decel);
     }
 
     @keyframes slideDown {

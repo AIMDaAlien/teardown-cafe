@@ -4,6 +4,7 @@ import ThemeToggle from '../components/ThemeToggle.astro'
 import Analytics from '../components/Analytics.astro'
 import Logo from '../components/Logo.astro'
 import Search from '../components/Search.astro'
+import Lightbox from '../components/Lightbox.astro'
 
 interface Props {
   title: string
@@ -75,6 +76,7 @@ const ogImageURL = new URL(image, Astro.site || 'https://teardown.cafe')
     </script>
   </head>
   <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
     <header class="site-header">
       <div class="header-content">
         <a href="/" class="site-title">
@@ -92,7 +94,7 @@ const ogImageURL = new URL(image, Astro.site || 'https://teardown.cafe')
       </div>
     </header>
 
-    <main class="main-content">
+    <main class="main-content" id="main-content">
       <slot />
     </main>
 
@@ -105,18 +107,37 @@ const ogImageURL = new URL(image, Astro.site || 'https://teardown.cafe')
       </div>
     </footer>
 
+    <Lightbox />
     <Analytics />
   </body>
 </html>
 
 <style>
+  .skip-link {
+    position: absolute;
+    top: -100%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    padding: 0.75rem 1.5rem;
+    background: var(--md-sys-color-primary);
+    color: var(--md-sys-color-on-primary);
+    font-weight: 500;
+    border-radius: 0 0 var(--md-sys-shape-corner-medium) var(--md-sys-shape-corner-medium);
+    text-decoration: none;
+    transition: top 0.2s ease;
+  }
+
+  .skip-link:focus {
+    top: 0;
+  }
+
   .site-header {
     background-color: var(--md-sys-color-surface-container);
     border-bottom: 1px solid var(--md-sys-color-outline-variant);
     position: sticky;
     top: 0;
     z-index: 10;
-    backdrop-filter: blur(12px);
   }
 
   .header-content {

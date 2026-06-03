@@ -1,0 +1,365 @@
+---
+/**
+ * Lightbox — Click-to-expand for article images
+ *
+ * Client-side enhancement: wraps article images with lightbox handlers.
+ * Keyboard: Escape to close, arrow keys for gallery nav.
+ * Respects prefers-reduced-motion.
+ */
+---
+
+<!-- Lightbox overlay -->
+<div id="lightbox-overlay" class="lightbox-overlay" role="dialog" aria-modal="true" aria-label="Image viewer" hidden>
+  <div class="lightbox-backdrop"></div>
+
+  <button class="lightbox-close" aria-label="Close image viewer">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M18 6L6 18M6 6l12 12" />
+    </svg>
+  </button>
+
+  <button class="lightbox-prev" aria-label="Previous image">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M15 18l-6-6 6-6" />
+    </svg>
+  </button>
+
+  <div class="lightbox-stage">
+    <img id="lightbox-img" src="" alt="" />
+  </div>
+
+  <button class="lightbox-next" aria-label="Next image">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M9 18l6-6-6-6" />
+    </svg>
+  </button>
+
+  <div class="lightbox-caption" id="lightbox-caption"></div>
+
+  <div class="lightbox-counter" id="lightbox-counter"></div>
+</div>
+
+<style>
+  .lightbox-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition:
+      opacity 0.3s var(--md-sys-motion-easing-emphasized-decel, cubic-bezier(0.16, 1, 0.3, 1)),
+      visibility 0.3s;
+  }
+
+  .lightbox-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .lightbox-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.92);
+    backdrop-filter: blur(8px);
+  }
+
+  .lightbox-stage {
+    position: relative;
+    z-index: 1;
+    max-width: 92vw;
+    max-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .lightbox-stage img {
+    max-width: 100%;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: var(--md-sys-shape-corner-medium, 12px);
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.4);
+    transform: scale(0.96);
+    transition: transform 0.35s var(--md-sys-motion-easing-emphasized-decel, cubic-bezier(0.16, 1, 0.3, 1));
+  }
+
+  .lightbox-overlay.active .lightbox-stage img {
+    transform: scale(1);
+  }
+
+  .lightbox-close,
+  .lightbox-prev,
+  .lightbox-next {
+    position: absolute;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease, transform 0.2s ease;
+    backdrop-filter: blur(4px);
+  }
+
+  .lightbox-close:hover,
+  .lightbox-prev:hover,
+  .lightbox-next:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+  }
+
+  .lightbox-close {
+    top: 1rem;
+    right: 1rem;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+  }
+
+  .lightbox-close svg,
+  .lightbox-prev svg,
+  .lightbox-next svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .lightbox-prev,
+  .lightbox-next {
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+  }
+
+  .lightbox-prev {
+    left: 1rem;
+  }
+
+  .lightbox-next {
+    right: 1rem;
+  }
+
+  .lightbox-prev:hover {
+    transform: translateY(-50%) scale(1.05);
+  }
+
+  .lightbox-next:hover {
+    transform: translateY(-50%) scale(1.05);
+  }
+
+  .lightbox-caption {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.9375rem;
+    text-align: center;
+    max-width: 600px;
+    padding: 0 1rem;
+    line-height: 1.5;
+  }
+
+  .lightbox-counter {
+    position: absolute;
+    top: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.875rem;
+    font-variant-numeric: tabular-nums;
+  }
+
+  @media (max-width: 768px) {
+    .lightbox-prev,
+    .lightbox-next {
+      display: none;
+    }
+
+    .lightbox-stage {
+      max-width: 96vw;
+      max-height: 80vh;
+    }
+
+    .lightbox-caption {
+      font-size: 0.875rem;
+      bottom: 1rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .lightbox-overlay,
+    .lightbox-stage img {
+      transition: none !important;
+    }
+  }
+</style>
+
+<script>
+  (function initLightbox() {
+    const overlay = document.getElementById('lightbox-overlay')
+    const imgEl = document.getElementById('lightbox-img') as HTMLImageElement
+    const captionEl = document.getElementById('lightbox-caption')
+    const counterEl = document.getElementById('lightbox-counter')
+    const closeBtn = overlay?.querySelector('.lightbox-close')
+    const prevBtn = overlay?.querySelector('.lightbox-prev')
+    const nextBtn = overlay?.querySelector('.lightbox-next')
+
+    if (!overlay || !imgEl) return
+
+    // Collect all article images that should have lightbox
+    let galleryImages: HTMLImageElement[] = []
+    let currentIndex = 0
+
+    function collectImages() {
+      galleryImages = Array.from(
+        document.querySelectorAll('.article-content img, .teardown-content img, article img')
+      ).filter((img): img is HTMLImageElement => img instanceof HTMLImageElement)
+    }
+
+    function openLightbox(index: number) {
+      if (!galleryImages.length) return
+      currentIndex = index
+      const img = galleryImages[currentIndex]
+
+      // Use highest-res variant if available (data-srcset or current src)
+      const highRes = img.dataset.srcset
+        ? extractLargestSrc(img.dataset.srcset)
+        : img.src
+
+      imgEl.src = highRes
+      imgEl.alt = img.alt || ''
+
+      if (captionEl) {
+        captionEl.textContent = img.alt || ''
+      }
+      if (counterEl) {
+        counterEl.textContent = `${currentIndex + 1} / ${galleryImages.length}`
+      }
+
+      overlay.hidden = false
+      // Force reflow for transition
+      void overlay.offsetWidth
+      overlay.classList.add('active')
+      document.body.style.overflow = 'hidden'
+
+      // Focus management
+      closeBtn?.focus()
+    }
+
+    function closeLightbox() {
+      overlay.classList.remove('active')
+      setTimeout(() => {
+        overlay.hidden = true
+        imgEl.src = ''
+        document.body.style.overflow = ''
+        // Return focus to the image that opened it
+        galleryImages[currentIndex]?.focus()
+      }, 300)
+    }
+
+    function showPrev() {
+      if (galleryImages.length <= 1) return
+      currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length
+      openLightbox(currentIndex)
+    }
+
+    function showNext() {
+      if (galleryImages.length <= 1) return
+      currentIndex = (currentIndex + 1) % galleryImages.length
+      openLightbox(currentIndex)
+    }
+
+    function extractLargestSrc(srcset: string): string {
+      const candidates = srcset.split(',').map((s) => {
+        const [url, widthStr] = s.trim().split(' ')
+        const width = parseInt(widthStr?.replace('w', '') || '0', 10)
+        return { url, width }
+      })
+      candidates.sort((a, b) => b.width - a.width)
+      return candidates[0]?.url || ''
+    }
+
+    // Focus trap
+    function trapFocus(e: KeyboardEvent) {
+      if (e.key !== 'Tab' || !overlay) return
+      const focusables = overlay.querySelectorAll<HTMLElement>(
+        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+      )
+      const first = focusables[0]
+      const last = focusables[focusables.length - 1]
+
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault()
+        last.focus()
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault()
+        first.focus()
+      }
+    }
+
+    // Keyboard handlers
+    document.addEventListener('keydown', (e) => {
+      if (overlay.hidden) return
+      if (e.key === 'Escape') {
+        e.preventDefault()
+        closeLightbox()
+      } else if (e.key === 'ArrowLeft') {
+        e.preventDefault()
+        showPrev()
+      } else if (e.key === 'ArrowRight') {
+        e.preventDefault()
+        showNext()
+      } else if (e.key === 'Tab') {
+        trapFocus(e)
+      }
+    })
+
+    closeBtn?.addEventListener('click', closeLightbox)
+    prevBtn?.addEventListener('click', showPrev)
+    nextBtn?.addEventListener('click', showNext)
+    overlay.querySelector('.lightbox-backdrop')?.addEventListener('click', closeLightbox)
+
+    // Wire up article images on DOM ready + after any navigation
+    function wireImages() {
+      collectImages()
+      galleryImages.forEach((img, index) => {
+        // Only wire once
+        if ((img as HTMLElement & { __lightboxWired?: boolean }).__lightboxWired) return
+        ;(img as HTMLElement & { __lightboxWired?: boolean }).__lightboxWired = true
+
+        img.style.cursor = 'zoom-in'
+        img.addEventListener('click', (e) => {
+          e.preventDefault()
+          openLightbox(index)
+        })
+        // Make keyboard-focusable
+        img.setAttribute('tabindex', '0')
+        img.setAttribute('role', 'button')
+        img.setAttribute('aria-label', `View larger: ${img.alt || 'image'}`)
+        img.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault()
+            openLightbox(index)
+          }
+        })
+      })
+    }
+
+    // Run on initial load and after Astro view transitions
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', wireImages)
+    } else {
+      wireImages()
+    }
+    document.addEventListener('astro:page-load', wireImages)
+  })()
+</script>

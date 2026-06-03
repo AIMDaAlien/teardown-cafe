@@ -1,0 +1,2776 @@
+{
+  "/images/truenas-sas-build/04-external-fan-cooling.webp": {
+    "original": "/images/truenas-sas-build/04-external-fan-cooling-cleaned.webp",
+    "width": 1200,
+    "height": 900,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/truenas-sas-build/04-external-fan-cooling-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/truenas-sas-build/04-external-fan-cooling-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/truenas-sas-build/04-external-fan-cooling-1200w.webp"
+      }
+    ]
+  },
+  "/images/truenas-sas-build/04-external-fan-cooling.jpg": {
+    "original": "/images/truenas-sas-build/04-external-fan-cooling-cleaned.jpg",
+    "width": 4096,
+    "height": 3072,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/truenas-sas-build/04-external-fan-cooling-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/truenas-sas-build/04-external-fan-cooling-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/truenas-sas-build/04-external-fan-cooling-1200w.webp"
+      }
+    ]
+  },
+  "/images/truenas-sas-build/04-drives-external-layout.webp": {
+    "original": "/images/truenas-sas-build/04-drives-external-layout-cleaned.webp",
+    "width": 1200,
+    "height": 900,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/truenas-sas-build/04-drives-external-layout-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/truenas-sas-build/04-drives-external-layout-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/truenas-sas-build/04-drives-external-layout-1200w.webp"
+      }
+    ]
+  },
+  "/images/truenas-sas-build/04-drives-external-layout.jpg": {
+    "original": "/images/truenas-sas-build/04-drives-external-layout-cleaned.jpg",
+    "width": 4096,
+    "height": 3072,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/truenas-sas-build/04-drives-external-layout-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/truenas-sas-build/04-drives-external-layout-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/truenas-sas-build/04-drives-external-layout-1200w.webp"
+      }
+    ]
+  },
+  "/images/truenas-sas-build/03-motherboard-drive-bays.webp": {
+    "original": "/images/truenas-sas-build/03-motherboard-drive-bays-cleaned.webp",
+    "width": 1200,
+    "height": 1600,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/truenas-sas-build/03-motherboard-drive-bays-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/truenas-sas-build/03-motherboard-drive-bays-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/truenas-sas-build/03-motherboard-drive-bays-1200w.webp"
+      }
+    ]
+  },
+  "/images/truenas-sas-build/03-motherboard-drive-bays.jpg": {
+    "original": "/images/truenas-sas-build/03-motherboard-drive-bays-cleaned.jpg",
+    "width": 3072,
+    "height": 4096,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/truenas-sas-build/03-motherboard-drive-bays-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/truenas-sas-build/03-motherboard-drive-bays-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/truenas-sas-build/03-motherboard-drive-bays-1200w.webp"
+      }
+    ]
+  },
+  "/images/truenas-sas-build/02-sas-drive-power-incompatibility.webp": {
+    "original": "/images/truenas-sas-build/02-sas-drive-power-incompatibility-cleaned.webp",
+    "width": 1200,
+    "height": 1600,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/truenas-sas-build/02-sas-drive-power-incompatibility-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/truenas-sas-build/02-sas-drive-power-incompatibility-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/truenas-sas-build/02-sas-drive-power-incompatibility-1200w.webp"
+      }
+    ]
+  },
+  "/images/truenas-sas-build/02-sas-drive-power-incompatibility.jpg": {
+    "original": "/images/truenas-sas-build/02-sas-drive-power-incompatibility-cleaned.jpg",
+    "width": 3072,
+    "height": 4096,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/truenas-sas-build/02-sas-drive-power-incompatibility-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/truenas-sas-build/02-sas-drive-power-incompatibility-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/truenas-sas-build/02-sas-drive-power-incompatibility-1200w.webp"
+      }
+    ]
+  },
+  "/images/truenas-sas-build/02-interior-cables-hba.webp": {
+    "original": "/images/truenas-sas-build/02-interior-cables-hba-cleaned.webp",
+    "width": 1200,
+    "height": 900,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/truenas-sas-build/02-interior-cables-hba-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/truenas-sas-build/02-interior-cables-hba-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/truenas-sas-build/02-interior-cables-hba-1200w.webp"
+      }
+    ]
+  },
+  "/images/truenas-sas-build/02-interior-cables-hba.jpg": {
+    "original": "/images/truenas-sas-build/02-interior-cables-hba-cleaned.jpg",
+    "width": 4096,
+    "height": 3072,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/truenas-sas-build/02-interior-cables-hba-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/truenas-sas-build/02-interior-cables-hba-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/truenas-sas-build/02-interior-cables-hba-1200w.webp"
+      }
+    ]
+  },
+  "/images/truenas-sas-build/01-asus-motherboard-layout.webp": {
+    "original": "/images/truenas-sas-build/01-asus-motherboard-layout-cleaned.webp",
+    "width": 1200,
+    "height": 1600,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/truenas-sas-build/01-asus-motherboard-layout-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/truenas-sas-build/01-asus-motherboard-layout-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/truenas-sas-build/01-asus-motherboard-layout-1200w.webp"
+      }
+    ]
+  },
+  "/images/truenas-sas-build/01-asus-motherboard-layout.jpg": {
+    "original": "/images/truenas-sas-build/01-asus-motherboard-layout-cleaned.jpg",
+    "width": 3072,
+    "height": 4096,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/truenas-sas-build/01-asus-motherboard-layout-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/truenas-sas-build/01-asus-motherboard-layout-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/truenas-sas-build/01-asus-motherboard-layout-1200w.webp"
+      }
+    ]
+  },
+  "/images/thinkpad-t490s-2023/01-internals-overview.webp": {
+    "original": "/images/thinkpad-t490s-2023/01-internals-overview-cleaned.webp",
+    "width": 1200,
+    "height": 1600,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/thinkpad-t490s-2023/01-internals-overview-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/thinkpad-t490s-2023/01-internals-overview-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/thinkpad-t490s-2023/01-internals-overview-1200w.webp"
+      }
+    ]
+  },
+  "/images/thinkpad-t490s-2023/01-internals-overview.jpg": {
+    "original": "/images/thinkpad-t490s-2023/01-internals-overview-cleaned.jpg",
+    "width": 3072,
+    "height": 4096,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/thinkpad-t490s-2023/01-internals-overview-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/thinkpad-t490s-2023/01-internals-overview-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/thinkpad-t490s-2023/01-internals-overview-1200w.webp"
+      }
+    ]
+  },
+  "/images/raspberry-pi-5-nvme/06-final-assembly.webp": {
+    "original": "/images/raspberry-pi-5-nvme/06-final-assembly-cleaned.webp",
+    "width": 1200,
+    "height": 1200,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/raspberry-pi-5-nvme/06-final-assembly-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/raspberry-pi-5-nvme/06-final-assembly-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/raspberry-pi-5-nvme/06-final-assembly-1200w.webp"
+      }
+    ]
+  },
+  "/images/raspberry-pi-5-nvme/06-final-assembly.jpg": {
+    "original": "/images/raspberry-pi-5-nvme/06-final-assembly-cleaned.jpg",
+    "width": 3000,
+    "height": 3000,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/raspberry-pi-5-nvme/06-final-assembly-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/raspberry-pi-5-nvme/06-final-assembly-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/raspberry-pi-5-nvme/06-final-assembly-1200w.webp"
+      }
+    ]
+  },
+  "/images/raspberry-pi-5-nvme/05-hat-assembly-layers.webp": {
+    "original": "/images/raspberry-pi-5-nvme/05-hat-assembly-layers-cleaned.webp",
+    "width": 1200,
+    "height": 1200,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/raspberry-pi-5-nvme/05-hat-assembly-layers-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/raspberry-pi-5-nvme/05-hat-assembly-layers-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/raspberry-pi-5-nvme/05-hat-assembly-layers-1200w.webp"
+      }
+    ]
+  },
+  "/images/raspberry-pi-5-nvme/05-hat-assembly-layers.jpg": {
+    "original": "/images/raspberry-pi-5-nvme/05-hat-assembly-layers-cleaned.jpg",
+    "width": 3072,
+    "height": 3072,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/raspberry-pi-5-nvme/05-hat-assembly-layers-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/raspberry-pi-5-nvme/05-hat-assembly-layers-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/raspberry-pi-5-nvme/05-hat-assembly-layers-1200w.webp"
+      }
+    ]
+  },
+  "/images/raspberry-pi-5-nvme/04-case-fitting-test.webp": {
+    "original": "/images/raspberry-pi-5-nvme/04-case-fitting-test-cleaned.webp",
+    "width": 1200,
+    "height": 1200,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/raspberry-pi-5-nvme/04-case-fitting-test-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/raspberry-pi-5-nvme/04-case-fitting-test-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/raspberry-pi-5-nvme/04-case-fitting-test-1200w.webp"
+      }
+    ]
+  },
+  "/images/raspberry-pi-5-nvme/04-case-fitting-test.jpg": {
+    "original": "/images/raspberry-pi-5-nvme/04-case-fitting-test-cleaned.jpg",
+    "width": 3072,
+    "height": 3072,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/raspberry-pi-5-nvme/04-case-fitting-test-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/raspberry-pi-5-nvme/04-case-fitting-test-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/raspberry-pi-5-nvme/04-case-fitting-test-1200w.webp"
+      }
+    ]
+  },
+  "/images/raspberry-pi-5-nvme/03-hat-installation-with-fan.webp": {
+    "original": "/images/raspberry-pi-5-nvme/03-hat-installation-with-fan-cleaned.webp",
+    "width": 1200,
+    "height": 1200,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/raspberry-pi-5-nvme/03-hat-installation-with-fan-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/raspberry-pi-5-nvme/03-hat-installation-with-fan-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/raspberry-pi-5-nvme/03-hat-installation-with-fan-1200w.webp"
+      }
+    ]
+  },
+  "/images/raspberry-pi-5-nvme/03-hat-installation-with-fan.jpg": {
+    "original": "/images/raspberry-pi-5-nvme/03-hat-installation-with-fan-cleaned.jpg",
+    "width": 3072,
+    "height": 3072,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/raspberry-pi-5-nvme/03-hat-installation-with-fan-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/raspberry-pi-5-nvme/03-hat-installation-with-fan-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/raspberry-pi-5-nvme/03-hat-installation-with-fan-1200w.webp"
+      }
+    ]
+  },
+  "/images/raspberry-pi-5-nvme/02-raspberry-pi-5-ports.webp": {
+    "original": "/images/raspberry-pi-5-nvme/02-raspberry-pi-5-ports-cleaned.webp",
+    "width": 1200,
+    "height": 1200,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/raspberry-pi-5-nvme/02-raspberry-pi-5-ports-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/raspberry-pi-5-nvme/02-raspberry-pi-5-ports-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/raspberry-pi-5-nvme/02-raspberry-pi-5-ports-1200w.webp"
+      }
+    ]
+  },
+  "/images/raspberry-pi-5-nvme/02-raspberry-pi-5-ports.jpg": {
+    "original": "/images/raspberry-pi-5-nvme/02-raspberry-pi-5-ports-cleaned.jpg",
+    "width": 3072,
+    "height": 3072,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/raspberry-pi-5-nvme/02-raspberry-pi-5-ports-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/raspberry-pi-5-nvme/02-raspberry-pi-5-ports-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/raspberry-pi-5-nvme/02-raspberry-pi-5-ports-1200w.webp"
+      }
+    ]
+  },
+  "/images/raspberry-pi-5-nvme/01-components-overview.webp": {
+    "original": "/images/raspberry-pi-5-nvme/01-components-overview-cleaned.webp",
+    "width": 1200,
+    "height": 1200,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/raspberry-pi-5-nvme/01-components-overview-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/raspberry-pi-5-nvme/01-components-overview-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/raspberry-pi-5-nvme/01-components-overview-1200w.webp"
+      }
+    ]
+  },
+  "/images/raspberry-pi-5-nvme/01-components-overview.jpg": {
+    "original": "/images/raspberry-pi-5-nvme/01-components-overview-cleaned.jpg",
+    "width": 3072,
+    "height": 3072,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/raspberry-pi-5-nvme/01-components-overview-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/raspberry-pi-5-nvme/01-components-overview-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/raspberry-pi-5-nvme/01-components-overview-1200w.webp"
+      }
+    ]
+  },
+  "/images/moto-g-stylus-2022-screen/04-screen-replaced.webp": {
+    "original": "/images/moto-g-stylus-2022-screen/04-screen-replaced-cleaned.webp",
+    "width": 1200,
+    "height": 1600,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/moto-g-stylus-2022-screen/04-screen-replaced-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/moto-g-stylus-2022-screen/04-screen-replaced-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/moto-g-stylus-2022-screen/04-screen-replaced-1200w.webp"
+      }
+    ]
+  },
+  "/images/moto-g-stylus-2022-screen/04-screen-replaced.jpg": {
+    "original": "/images/moto-g-stylus-2022-screen/04-screen-replaced-cleaned.jpg",
+    "width": 3468,
+    "height": 4624,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/moto-g-stylus-2022-screen/04-screen-replaced-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/moto-g-stylus-2022-screen/04-screen-replaced-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/moto-g-stylus-2022-screen/04-screen-replaced-1200w.webp"
+      }
+    ]
+  },
+  "/images/moto-g-stylus-2022-screen/03-battery-internals-view.webp": {
+    "original": "/images/moto-g-stylus-2022-screen/03-battery-internals-view-cleaned.webp",
+    "width": 1200,
+    "height": 1600,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/moto-g-stylus-2022-screen/03-battery-internals-view-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/moto-g-stylus-2022-screen/03-battery-internals-view-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/moto-g-stylus-2022-screen/03-battery-internals-view-1200w.webp"
+      }
+    ]
+  },
+  "/images/moto-g-stylus-2022-screen/03-battery-internals-view.jpg": {
+    "original": "/images/moto-g-stylus-2022-screen/03-battery-internals-view-cleaned.jpg",
+    "width": 3468,
+    "height": 4624,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/moto-g-stylus-2022-screen/03-battery-internals-view-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/moto-g-stylus-2022-screen/03-battery-internals-view-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/moto-g-stylus-2022-screen/03-battery-internals-view-1200w.webp"
+      }
+    ]
+  },
+  "/images/moto-g-stylus-2022-screen/02-back-cover-removed.webp": {
+    "original": "/images/moto-g-stylus-2022-screen/02-back-cover-removed-cleaned.webp",
+    "width": 1200,
+    "height": 1600,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/moto-g-stylus-2022-screen/02-back-cover-removed-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/moto-g-stylus-2022-screen/02-back-cover-removed-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/moto-g-stylus-2022-screen/02-back-cover-removed-1200w.webp"
+      }
+    ]
+  },
+  "/images/moto-g-stylus-2022-screen/02-back-cover-removed.jpg": {
+    "original": "/images/moto-g-stylus-2022-screen/02-back-cover-removed-cleaned.jpg",
+    "width": 3468,
+    "height": 4624,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/moto-g-stylus-2022-screen/02-back-cover-removed-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/moto-g-stylus-2022-screen/02-back-cover-removed-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/moto-g-stylus-2022-screen/02-back-cover-removed-1200w.webp"
+      }
+    ]
+  },
+  "/images/moto-g-stylus-2022-screen/01-phone-exterior.webp": {
+    "original": "/images/moto-g-stylus-2022-screen/01-phone-exterior-cleaned.webp",
+    "width": 1200,
+    "height": 1600,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/moto-g-stylus-2022-screen/01-phone-exterior-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/moto-g-stylus-2022-screen/01-phone-exterior-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/moto-g-stylus-2022-screen/01-phone-exterior-1200w.webp"
+      }
+    ]
+  },
+  "/images/moto-g-stylus-2022-screen/01-phone-exterior.jpg": {
+    "original": "/images/moto-g-stylus-2022-screen/01-phone-exterior-cleaned.jpg",
+    "width": 3468,
+    "height": 4624,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/moto-g-stylus-2022-screen/01-phone-exterior-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/moto-g-stylus-2022-screen/01-phone-exterior-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/moto-g-stylus-2022-screen/01-phone-exterior-1200w.webp"
+      }
+    ]
+  },
+  "/images/macbook-air-m1-ideation/05-battery-removed.webp": {
+    "original": "/images/macbook-air-m1-ideation/05-battery-removed-cleaned.webp",
+    "width": 1024,
+    "height": 768,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/macbook-air-m1-ideation/05-battery-removed-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/macbook-air-m1-ideation/05-battery-removed-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/macbook-air-m1-ideation/05-battery-removed-1200w.webp"
+      }
+    ]
+  },
+  "/images/macbook-air-m1-ideation/05-battery-removed.jpg": {
+    "original": "/images/macbook-air-m1-ideation/05-battery-removed-cleaned.jpg",
+    "width": 1024,
+    "height": 768,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/macbook-air-m1-ideation/05-battery-removed-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/macbook-air-m1-ideation/05-battery-removed-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/macbook-air-m1-ideation/05-battery-removed-1200w.webp"
+      }
+    ]
+  },
+  "/images/macbook-air-m1-ideation/04-usbc-daughterboard.webp": {
+    "original": "/images/macbook-air-m1-ideation/04-usbc-daughterboard-cleaned.webp",
+    "width": 768,
+    "height": 1024,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/macbook-air-m1-ideation/04-usbc-daughterboard-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/macbook-air-m1-ideation/04-usbc-daughterboard-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/macbook-air-m1-ideation/04-usbc-daughterboard-1200w.webp"
+      }
+    ]
+  },
+  "/images/macbook-air-m1-ideation/04-usbc-daughterboard.jpg": {
+    "original": "/images/macbook-air-m1-ideation/04-usbc-daughterboard-cleaned.jpg",
+    "width": 768,
+    "height": 1024,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/macbook-air-m1-ideation/04-usbc-daughterboard-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/macbook-air-m1-ideation/04-usbc-daughterboard-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/macbook-air-m1-ideation/04-usbc-daughterboard-1200w.webp"
+      }
+    ]
+  },
+  "/images/macbook-air-m1-ideation/03-logic-board-closeup.webp": {
+    "original": "/images/macbook-air-m1-ideation/03-logic-board-closeup-cleaned.webp",
+    "width": 1024,
+    "height": 768,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/macbook-air-m1-ideation/03-logic-board-closeup-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/macbook-air-m1-ideation/03-logic-board-closeup-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/macbook-air-m1-ideation/03-logic-board-closeup-1200w.webp"
+      }
+    ]
+  },
+  "/images/macbook-air-m1-ideation/03-logic-board-closeup.jpg": {
+    "original": "/images/macbook-air-m1-ideation/03-logic-board-closeup-cleaned.jpg",
+    "width": 1024,
+    "height": 768,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/macbook-air-m1-ideation/03-logic-board-closeup-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/macbook-air-m1-ideation/03-logic-board-closeup-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/macbook-air-m1-ideation/03-logic-board-closeup-1200w.webp"
+      }
+    ]
+  },
+  "/images/macbook-air-m1-ideation/02-logic-board-lifting.webp": {
+    "original": "/images/macbook-air-m1-ideation/02-logic-board-lifting-cleaned.webp",
+    "width": 1024,
+    "height": 768,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/macbook-air-m1-ideation/02-logic-board-lifting-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/macbook-air-m1-ideation/02-logic-board-lifting-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/macbook-air-m1-ideation/02-logic-board-lifting-1200w.webp"
+      }
+    ]
+  },
+  "/images/macbook-air-m1-ideation/02-logic-board-lifting.jpg": {
+    "original": "/images/macbook-air-m1-ideation/02-logic-board-lifting-cleaned.jpg",
+    "width": 1024,
+    "height": 768,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/macbook-air-m1-ideation/02-logic-board-lifting-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/macbook-air-m1-ideation/02-logic-board-lifting-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/macbook-air-m1-ideation/02-logic-board-lifting-1200w.webp"
+      }
+    ]
+  },
+  "/images/macbook-air-m1-ideation/01-internal-overview.webp": {
+    "original": "/images/macbook-air-m1-ideation/01-internal-overview-cleaned.webp",
+    "width": 1024,
+    "height": 768,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/macbook-air-m1-ideation/01-internal-overview-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/macbook-air-m1-ideation/01-internal-overview-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/macbook-air-m1-ideation/01-internal-overview-1200w.webp"
+      }
+    ]
+  },
+  "/images/macbook-air-m1-ideation/01-internal-overview.jpg": {
+    "original": "/images/macbook-air-m1-ideation/01-internal-overview-cleaned.jpg",
+    "width": 1024,
+    "height": 768,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/macbook-air-m1-ideation/01-internal-overview-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/macbook-air-m1-ideation/01-internal-overview-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/macbook-air-m1-ideation/01-internal-overview-1200w.webp"
+      }
+    ]
+  },
+  "/images/macbook-pro-2010-upgrades/IMG20250328232505.webp": {
+    "original": "/images/macbook-pro-2010-upgrades/IMG20250328232505-cleaned.webp",
+    "width": 1200,
+    "height": 1200,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/macbook-pro-2010-upgrades/IMG20250328232505-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/macbook-pro-2010-upgrades/IMG20250328232505-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/macbook-pro-2010-upgrades/IMG20250328232505-1200w.webp"
+      }
+    ]
+  },
+  "/images/macbook-pro-2010-upgrades/IMG20250328232505.jpg": {
+    "original": "/images/macbook-pro-2010-upgrades/IMG20250328232505-cleaned.jpg",
+    "width": 1920,
+    "height": 1920,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/macbook-pro-2010-upgrades/IMG20250328232505-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/macbook-pro-2010-upgrades/IMG20250328232505-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/macbook-pro-2010-upgrades/IMG20250328232505-1200w.webp"
+      }
+    ]
+  },
+  "/images/macbook-pro-2010-upgrades/IMG20250312202418.webp": {
+    "original": "/images/macbook-pro-2010-upgrades/IMG20250312202418-cleaned.webp",
+    "width": 1200,
+    "height": 900,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/macbook-pro-2010-upgrades/IMG20250312202418-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/macbook-pro-2010-upgrades/IMG20250312202418-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/macbook-pro-2010-upgrades/IMG20250312202418-1200w.webp"
+      }
+    ]
+  },
+  "/images/macbook-pro-2010-upgrades/IMG20250312202418.jpg": {
+    "original": "/images/macbook-pro-2010-upgrades/IMG20250312202418-cleaned.jpg",
+    "width": 1920,
+    "height": 1440,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/macbook-pro-2010-upgrades/IMG20250312202418-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/macbook-pro-2010-upgrades/IMG20250312202418-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/macbook-pro-2010-upgrades/IMG20250312202418-1200w.webp"
+      }
+    ]
+  },
+  "/images/macbook-pro-2010-upgrades/IMG20250307201158.webp": {
+    "original": "/images/macbook-pro-2010-upgrades/IMG20250307201158-cleaned.webp",
+    "width": 1200,
+    "height": 675,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/macbook-pro-2010-upgrades/IMG20250307201158-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/macbook-pro-2010-upgrades/IMG20250307201158-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/macbook-pro-2010-upgrades/IMG20250307201158-1200w.webp"
+      }
+    ]
+  },
+  "/images/macbook-pro-2010-upgrades/IMG20250307201158.jpg": {
+    "original": "/images/macbook-pro-2010-upgrades/IMG20250307201158-cleaned.jpg",
+    "width": 1920,
+    "height": 1080,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/macbook-pro-2010-upgrades/IMG20250307201158-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/macbook-pro-2010-upgrades/IMG20250307201158-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/macbook-pro-2010-upgrades/IMG20250307201158-1200w.webp"
+      }
+    ]
+  },
+  "/images/macbook-pro-2010-upgrades/IMG20250307162503.webp": {
+    "original": "/images/macbook-pro-2010-upgrades/IMG20250307162503-cleaned.webp",
+    "width": 1200,
+    "height": 675,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/macbook-pro-2010-upgrades/IMG20250307162503-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/macbook-pro-2010-upgrades/IMG20250307162503-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/macbook-pro-2010-upgrades/IMG20250307162503-1200w.webp"
+      }
+    ]
+  },
+  "/images/macbook-pro-2010-upgrades/IMG20250307162503.jpg": {
+    "original": "/images/macbook-pro-2010-upgrades/IMG20250307162503-cleaned.jpg",
+    "width": 1920,
+    "height": 1080,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/macbook-pro-2010-upgrades/IMG20250307162503-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/macbook-pro-2010-upgrades/IMG20250307162503-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/macbook-pro-2010-upgrades/IMG20250307162503-1200w.webp"
+      }
+    ]
+  },
+  "/images/macbook-pro-2010-upgrades/IMG20250307115338.webp": {
+    "original": "/images/macbook-pro-2010-upgrades/IMG20250307115338-cleaned.webp",
+    "width": 1200,
+    "height": 675,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/macbook-pro-2010-upgrades/IMG20250307115338-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/macbook-pro-2010-upgrades/IMG20250307115338-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/macbook-pro-2010-upgrades/IMG20250307115338-1200w.webp"
+      }
+    ]
+  },
+  "/images/macbook-pro-2010-upgrades/IMG20250307115338.jpg": {
+    "original": "/images/macbook-pro-2010-upgrades/IMG20250307115338-cleaned.jpg",
+    "width": 1920,
+    "height": 1080,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/macbook-pro-2010-upgrades/IMG20250307115338-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/macbook-pro-2010-upgrades/IMG20250307115338-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/macbook-pro-2010-upgrades/IMG20250307115338-1200w.webp"
+      }
+    ]
+  },
+  "/images/macbook-pro-2010-upgrades/20250325_045100.webp": {
+    "original": "/images/macbook-pro-2010-upgrades/20250325_045100-cleaned.webp",
+    "width": 1200,
+    "height": 676,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/macbook-pro-2010-upgrades/20250325_045100-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/macbook-pro-2010-upgrades/20250325_045100-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/macbook-pro-2010-upgrades/20250325_045100-1200w.webp"
+      }
+    ]
+  },
+  "/images/macbook-pro-2010-upgrades/20250325_045100.jpg": {
+    "original": "/images/macbook-pro-2010-upgrades/20250325_045100-cleaned.jpg",
+    "width": 1920,
+    "height": 1081,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/macbook-pro-2010-upgrades/20250325_045100-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/macbook-pro-2010-upgrades/20250325_045100-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/macbook-pro-2010-upgrades/20250325_045100-1200w.webp"
+      }
+    ]
+  },
+  "/images/macbook-air-2015-13inch/04-nvme-adapter-install.webp": {
+    "original": "/images/macbook-air-2015-13inch/04-nvme-adapter-install-cleaned.webp",
+    "width": 1200,
+    "height": 675,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/macbook-air-2015-13inch/04-nvme-adapter-install-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/macbook-air-2015-13inch/04-nvme-adapter-install-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/macbook-air-2015-13inch/04-nvme-adapter-install-1200w.webp"
+      }
+    ]
+  },
+  "/images/macbook-air-2015-13inch/04-nvme-adapter-install.jpg": {
+    "original": "/images/macbook-air-2015-13inch/04-nvme-adapter-install-cleaned.jpg",
+    "width": 4096,
+    "height": 2304,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/macbook-air-2015-13inch/04-nvme-adapter-install-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/macbook-air-2015-13inch/04-nvme-adapter-install-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/macbook-air-2015-13inch/04-nvme-adapter-install-1200w.webp"
+      }
+    ]
+  },
+  "/images/macbook-air-2015-13inch/03-os-x-el-capitan-screen.webp": {
+    "original": "/images/macbook-air-2015-13inch/03-os-x-el-capitan-screen-cleaned.webp",
+    "width": 1200,
+    "height": 675,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/macbook-air-2015-13inch/03-os-x-el-capitan-screen-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/macbook-air-2015-13inch/03-os-x-el-capitan-screen-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/macbook-air-2015-13inch/03-os-x-el-capitan-screen-1200w.webp"
+      }
+    ]
+  },
+  "/images/macbook-air-2015-13inch/03-os-x-el-capitan-screen.jpg": {
+    "original": "/images/macbook-air-2015-13inch/03-os-x-el-capitan-screen-cleaned.jpg",
+    "width": 4096,
+    "height": 2304,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/macbook-air-2015-13inch/03-os-x-el-capitan-screen-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/macbook-air-2015-13inch/03-os-x-el-capitan-screen-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/macbook-air-2015-13inch/03-os-x-el-capitan-screen-1200w.webp"
+      }
+    ]
+  },
+  "/images/macbook-air-2015-13inch/02-logic-board-closeup.webp": {
+    "original": "/images/macbook-air-2015-13inch/02-logic-board-closeup-cleaned.webp",
+    "width": 1200,
+    "height": 675,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/macbook-air-2015-13inch/02-logic-board-closeup-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/macbook-air-2015-13inch/02-logic-board-closeup-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/macbook-air-2015-13inch/02-logic-board-closeup-1200w.webp"
+      }
+    ]
+  },
+  "/images/macbook-air-2015-13inch/02-logic-board-closeup.jpg": {
+    "original": "/images/macbook-air-2015-13inch/02-logic-board-closeup-cleaned.jpg",
+    "width": 4096,
+    "height": 2304,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/macbook-air-2015-13inch/02-logic-board-closeup-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/macbook-air-2015-13inch/02-logic-board-closeup-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/macbook-air-2015-13inch/02-logic-board-closeup-1200w.webp"
+      }
+    ]
+  },
+  "/images/macbook-air-2015-13inch/01-full-internals-view.webp": {
+    "original": "/images/macbook-air-2015-13inch/01-full-internals-view-cleaned.webp",
+    "width": 1200,
+    "height": 675,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/macbook-air-2015-13inch/01-full-internals-view-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/macbook-air-2015-13inch/01-full-internals-view-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/macbook-air-2015-13inch/01-full-internals-view-1200w.webp"
+      }
+    ]
+  },
+  "/images/macbook-air-2015-13inch/01-full-internals-view.jpg": {
+    "original": "/images/macbook-air-2015-13inch/01-full-internals-view-cleaned.jpg",
+    "width": 4096,
+    "height": 2304,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/macbook-air-2015-13inch/01-full-internals-view-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/macbook-air-2015-13inch/01-full-internals-view-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/macbook-air-2015-13inch/01-full-internals-view-1200w.webp"
+      }
+    ]
+  },
+  "/images/hp-elitebook-g7-840/frankenstein-all-in-one.webp": {
+    "original": "/images/hp-elitebook-g7-840/frankenstein-all-in-one-cleaned.webp",
+    "width": 1200,
+    "height": 1600,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/hp-elitebook-g7-840/frankenstein-all-in-one-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/hp-elitebook-g7-840/frankenstein-all-in-one-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/hp-elitebook-g7-840/frankenstein-all-in-one-1200w.webp"
+      }
+    ]
+  },
+  "/images/hp-elitebook-g7-840/frankenstein-all-in-one.jpg": {
+    "original": "/images/hp-elitebook-g7-840/frankenstein-all-in-one-cleaned.jpg",
+    "width": 3468,
+    "height": 4624,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/hp-elitebook-g7-840/frankenstein-all-in-one-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/hp-elitebook-g7-840/frankenstein-all-in-one-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/hp-elitebook-g7-840/frankenstein-all-in-one-1200w.webp"
+      }
+    ]
+  },
+  "/images/hp-elitebook-g7-840/04-laptop-disassembled.webp": {
+    "original": "/images/hp-elitebook-g7-840/04-laptop-disassembled-cleaned.webp",
+    "width": 1200,
+    "height": 900,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/hp-elitebook-g7-840/04-laptop-disassembled-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/hp-elitebook-g7-840/04-laptop-disassembled-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/hp-elitebook-g7-840/04-laptop-disassembled-1200w.webp"
+      }
+    ]
+  },
+  "/images/hp-elitebook-g7-840/04-laptop-disassembled.jpg": {
+    "original": "/images/hp-elitebook-g7-840/04-laptop-disassembled-cleaned.jpg",
+    "width": 9248,
+    "height": 6936,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/hp-elitebook-g7-840/04-laptop-disassembled-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/hp-elitebook-g7-840/04-laptop-disassembled-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/hp-elitebook-g7-840/04-laptop-disassembled-1200w.webp"
+      }
+    ]
+  },
+  "/images/hp-elitebook-g7-840/03-workspace-setup.webp": {
+    "original": "/images/hp-elitebook-g7-840/03-workspace-setup-cleaned.webp",
+    "width": 1200,
+    "height": 2133,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/hp-elitebook-g7-840/03-workspace-setup-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/hp-elitebook-g7-840/03-workspace-setup-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/hp-elitebook-g7-840/03-workspace-setup-1200w.webp"
+      }
+    ]
+  },
+  "/images/hp-elitebook-g7-840/03-workspace-setup.jpg": {
+    "original": "/images/hp-elitebook-g7-840/03-workspace-setup-cleaned.jpg",
+    "width": 1836,
+    "height": 3264,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/hp-elitebook-g7-840/03-workspace-setup-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/hp-elitebook-g7-840/03-workspace-setup-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/hp-elitebook-g7-840/03-workspace-setup-1200w.webp"
+      }
+    ]
+  },
+  "/images/hp-elitebook-g7-840/02-workspace-dual-monitor.webp": {
+    "original": "/images/hp-elitebook-g7-840/02-workspace-dual-monitor-cleaned.webp",
+    "width": 1200,
+    "height": 1200,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/hp-elitebook-g7-840/02-workspace-dual-monitor-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/hp-elitebook-g7-840/02-workspace-dual-monitor-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/hp-elitebook-g7-840/02-workspace-dual-monitor-1200w.webp"
+      }
+    ]
+  },
+  "/images/hp-elitebook-g7-840/02-workspace-dual-monitor.jpg": {
+    "original": "/images/hp-elitebook-g7-840/02-workspace-dual-monitor-cleaned.jpg",
+    "width": 3468,
+    "height": 3468,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/hp-elitebook-g7-840/02-workspace-dual-monitor-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/hp-elitebook-g7-840/02-workspace-dual-monitor-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/hp-elitebook-g7-840/02-workspace-dual-monitor-1200w.webp"
+      }
+    ]
+  },
+  "/images/hp-elitebook-g7-840/01-keyboards-comparison.webp": {
+    "original": "/images/hp-elitebook-g7-840/01-keyboards-comparison-cleaned.webp",
+    "width": 1200,
+    "height": 2128,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/hp-elitebook-g7-840/01-keyboards-comparison-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/hp-elitebook-g7-840/01-keyboards-comparison-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/hp-elitebook-g7-840/01-keyboards-comparison-1200w.webp"
+      }
+    ]
+  },
+  "/images/hp-elitebook-g7-840/01-keyboards-comparison.jpg": {
+    "original": "/images/hp-elitebook-g7-840/01-keyboards-comparison-cleaned.jpg",
+    "width": 2608,
+    "height": 4624,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/hp-elitebook-g7-840/01-keyboards-comparison-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/hp-elitebook-g7-840/01-keyboards-comparison-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/hp-elitebook-g7-840/01-keyboards-comparison-1200w.webp"
+      }
+    ]
+  },
+  "/images/gmk67-custom/IMG20240620183234.webp": {
+    "original": "/images/gmk67-custom/IMG20240620183234-cleaned.webp",
+    "width": 1200,
+    "height": 2128,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/gmk67-custom/IMG20240620183234-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/gmk67-custom/IMG20240620183234-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/gmk67-custom/IMG20240620183234-1200w.webp"
+      }
+    ]
+  },
+  "/images/gmk67-custom/IMG20240620183234.jpg": {
+    "original": "/images/gmk67-custom/IMG20240620183234-cleaned.jpg",
+    "width": 2608,
+    "height": 4624,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/gmk67-custom/IMG20240620183234-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/gmk67-custom/IMG20240620183234-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/gmk67-custom/IMG20240620183234-1200w.webp"
+      }
+    ]
+  },
+  "/images/gmk67-custom/IMG20240620164959-EDIT-EDIT.webp": {
+    "original": "/images/gmk67-custom/IMG20240620164959-EDIT-EDIT-cleaned.webp",
+    "width": 1200,
+    "height": 1680,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/gmk67-custom/IMG20240620164959-EDIT-EDIT-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/gmk67-custom/IMG20240620164959-EDIT-EDIT-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/gmk67-custom/IMG20240620164959-EDIT-EDIT-1200w.webp"
+      }
+    ]
+  },
+  "/images/gmk67-custom/IMG20240620164959-EDIT-EDIT.jpg": {
+    "original": "/images/gmk67-custom/IMG20240620164959-EDIT-EDIT-cleaned.jpg",
+    "width": 2364,
+    "height": 3310,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/gmk67-custom/IMG20240620164959-EDIT-EDIT-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/gmk67-custom/IMG20240620164959-EDIT-EDIT-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/gmk67-custom/IMG20240620164959-EDIT-EDIT-1200w.webp"
+      }
+    ]
+  },
+  "/images/epomaker-split-65/IMG20250405191943.webp": {
+    "original": "/images/epomaker-split-65/IMG20250405191943-cleaned.webp",
+    "width": 1200,
+    "height": 675,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/epomaker-split-65/IMG20250405191943-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/epomaker-split-65/IMG20250405191943-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/epomaker-split-65/IMG20250405191943-1200w.webp"
+      }
+    ]
+  },
+  "/images/epomaker-split-65/IMG20250405191943.jpg": {
+    "original": "/images/epomaker-split-65/IMG20250405191943-cleaned.jpg",
+    "width": 4096,
+    "height": 2304,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/epomaker-split-65/IMG20250405191943-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/epomaker-split-65/IMG20250405191943-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/epomaker-split-65/IMG20250405191943-1200w.webp"
+      }
+    ]
+  },
+  "/images/epomaker-split-65/IMG20250405184838.webp": {
+    "original": "/images/epomaker-split-65/IMG20250405184838-cleaned.webp",
+    "width": 1200,
+    "height": 675,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/epomaker-split-65/IMG20250405184838-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/epomaker-split-65/IMG20250405184838-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/epomaker-split-65/IMG20250405184838-1200w.webp"
+      }
+    ]
+  },
+  "/images/epomaker-split-65/IMG20250405184838.jpg": {
+    "original": "/images/epomaker-split-65/IMG20250405184838-cleaned.jpg",
+    "width": 4096,
+    "height": 2304,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/epomaker-split-65/IMG20250405184838-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/epomaker-split-65/IMG20250405184838-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/epomaker-split-65/IMG20250405184838-1200w.webp"
+      }
+    ]
+  },
+  "/images/epomaker-split-65/IMG20250219205819.webp": {
+    "original": "/images/epomaker-split-65/IMG20250219205819-cleaned.webp",
+    "width": 1200,
+    "height": 675,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/epomaker-split-65/IMG20250219205819-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/epomaker-split-65/IMG20250219205819-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/epomaker-split-65/IMG20250219205819-1200w.webp"
+      }
+    ]
+  },
+  "/images/epomaker-split-65/IMG20250219205819.jpg": {
+    "original": "/images/epomaker-split-65/IMG20250219205819-cleaned.jpg",
+    "width": 4096,
+    "height": 2304,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/epomaker-split-65/IMG20250219205819-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/epomaker-split-65/IMG20250219205819-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/epomaker-split-65/IMG20250219205819-1200w.webp"
+      }
+    ]
+  },
+  "/images/epomaker-split-65/IMG20250219205754.webp": {
+    "original": "/images/epomaker-split-65/IMG20250219205754-cleaned.webp",
+    "width": 1200,
+    "height": 675,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/epomaker-split-65/IMG20250219205754-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/epomaker-split-65/IMG20250219205754-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/epomaker-split-65/IMG20250219205754-1200w.webp"
+      }
+    ]
+  },
+  "/images/epomaker-split-65/IMG20250219205754.jpg": {
+    "original": "/images/epomaker-split-65/IMG20250219205754-cleaned.jpg",
+    "width": 4096,
+    "height": 2304,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/epomaker-split-65/IMG20250219205754-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/epomaker-split-65/IMG20250219205754-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/epomaker-split-65/IMG20250219205754-1200w.webp"
+      }
+    ]
+  },
+  "/images/epomaker-split-65/20250423_211507.webp": {
+    "original": "/images/epomaker-split-65/20250423_211507-cleaned.webp",
+    "width": 1200,
+    "height": 900,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/epomaker-split-65/20250423_211507-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/epomaker-split-65/20250423_211507-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/epomaker-split-65/20250423_211507-1200w.webp"
+      }
+    ]
+  },
+  "/images/epomaker-split-65/20250423_211507.jpg": {
+    "original": "/images/epomaker-split-65/20250423_211507-cleaned.jpg",
+    "width": 4000,
+    "height": 3000,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/epomaker-split-65/20250423_211507-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/epomaker-split-65/20250423_211507-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/epomaker-split-65/20250423_211507-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-p2s/IMG20251219093302.webp": {
+    "original": "/images/bambu-p2s/IMG20251219093302-cleaned.webp",
+    "width": 1200,
+    "height": 1600,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-p2s/IMG20251219093302-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-p2s/IMG20251219093302-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-p2s/IMG20251219093302-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-p2s/IMG20251219093302.jpg": {
+    "original": "/images/bambu-p2s/IMG20251219093302-cleaned.jpg",
+    "width": 3072,
+    "height": 4096,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-p2s/IMG20251219093302-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-p2s/IMG20251219093302-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-p2s/IMG20251219093302-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-p2s/IMG20251209192055.webp": {
+    "original": "/images/bambu-p2s/IMG20251209192055-cleaned.webp",
+    "width": 1200,
+    "height": 1200,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-p2s/IMG20251209192055-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-p2s/IMG20251209192055-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-p2s/IMG20251209192055-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-p2s/IMG20251209192055.jpg": {
+    "original": "/images/bambu-p2s/IMG20251209192055-cleaned.jpg",
+    "width": 3072,
+    "height": 3072,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-p2s/IMG20251209192055-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-p2s/IMG20251209192055-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-p2s/IMG20251209192055-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-p2s/IMG20251209162725.webp": {
+    "original": "/images/bambu-p2s/IMG20251209162725-cleaned.webp",
+    "width": 1200,
+    "height": 1200,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-p2s/IMG20251209162725-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-p2s/IMG20251209162725-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-p2s/IMG20251209162725-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-p2s/IMG20251209162725.jpg": {
+    "original": "/images/bambu-p2s/IMG20251209162725-cleaned.jpg",
+    "width": 3072,
+    "height": 3072,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-p2s/IMG20251209162725-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-p2s/IMG20251209162725-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-p2s/IMG20251209162725-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-p2s/IMG20251209160855.webp": {
+    "original": "/images/bambu-p2s/IMG20251209160855-cleaned.webp",
+    "width": 1200,
+    "height": 1600,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-p2s/IMG20251209160855-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-p2s/IMG20251209160855-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-p2s/IMG20251209160855-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-p2s/IMG20251209160855.jpg": {
+    "original": "/images/bambu-p2s/IMG20251209160855-cleaned.jpg",
+    "width": 3072,
+    "height": 4096,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-p2s/IMG20251209160855-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-p2s/IMG20251209160855-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-p2s/IMG20251209160855-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-p2s/IMG20251209160353.webp": {
+    "original": "/images/bambu-p2s/IMG20251209160353-cleaned.webp",
+    "width": 1200,
+    "height": 900,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-p2s/IMG20251209160353-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-p2s/IMG20251209160353-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-p2s/IMG20251209160353-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-p2s/IMG20251209160353.jpg": {
+    "original": "/images/bambu-p2s/IMG20251209160353-cleaned.jpg",
+    "width": 4096,
+    "height": 3072,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-p2s/IMG20251209160353-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-p2s/IMG20251209160353-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-p2s/IMG20251209160353-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-p2s/IMG20251209155918.webp": {
+    "original": "/images/bambu-p2s/IMG20251209155918-cleaned.webp",
+    "width": 1200,
+    "height": 1600,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-p2s/IMG20251209155918-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-p2s/IMG20251209155918-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-p2s/IMG20251209155918-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-p2s/IMG20251209155918.jpg": {
+    "original": "/images/bambu-p2s/IMG20251209155918-cleaned.jpg",
+    "width": 3072,
+    "height": 4096,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-p2s/IMG20251209155918-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-p2s/IMG20251209155918-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-p2s/IMG20251209155918-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-p2s/IMG20251209155439.webp": {
+    "original": "/images/bambu-p2s/IMG20251209155439-cleaned.webp",
+    "width": 1200,
+    "height": 1600,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-p2s/IMG20251209155439-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-p2s/IMG20251209155439-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-p2s/IMG20251209155439-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-p2s/IMG20251209155439.jpg": {
+    "original": "/images/bambu-p2s/IMG20251209155439-cleaned.jpg",
+    "width": 3072,
+    "height": 4096,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-p2s/IMG20251209155439-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-p2s/IMG20251209155439-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-p2s/IMG20251209155439-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-p2s/IMG20251209155004.webp": {
+    "original": "/images/bambu-p2s/IMG20251209155004-cleaned.webp",
+    "width": 1200,
+    "height": 1600,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-p2s/IMG20251209155004-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-p2s/IMG20251209155004-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-p2s/IMG20251209155004-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-p2s/IMG20251209155004.jpg": {
+    "original": "/images/bambu-p2s/IMG20251209155004-cleaned.jpg",
+    "width": 3072,
+    "height": 4096,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-p2s/IMG20251209155004-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-p2s/IMG20251209155004-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-p2s/IMG20251209155004-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-a1-combo/IMG20250912221351.webp": {
+    "original": "/images/bambu-a1-combo/IMG20250912221351-cleaned.webp",
+    "width": 1200,
+    "height": 1600,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-a1-combo/IMG20250912221351-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-a1-combo/IMG20250912221351-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-a1-combo/IMG20250912221351-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-a1-combo/IMG20250912221351.jpg": {
+    "original": "/images/bambu-a1-combo/IMG20250912221351-cleaned.jpg",
+    "width": 1440,
+    "height": 1920,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-a1-combo/IMG20250912221351-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-a1-combo/IMG20250912221351-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-a1-combo/IMG20250912221351-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-a1-combo/IMG20250910221256.webp": {
+    "original": "/images/bambu-a1-combo/IMG20250910221256-cleaned.webp",
+    "width": 1200,
+    "height": 1600,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-a1-combo/IMG20250910221256-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-a1-combo/IMG20250910221256-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-a1-combo/IMG20250910221256-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-a1-combo/IMG20250910221256.jpg": {
+    "original": "/images/bambu-a1-combo/IMG20250910221256-cleaned.jpg",
+    "width": 1440,
+    "height": 1920,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-a1-combo/IMG20250910221256-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-a1-combo/IMG20250910221256-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-a1-combo/IMG20250910221256-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-a1-combo/IMG20250819142955.webp": {
+    "original": "/images/bambu-a1-combo/IMG20250819142955-cleaned.webp",
+    "width": 1200,
+    "height": 1600,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-a1-combo/IMG20250819142955-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-a1-combo/IMG20250819142955-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-a1-combo/IMG20250819142955-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-a1-combo/IMG20250819142955.jpg": {
+    "original": "/images/bambu-a1-combo/IMG20250819142955-cleaned.jpg",
+    "width": 1440,
+    "height": 1920,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-a1-combo/IMG20250819142955-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-a1-combo/IMG20250819142955-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-a1-combo/IMG20250819142955-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-a1-combo/IMG20250814220937.webp": {
+    "original": "/images/bambu-a1-combo/IMG20250814220937-cleaned.webp",
+    "width": 1200,
+    "height": 1600,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-a1-combo/IMG20250814220937-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-a1-combo/IMG20250814220937-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-a1-combo/IMG20250814220937-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-a1-combo/IMG20250814220937.jpg": {
+    "original": "/images/bambu-a1-combo/IMG20250814220937-cleaned.jpg",
+    "width": 1440,
+    "height": 1920,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-a1-combo/IMG20250814220937-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-a1-combo/IMG20250814220937-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-a1-combo/IMG20250814220937-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-a1-combo/IMG20250809222734.webp": {
+    "original": "/images/bambu-a1-combo/IMG20250809222734-cleaned.webp",
+    "width": 1200,
+    "height": 1600,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-a1-combo/IMG20250809222734-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-a1-combo/IMG20250809222734-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-a1-combo/IMG20250809222734-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-a1-combo/IMG20250809222734.jpg": {
+    "original": "/images/bambu-a1-combo/IMG20250809222734-cleaned.jpg",
+    "width": 1440,
+    "height": 1920,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-a1-combo/IMG20250809222734-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-a1-combo/IMG20250809222734-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-a1-combo/IMG20250809222734-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-a1-combo/IMG20250806151909.webp": {
+    "original": "/images/bambu-a1-combo/IMG20250806151909-cleaned.webp",
+    "width": 1200,
+    "height": 1600,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-a1-combo/IMG20250806151909-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-a1-combo/IMG20250806151909-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-a1-combo/IMG20250806151909-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-a1-combo/IMG20250806151909.jpg": {
+    "original": "/images/bambu-a1-combo/IMG20250806151909-cleaned.jpg",
+    "width": 1440,
+    "height": 1920,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-a1-combo/IMG20250806151909-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-a1-combo/IMG20250806151909-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-a1-combo/IMG20250806151909-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-a1-combo/IMG20250727165952.webp": {
+    "original": "/images/bambu-a1-combo/IMG20250727165952-cleaned.webp",
+    "width": 1200,
+    "height": 1600,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-a1-combo/IMG20250727165952-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-a1-combo/IMG20250727165952-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-a1-combo/IMG20250727165952-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-a1-combo/IMG20250727165952.jpg": {
+    "original": "/images/bambu-a1-combo/IMG20250727165952-cleaned.jpg",
+    "width": 1440,
+    "height": 1920,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-a1-combo/IMG20250727165952-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-a1-combo/IMG20250727165952-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-a1-combo/IMG20250727165952-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-a1-mini/IMG20251014222542.webp": {
+    "original": "/images/bambu-a1-mini/IMG20251014222542-cleaned.webp",
+    "width": 1200,
+    "height": 1200,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-a1-mini/IMG20251014222542-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-a1-mini/IMG20251014222542-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-a1-mini/IMG20251014222542-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-a1-mini/IMG20251014222542.jpg": {
+    "original": "/images/bambu-a1-mini/IMG20251014222542-cleaned.jpg",
+    "width": 1920,
+    "height": 1920,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-a1-mini/IMG20251014222542-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-a1-mini/IMG20251014222542-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-a1-mini/IMG20251014222542-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-a1-mini/IMG20250916132007.webp": {
+    "original": "/images/bambu-a1-mini/IMG20250916132007-cleaned.webp",
+    "width": 1200,
+    "height": 1600,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-a1-mini/IMG20250916132007-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-a1-mini/IMG20250916132007-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-a1-mini/IMG20250916132007-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-a1-mini/IMG20250916132007.jpg": {
+    "original": "/images/bambu-a1-mini/IMG20250916132007-cleaned.jpg",
+    "width": 1440,
+    "height": 1920,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-a1-mini/IMG20250916132007-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-a1-mini/IMG20250916132007-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-a1-mini/IMG20250916132007-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-a1-mini/IMG20250803230410.webp": {
+    "original": "/images/bambu-a1-mini/IMG20250803230410-cleaned.webp",
+    "width": 1200,
+    "height": 1600,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-a1-mini/IMG20250803230410-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-a1-mini/IMG20250803230410-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-a1-mini/IMG20250803230410-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-a1-mini/IMG20250803230410.jpg": {
+    "original": "/images/bambu-a1-mini/IMG20250803230410-cleaned.jpg",
+    "width": 1440,
+    "height": 1920,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-a1-mini/IMG20250803230410-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-a1-mini/IMG20250803230410-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-a1-mini/IMG20250803230410-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-a1-mini/IMG20250803142849.webp": {
+    "original": "/images/bambu-a1-mini/IMG20250803142849-cleaned.webp",
+    "width": 1200,
+    "height": 1600,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-a1-mini/IMG20250803142849-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-a1-mini/IMG20250803142849-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-a1-mini/IMG20250803142849-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-a1-mini/IMG20250803142849.jpg": {
+    "original": "/images/bambu-a1-mini/IMG20250803142849-cleaned.jpg",
+    "width": 1440,
+    "height": 1920,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-a1-mini/IMG20250803142849-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-a1-mini/IMG20250803142849-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-a1-mini/IMG20250803142849-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-a1-mini/IMG20250731124342.webp": {
+    "original": "/images/bambu-a1-mini/IMG20250731124342-cleaned.webp",
+    "width": 1200,
+    "height": 1600,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-a1-mini/IMG20250731124342-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-a1-mini/IMG20250731124342-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-a1-mini/IMG20250731124342-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-a1-mini/IMG20250731124342.jpg": {
+    "original": "/images/bambu-a1-mini/IMG20250731124342-cleaned.jpg",
+    "width": 1440,
+    "height": 1920,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-a1-mini/IMG20250731124342-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-a1-mini/IMG20250731124342-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-a1-mini/IMG20250731124342-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-a1-mini/IMG20250730111013.webp": {
+    "original": "/images/bambu-a1-mini/IMG20250730111013-cleaned.webp",
+    "width": 1200,
+    "height": 1600,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-a1-mini/IMG20250730111013-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-a1-mini/IMG20250730111013-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-a1-mini/IMG20250730111013-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-a1-mini/IMG20250730111013.jpg": {
+    "original": "/images/bambu-a1-mini/IMG20250730111013-cleaned.jpg",
+    "width": 1440,
+    "height": 1920,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-a1-mini/IMG20250730111013-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-a1-mini/IMG20250730111013-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-a1-mini/IMG20250730111013-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-a1-mini/IMG20250729113314.webp": {
+    "original": "/images/bambu-a1-mini/IMG20250729113314-cleaned.webp",
+    "width": 1200,
+    "height": 1600,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-a1-mini/IMG20250729113314-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-a1-mini/IMG20250729113314-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-a1-mini/IMG20250729113314-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-a1-mini/IMG20250729113314.jpg": {
+    "original": "/images/bambu-a1-mini/IMG20250729113314-cleaned.jpg",
+    "width": 1440,
+    "height": 1920,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-a1-mini/IMG20250729113314-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-a1-mini/IMG20250729113314-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-a1-mini/IMG20250729113314-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-a1-mini/IMG20250728190321.webp": {
+    "original": "/images/bambu-a1-mini/IMG20250728190321-cleaned.webp",
+    "width": 1200,
+    "height": 1600,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-a1-mini/IMG20250728190321-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-a1-mini/IMG20250728190321-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-a1-mini/IMG20250728190321-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-a1-mini/IMG20250728190321.jpg": {
+    "original": "/images/bambu-a1-mini/IMG20250728190321-cleaned.jpg",
+    "width": 1440,
+    "height": 1920,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-a1-mini/IMG20250728190321-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-a1-mini/IMG20250728190321-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-a1-mini/IMG20250728190321-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-a1-mini/IMG20250727170205.webp": {
+    "original": "/images/bambu-a1-mini/IMG20250727170205-cleaned.webp",
+    "width": 1200,
+    "height": 1600,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-a1-mini/IMG20250727170205-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-a1-mini/IMG20250727170205-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-a1-mini/IMG20250727170205-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-a1-mini/IMG20250727170205.jpg": {
+    "original": "/images/bambu-a1-mini/IMG20250727170205-cleaned.jpg",
+    "width": 1440,
+    "height": 1920,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-a1-mini/IMG20250727170205-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-a1-mini/IMG20250727170205-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-a1-mini/IMG20250727170205-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-a1-mini/IMG20250727165525.webp": {
+    "original": "/images/bambu-a1-mini/IMG20250727165525-cleaned.webp",
+    "width": 1200,
+    "height": 1600,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-a1-mini/IMG20250727165525-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-a1-mini/IMG20250727165525-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-a1-mini/IMG20250727165525-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-a1-mini/IMG20250727165525.jpg": {
+    "original": "/images/bambu-a1-mini/IMG20250727165525-cleaned.jpg",
+    "width": 1440,
+    "height": 1920,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-a1-mini/IMG20250727165525-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-a1-mini/IMG20250727165525-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-a1-mini/IMG20250727165525-1200w.webp"
+      }
+    ]
+  },
+  "/images/discoveries/macbook-air-2015-screen/diffuser-layers.webp": {
+    "original": "/images/discoveries/macbook-air-2015-screen/diffuser-layers-cleaned.webp",
+    "width": 1024,
+    "height": 768,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/discoveries/macbook-air-2015-screen/diffuser-layers-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/discoveries/macbook-air-2015-screen/diffuser-layers-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/discoveries/macbook-air-2015-screen/diffuser-layers-1200w.webp"
+      }
+    ]
+  },
+  "/images/discoveries/macbook-air-2015-screen/diffuser-layers.jpg": {
+    "original": "/images/discoveries/macbook-air-2015-screen/diffuser-layers-cleaned.jpg",
+    "width": 1024,
+    "height": 768,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/discoveries/macbook-air-2015-screen/diffuser-layers-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/discoveries/macbook-air-2015-screen/diffuser-layers-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/discoveries/macbook-air-2015-screen/diffuser-layers-1200w.webp"
+      }
+    ]
+  },
+  "/images/discoveries/macbook-air-2015-screen/cracked-screen-2.webp": {
+    "original": "/images/discoveries/macbook-air-2015-screen/cracked-screen-2-cleaned.webp",
+    "width": 1024,
+    "height": 768,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/discoveries/macbook-air-2015-screen/cracked-screen-2-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/discoveries/macbook-air-2015-screen/cracked-screen-2-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/discoveries/macbook-air-2015-screen/cracked-screen-2-1200w.webp"
+      }
+    ]
+  },
+  "/images/discoveries/macbook-air-2015-screen/cracked-screen-2.jpg": {
+    "original": "/images/discoveries/macbook-air-2015-screen/cracked-screen-2-cleaned.jpg",
+    "width": 1024,
+    "height": 768,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/discoveries/macbook-air-2015-screen/cracked-screen-2-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/discoveries/macbook-air-2015-screen/cracked-screen-2-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/discoveries/macbook-air-2015-screen/cracked-screen-2-1200w.webp"
+      }
+    ]
+  },
+  "/images/discoveries/macbook-air-2015-screen/cracked-screen-1.webp": {
+    "original": "/images/discoveries/macbook-air-2015-screen/cracked-screen-1-cleaned.webp",
+    "width": 1024,
+    "height": 768,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/discoveries/macbook-air-2015-screen/cracked-screen-1-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/discoveries/macbook-air-2015-screen/cracked-screen-1-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/discoveries/macbook-air-2015-screen/cracked-screen-1-1200w.webp"
+      }
+    ]
+  },
+  "/images/discoveries/macbook-air-2015-screen/cracked-screen-1.jpg": {
+    "original": "/images/discoveries/macbook-air-2015-screen/cracked-screen-1-cleaned.jpg",
+    "width": 1024,
+    "height": 768,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/discoveries/macbook-air-2015-screen/cracked-screen-1-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/discoveries/macbook-air-2015-screen/cracked-screen-1-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/discoveries/macbook-air-2015-screen/cracked-screen-1-1200w.webp"
+      }
+    ]
+  },
+  "/images/discoveries/macbook-air-2015-screen/backlight-assembly.webp": {
+    "original": "/images/discoveries/macbook-air-2015-screen/backlight-assembly-cleaned.webp",
+    "width": 768,
+    "height": 1024,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/discoveries/macbook-air-2015-screen/backlight-assembly-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/discoveries/macbook-air-2015-screen/backlight-assembly-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/discoveries/macbook-air-2015-screen/backlight-assembly-1200w.webp"
+      }
+    ]
+  },
+  "/images/discoveries/macbook-air-2015-screen/backlight-assembly.jpg": {
+    "original": "/images/discoveries/macbook-air-2015-screen/backlight-assembly-cleaned.jpg",
+    "width": 768,
+    "height": 1024,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/discoveries/macbook-air-2015-screen/backlight-assembly-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/discoveries/macbook-air-2015-screen/backlight-assembly-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/discoveries/macbook-air-2015-screen/backlight-assembly-1200w.webp"
+      }
+    ]
+  }
+}

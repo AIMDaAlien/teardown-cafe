@@ -1,6 +1,6 @@
 ---
 import { getCollection } from 'astro:content'
-import ProgressiveImage from './ProgressiveImage.astro'
+import OptimizedImage from './OptimizedImage.astro'
 
 interface Props {
   currentSlug: string
@@ -42,10 +42,12 @@ if (relatedTeardowns.length < limit) {
             <a href={`/teardowns/${teardown.id}`} class="card-link">
               <div class="card-image">
                 {teardown.data.heroImage ? (
-                  <ProgressiveImage
+                  <OptimizedImage
                     src={teardown.data.heroImage}
                     alt={teardown.data.title}
                     loading="lazy"
+                    sizes="(max-width: 600px) 90vw, 350px"
+                    aspect="video"
                     class="teardown-hero"
                   />
                 ) : (
@@ -70,7 +72,7 @@ if (relatedTeardowns.length < limit) {
                 <p class="card-description">{teardown.data.description}</p>
                 <div class="card-meta">
                   <span class="device-type">{teardown.data.device}</span>
-                  <span class="difficulty difficulty-{teardown.data.difficulty}">
+                  <span class={`difficulty badge-difficulty-${teardown.data.difficulty}`}>
                     {teardown.data.difficulty}
                   </span>
                 </div>
@@ -206,21 +208,6 @@ if (relatedTeardowns.length < limit) {
     font-size: 0.875rem;
     font-weight: 500;
     text-transform: capitalize;
-  }
-
-  .difficulty-easy {
-    background-color: #2e7d32;
-    color: #e8f5e9;
-  }
-
-  .difficulty-medium {
-    background-color: #f57c00;
-    color: #fff3e0;
-  }
-
-  .difficulty-hard {
-    background-color: #c62828;
-    color: #ffebee;
   }
 
   @media (max-width: 768px) {

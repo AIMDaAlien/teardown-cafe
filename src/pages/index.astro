@@ -5,6 +5,7 @@ import WaveDiffusions from '../components/WaveDiffusions.astro'
 import FloatingParticles from '../components/FloatingParticles.astro'
 import DeviceIcons from '../components/DeviceIcons.astro'
 import FocusMode from '../components/FocusMode.astro'
+import OptimizedImage from '../components/OptimizedImage.astro'
 import { getCollection } from 'astro:content'
 
 const teardowns = await getCollection('teardowns')
@@ -332,10 +333,12 @@ const sortedTeardowns = teardowns.sort((a, b) => {
             <a href={`/teardowns/${teardown.id}`} class="card-link">
               {teardown.data.heroImage && (
                 <div class="card-image">
-                  <img
+                  <OptimizedImage
                     src={teardown.data.heroImage}
                     alt={teardown.data.title}
                     loading="lazy"
+                    sizes="(max-width: 600px) 90vw, (max-width: 1024px) 45vw, 400px"
+                    aspect="video"
                   />
                   <div class="image-overlay" aria-hidden="true" />
                 </div>
@@ -351,7 +354,7 @@ const sortedTeardowns = teardowns.sort((a, b) => {
                     </span>
                     {teardown.data.device}
                   </span>
-                  <span class="difficulty difficulty-{teardown.data.difficulty}">
+                  <span class={`difficulty badge-difficulty-${teardown.data.difficulty}`}>
                     {teardown.data.difficulty}
                   </span>
                 </div>
@@ -443,8 +446,11 @@ const sortedTeardowns = teardowns.sort((a, b) => {
     background-color: var(--md-sys-color-surface-container);
     border-radius: var(--md-sys-shape-corner-large);
     overflow: hidden;
-    transition: box-shadow var(--md-sys-motion-duration-medium)
-      var(--md-sys-motion-easing-spring-soft);
+    transition:
+      transform var(--md-sys-motion-duration-medium)
+        var(--md-sys-motion-easing-emphasized-decel),
+      box-shadow var(--md-sys-motion-duration-medium)
+        var(--md-sys-motion-easing-emphasized-decel);
     box-shadow: var(--md-sys-elevation-level1);
     opacity: 0;
     animation: cardFadeIn 0.6s var(--md-sys-motion-easing-decelerate) forwards;
@@ -465,6 +471,7 @@ const sortedTeardowns = teardowns.sort((a, b) => {
   }
 
   .teardown-card:hover {
+    transform: translateY(-6px) scale(1.01);
     box-shadow: var(--md-sys-elevation-level4);
   }
 
@@ -507,7 +514,7 @@ const sortedTeardowns = teardowns.sort((a, b) => {
     height: 100%;
     object-fit: cover;
     transition: transform var(--md-sys-motion-duration-medium)
-      var(--md-sys-motion-easing-spring);
+      var(--md-sys-motion-easing-emphasized-decel);
   }
 
   .teardown-card:hover .card-image img {
@@ -556,7 +563,7 @@ const sortedTeardowns = teardowns.sort((a, b) => {
     align-items: center;
     gap: 0.35rem;
     transition: all var(--md-sys-motion-duration-short)
-      var(--md-sys-motion-easing-spring-soft);
+      var(--md-sys-motion-easing-emphasized-decel);
   }
 
   .device-icon {
@@ -573,7 +580,6 @@ const sortedTeardowns = teardowns.sort((a, b) => {
   }
 
   .teardown-card:hover .device-type {
-    transform: scale(1.05);
     background-color: var(--md-sys-color-primary);
     color: var(--md-sys-color-on-primary);
   }
@@ -584,27 +590,6 @@ const sortedTeardowns = teardowns.sort((a, b) => {
     font-size: 0.875rem;
     font-weight: 500;
     text-transform: capitalize;
-    transition: transform var(--md-sys-motion-duration-short)
-      var(--md-sys-motion-easing-spring-soft);
-  }
-
-  .teardown-card:hover .difficulty {
-    transform: scale(1.05);
-  }
-
-  .difficulty-easy {
-    background-color: var(--md-sys-color-accent-green);
-    color: #1b5e20;
-  }
-
-  .difficulty-medium {
-    background-color: var(--md-sys-color-accent-amber);
-    color: #e65100;
-  }
-
-  .difficulty-hard {
-    background-color: #ef5350;
-    color: #ffebee;
   }
 
   .card-content h2 {
@@ -762,16 +747,12 @@ const sortedTeardowns = teardowns.sort((a, b) => {
       }
     }
 
+    .teardown-card,
     .teardown-card:hover {
       transform: none;
     }
 
     .teardown-card:hover .card-image img {
-      transform: none;
-    }
-
-    .teardown-card:hover .device-type,
-    .teardown-card:hover .difficulty {
       transform: none;
     }
   }
@@ -795,128 +776,6 @@ const sortedTeardowns = teardowns.sort((a, b) => {
 </style>
 
 <script>
-  const prefersReducedMotion = window.matchMedia(
-    '(prefers-reduced-motion: reduce)'
-  ).matches
-
-  if (!prefersReducedMotion) {
-    const cards = document.querySelectorAll(
-      '.teardown-card'
-    ) as NodeListOf<HTMLElement>
-
-    interface CardPhysicsState {
-      x: number
-      y: number
-      rotation: number
-      velocityX: number
-      velocityY: number
-      velocityRotation: number
-      isHovered: boolean
-      targetX: number
-      targetY: number
-      targetRotation: number
-    }
-
-    const cardStates: CardPhysicsState[] = Array.from(cards).map(() => ({
-      x: 0,
-      y: -12,
-      rotation: 0,
-      velocityX: 0,
-      velocityY: 0,
-      velocityRotation: 0,
-      isHovered: false,
-      targetX: 0,
-      targetY: -12,
-      targetRotation: 0,
-    }))
-
-    const SPRING_TENSION = 0.18
-    const SPRING_FRICTION = 0.22
-    const GRAVITY = 0.6
-    const LIFT_HEIGHT = 12
-    const ROTATION_MAX = 2
-
-    let rafId: number | null = null
-
-    function updateCardPhysics() {
-      let needsUpdate = false
-
-      cards.forEach((card, index) => {
-        const state = cardStates[index]
-
-        if (state.isHovered) {
-          const dx = state.targetX - state.x
-          const dy = state.targetY - state.y
-          const dRot = state.targetRotation - state.rotation
-
-          state.velocityX += dx * SPRING_TENSION
-          state.velocityY += dy * SPRING_TENSION
-          state.velocityRotation += dRot * SPRING_TENSION
-        } else {
-          state.velocityX += (0 - state.x) * SPRING_TENSION
-          state.velocityY += (0 - state.y) * SPRING_TENSION + GRAVITY
-          state.velocityRotation += (0 - state.rotation) * SPRING_TENSION
-        }
-
-        state.velocityX *= 1 - SPRING_FRICTION
-        state.velocityY *= 1 - SPRING_FRICTION
-        state.velocityRotation *= 1 - SPRING_FRICTION
-
-        state.x += state.velocityX
-        state.y += state.velocityY
-        state.rotation += state.velocityRotation
-
-        card.style.transform = `translate3d(${state.x}px, ${state.y}px, 0) rotate(${state.rotation}deg) scale(${state.isHovered ? 1.03 : 1})`
-
-        if (
-          Math.abs(state.velocityX) > 0.01 ||
-          Math.abs(state.velocityY) > 0.01 ||
-          Math.abs(state.velocityRotation) > 0.01
-        ) {
-          needsUpdate = true
-        }
-      })
-
-      if (needsUpdate) {
-        rafId = requestAnimationFrame(updateCardPhysics)
-      } else {
-        rafId = null
-      }
-    }
-
-    cards.forEach((card, index) => {
-      card.addEventListener('mouseenter', () => {
-        cardStates[index].isHovered = true
-        cardStates[index].targetY = -LIFT_HEIGHT
-
-        if (rafId === null) {
-          rafId = requestAnimationFrame(updateCardPhysics)
-        }
-      })
-
-      card.addEventListener('mouseleave', () => {
-        cardStates[index].isHovered = false
-        cardStates[index].targetX = 0
-        cardStates[index].targetY = 0
-        cardStates[index].targetRotation = 0
-
-        if (rafId === null) {
-          rafId = requestAnimationFrame(updateCardPhysics)
-        }
-      })
-
-      card.addEventListener('mousemove', (e: MouseEvent) => {
-        if (cardStates[index].isHovered) {
-          const rect = card.getBoundingClientRect()
-          const centerX = rect.left + rect.width / 2
-
-          const relativeX = e.clientX - centerX
-
-          cardStates[index].targetRotation =
-            (relativeX / rect.width) * ROTATION_MAX
-          cardStates[index].targetX = (relativeX / rect.width) * 4
-        }
-      })
-    })
-  }
+  // Card hover is now pure CSS — no JS physics needed.
+  // Reduced-motion preferences are handled via CSS media query.
 </script>

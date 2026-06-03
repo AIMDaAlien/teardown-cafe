@@ -71,7 +71,7 @@
   --md-sys-shape-corner-extra-large: 28px;
   --md-sys-shape-corner-full: 9999px;
 
-  /* Motion Tokens - Enhanced with Spring Physics (Material 3 Expressive) */
+  /* Motion Tokens — Refined deceleration curves (no spring bounce) */
   --md-sys-motion-duration-short1: 50ms;
   --md-sys-motion-duration-short2: 100ms;
   --md-sys-motion-duration-short3: 150ms;
@@ -80,24 +80,13 @@
   --md-sys-motion-duration-long: 600ms;
   --md-sys-motion-easing-standard: cubic-bezier(0.4, 0, 0.2, 1);
   --md-sys-motion-easing-emphasized: cubic-bezier(0.2, 0, 0, 1);
-  --md-sys-motion-easing-spring: cubic-bezier(
-    0.34,
-    1.56,
-    0.64,
-    1
-  ); /* Spring bounce */
-  --md-sys-motion-easing-spring-soft: cubic-bezier(
-    0.4,
-    1.2,
-    0.6,
-    1
-  ); /* Softer spring */
-  --md-sys-motion-easing-decelerate: cubic-bezier(
-    0,
-    0,
-    0.2,
-    1
-  ); /* Smooth deceleration */
+  --md-sys-motion-easing-emphasized-decel: cubic-bezier(0.16, 1, 0.3, 1);
+  --md-sys-motion-easing-emphasized-accel: cubic-bezier(0.4, 0, 1, 1);
+  --md-sys-motion-easing-decelerate: cubic-bezier(0, 0, 0.2, 1);
+
+  /* Legacy aliases for backward compatibility during transition */
+  --md-sys-motion-easing-spring: var(--md-sys-motion-easing-emphasized-decel);
+  --md-sys-motion-easing-spring-soft: var(--md-sys-motion-easing-emphasized-decel);
 
   /* Typography Tokens */
   --md-sys-typescale-display-large-font: 'Ubuntu', system-ui, sans-serif;
@@ -156,6 +145,21 @@
   --md-sys-typescale-code-size: 14px;
   --md-sys-typescale-code-weight: 400;
   --md-sys-typescale-code-line-height: 20px;
+
+  /* ─── Semantic Badge Tokens ─────────────────────────────────────────── */
+  --badge-difficulty-easy-bg: var(--md-sys-color-accent-green);
+  --badge-difficulty-easy-text: #1b5e20;
+  --badge-difficulty-medium-bg: var(--md-sys-color-accent-amber);
+  --badge-difficulty-medium-text: #e65100;
+  --badge-difficulty-hard-bg: #ef5350;
+  --badge-difficulty-hard-text: #ffebee;
+
+  --badge-severity-critical-bg: rgba(255, 82, 82, 0.2);
+  --badge-severity-critical-text: #ff5252;
+  --badge-severity-warning-bg: rgba(255, 171, 64, 0.2);
+  --badge-severity-warning-text: #ffab40;
+  --badge-severity-insight-bg: var(--md-sys-color-primary-container);
+  --badge-severity-insight-text: var(--md-sys-color-on-primary-container);
 }
 
 /* Light Theme */
@@ -170,6 +174,15 @@
   --md-sys-color-accent-teal: #00acc1;
   --md-sys-color-accent-amber: #ff8f00;
   --md-sys-color-accent-green: #4caf50;
+
+  /* Semantic Badge Tokens — Light */
+  --badge-difficulty-easy-text: #1b5e20;
+  --badge-difficulty-medium-text: #e65100;
+  --badge-difficulty-hard-text: #c62828;
+  --badge-severity-critical-bg: rgba(255, 82, 82, 0.12);
+  --badge-severity-critical-text: #d32f2f;
+  --badge-severity-warning-bg: rgba(255, 171, 64, 0.12);
+  --badge-severity-warning-text: #f57c00;
 
   --md-sys-color-secondary: #625b71;
   --md-sys-color-on-secondary: #ffffff;
@@ -220,6 +233,33 @@
     0px 8px 12px 6px rgba(0, 0, 0, 0.05), 0px 4px 4px rgba(0, 0, 0, 0.1);
 }
 
+/* ─── Badge Utility Classes ─────────────────────────────────────────── */
+.badge-difficulty-easy {
+  background-color: var(--badge-difficulty-easy-bg);
+  color: var(--badge-difficulty-easy-text);
+}
+.badge-difficulty-medium {
+  background-color: var(--badge-difficulty-medium-bg);
+  color: var(--badge-difficulty-medium-text);
+}
+.badge-difficulty-hard {
+  background-color: var(--badge-difficulty-hard-bg);
+  color: var(--badge-difficulty-hard-text);
+}
+
+.badge-severity-critical {
+  background: var(--badge-severity-critical-bg);
+  color: var(--badge-severity-critical-text);
+}
+.badge-severity-warning {
+  background: var(--badge-severity-warning-bg);
+  color: var(--badge-severity-warning-text);
+}
+.badge-severity-insight {
+  background: var(--badge-severity-insight-bg);
+  color: var(--badge-severity-insight-text);
+}
+
 /* Global Reset & Base Styles */
 * {
   margin: 0;
@@ -230,9 +270,12 @@
 html {
   font-family: var(--md-sys-typescale-body-large-font);
   font-size: var(--md-sys-typescale-body-large-size);
-  line-height: var(--md-sys-typescale-body-large-line-height);
+  line-height: 1.7;
   background-color: var(--md-sys-color-background);
   color: var(--md-sys-color-on-background);
+  font-feature-settings: 'liga' 1, 'cv11' 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
@@ -304,6 +347,22 @@ body {
   font-size: var(--md-sys-typescale-label-medium-size);
   font-weight: var(--md-sys-typescale-label-medium-weight);
   line-height: var(--md-sys-typescale-label-medium-line-height);
+}
+
+/* Content Visibility for long lists */
+.teardown-card,
+.discovery-card,
+.print-card {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 300px;
+}
+
+/* Article reading measure — max 65ch for comfort */
+.article-content p,
+.teardown-content p,
+.about-section p,
+.discovery-content p {
+  max-width: 65ch;
 }
 
 /* Link Styles */

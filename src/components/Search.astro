@@ -178,7 +178,7 @@
         showSubResults: true,
         showImages: false,
       })
-    } catch (e) {
+    } catch {
       // In dev mode, Pagefind won't be available
       container.innerHTML =
         '<p style="color: var(--md-sys-color-on-surface-variant); padding: 1rem;">Search is available after building the site.</p>'
@@ -218,6 +218,25 @@
   backdrop?.addEventListener('click', closeSearch)
   closeBtn?.addEventListener('click', closeSearch)
 
+  // Focus trap for modal
+  function trapFocus(e: KeyboardEvent) {
+    if (e.key !== 'Tab' || !modal?.classList.contains('active')) return
+    const focusables = modal.querySelectorAll<HTMLElement>(
+      'button, input, [href], select, textarea, [tabindex]:not([tabindex="-1"])'
+    )
+    if (focusables.length === 0) return
+    const first = focusables[0]
+    const last = focusables[focusables.length - 1]
+
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault()
+      last.focus()
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault()
+      first.focus()
+    }
+  }
+
   // Keyboard shortcuts
   document.addEventListener('keydown', (e) => {
     // Open with / key
@@ -233,5 +252,8 @@
     if (e.key === 'Escape' && modal?.classList.contains('active')) {
       closeSearch()
     }
+
+    // Focus trap
+    trapFocus(e)
   })
 </script>

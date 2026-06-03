@@ -8,6 +8,7 @@ import FocusMode from '../../components/FocusMode.astro'
 import TagCloud from '../../components/TagCloud.astro'
 import RelatedObsidianNotes from '../../components/RelatedObsidianNotes.astro'
 import RelatedTeardowns from '../../components/RelatedTeardowns.astro'
+import OptimizedImage from '../../components/OptimizedImage.astro'
 import { getCollection, render } from 'astro:content'
 
 // Astro 5: Generate static paths using entry.id (not entry.slug)
@@ -51,7 +52,7 @@ const readingTime = Math.max(1, Math.ceil(wordCount / wordsPerMinute))
     <header class="article-header">
       <div class="article-meta">
         <span class="device-type">{entry.data.device}</span>
-        <span class="difficulty difficulty-{entry.data.difficulty}">
+        <span class={`difficulty badge-difficulty-${entry.data.difficulty}`}>
           {entry.data.difficulty}
         </span>
         <span class="reading-time">
@@ -78,7 +79,12 @@ const readingTime = Math.max(1, Math.ceil(wordCount / wordsPerMinute))
       {
         entry.data.heroImage && (
           <div class="hero-image">
-            <img src={entry.data.heroImage} alt={entry.data.title} />
+            <OptimizedImage
+              src={entry.data.heroImage}
+              alt={entry.data.title}
+              loading="eager"
+              sizes="(max-width: 800px) 100vw, 800px"
+            />
           </div>
         )
       }
@@ -172,21 +178,6 @@ const readingTime = Math.max(1, Math.ceil(wordCount / wordsPerMinute))
     font-size: 0.875rem;
     font-weight: 500;
     text-transform: capitalize;
-  }
-
-  .difficulty-easy {
-    background-color: #2e7d32;
-    color: #e8f5e9;
-  }
-
-  .difficulty-medium {
-    background-color: #f57c00;
-    color: #fff3e0;
-  }
-
-  .difficulty-hard {
-    background-color: #c62828;
-    color: #ffebee;
   }
 
   .article-meta time {
