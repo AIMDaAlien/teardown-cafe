@@ -9,35 +9,31 @@ icon: "💔"
 
 ## The Anti-Repair Design
 
-Apple's Early 2015 MacBook Air display assembly is a prime example of anti-repair design. The LCD panel is bonded to the front glass with adhesive that makes non-destructive separation virtually impossible.
+Apples Early 2015 MacBook Air display is glued together. The LCD panel, front glass, and backlight are essentially one unit. You cannot separate them without destroying something.
 
-### What I Learned
+I found this out the hard way. I wanted the LED backlight for another project. The screen was fine before I started. It was not fine after.
 
-- The screen, glass, and backlight are essentially one fused unit
-- Apple expects you to replace the entire display assembly (~$400-600)
-- Even professional repair shops struggle with this model
-- My attempt to salvage just the LED backlight resulted in a cracked (previously working) screen
+## What Happened
 
-### The Takeaway
+- The layers are fused with adhesive that makes non-destructive separation basically impossible
+- Apple expects you to replace the entire display assembly for $400-600
+- Even repair shops struggle with this model
+- My attempt to salvage the backlight cracked a previously working screen
 
-If you're sourcing parts from a MacBook Air Early 2015, treat the display as a single unit. Don't try to be a hero—I learned that lesson the hard way.
+## The Lesson
+
+If youre sourcing parts from a MacBook Air Early 2015, treat the display as one piece. Dont try to separate the layers. I learned that lesson the expensive way.
 
 ## Visual Evidence
 
-Here's exactly what happens when you try to "just replace the screen":
-
 ![Cracked LCD Panel](/images/discoveries/macbook-air-2015-screen/cracked-screen-1.webp)
-*Figure 1: The inevitable result of attempting to separate the layers.*
+The inevitable result of trying to separate the layers.
 
 ![Internal damage](/images/discoveries/macbook-air-2015-screen/cracked-screen-2.webp)
-*Figure 2: The pressure required to separate the bezel destroys the LCD matrix.*
-
-### The Layers
-
-Once destroyed, you can see the layer construction. I did manage to salvage the backlight assembly (bottom), but at the cost of the panel itself.
+The pressure needed to separate the bezel destroys the LCD matrix.
 
 ![Backlight Assembly](/images/discoveries/macbook-air-2015-screen/backlight-assembly.webp)
-*Figure 3: With the LCD removed (and broken), the backlight assembly remains.*
+I did manage to salvage the backlight. But I destroyed the panel to get it.
 
 ![Diffuser Layers](/images/discoveries/macbook-air-2015-screen/diffuser-layers.webp)
-*Figure 4: The diffuser sheets sorted out. Useful for other projects, but expensive scrap.*
+The diffuser sheets sorted out. Useful for other projects. Expensive scrap.

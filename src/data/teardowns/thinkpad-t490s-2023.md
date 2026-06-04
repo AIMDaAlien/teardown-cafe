@@ -1,6 +1,6 @@
 ---
 title: 'ThinkPad T490s - Under the Hood'
-description: 'Quick look inside a Lenovo ThinkPad T490s out of curiosity - documenting what the internals look like'
+description: 'Opened a ThinkPad T490s just to see what was inside. No repair needed, just curiosity.'
 pubDate: 2023-08-30
 device: laptop
 difficulty: easy
@@ -9,85 +9,56 @@ relatedNotes:
   - 'Hardware/Laptop Repair Techniques'
 ---
 
-## Quick Look Inside
+## What This Is
 
-Opened up a ThinkPad T490s just to see what the internals looked like. No particular repair needed - just curiosity about the component layout and build quality.
-
-**Device:**
-
-- **Model**: Lenovo ThinkPad T490s
-- **Year**: ~2019-2020
-- **Date**: August 2023
+Opened a ThinkPad T490s to see the internals. No repair needed. Just wanted to check the component layout and build quality.
 
 ![ThinkPad T490s Internals](/images/thinkpad-t490s-2023/01-internals-overview.jpg)
 
-## What's Visible
+## Whats Inside
 
-**Left side (from this angle):**
+**Left side:**
 
-- **Battery**: Lenovo Li-ion pack taking up significant space
-  - 11.4V nominal voltage marked on label
-  - Internal, non-removable design
-  - Battery warning labels visible
-- **Fan assembly**: Single cooling fan with dual heatpipes
-  - One pipe goes to CPU area
-  - Thermal solution adequate for 15W ultrabook processor
+- Battery: Lenovo Li-ion pack, 11.4V, internal non-removable design
+- Fan assembly: single fan with dual heatpipes, one to the CPU area
 
-**Center/Right:**
+**Center and right:**
 
-- **Motherboard**: Main logic board with components
-  - CPU under heatsink (center area)
-  - RAM is **soldered** to motherboard - not upgradeable
-  - M.2 slot visible but **SSD removed** in this photo
-- **Wireless card**: M.2 slot with Wi-Fi module installed
+- Motherboard with CPU under the heatsink
+- RAM is soldered to the board. Not upgradeable.
+- M.2 slot visible but the SSD was removed in this photo
+- Wireless card in an M.2 slot
 
-**Ports visible:**
+**Ports along the edge:** USB-C, USB-A, HDMI, audio jack, and whatever else the T490s config includes.
 
-- USB-C ports along edge
-- USB-A ports
-- HDMI connector
-- Audio jack
-- Various other connectivity (exact layout depends on T490s configuration)
+## Build Quality
 
-**Build observations:**
+Clean cable routing in channels. Single bottom panel for access. WiFi card and SSD are modular. Mostly Phillips screws. Magnesium-aluminum chassis.
 
-- Clean cable routing along channels
-- Single bottom panel removal for access
-- Modular construction where possible (Wi-Fi card, SSD)
-- Mostly Phillips screws
-- Magnesium-aluminum chassis construction
+## Upgradeability
 
-**What's NOT upgradeable on T490s:**
-
-- RAM (soldered to motherboard)
+**Not upgradeable:**
+- RAM (soldered)
 - CPU (soldered)
-- Battery (requires full disassembly to replace)
+- Battery (requires full disassembly)
 
-**What IS replaceable:**
-
+**Replaceable:**
 - M.2 NVMe SSD
-- M.2 Wi-Fi card
+- M.2 WiFi card
 - Cooling fan
 - CMOS battery
 
-## ThinkPad T490s Context
+## Context
 
-The T490s is Lenovo's 14" ultrabook from the business ThinkPad line. This generation marked Lenovo's shift to thinner designs with more soldered components. Unlike older ThinkPads (T420/T430 era), the T490s sacrifices upgradeability for reduced thickness and weight.
+The T490s is Lenovos 14-inch business ultrabook from 2019-2020. This generation got thinner with more soldered components. Older ThinkPads like the T420 era were modular and upgradeable. The T490s trades that for reduced thickness and weight.
 
-**Typical specs:**
-
-- Intel Core i5/i7 (8th or 10th Gen)
-- 8GB or 16GB RAM (soldered)
-- M.2 NVMe storage
-- 14" IPS display
-- ~2.8 lbs weight
-- MIL-STD-810G certified
+Typical specs: Intel Core i5 or i7 (8th or 10th gen), 8GB or 16GB soldered RAM, M.2 NVMe storage, 14-inch IPS display, about 2.8 pounds, MIL-STD-810G certified.
 
 ## Why I Documented This
 
-Just wanted to see what's inside a modern ThinkPad ultrabook. The soldered RAM was expected based on the model, but wanted visual confirmation of the layout. Having the photo as reference is useful for future work on similar models.
+Wanted to see what a modern ThinkPad ultrabook looks like inside. The soldered RAM was expected for this model but I wanted visual confirmation of the layout. Photo reference is useful for future work on similar machines.
 
 ---
 
 _Documented: August 2023_
-_Purpose: Curiosity / Component layout reference_
+_Purpose: Curiosity, component layout reference_

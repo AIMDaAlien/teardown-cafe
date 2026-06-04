@@ -1,6 +1,6 @@
 ---
 title: 'Moto G Stylus 2022 Screen Repair'
-description: 'Replacing a cracked screen on the Motorola G Stylus 2022, navigating hidden screws and battery removal to access the display connector'
+description: 'Cracked screen plus hidden screws plus a battery you have to remove. More involved than it should be.'
 pubDate: 2024-02-26
 device: smartphone
 difficulty: medium
@@ -8,63 +8,39 @@ heroImage: /images/moto-g-stylus-2022-screen/04-screen-replaced.jpg
 video: /images/moto-g-stylus-2022-screen/repair-process.mp4
 ---
 
-## Why I Did This
+## What This Is
 
-The Moto G Stylus 2022 came in with a cracked screen - a common issue with modern smartphones. While this repair seemed straightforward at first glance, Motorola's design choices added a couple of gotchas that made it more interesting than your typical screen replacement.
+Moto G Stylus 2022 with a cracked screen. Still functional though - the digitizer cable survived the impact. That meant I could test the repair immediately after reassembly instead of hoping it worked.
 
-_The photo you see on screen? That's the inside of my Samsung Galaxy S6 from 2019, man I miss those rooted Android days [placeholder link to future Galaxy S6 entry]_
+_The photo you see on screen? Thats the inside of my Samsung Galaxy S6 from 2019. Man I miss those rooted Android days._
 
-## The Repair Process
+## The Repair
 
-### Initial Assessment
+### Step 1: Back Cover
 
 ![Phone exterior showing damage](/images/moto-g-stylus-2022-screen/01-phone-exterior.jpg)
 
-The phone's screen was cracked but still functional - always a good sign that the digitizer cable survived the impact. This meant I could verify the repair immediately after reassembly.
+Back cover comes off with heat and careful prying. But Motorola hid screws under small stickers near the top. Easy to miss. If you dont find them youll break plastic clips trying to force the cover off.
 
-**Tools needed:**
+Always check under stickers and rubber feet for hidden screws. Basic rule but easy to forget.
 
-- Phillips #000 screwdriver
-- Plastic opening tools
-- Spudger (essential for battery removal)
-- Heat gun or hair dryer (for adhesive)
-- Replacement screen assembly
-
-### Step 1: Back Cover Removal
+### Step 2: Battery
 
 ![Back cover removed, exposing internals](/images/moto-g-stylus-2022-screen/02-back-cover-removed.jpg)
 
-The back cover comes off relatively easily with some heat and careful prying. However, **here's the first gotcha**: Motorola hid a couple of screws under small stickers near the top of the phone.
-
-These aren't immediately obvious and if you miss them, you'll end up damaging the plastic clips while trying to remove the cover with force.
-
-**Pro tip:** Always check under stickers and rubber feet for hidden fasteners.
-
-### Step 2: Battery Disconnect and Removal
+The battery has to come out completely to reach the display connector. Its not optional. Some phones let you swap the screen without touching the battery. This one doesnt.
 
 ![Battery exposed with ZURUN branding visible](/images/moto-g-stylus-2022-screen/03-battery-internals-view.jpg)
 
-This is where the repair gets interesting. Unlike some phones where you can access the screen ribbon cable without battery removal, the Moto G Stylus 2022 requires full battery extraction to reach the display connector.
+Battery specs: 3900mAh Li-ion, ZURUN brand, 3.85V. Held down with strong adhesive. Worked it free with a plastic spudger from the edges.
 
-**Battery specs:**
+Never puncture or bend lithium batteries. They catch fire. Use proper tools.
 
-- **Capacity:** 3900mAh
-- **Type:** Li-ion Polymer
-- **Brand:** ZURUN
-- **Voltage:** 3.85V (4.35V charging limit)
-- **Standard:** GB/T 18287-2017
+### The Hidden Problem
 
-The battery is held down with strong adhesive. I used a plastic spudger to carefully work it free from the edges. **Critical safety note:** Never puncture or bend lithium batteries - they can catch fire.
+The ribbon cable connecting the screen to the motherboard sits underneath where the battery was. So you cant just disconnect the screen and swap it. You have to remove the battery first. Adds complexity and risk for no good reason.
 
-### The Hidden Challenge
-
-**Second gotcha:** The ribbon cable connecting the screen to the motherboard sits _underneath_ where the battery was positioned. This design choice means:
-
-1. You can't just disconnect the screen connector and call it done
-2. Battery removal adds complexity and risk
-3. Repair time increases significantly
-
-This is likely a cost-saving measure in the phone's internal layout, but it makes DIY repairs more intimidating for beginners.
+Probably a cost-saving measure in the layout. Makes DIY repairs more intimidating than they need to be.
 
 ### Step 3: Screen Replacement
 
@@ -72,63 +48,51 @@ This is likely a cost-saving measure in the phone's internal layout, but it make
   Your browser doesn't support embedded videos. <a href="/images/moto-g-stylus-2022-screen/repair-process.mp4">Download the repair process video</a>.
 </video>
 
-_Watch the repair process video to see the screen removal and installation_
+With the battery out:
 
-With the battery out of the way:
+1. Disconnected the old screen ribbon
+2. Removed the damaged screen assembly
+3. Cleaned adhesive residue from the frame
+4. Connected the new screen ribbon
+5. Verified it worked before putting anything back together
 
-1. Disconnected the old screen's ribbon cable
-2. Carefully removed the damaged screen assembly
-3. Cleaned the frame of any adhesive residue
-4. Connected the new screen's ribbon cable
-5. Verified connection before reassembly (crucial step!)
+Testing before final assembly is crucial. Connect the new screen, power on, confirm touch and display work. Only then do you commit to reassembly.
 
 ### Step 4: Reassembly
 
 ![Completed repair with screen replaced](/images/moto-g-stylus-2022-screen/04-screen-replaced.jpg)
 
-Reassembly followed the reverse order:
+Reverse order. Tested with battery connected but not adhered - screen worked perfectly. Secured battery with fresh adhesive strips. Reconnected everything. Replaced screws including the hidden ones. Snapped the back cover on.
 
-1. **Test first:** Powered on the phone with battery connected but not adhered - screen worked perfectly ✓
-2. Secured battery back in place with fresh adhesive strips
-3. Reconnected battery connector
-4. Replaced screws (including the hidden ones!)
-5. Snapped back cover into place
+Final check: touch response, brightness, display quality. All good.
 
-**Final test:** Touch response, brightness adjustment, and display quality all checked out.
+## Difficulty
 
-## Difficulty Assessment
+Easy-medium. Straightforward if youve done phone repairs before. Medium for first-timers because of the hidden screws and mandatory battery removal.
 
-This repair sits in the **easy-medium range** - very straightforward for phone repair experts, but medium difficulty for first-timers due to:
-
-**Why experts find it easy:**
-
-- Standard screw types throughout
-- No soldering required
+**Why its easier for experienced people:**
+- Standard screws throughout
+- No soldering
 - Screen assembly is modular
-- Clear internal layout once opened
+- Clear layout once youre inside
 
-**Why beginners find it medium:**
+**Why its harder for beginners:**
+- Hidden fasteners you can easily miss
+- Battery removal adds risk
+- Strong adhesive needs patience
+- Ribbon cable position requires careful handling
 
-- Hidden fasteners not immediately visible
-- Battery removal adds complexity and risk
-- Strong adhesive requires patience
-- Ribbon cable positioning requires careful handling
+Time: 30-45 minutes if you know what youre doing. 60-90 minutes for a first-timer.
 
-**Repairability Score: 6/10**
+## Tips
 
-- Tool requirements: Basic tools sufficient ✓
-- Component availability: Replacement screens readily available online
-- Time required: 30-45 minutes for experienced; 60-90 minutes for first-timers
-
-## Tips for DIY Repairs
-
-1. **Always check for hidden screws** - Run your fingernail over stickers and rubber feet
-2. **Heat is your friend** - Makes adhesive removal much easier and safer
-3. **Test before final assembly** - Connect new screen and verify function before committing
-4. **Take photos** - Document screw locations and cable routing during disassembly
-5. **Use proper tools** - A quality spudger prevents battery puncture
+1. Check under stickers for hidden screws. Every time.
+2. Heat makes adhesive removal easier and safer.
+3. Test before final assembly. Always.
+4. Take photos during disassembly. Screw locations, cable routing.
+5. Use a quality spudger for battery removal. Cheap ones bend or snap.
 
 ---
 
-_Repair completed: February 26, 2024_
-_Difficulty: Easy-medium - Hidden fasteners and battery removal required_
+_Repair: February 26, 2024_
+_Status: Screen replaced successfully_

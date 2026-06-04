@@ -1,6 +1,6 @@
 ---
 title: 'MacBook Pro 2010 - From Mac OS Lion to Sequoia'
-description: 'Testing OpenCore limits: upgrading a 2010 MacBook Pro from Mac OS Lion through High Sierra to unsupported Monterey and Sequoia'
+description: 'Bought a 2010 MacBook Pro off eBay. It booted to Lion. That was a problem.'
 pubDate: 2025-03-07
 device: laptop
 difficulty: medium
@@ -22,144 +22,90 @@ tags:
   ]
 ---
 
-## The Problem
+## What This Is
 
-Bought a 2010 MacBook Pro off eBay. Booted to **Mac OS Lion** - completely unusable for modern web. Safari couldn't load sites, Chrome wouldn't install, everything threw "you're severely outdated" errors.
+I bought a 2010 MacBook Pro off eBay. Booted it up and got **Mac OS Lion**. Safari couldnt load anything. Chrome wouldnt install. Every site threw "your browser is outdated" errors. Completely unusable for modern web.
 
-**The trap:** Without another Mac to create OpenCore installers, you're stuck with an expensive paperweight.
+The real problem: without another Mac to create bootable installers, youre stuck. Cant make an OpenCore USB from Lion. Cant download modern browsers. Cant do anything.
 
-[![Mac OS Lion - ancient and broken](/images/macbook-pro-2010-upgrades/IMG20250328232505.jpg)](/images/macbook-pro-2010-upgrades/IMG20250328232505.jpg)
+![Mac OS Lion - ancient and broken](/images/macbook-pro-2010-upgrades/IMG20250328232505.jpg)
 
 ## Step 1: High Sierra
 
-Installed **macOS High Sierra (10.13)** - the latest officially supported version. Downloaded DMG directly from Apple's servers.
+Downloaded the macOS High Sierra DMG directly from Apples servers. Installed it. Internet finally worked.
 
-[![High Sierra installation](/images/macbook-pro-2010-upgrades/IMG20250307162503.jpg)](/images/macbook-pro-2010-upgrades/IMG20250307162503.jpg)
+![High Sierra installation](/images/macbook-pro-2010-upgrades/IMG20250307162503.jpg)
 
-**Result:** Internet finally worked, but browsers constantly complained about being outdated.
+Browsers still complained about being outdated but at least they functioned. High Sierra is the last officially supported version for this machine.
 
-## Step 2: OpenCore Experimentation
+## Step 2: OpenCore
 
-Found **OpenCore Legacy Patcher** - patches newer unsupported macOS versions onto old hardware. Decided to test the limits.
+Found OpenCore Legacy Patcher. It patches newer macOS versions onto old hardware. I wanted to see how far this thing could go.
 
-[![Initial state](/images/macbook-pro-2010-upgrades/IMG20250307115338.jpg)](/images/macbook-pro-2010-upgrades/IMG20250307115338.jpg)
+![Initial state](/images/macbook-pro-2010-upgrades/IMG20250307115338.jpg)
 
 ### Monterey (12.x)
 
-[![Monterey running](/images/macbook-pro-2010-upgrades/IMG20250312202418.jpg)](/images/macbook-pro-2010-upgrades/IMG20250312202418.jpg)
+![Monterey running](/images/macbook-pro-2010-upgrades/IMG20250312202418.jpg)
 
-Boot time increased to 2-3 minutes, UI noticeably slower, but usable. Fan moderate, heat manageable.
+Boot time went from 30 seconds to 2-3 minutes. UI was noticeably slower. Fan ran moderate. Heat was manageable. But it worked. You could browse, type, do basic tasks.
 
 ### Sequoia (15.x)
 
-[![Sequoia struggling](/images/macbook-pro-2010-upgrades/20250325_045100.jpg)](/images/macbook-pro-2010-upgrades/20250325_045100.jpg)
+![Sequoia struggling](/images/macbook-pro-2010-upgrades/20250325_045100.jpg)
 
-Complete performance collapse. 4-5 minute boots, significant UI lag, fan maxed constantly, screensaver stuttering. Technically functional, practically unusable.
+Total collapse. 4-5 minute boots. Significant lag just moving windows around. Fan maxed constantly. Screensaver stuttered. Technically it booted. Practically it was unusable.
 
-[![Performance limits](/images/macbook-pro-2010-upgrades/IMG20250307201158.jpg)](/images/macbook-pro-2010-upgrades/IMG20250307201158.jpg)
+![Performance limits](/images/macbook-pro-2010-upgrades/IMG20250307201158.jpg)
 
-**Verdict:** Reverted to Monterey.
+I reverted to Monterey.
 
-## Performance Observations
+## Performance at a Glance
 
-<div class="performance-table">
+| macOS Version | Boot Time | UI Speed | Fan | Usable? |
+|---------------|-----------|----------|-----|---------|
+| Lion (10.7) | 30s | Fast | Silent | No - internet broken |
+| High Sierra (10.13) | 45s | Fast | Quiet | Yes, limited |
+| Monterey (12.x) | 2-3min | Slow | Moderate | Yes, barely |
+| Sequoia (15.x) | 4-5min | Very slow | Maxed | No |
 
-| macOS Version       | Boot Time | UI Response | Fan Noise | Usability       |
-| :------------------ | :-------: | :---------: | :-------: | :-------------- |
-| Lion (10.7)         |    30s    |   Instant   |  Silent   | Internet broken |
-| High Sierra (10.13) |    45s    |   Instant   |   Quiet   | Limited web     |
-| Monterey (12.x)     |  2-3min   |    Slow     | Moderate  | Acceptable      |
-| Sequoia (15.x)      |  4-5min   |  Very slow  |   Maxed   | Impractical     |
-
-</div>
-
-<style>
-.performance-table {
-  margin: 2rem 0;
-  overflow-x: auto;
-}
-
-.performance-table table {
-  width: 100%;
-  border-collapse: separate;
-  border-spacing: 0;
-}
-
-.performance-table th,
-.performance-table td {
-  padding: 0.75rem 1.5rem;
-  text-align: left;
-  border-bottom: 1px solid var(--surface-container);
-}
-
-.performance-table th {
-  background: var(--surface-container);
-  font-weight: 600;
-  position: sticky;
-  top: 0;
-}
-
-.performance-table td {
-  background: var(--surface);
-}
-
-.performance-table tr:hover td {
-  background: var(--surface-container-low);
-}
-</style>
-
-## Hardware Specs
-
-**MacBook Pro 13-inch, Mid-2010**
+## The Hardware
 
 - Intel Core 2 Duo P8600 @ 2.4GHz (2 cores)
 - 4GB DDR3-1066 (upgraded to 8GB)
-- 250GB HDD → SSD upgrade
-- NVIDIA GeForce 320M (256MB)
+- 250GB HDD (swapped to SSD)
+- NVIDIA GeForce 320M with 256MB
 
-**OS Compatibility:**
-
-- Official: Mac OS X 10.6 → macOS 10.13 High Sierra
-- OpenCore: Up to macOS 15 Sequoia (technically)
-- Practical limit: macOS 12 Monterey
+Official support ended at High Sierra. OpenCore can technically push it to Sequoia. The practical limit is Monterey.
 
 ## What I Learned
 
-**OpenCore works but respect limits.** Monterey on 15-year-old hardware was impressive. Sequoia proved hardware has real boundaries - fans maxing just to render screensavers made that clear.
+OpenCore works but hardware has real limits. Monterey on 15-year-old silicon was impressive in a "I cant believe this boots" kind of way. Sequoia proved there are walls you cant patch around. Fans maxing just to render a screensaver made that clear.
 
-**High Sierra = sweet spot** for this hardware. Modern enough for most tasks, light enough to run smoothly.
+High Sierra is the sweet spot for this machine. Modern enough to function, light enough to run smooth.
 
-**This machine sparked my Apple laptop journey:**
-
-1. 2010 MacBook Pro (learning OpenCore)
-2. M1 MacBook Air (first Apple Silicon)
-3. M4 MacBook Air (current daily driver)
+This machine started my Apple laptop journey. 2010 Pro with OpenCore, then an M1 Air, now an M4 Air as daily driver.
 
 ## Recommendations
 
-**For 2010-2012 MacBooks:**
+For anyone with a 2010-2012 MacBook:
 
-- High Sierra for best balance
-- Monterey if you need modern browsers
-- Don't attempt anything newer
-- Upgrade to SSD first
-- Max out RAM to 8GB
+- High Sierra for best balance of compatibility and speed
+- Monterey if you absolutely need modern browsers
+- Dont bother with anything newer
+- Upgrade to SSD first. Biggest single improvement you can make.
+- Max RAM to 8GB
 
-**OpenCore resources:**
+[OpenCore Legacy Patcher](https://dortania.github.io/OpenCore-Legacy-Patcher/) if you want to try this yourself.
 
-- [OpenCore Legacy Patcher](https://dortania.github.io/OpenCore-Legacy-Patcher/)
+## Difficulty
 
-## Difficulty: Medium
+High Sierra install is easy. OpenCore setup is well documented. Performance tuning is trial and error. Knowing when to stop is experience.
 
-- High Sierra installation: Easy
-- OpenCore setup: Well-documented
-- Performance tuning: Trial and error
-- Knowing limits: Experience
-
-**Repairability: 8/10** - RAM upgradeable, SSD replaceable, battery removable, standard screws.
+Repairability is solid. RAM upgradeable, SSD replaceable, battery removable, standard screws throughout.
 
 ---
 
-_Project: March 2025_  
-_Final OS: macOS Monterey 12.x_  
+_Project: March 2025_
+_Final OS: macOS Monterey 12.x_
 _Status: Retired for M4 Air_

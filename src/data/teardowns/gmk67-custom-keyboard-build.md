@@ -1,6 +1,6 @@
 ---
 title: 'GMK67 Custom Mechanical Keyboard Build'
-description: 'Building my first custom mechanical keyboard with AKKO Lavender switches, KTT Baby Whites, and a lavender gradient keycap set'
+description: 'My first custom keyboard. Lavender theme, mixed switches, about $130 total.'
 pubDate: 2024-06-06
 device: mechanical-keyboard
 difficulty: easy
@@ -8,137 +8,87 @@ heroImage: /images/gmk67-custom/IMG20240620164959-EDIT-EDIT.jpg
 video: /images/gmk67-custom/soundtest.mp4
 ---
 
-## Why I Built This
+## What This Is
 
-After getting hooked on mechanical keyboards, I wanted to build my own from scratch. The GMK67 was perfect for a first build - hot-swappable switches, straightforward assembly, and room to experiment with different switch types.
+I wanted to build a keyboard from scratch. The GMK67 was perfect for a first build - hot-swap PCB so no soldering, straightforward assembly, and cheap enough that mistakes wouldnt hurt.
 
-**The vision:** A lavender-themed keyboard with linear switches for letters (smooth, fast typing) and tactile switches for modifiers (distinct feedback).
+The idea was lavender everything. Linear switches for letters, tactile for modifiers, lavender gradient keycaps. Total cost around $130.
 
-**Total cost:** ~$130
+## The Parts
+
+- **Board:** GMK67 hot-swap PCB, 65% layout
+- **Switches (letters):** AKKO Lavender, linear
+- **Switches (modifiers):** KTT Baby White, tactile
+- **Keycaps:** Lavender gradient PBT set
+
+This was my second mechanical keyboard but my first custom build from individual parts.
 
 ## The Build
 
-**Components:**
-
-- **Board:** GMK67 hot-swap PCB (65% layout)
-- **Switches (Letters):** AKKO Lavender switches - Linear
-- **Switches (Modifiers):** KTT Baby White switches - Tactile
-- **Keycaps:** Lavender gradient PBT set
-- **Acquired:** June 6, 2024
-
-This is my second mechanical keyboard, but my first custom build from components.
-
-## Build Process
-
-### Step 1: Component Prep
+### Component Prep
 
 ![Unboxed GMK67 components and switches](/images/gmk67-custom/IMG20240620183234.jpg)
 
-Hot-swap PCBs are beginner-friendly - no soldering required. The board has clear switch socket guides, so you can't install switches backward unless you really try.
+Hot-swap means no soldering. The board has clear socket guides so youd have to try pretty hard to install a switch backward.
 
-**Key decision:** Mixed switches for different key zones:
+Mixed switches was the main decision. Linear for the letter keys because I type fast and dont want resistance. Tactile for modifiers so I can feel where the function keys are without looking.
 
-- **AKKO Lavender (Linear)** for alphanumeric keys - smooth typing experience
-- **KTT Baby White (Tactile)** for modifiers - tactile bump helps identify function keys by feel
-
-### Step 2: Switch Installation
+### Switch Installation
 
 ![Completed keyboard with lavender gradient keycaps installed](/images/gmk67-custom/IMG20240620164959-EDIT-EDIT.jpg)
 
-Installing switches was straightforward:
+Align the pins with the sockets, press until it clicks. The board guides the orientation. Just match pins to holes.
 
-1. Align switch pins with hot-swap sockets
-2. Press firmly until switch clicks into place
-3. Verify switch is flush with plate
+First time doing this and not a single bent pin. Nothing installed wrong. If you can press a button you can build this keyboard.
 
-**Pro tip:** The board itself guides proper orientation - just match the pins to the socket holes.
-
-**First-time experience:** Perfect. Not a single bent pin, no switches installed incorrectly. If you can press buttons, you can build this keyboard.
-
-### Step 3: Keycap Installation
+### Keycaps
 
 <video controls src="/images/gmk67-custom/VID20240620181350.mp4" poster="/images/gmk67-custom/IMG20240620164959-EDIT-EDIT.jpg">
   Your browser doesn't support embedded videos. <a href="/images/gmk67-custom/VID20240620181350.mp4">Download the assembly video</a>.
 </video>
 
-_Watch the assembly process_
+Lavender gradient PBT keycaps. PBT doesnt develop shine from finger oils like ABS does. They feel solid.
 
-The lavender gradient keycaps complete the aesthetic. PBT material feels solid and won't develop shine from finger oils like ABS keycaps.
-
-## Sound Test & Results
+## Sound Test
 
 <video controls src="/images/gmk67-custom/soundtest.mp4" poster="/images/gmk67-custom/IMG20240620164959-EDIT-EDIT.jpg">
   Your browser doesn't support embedded videos. <a href="/images/gmk67-custom/soundtest.mp4">Download the sound test</a>.
 </video>
 
-_Typing sound test with mixed switches_
+The lavender linears are buttery smooth. No bump, just press and go. The Baby White tactiles have a clear bump on the modifiers. You know exactly when youve hit a function key. The PBT gives a deeper, satisfying sound compared to thinner ABS caps.
 
-**Typing experience:**
+Mixed switches work because letters get used constantly and linears reduce finger strain. Modifiers need distinction so you dont accidentally hit Shift or Ctrl. Plus the sound variation adds character.
 
-- **Lavender linear switches:** Buttery smooth actuation, no tactile bump. Perfect for fast typing without finger fatigue
-- **Baby White tactile switches:** Clear tactile feedback on modifiers helps identify keys without looking
-- **Keycap sound:** Deep, satisfying thock from PBT material
+## Difficulty
 
-**Why mixed switches work:**
+Easy. No soldering, no tools, no permanent changes. The board prevents most mistakes. Switches pop out if you mess up.
 
-- Letters see constant use - linear reduces finger strain
-- Modifiers need distinction - tactile bump prevents accidental presses
-- Sound variety adds character to typing
+Time breakdown:
+- Unboxing: 10 minutes
+- Switches: 20 minutes
+- Keycaps: 10 minutes
+- Total: about 40 minutes
 
-## Difficulty Assessment
+Skills needed: ability to press small things firmly. Thats it.
 
-**Rating: Easy**
+## Budget
 
-**Why it's genuinely easy:**
-
-- **No soldering:** Hot-swap PCB eliminates the biggest barrier to entry
-- **Clear orientation:** Board guides prevent mistakes
-- **No tools required:** Just your hands
-- **Forgiving design:** Switches can be removed/repositioned if needed
-
-**Time investment:**
-
-- Unboxing and prep: 10 minutes
-- Switch installation: 20 minutes
-- Keycap installation: 10 minutes
-- **Total:** ~40 minutes
-
-**Skills needed:**
-
-- Ability to press small components firmly
-- That's it
-
-**Perfect first build:** If you're considering custom keyboards but intimidated by complexity, this is your entry point.
-
-**Repairability Score: 10/10**
-
-- Hot-swap design = instant switch replacement
-- No soldering = no permanent modifications
-- Every component is user-replaceable
-- Keycaps pop on/off in seconds
-
-## Would I Recommend This Build?
-
-**Absolutely yes, especially if:**
-
-- First custom keyboard build
-- Want to experiment with different switches
-- Like the 65% compact layout (arrow keys + some function keys)
-- Prefer smooth linear switches for typing
-
-**Budget breakdown (~$130 total):**
-
-- GMK67 PCB kit: ~$50
+- GMK67 kit: ~$50
 - AKKO Lavender switches (70): ~$25
 - KTT Baby White switches (20): ~$10
 - Lavender gradient PBT keycaps: ~$35
 - USB cable: ~$10
+- **Total: ~$130**
 
-**The best part:** Hot-swap design means I can swap switches anytime. Want clickier switches? Pop the old ones out, press new ones in. Done in 5 minutes.
+Best part is the hot-swap design. Want clickier switches? Pop the old ones out, press new ones in. Five minutes.
 
-This build proved custom keyboards aren't intimidating - they're just expensive LEGO sets that you type on.
+## Final Word
+
+Custom keyboards arent intimidating. Theyre just expensive LEGO sets that you type on. The GMK67 is the perfect entry point. Cheap, forgiving, and the end result is a keyboard thats actually yours.
+
+If youre thinking about building one, stop thinking and do it. This build took 40 minutes and I had zero experience.
 
 ---
 
-_Build completed: June 6, 2024_  
-_Difficulty: Easy - Perfect first-time keyboard build_
+_Build: June 6, 2024_
+_Status: Daily driver until the split keyboard took over_
