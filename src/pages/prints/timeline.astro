@@ -186,12 +186,23 @@ for (const [, group] of sortedGroups) {
     flex-shrink: 0;
     border-radius: 8px;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--md-sys-color-surface-container-low);
   }
 
-  .timeline-image :global(.optimized-img) {
+  .timeline-image :global(picture.optimized-picture) {
+    display: block;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+  }
+
+  .timeline-image :global(picture.optimized-picture .optimized-img) {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    aspect-ratio: auto;
     border-radius: 0;
   }
 
@@ -272,6 +283,11 @@ for (const [, group] of sortedGroups) {
     .timeline-image {
       width: 100%;
       height: 200px;
+    }
+
+    .timeline-image :global(picture.optimized-picture .optimized-img) {
+      height: 100%;
+      object-fit: contain;
     }
   }
 </style>

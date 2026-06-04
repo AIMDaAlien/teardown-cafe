@@ -1,10 +1,10 @@
 ---
 title: 'Micro-ATX Case Panels'
 image: '/images/3d-printed-micro-atx-case-build/06-wavy-3d-printed-panels.jpg'
-pubDate: 2025-11-10
+pubDate: 2026-01-11
 printer: 'Bambu Lab P1S'
 filament: 'PETG'
-category: 'functional'
+category: 'desktop'
 sourceUrl: 'https://www.printables.com/model/1536973-budget-friendly-compact-matx-case-with-atx-psu'
 featured: true
 color: 'Gray / Light Blue'

@@ -188,14 +188,26 @@ const filaments = [...new Set(prints.map((p) => p.data.filament).filter(Boolean)
 
   .print-image-wrapper {
     width: 100%;
-    aspect-ratio: 1;
+    min-height: 160px;
+    max-height: 280px;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--md-sys-color-surface-container-low);
   }
 
-  .print-image-wrapper :global(.optimized-img) {
+  .print-image-wrapper :global(picture.optimized-picture) {
+    display: block;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+  }
+
+  .print-image-wrapper :global(picture.optimized-picture .optimized-img) {
+    width: 100%;
+    height: auto;
+    max-height: 280px;
+    object-fit: contain;
+    aspect-ratio: auto;
     border-radius: 0;
   }
 

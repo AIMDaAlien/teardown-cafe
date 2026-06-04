@@ -1,8 +1,8 @@
 ---
 title: '3D Printed Micro-ATX Case Build'
 description: 'Shrinking a full desktop setup into a custom 3D printed micro-ATX case that fits an RTX GPU, ATX PSU, and somehow still leaves the RTX 4090 looking oversized'
-pubDate: 2025-11-15
-device: other
+pubDate: 2026-01-11
+device: desktop
 difficulty: medium
 heroImage: /images/3d-printed-micro-atx-case-build/08-front-with-4090-scale.jpg
 tags:

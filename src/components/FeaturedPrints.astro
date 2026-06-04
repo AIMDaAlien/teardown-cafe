@@ -6,7 +6,6 @@ const prints = await getCollection('prints')
 const featured = prints
   .filter((p) => p.data.featured)
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
-  .slice(0, 4)
 ---
 
 {
@@ -110,14 +109,26 @@ const featured = prints
 
   .featured-image {
     width: 100%;
-    aspect-ratio: 1;
+    min-height: 140px;
+    max-height: 220px;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--md-sys-color-surface-container-low);
   }
 
-  .featured-image :global(.optimized-img) {
+  .featured-image :global(picture.optimized-picture) {
+    display: block;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+  }
+
+  .featured-image :global(picture.optimized-picture .optimized-img) {
+    width: 100%;
+    height: auto;
+    max-height: 220px;
+    object-fit: contain;
+    aspect-ratio: auto;
     border-radius: 0;
   }
 

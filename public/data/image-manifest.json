@@ -873,6 +873,785 @@
       }
     ]
   },
+  "/images/prints/wisteria branch.jpg": {
+    "original": "/images/prints/wisteria branch-cleaned.jpg",
+    "width": 2304,
+    "height": 4096,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/prints/wisteria branch-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/prints/wisteria branch-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/prints/wisteria branch-1200w.webp"
+      }
+    ]
+  },
+  "/images/prints/wave clock.jpg": {
+    "original": "/images/prints/wave clock-cleaned.jpg",
+    "width": 3072,
+    "height": 3072,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/prints/wave clock-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/prints/wave clock-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/prints/wave clock-1200w.webp"
+      }
+    ]
+  },
+  "/images/prints/tropical leaves bookmark.jpg": {
+    "original": "/images/prints/tropical leaves bookmark-cleaned.jpg",
+    "width": 3072,
+    "height": 4096,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/prints/tropical leaves bookmark-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/prints/tropical leaves bookmark-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/prints/tropical leaves bookmark-1200w.webp"
+      }
+    ]
+  },
+  "/images/prints/tiny treehouse for plants.jpg": {
+    "original": "/images/prints/tiny treehouse for plants-cleaned.jpg",
+    "width": 3072,
+    "height": 3072,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/prints/tiny treehouse for plants-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/prints/tiny treehouse for plants-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/prints/tiny treehouse for plants-1200w.webp"
+      }
+    ]
+  },
+  "/images/prints/tablet or phone stand.jpg": {
+    "original": "/images/prints/tablet or phone stand-cleaned.jpg",
+    "width": 3072,
+    "height": 4096,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/prints/tablet or phone stand-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/prints/tablet or phone stand-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/prints/tablet or phone stand-1200w.webp"
+      }
+    ]
+  },
+  "/images/prints/stake pot.jpg": {
+    "original": "/images/prints/stake pot-cleaned.jpg",
+    "width": 2568,
+    "height": 3160,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/prints/stake pot-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/prints/stake pot-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/prints/stake pot-1200w.webp"
+      }
+    ]
+  },
+  "/images/prints/small organizer and kumiko sticky notes holder.jpg": {
+    "original": "/images/prints/small organizer and kumiko sticky notes holder-cleaned.jpg",
+    "width": 3072,
+    "height": 4096,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/prints/small organizer and kumiko sticky notes holder-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/prints/small organizer and kumiko sticky notes holder-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/prints/small organizer and kumiko sticky notes holder-1200w.webp"
+      }
+    ]
+  },
+  "/images/prints/seedling starter tray.jpg": {
+    "original": "/images/prints/seedling starter tray-cleaned.jpg",
+    "width": 3072,
+    "height": 3072,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/prints/seedling starter tray-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/prints/seedling starter tray-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/prints/seedling starter tray-1200w.webp"
+      }
+    ]
+  },
+  "/images/prints/seed packet holder.jpg": {
+    "original": "/images/prints/seed packet holder-cleaned.jpg",
+    "width": 3072,
+    "height": 4096,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/prints/seed packet holder-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/prints/seed packet holder-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/prints/seed packet holder-1200w.webp"
+      }
+    ]
+  },
+  "/images/prints/salad spinner.jpg": {
+    "original": "/images/prints/salad spinner-cleaned.jpg",
+    "width": 4096,
+    "height": 2304,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/prints/salad spinner-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/prints/salad spinner-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/prints/salad spinner-1200w.webp"
+      }
+    ]
+  },
+  "/images/prints/rtx 4090 pencil box.jpg": {
+    "original": "/images/prints/rtx 4090 pencil box-cleaned.jpg",
+    "width": 3072,
+    "height": 4096,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/prints/rtx 4090 pencil box-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/prints/rtx 4090 pencil box-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/prints/rtx 4090 pencil box-1200w.webp"
+      }
+    ]
+  },
+  "/images/prints/rpi b+ case.jpg": {
+    "original": "/images/prints/rpi b+ case-cleaned.jpg",
+    "width": 3000,
+    "height": 4000,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/prints/rpi b+ case-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/prints/rpi b+ case-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/prints/rpi b+ case-1200w.webp"
+      }
+    ]
+  },
+  "/images/prints/ribbed floral vase.jpg": {
+    "original": "/images/prints/ribbed floral vase-cleaned.jpg",
+    "width": 3072,
+    "height": 4096,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/prints/ribbed floral vase-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/prints/ribbed floral vase-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/prints/ribbed floral vase-1200w.webp"
+      }
+    ]
+  },
+  "/images/prints/raspberry pi cluster tower.jpg": {
+    "original": "/images/prints/raspberry pi cluster tower-cleaned.jpg",
+    "width": 3072,
+    "height": 3072,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/prints/raspberry pi cluster tower-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/prints/raspberry pi cluster tower-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/prints/raspberry pi cluster tower-1200w.webp"
+      }
+    ]
+  },
+  "/images/prints/portable shoe rack.jpg": {
+    "original": "/images/prints/portable shoe rack-cleaned.jpg",
+    "width": 3072,
+    "height": 4096,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/prints/portable shoe rack-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/prints/portable shoe rack-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/prints/portable shoe rack-1200w.webp"
+      }
+    ]
+  },
+  "/images/prints/portable hanging bars.jpg": {
+    "original": "/images/prints/portable hanging bars-cleaned.jpg",
+    "width": 4096,
+    "height": 3072,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/prints/portable hanging bars-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/prints/portable hanging bars-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/prints/portable hanging bars-1200w.webp"
+      }
+    ]
+  },
+  "/images/prints/plant pot for mediterranean plants needing ample oxygen.jpg": {
+    "original": "/images/prints/plant pot for mediterranean plants needing ample oxygen-cleaned.jpg",
+    "width": 3072,
+    "height": 4096,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/prints/plant pot for mediterranean plants needing ample oxygen-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/prints/plant pot for mediterranean plants needing ample oxygen-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/prints/plant pot for mediterranean plants needing ample oxygen-1200w.webp"
+      }
+    ]
+  },
+  "/images/prints/pi 5 case.jpg": {
+    "original": "/images/prints/pi 5 case-cleaned.jpg",
+    "width": 3072,
+    "height": 3072,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/prints/pi 5 case-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/prints/pi 5 case-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/prints/pi 5 case-1200w.webp"
+      }
+    ]
+  },
+  "/images/prints/phone cage with mic holder.jpg": {
+    "original": "/images/prints/phone cage with mic holder-cleaned.jpg",
+    "width": 3072,
+    "height": 3072,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/prints/phone cage with mic holder-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/prints/phone cage with mic holder-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/prints/phone cage with mic holder-1200w.webp"
+      }
+    ]
+  },
+  "/images/prints/monument valley night.jpg": {
+    "original": "/images/prints/monument valley night-cleaned.jpg",
+    "width": 3072,
+    "height": 4096,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/prints/monument valley night-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/prints/monument valley night-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/prints/monument valley night-1200w.webp"
+      }
+    ]
+  },
+  "/images/prints/measuring tape.jpg": {
+    "original": "/images/prints/measuring tape-cleaned.jpg",
+    "width": 3456,
+    "height": 4608,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/prints/measuring tape-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/prints/measuring tape-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/prints/measuring tape-1200w.webp"
+      }
+    ]
+  },
+  "/images/prints/lit monument valley booknook.jpg": {
+    "original": "/images/prints/lit monument valley booknook-cleaned.jpg",
+    "width": 3072,
+    "height": 3072,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/prints/lit monument valley booknook-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/prints/lit monument valley booknook-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/prints/lit monument valley booknook-1200w.webp"
+      }
+    ]
+  },
+  "/images/prints/large kumiko desk tower.jpg": {
+    "original": "/images/prints/large kumiko desk tower-cleaned.jpg",
+    "width": 3072,
+    "height": 4096,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/prints/large kumiko desk tower-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/prints/large kumiko desk tower-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/prints/large kumiko desk tower-1200w.webp"
+      }
+    ]
+  },
+  "/images/prints/kumiko lamp.jpg": {
+    "original": "/images/prints/kumiko lamp-cleaned.jpg",
+    "width": 3072,
+    "height": 4096,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/prints/kumiko lamp-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/prints/kumiko lamp-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/prints/kumiko lamp-1200w.webp"
+      }
+    ]
+  },
+  "/images/prints/iem case.jpg": {
+    "original": "/images/prints/iem case-cleaned.jpg",
+    "width": 4000,
+    "height": 3000,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/prints/iem case-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/prints/iem case-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/prints/iem case-1200w.webp"
+      }
+    ]
+  },
+  "/images/prints/hydroponic tower2.jpg": {
+    "original": "/images/prints/hydroponic tower2-cleaned.jpg",
+    "width": 2304,
+    "height": 4096,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/prints/hydroponic tower2-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/prints/hydroponic tower2-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/prints/hydroponic tower2-1200w.webp"
+      }
+    ]
+  },
+  "/images/prints/hydro cups in mogu mogu bottles.jpg": {
+    "original": "/images/prints/hydro cups in mogu mogu bottles-cleaned.jpg",
+    "width": 4096,
+    "height": 2304,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/prints/hydro cups in mogu mogu bottles-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/prints/hydro cups in mogu mogu bottles-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/prints/hydro cups in mogu mogu bottles-1200w.webp"
+      }
+    ]
+  },
+  "/images/prints/headphone holder.jpg": {
+    "original": "/images/prints/headphone holder-cleaned.jpg",
+    "width": 3072,
+    "height": 4096,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/prints/headphone holder-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/prints/headphone holder-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/prints/headphone holder-1200w.webp"
+      }
+    ]
+  },
+  "/images/prints/galaxy watch tv stand.jpg": {
+    "original": "/images/prints/galaxy watch tv stand-cleaned.jpg",
+    "width": 3072,
+    "height": 4096,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/prints/galaxy watch tv stand-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/prints/galaxy watch tv stand-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/prints/galaxy watch tv stand-1200w.webp"
+      }
+    ]
+  },
+  "/images/prints/failed prototype for laptop conversion to allinone.jpg": {
+    "original": "/images/prints/failed prototype for laptop conversion to allinone-cleaned.jpg",
+    "width": 4096,
+    "height": 3072,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/prints/failed prototype for laptop conversion to allinone-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/prints/failed prototype for laptop conversion to allinone-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/prints/failed prototype for laptop conversion to allinone-1200w.webp"
+      }
+    ]
+  },
+  "/images/prints/drawer organization with gridfinity.jpg": {
+    "original": "/images/prints/drawer organization with gridfinity-cleaned.jpg",
+    "width": 4096,
+    "height": 3072,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/prints/drawer organization with gridfinity-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/prints/drawer organization with gridfinity-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/prints/drawer organization with gridfinity-1200w.webp"
+      }
+    ]
+  },
+  "/images/prints/cat garden+knitted heart teddy+knitted turtle+ conifer.jpg": {
+    "original": "/images/prints/cat garden+knitted heart teddy+knitted turtle+ conifer-cleaned.jpg",
+    "width": 4096,
+    "height": 3072,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/prints/cat garden+knitted heart teddy+knitted turtle+ conifer-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/prints/cat garden+knitted heart teddy+knitted turtle+ conifer-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/prints/cat garden+knitted heart teddy+knitted turtle+ conifer-1200w.webp"
+      }
+    ]
+  },
+  "/images/prints/cat bookmark.jpg": {
+    "original": "/images/prints/cat bookmark-cleaned.jpg",
+    "width": 3072,
+    "height": 4096,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/prints/cat bookmark-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/prints/cat bookmark-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/prints/cat bookmark-1200w.webp"
+      }
+    ]
+  },
+  "/images/prints/bookend.jpg": {
+    "original": "/images/prints/bookend-cleaned.jpg",
+    "width": 3072,
+    "height": 4096,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/prints/bookend-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/prints/bookend-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/prints/bookend-1200w.webp"
+      }
+    ]
+  },
+  "/images/prints/bonsai.jpg": {
+    "original": "/images/prints/bonsai-cleaned.jpg",
+    "width": 3072,
+    "height": 4096,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/prints/bonsai-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/prints/bonsai-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/prints/bonsai-1200w.webp"
+      }
+    ]
+  },
+  "/images/prints/bedsheet corner keeper.jpg": {
+    "original": "/images/prints/bedsheet corner keeper-cleaned.jpg",
+    "width": 3072,
+    "height": 4096,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/prints/bedsheet corner keeper-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/prints/bedsheet corner keeper-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/prints/bedsheet corner keeper-1200w.webp"
+      }
+    ]
+  },
+  "/images/prints/air filter1.jpg": {
+    "original": "/images/prints/air filter1-cleaned.jpg",
+    "width": 3072,
+    "height": 4096,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/prints/air filter1-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/prints/air filter1-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/prints/air filter1-1200w.webp"
+      }
+    ]
+  },
+  "/images/prints/IMG20251223191135.jpg": {
+    "original": "/images/prints/IMG20251223191135-cleaned.jpg",
+    "width": 3072,
+    "height": 3072,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/prints/IMG20251223191135-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/prints/IMG20251223191135-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/prints/IMG20251223191135-1200w.webp"
+      }
+    ]
+  },
+  "/images/prints/IMG20251103185843.jpg": {
+    "original": "/images/prints/IMG20251103185843-cleaned.jpg",
+    "width": 4096,
+    "height": 3072,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/prints/IMG20251103185843-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/prints/IMG20251103185843-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/prints/IMG20251103185843-1200w.webp"
+      }
+    ]
+  },
+  "/images/prints/IMG20251103182800.jpg": {
+    "original": "/images/prints/IMG20251103182800-cleaned.jpg",
+    "width": 3072,
+    "height": 4096,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/prints/IMG20251103182800-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/prints/IMG20251103182800-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/prints/IMG20251103182800-1200w.webp"
+      }
+    ]
+  },
+  "/images/prints/IMG20251103182349.jpg": {
+    "original": "/images/prints/IMG20251103182349-cleaned.jpg",
+    "width": 3072,
+    "height": 4096,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/prints/IMG20251103182349-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/prints/IMG20251103182349-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/prints/IMG20251103182349-1200w.webp"
+      }
+    ]
+  },
   "/images/macbook-air-m1-ideation/05-battery-removed.webp": {
     "original": "/images/macbook-air-m1-ideation/05-battery-removed-cleaned.webp",
     "width": 1024,
@@ -1671,424 +2450,6 @@
       }
     ]
   },
-  "/images/3d-printed-micro-atx-case-build/08-front-with-4090-scale.jpg": {
-    "original": "/images/3d-printed-micro-atx-case-build/08-front-with-4090-scale-cleaned.jpg",
-    "width": 3072,
-    "height": 4096,
-    "variants": [
-      {
-        "width": 400,
-        "path": "/images/3d-printed-micro-atx-case-build/08-front-with-4090-scale-400w.webp"
-      },
-      {
-        "width": 800,
-        "path": "/images/3d-printed-micro-atx-case-build/08-front-with-4090-scale-800w.webp"
-      },
-      {
-        "width": 1200,
-        "path": "/images/3d-printed-micro-atx-case-build/08-front-with-4090-scale-1200w.webp"
-      }
-    ]
-  },
-  "/images/3d-printed-micro-atx-case-build/07-final-back-view.jpg": {
-    "original": "/images/3d-printed-micro-atx-case-build/07-final-back-view-cleaned.jpg",
-    "width": 3072,
-    "height": 3072,
-    "variants": [
-      {
-        "width": 400,
-        "path": "/images/3d-printed-micro-atx-case-build/07-final-back-view-400w.webp"
-      },
-      {
-        "width": 800,
-        "path": "/images/3d-printed-micro-atx-case-build/07-final-back-view-800w.webp"
-      },
-      {
-        "width": 1200,
-        "path": "/images/3d-printed-micro-atx-case-build/07-final-back-view-1200w.webp"
-      }
-    ]
-  },
-  "/images/3d-printed-micro-atx-case-build/06-wavy-3d-printed-panels.jpg": {
-    "original": "/images/3d-printed-micro-atx-case-build/06-wavy-3d-printed-panels-cleaned.jpg",
-    "width": 3072,
-    "height": 3072,
-    "variants": [
-      {
-        "width": 400,
-        "path": "/images/3d-printed-micro-atx-case-build/06-wavy-3d-printed-panels-400w.webp"
-      },
-      {
-        "width": 800,
-        "path": "/images/3d-printed-micro-atx-case-build/06-wavy-3d-printed-panels-800w.webp"
-      },
-      {
-        "width": 1200,
-        "path": "/images/3d-printed-micro-atx-case-build/06-wavy-3d-printed-panels-1200w.webp"
-      }
-    ]
-  },
-  "/images/3d-printed-micro-atx-case-build/05-ssd-cable-routing.jpg": {
-    "original": "/images/3d-printed-micro-atx-case-build/05-ssd-cable-routing-cleaned.jpg",
-    "width": 3072,
-    "height": 3072,
-    "variants": [
-      {
-        "width": 400,
-        "path": "/images/3d-printed-micro-atx-case-build/05-ssd-cable-routing-400w.webp"
-      },
-      {
-        "width": 800,
-        "path": "/images/3d-printed-micro-atx-case-build/05-ssd-cable-routing-800w.webp"
-      },
-      {
-        "width": 1200,
-        "path": "/images/3d-printed-micro-atx-case-build/05-ssd-cable-routing-1200w.webp"
-      }
-    ]
-  },
-  "/images/3d-printed-micro-atx-case-build/04-gpu-psu-installed.jpg": {
-    "original": "/images/3d-printed-micro-atx-case-build/04-gpu-psu-installed-cleaned.jpg",
-    "width": 3072,
-    "height": 3072,
-    "variants": [
-      {
-        "width": 400,
-        "path": "/images/3d-printed-micro-atx-case-build/04-gpu-psu-installed-400w.webp"
-      },
-      {
-        "width": 800,
-        "path": "/images/3d-printed-micro-atx-case-build/04-gpu-psu-installed-800w.webp"
-      },
-      {
-        "width": 1200,
-        "path": "/images/3d-printed-micro-atx-case-build/04-gpu-psu-installed-1200w.webp"
-      }
-    ]
-  },
-  "/images/3d-printed-micro-atx-case-build/03-side-view-cooler-mount.jpg": {
-    "original": "/images/3d-printed-micro-atx-case-build/03-side-view-cooler-mount-cleaned.jpg",
-    "width": 3072,
-    "height": 3072,
-    "variants": [
-      {
-        "width": 400,
-        "path": "/images/3d-printed-micro-atx-case-build/03-side-view-cooler-mount-400w.webp"
-      },
-      {
-        "width": 800,
-        "path": "/images/3d-printed-micro-atx-case-build/03-side-view-cooler-mount-800w.webp"
-      },
-      {
-        "width": 1200,
-        "path": "/images/3d-printed-micro-atx-case-build/03-side-view-cooler-mount-1200w.webp"
-      }
-    ]
-  },
-  "/images/3d-printed-micro-atx-case-build/02-motherboard-cooler-fit.jpg": {
-    "original": "/images/3d-printed-micro-atx-case-build/02-motherboard-cooler-fit-cleaned.jpg",
-    "width": 3072,
-    "height": 3072,
-    "variants": [
-      {
-        "width": 400,
-        "path": "/images/3d-printed-micro-atx-case-build/02-motherboard-cooler-fit-400w.webp"
-      },
-      {
-        "width": 800,
-        "path": "/images/3d-printed-micro-atx-case-build/02-motherboard-cooler-fit-800w.webp"
-      },
-      {
-        "width": 1200,
-        "path": "/images/3d-printed-micro-atx-case-build/02-motherboard-cooler-fit-1200w.webp"
-      }
-    ]
-  },
-  "/images/3d-printed-micro-atx-case-build/01-premigration-bulky-case.jpg": {
-    "original": "/images/3d-printed-micro-atx-case-build/01-premigration-bulky-case-cleaned.jpg",
-    "width": 2304,
-    "height": 4096,
-    "variants": [
-      {
-        "width": 400,
-        "path": "/images/3d-printed-micro-atx-case-build/01-premigration-bulky-case-400w.webp"
-      },
-      {
-        "width": 800,
-        "path": "/images/3d-printed-micro-atx-case-build/01-premigration-bulky-case-800w.webp"
-      },
-      {
-        "width": 1200,
-        "path": "/images/3d-printed-micro-atx-case-build/01-premigration-bulky-case-1200w.webp"
-      }
-    ]
-  },
-  "/images/bambu-a1-combo/IMG20250912221351.webp": {
-    "original": "/images/bambu-a1-combo/IMG20250912221351-cleaned.webp",
-    "width": 1200,
-    "height": 1600,
-    "variants": [
-      {
-        "width": 400,
-        "path": "/images/bambu-a1-combo/IMG20250912221351-400w.webp"
-      },
-      {
-        "width": 800,
-        "path": "/images/bambu-a1-combo/IMG20250912221351-800w.webp"
-      },
-      {
-        "width": 1200,
-        "path": "/images/bambu-a1-combo/IMG20250912221351-1200w.webp"
-      }
-    ]
-  },
-  "/images/bambu-a1-combo/IMG20250912221351.jpg": {
-    "original": "/images/bambu-a1-combo/IMG20250912221351-cleaned.jpg",
-    "width": 1440,
-    "height": 1920,
-    "variants": [
-      {
-        "width": 400,
-        "path": "/images/bambu-a1-combo/IMG20250912221351-400w.webp"
-      },
-      {
-        "width": 800,
-        "path": "/images/bambu-a1-combo/IMG20250912221351-800w.webp"
-      },
-      {
-        "width": 1200,
-        "path": "/images/bambu-a1-combo/IMG20250912221351-1200w.webp"
-      }
-    ]
-  },
-  "/images/bambu-a1-combo/IMG20250910221256.webp": {
-    "original": "/images/bambu-a1-combo/IMG20250910221256-cleaned.webp",
-    "width": 1200,
-    "height": 1600,
-    "variants": [
-      {
-        "width": 400,
-        "path": "/images/bambu-a1-combo/IMG20250910221256-400w.webp"
-      },
-      {
-        "width": 800,
-        "path": "/images/bambu-a1-combo/IMG20250910221256-800w.webp"
-      },
-      {
-        "width": 1200,
-        "path": "/images/bambu-a1-combo/IMG20250910221256-1200w.webp"
-      }
-    ]
-  },
-  "/images/bambu-a1-combo/IMG20250910221256.jpg": {
-    "original": "/images/bambu-a1-combo/IMG20250910221256-cleaned.jpg",
-    "width": 1440,
-    "height": 1920,
-    "variants": [
-      {
-        "width": 400,
-        "path": "/images/bambu-a1-combo/IMG20250910221256-400w.webp"
-      },
-      {
-        "width": 800,
-        "path": "/images/bambu-a1-combo/IMG20250910221256-800w.webp"
-      },
-      {
-        "width": 1200,
-        "path": "/images/bambu-a1-combo/IMG20250910221256-1200w.webp"
-      }
-    ]
-  },
-  "/images/bambu-a1-combo/IMG20250819142955.webp": {
-    "original": "/images/bambu-a1-combo/IMG20250819142955-cleaned.webp",
-    "width": 1200,
-    "height": 1600,
-    "variants": [
-      {
-        "width": 400,
-        "path": "/images/bambu-a1-combo/IMG20250819142955-400w.webp"
-      },
-      {
-        "width": 800,
-        "path": "/images/bambu-a1-combo/IMG20250819142955-800w.webp"
-      },
-      {
-        "width": 1200,
-        "path": "/images/bambu-a1-combo/IMG20250819142955-1200w.webp"
-      }
-    ]
-  },
-  "/images/bambu-a1-combo/IMG20250819142955.jpg": {
-    "original": "/images/bambu-a1-combo/IMG20250819142955-cleaned.jpg",
-    "width": 1440,
-    "height": 1920,
-    "variants": [
-      {
-        "width": 400,
-        "path": "/images/bambu-a1-combo/IMG20250819142955-400w.webp"
-      },
-      {
-        "width": 800,
-        "path": "/images/bambu-a1-combo/IMG20250819142955-800w.webp"
-      },
-      {
-        "width": 1200,
-        "path": "/images/bambu-a1-combo/IMG20250819142955-1200w.webp"
-      }
-    ]
-  },
-  "/images/bambu-a1-combo/IMG20250814220937.webp": {
-    "original": "/images/bambu-a1-combo/IMG20250814220937-cleaned.webp",
-    "width": 1200,
-    "height": 1600,
-    "variants": [
-      {
-        "width": 400,
-        "path": "/images/bambu-a1-combo/IMG20250814220937-400w.webp"
-      },
-      {
-        "width": 800,
-        "path": "/images/bambu-a1-combo/IMG20250814220937-800w.webp"
-      },
-      {
-        "width": 1200,
-        "path": "/images/bambu-a1-combo/IMG20250814220937-1200w.webp"
-      }
-    ]
-  },
-  "/images/bambu-a1-combo/IMG20250814220937.jpg": {
-    "original": "/images/bambu-a1-combo/IMG20250814220937-cleaned.jpg",
-    "width": 1440,
-    "height": 1920,
-    "variants": [
-      {
-        "width": 400,
-        "path": "/images/bambu-a1-combo/IMG20250814220937-400w.webp"
-      },
-      {
-        "width": 800,
-        "path": "/images/bambu-a1-combo/IMG20250814220937-800w.webp"
-      },
-      {
-        "width": 1200,
-        "path": "/images/bambu-a1-combo/IMG20250814220937-1200w.webp"
-      }
-    ]
-  },
-  "/images/bambu-a1-combo/IMG20250809222734.webp": {
-    "original": "/images/bambu-a1-combo/IMG20250809222734-cleaned.webp",
-    "width": 1200,
-    "height": 1600,
-    "variants": [
-      {
-        "width": 400,
-        "path": "/images/bambu-a1-combo/IMG20250809222734-400w.webp"
-      },
-      {
-        "width": 800,
-        "path": "/images/bambu-a1-combo/IMG20250809222734-800w.webp"
-      },
-      {
-        "width": 1200,
-        "path": "/images/bambu-a1-combo/IMG20250809222734-1200w.webp"
-      }
-    ]
-  },
-  "/images/bambu-a1-combo/IMG20250809222734.jpg": {
-    "original": "/images/bambu-a1-combo/IMG20250809222734-cleaned.jpg",
-    "width": 1440,
-    "height": 1920,
-    "variants": [
-      {
-        "width": 400,
-        "path": "/images/bambu-a1-combo/IMG20250809222734-400w.webp"
-      },
-      {
-        "width": 800,
-        "path": "/images/bambu-a1-combo/IMG20250809222734-800w.webp"
-      },
-      {
-        "width": 1200,
-        "path": "/images/bambu-a1-combo/IMG20250809222734-1200w.webp"
-      }
-    ]
-  },
-  "/images/bambu-a1-combo/IMG20250806151909.webp": {
-    "original": "/images/bambu-a1-combo/IMG20250806151909-cleaned.webp",
-    "width": 1200,
-    "height": 1600,
-    "variants": [
-      {
-        "width": 400,
-        "path": "/images/bambu-a1-combo/IMG20250806151909-400w.webp"
-      },
-      {
-        "width": 800,
-        "path": "/images/bambu-a1-combo/IMG20250806151909-800w.webp"
-      },
-      {
-        "width": 1200,
-        "path": "/images/bambu-a1-combo/IMG20250806151909-1200w.webp"
-      }
-    ]
-  },
-  "/images/bambu-a1-combo/IMG20250806151909.jpg": {
-    "original": "/images/bambu-a1-combo/IMG20250806151909-cleaned.jpg",
-    "width": 1440,
-    "height": 1920,
-    "variants": [
-      {
-        "width": 400,
-        "path": "/images/bambu-a1-combo/IMG20250806151909-400w.webp"
-      },
-      {
-        "width": 800,
-        "path": "/images/bambu-a1-combo/IMG20250806151909-800w.webp"
-      },
-      {
-        "width": 1200,
-        "path": "/images/bambu-a1-combo/IMG20250806151909-1200w.webp"
-      }
-    ]
-  },
-  "/images/bambu-a1-combo/IMG20250727165952.webp": {
-    "original": "/images/bambu-a1-combo/IMG20250727165952-cleaned.webp",
-    "width": 1200,
-    "height": 1600,
-    "variants": [
-      {
-        "width": 400,
-        "path": "/images/bambu-a1-combo/IMG20250727165952-400w.webp"
-      },
-      {
-        "width": 800,
-        "path": "/images/bambu-a1-combo/IMG20250727165952-800w.webp"
-      },
-      {
-        "width": 1200,
-        "path": "/images/bambu-a1-combo/IMG20250727165952-1200w.webp"
-      }
-    ]
-  },
-  "/images/bambu-a1-combo/IMG20250727165952.jpg": {
-    "original": "/images/bambu-a1-combo/IMG20250727165952-cleaned.jpg",
-    "width": 1440,
-    "height": 1920,
-    "variants": [
-      {
-        "width": 400,
-        "path": "/images/bambu-a1-combo/IMG20250727165952-400w.webp"
-      },
-      {
-        "width": 800,
-        "path": "/images/bambu-a1-combo/IMG20250727165952-800w.webp"
-      },
-      {
-        "width": 1200,
-        "path": "/images/bambu-a1-combo/IMG20250727165952-1200w.webp"
-      }
-    ]
-  },
   "/images/bambu-p2s/IMG20251219093302.webp": {
     "original": "/images/bambu-p2s/IMG20251219093302-cleaned.webp",
     "width": 1200,
@@ -2390,6 +2751,424 @@
       {
         "width": 1200,
         "path": "/images/bambu-p2s/IMG20251209155004-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-a1-combo/IMG20250912221351.webp": {
+    "original": "/images/bambu-a1-combo/IMG20250912221351-cleaned.webp",
+    "width": 1200,
+    "height": 1600,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-a1-combo/IMG20250912221351-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-a1-combo/IMG20250912221351-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-a1-combo/IMG20250912221351-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-a1-combo/IMG20250912221351.jpg": {
+    "original": "/images/bambu-a1-combo/IMG20250912221351-cleaned.jpg",
+    "width": 1440,
+    "height": 1920,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-a1-combo/IMG20250912221351-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-a1-combo/IMG20250912221351-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-a1-combo/IMG20250912221351-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-a1-combo/IMG20250910221256.webp": {
+    "original": "/images/bambu-a1-combo/IMG20250910221256-cleaned.webp",
+    "width": 1200,
+    "height": 1600,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-a1-combo/IMG20250910221256-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-a1-combo/IMG20250910221256-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-a1-combo/IMG20250910221256-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-a1-combo/IMG20250910221256.jpg": {
+    "original": "/images/bambu-a1-combo/IMG20250910221256-cleaned.jpg",
+    "width": 1440,
+    "height": 1920,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-a1-combo/IMG20250910221256-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-a1-combo/IMG20250910221256-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-a1-combo/IMG20250910221256-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-a1-combo/IMG20250819142955.webp": {
+    "original": "/images/bambu-a1-combo/IMG20250819142955-cleaned.webp",
+    "width": 1200,
+    "height": 1600,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-a1-combo/IMG20250819142955-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-a1-combo/IMG20250819142955-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-a1-combo/IMG20250819142955-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-a1-combo/IMG20250819142955.jpg": {
+    "original": "/images/bambu-a1-combo/IMG20250819142955-cleaned.jpg",
+    "width": 1440,
+    "height": 1920,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-a1-combo/IMG20250819142955-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-a1-combo/IMG20250819142955-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-a1-combo/IMG20250819142955-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-a1-combo/IMG20250814220937.webp": {
+    "original": "/images/bambu-a1-combo/IMG20250814220937-cleaned.webp",
+    "width": 1200,
+    "height": 1600,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-a1-combo/IMG20250814220937-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-a1-combo/IMG20250814220937-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-a1-combo/IMG20250814220937-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-a1-combo/IMG20250814220937.jpg": {
+    "original": "/images/bambu-a1-combo/IMG20250814220937-cleaned.jpg",
+    "width": 1440,
+    "height": 1920,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-a1-combo/IMG20250814220937-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-a1-combo/IMG20250814220937-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-a1-combo/IMG20250814220937-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-a1-combo/IMG20250809222734.webp": {
+    "original": "/images/bambu-a1-combo/IMG20250809222734-cleaned.webp",
+    "width": 1200,
+    "height": 1600,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-a1-combo/IMG20250809222734-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-a1-combo/IMG20250809222734-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-a1-combo/IMG20250809222734-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-a1-combo/IMG20250809222734.jpg": {
+    "original": "/images/bambu-a1-combo/IMG20250809222734-cleaned.jpg",
+    "width": 1440,
+    "height": 1920,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-a1-combo/IMG20250809222734-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-a1-combo/IMG20250809222734-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-a1-combo/IMG20250809222734-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-a1-combo/IMG20250806151909.webp": {
+    "original": "/images/bambu-a1-combo/IMG20250806151909-cleaned.webp",
+    "width": 1200,
+    "height": 1600,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-a1-combo/IMG20250806151909-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-a1-combo/IMG20250806151909-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-a1-combo/IMG20250806151909-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-a1-combo/IMG20250806151909.jpg": {
+    "original": "/images/bambu-a1-combo/IMG20250806151909-cleaned.jpg",
+    "width": 1440,
+    "height": 1920,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-a1-combo/IMG20250806151909-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-a1-combo/IMG20250806151909-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-a1-combo/IMG20250806151909-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-a1-combo/IMG20250727165952.webp": {
+    "original": "/images/bambu-a1-combo/IMG20250727165952-cleaned.webp",
+    "width": 1200,
+    "height": 1600,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-a1-combo/IMG20250727165952-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-a1-combo/IMG20250727165952-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-a1-combo/IMG20250727165952-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-a1-combo/IMG20250727165952.jpg": {
+    "original": "/images/bambu-a1-combo/IMG20250727165952-cleaned.jpg",
+    "width": 1440,
+    "height": 1920,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-a1-combo/IMG20250727165952-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-a1-combo/IMG20250727165952-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-a1-combo/IMG20250727165952-1200w.webp"
+      }
+    ]
+  },
+  "/images/3d-printed-micro-atx-case-build/08-front-with-4090-scale.jpg": {
+    "original": "/images/3d-printed-micro-atx-case-build/08-front-with-4090-scale-cleaned.jpg",
+    "width": 3072,
+    "height": 4096,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/3d-printed-micro-atx-case-build/08-front-with-4090-scale-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/3d-printed-micro-atx-case-build/08-front-with-4090-scale-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/3d-printed-micro-atx-case-build/08-front-with-4090-scale-1200w.webp"
+      }
+    ]
+  },
+  "/images/3d-printed-micro-atx-case-build/07-final-back-view.jpg": {
+    "original": "/images/3d-printed-micro-atx-case-build/07-final-back-view-cleaned.jpg",
+    "width": 3072,
+    "height": 3072,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/3d-printed-micro-atx-case-build/07-final-back-view-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/3d-printed-micro-atx-case-build/07-final-back-view-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/3d-printed-micro-atx-case-build/07-final-back-view-1200w.webp"
+      }
+    ]
+  },
+  "/images/3d-printed-micro-atx-case-build/06-wavy-3d-printed-panels.jpg": {
+    "original": "/images/3d-printed-micro-atx-case-build/06-wavy-3d-printed-panels-cleaned.jpg",
+    "width": 3072,
+    "height": 3072,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/3d-printed-micro-atx-case-build/06-wavy-3d-printed-panels-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/3d-printed-micro-atx-case-build/06-wavy-3d-printed-panels-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/3d-printed-micro-atx-case-build/06-wavy-3d-printed-panels-1200w.webp"
+      }
+    ]
+  },
+  "/images/3d-printed-micro-atx-case-build/05-ssd-cable-routing.jpg": {
+    "original": "/images/3d-printed-micro-atx-case-build/05-ssd-cable-routing-cleaned.jpg",
+    "width": 3072,
+    "height": 3072,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/3d-printed-micro-atx-case-build/05-ssd-cable-routing-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/3d-printed-micro-atx-case-build/05-ssd-cable-routing-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/3d-printed-micro-atx-case-build/05-ssd-cable-routing-1200w.webp"
+      }
+    ]
+  },
+  "/images/3d-printed-micro-atx-case-build/04-gpu-psu-installed.jpg": {
+    "original": "/images/3d-printed-micro-atx-case-build/04-gpu-psu-installed-cleaned.jpg",
+    "width": 3072,
+    "height": 3072,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/3d-printed-micro-atx-case-build/04-gpu-psu-installed-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/3d-printed-micro-atx-case-build/04-gpu-psu-installed-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/3d-printed-micro-atx-case-build/04-gpu-psu-installed-1200w.webp"
+      }
+    ]
+  },
+  "/images/3d-printed-micro-atx-case-build/03-side-view-cooler-mount.jpg": {
+    "original": "/images/3d-printed-micro-atx-case-build/03-side-view-cooler-mount-cleaned.jpg",
+    "width": 3072,
+    "height": 3072,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/3d-printed-micro-atx-case-build/03-side-view-cooler-mount-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/3d-printed-micro-atx-case-build/03-side-view-cooler-mount-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/3d-printed-micro-atx-case-build/03-side-view-cooler-mount-1200w.webp"
+      }
+    ]
+  },
+  "/images/3d-printed-micro-atx-case-build/02-motherboard-cooler-fit.jpg": {
+    "original": "/images/3d-printed-micro-atx-case-build/02-motherboard-cooler-fit-cleaned.jpg",
+    "width": 3072,
+    "height": 3072,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/3d-printed-micro-atx-case-build/02-motherboard-cooler-fit-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/3d-printed-micro-atx-case-build/02-motherboard-cooler-fit-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/3d-printed-micro-atx-case-build/02-motherboard-cooler-fit-1200w.webp"
+      }
+    ]
+  },
+  "/images/3d-printed-micro-atx-case-build/01-premigration-bulky-case.jpg": {
+    "original": "/images/3d-printed-micro-atx-case-build/01-premigration-bulky-case-cleaned.jpg",
+    "width": 2304,
+    "height": 4096,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/3d-printed-micro-atx-case-build/01-premigration-bulky-case-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/3d-printed-micro-atx-case-build/01-premigration-bulky-case-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/3d-printed-micro-atx-case-build/01-premigration-bulky-case-1200w.webp"
       }
     ]
   },

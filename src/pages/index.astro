@@ -502,25 +502,33 @@ const sortedTeardowns = teardowns.sort((a, b) => {
   }
 
   .card-image {
-    position: relative;
     width: 100%;
-    padding-top: 56.25%;
-    background-color: var(--md-sys-color-surface-container-highest);
+    min-height: 160px;
+    max-height: 260px;
+    background: var(--md-sys-color-surface-container-low);
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
-  .card-image img {
-    position: absolute;
-    top: 0;
-    left: 0;
+  .card-image :global(picture.optimized-picture) {
+    display: block;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+  }
+
+  .card-image :global(picture.optimized-picture .optimized-img) {
+    width: 100%;
+    height: auto;
+    max-height: 260px;
+    object-fit: contain;
+    aspect-ratio: auto;
+    border-radius: 0;
     transition: transform var(--md-sys-motion-duration-medium)
       var(--md-sys-motion-easing-emphasized-decel);
   }
 
-  .teardown-card:hover .card-image img {
+  .teardown-card:hover .card-image :global(.optimized-img) {
     transform: scale(1.12);
   }
 

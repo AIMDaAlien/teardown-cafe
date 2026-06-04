@@ -147,12 +147,13 @@
   --md-sys-typescale-code-line-height: 20px;
 
   /* ─── Semantic Badge Tokens ─────────────────────────────────────────── */
-  --badge-difficulty-easy-bg: var(--md-sys-color-accent-green);
-  --badge-difficulty-easy-text: #1b5e20;
-  --badge-difficulty-medium-bg: var(--md-sys-color-accent-amber);
-  --badge-difficulty-medium-text: #e65100;
-  --badge-difficulty-hard-bg: #ef5350;
-  --badge-difficulty-hard-text: #ffebee;
+  /* Difficulty badges — muted & harmonized with periwinkle theme */
+  --badge-difficulty-easy-bg: rgba(130, 170, 150, 0.15);
+  --badge-difficulty-easy-text: #9db8a8;
+  --badge-difficulty-medium-bg: rgba(190, 170, 130, 0.15);
+  --badge-difficulty-medium-text: #c8b898;
+  --badge-difficulty-hard-bg: rgba(180, 140, 150, 0.15);
+  --badge-difficulty-hard-text: #c4a0a8;
 
   --badge-severity-critical-bg: rgba(255, 82, 82, 0.2);
   --badge-severity-critical-text: #ff5252;
@@ -176,9 +177,9 @@
   --md-sys-color-accent-green: #4caf50;
 
   /* Semantic Badge Tokens — Light */
-  --badge-difficulty-easy-text: #1b5e20;
-  --badge-difficulty-medium-text: #e65100;
-  --badge-difficulty-hard-text: #c62828;
+  --badge-difficulty-easy-text: #5a8a6e;
+  --badge-difficulty-medium-text: #8a7a50;
+  --badge-difficulty-hard-text: #8a5a65;
   --badge-severity-critical-bg: rgba(255, 82, 82, 0.12);
   --badge-severity-critical-text: #d32f2f;
   --badge-severity-warning-bg: rgba(255, 171, 64, 0.12);
@@ -355,6 +356,11 @@ body {
 .print-card {
   content-visibility: auto;
   contain-intrinsic-size: auto 300px;
+}
+
+/* Ensure print cards are visible without scrolling on gallery pages */
+.prints-grid .print-card {
+  content-visibility: visible;
 }
 
 /* Article reading measure — max 65ch for comfort */

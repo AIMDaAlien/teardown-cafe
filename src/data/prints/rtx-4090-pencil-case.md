@@ -2,8 +2,8 @@
 title: 'RTX 4090 Pencil Case'
 image: '/images/3d-printed-micro-atx-case-build/08-front-with-4090-scale.jpg'
 pubDate: 2025-11-15
-printer: 'Bambu Lab P1S'
-filament: 'PETG Silver'
+printer: ''
+filament: ''
 category: 'functional'
 sourceUrl: ''
 featured: true

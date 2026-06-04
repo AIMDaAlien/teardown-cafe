@@ -20,6 +20,7 @@ const teardowns = defineCollection({
       'nas',
       'mechanical-keyboard',
       '3d-printer',
+      'desktop',
       'other',
     ]),
     difficulty: z.enum(['easy', 'medium', 'hard']),
