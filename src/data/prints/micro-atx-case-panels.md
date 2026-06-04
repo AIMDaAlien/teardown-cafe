@@ -13,6 +13,6 @@ relatedTeardown: '3d-printed-micro-atx-case-build'
 
 The side and top panels for the compact micro-ATX case build. Printed in a two-tone gray and light blue PETG scheme with a curved wave pattern that acts as both structural ribbing and airflow channels.
 
-These panels are the visual signature of the build — the wave design catches light in interesting ways and the colour split happened organically when I ran out of gray filament mid-print and decided to commit to the aesthetic rather than reprint.
+These panels are the visual signature of the build - the wave design catches light in interesting ways and the colour split happened organically when I ran out of gray filament mid-print and decided to commit to the aesthetic rather than reprint.
 
-The case design by NixieShift is remarkably well-toleranced. Every panel clicks into place with M3 hardware, and the ventilation geometry actually works — temperatures under load stayed well within safe ranges despite the compact footprint.
+The case design by Makerunit is remarkably well-toleranced. Every panel clicks into place with M3 hardware, and the ventilation geometry actually works - temperatures under load stayed well within safe ranges despite the compact footprint.
