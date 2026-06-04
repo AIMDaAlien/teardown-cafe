@@ -14,179 +14,133 @@ tags:
   - rtx
 ---
 
-## Project Overview
+## What This Is
 
-This build answers a question nobody asked but everyone secretly wonders: *how small can you make a micro-ATX desktop before it becomes physically uncomfortable?* The answer, it turns out, is "small enough that an RTX 4090 Founders Edition is larger than the entire computer."
+I had a perfectly fine desktop sitting on the floor in a [Jonsbo D41](https://amzn.to/4fn1kKL). It had that little attached screen which was pretty neat, though it seems like they stopped selling that version. The build worked. It was just... big. After watching enough SFF content online, I got tired of having a tower eating floor space and decided to shrink everything down.
 
-The case is a [budget-friendly compact micro-ATX design by NixieShift on Printables](https://www.printables.com/model/1536973-budget-friendly-compact-matx-case-with-atx-psu), designed specifically to cram a full micro-ATX motherboard and standard ATX power supply into the tightest possible footprint. I printed the panels in a two-tone gray and light blue scheme, and the creator was kind enough to [leave a review on my make](https://www.printables.com/make/3225141) — which is either validation or a polite warning to others, depending on your interpretation.
+The case itself is a [budget-friendly compact micro-ATX design by Makerunit on Printables](https://www.printables.com/model/1536973-budget-friendly-compact-matx-case-with-atx-psu). It is designed to fit a full micro-ATX board and a standard ATX power supply into way less space than you would expect. Most of the case is black PETG, and the front removable panel is silver and grey-blue PLA. Printed mostly on the P2S, though some parts came off the A1.
 
-## Components Used
+## The Parts List
 
-### Core Hardware
+This is what actually went inside, not some made-up specs:
 
-- **ASRock B550M Pro4** micro-ATX motherboard
-- **AMD Ryzen** CPU (cooled by a Thermalright tower cooler)
-- **MSI GeForce RTX** dual-fan graphics card
-- **be quiet! ATX Power Supply** — yes, a full ATX unit, shoehorned vertically
-- **Crucial 2.5-inch SATA SSD** — mounted on a custom 3D printed bracket
-- **M.2 NVMe SSD** — because every millimetre counts
+- [ASRock B660M RS Pro](https://amzn.to/4fn1kKL) Intel motherboard
+- [Intel i5-12600KF](https://amzn.to/4xeZiCY)
+- [64GB DDR4 3600MHz](https://amzn.to/4oeJNXE)
+- [Thermalright low profile cooler](https://amzn.to/3Q0oEUk)
+- [be quiet! 550W ATX PSU](https://amzn.to/4uWFR04)
+- [1TB ORICO PCIe Gen4 SSD](https://amzn.to/4uj7nnr) (sold out now, [this one](https://amzn.to/4vyx0Sk) is the next best thing)
+- [Crucial MX500 1TB SATA SSD](https://amzn.to/4ft17pl) (way overpriced at the moment, [this alternative](https://amzn.to/3PFsPow) is better value right now)
+- RTX 3060 12GB from the old build
 
-### The Case
+## The Migration
 
-- **3D Printed Micro-ATX Case** (PETG, ~0.3mm layer height)
-  - Two-tone panel scheme: gray + light blue
-  - Curved wavy slat design on side panels for airflow
-  - Geometric star-pattern back panel
-  - Panel-mount construction with M3 hardware
-
-### Tools Used
-
-- Bambu Lab 3D printer (the same one that later earned its own teardown here)
-- iFixit toolkit for assembly
-- Patience, and a lot of it
-
-## Build Process
-
-### Step 0: The Before Times
+### Before
 
 ![Premigration Setup](/images/3d-printed-micro-atx-case-build/01-premigration-bulky-case.jpg)
 
-This was the starting point: a perfectly respectable mid-tower case doing mid-tower things. ASRock board, MSI RTX card, Thermalright cooler, an M.2 drive, a SATA SSD flopping around in the basement, and enough empty volume to store a week's worth of groceries. It worked. It was fine. It was also *massive*, and after spending enough time around Small Form Factor builds online, "fine" started to feel like "wasted desk space."
+This was the starting point. The Jonsbo D41 is not a bad case at all, especially with that little screen. But it lived on the floor, and I was tired of that. The plan was simple: move everything into something that could actually sit on top of the desk without looking ridiculous.
 
-The migration plan was simple: transplant every component into a case that occupies roughly one-third the footprint. What could go wrong?
-
-### Step 1: Motherboard Test Fit
+### Motherboard Test Fit
 
 ![Motherboard and Cooler Fit](/images/3d-printed-micro-atx-case-build/02-motherboard-cooler-fit.jpg)
 
-The first panel set came off the printer and immediately went into a test fit. The ASRock B550M drops into the frame with surprising precision — the standoff holes line up, the I/O shield cutout is correctly sized, and the Thermalright cooler clears the top panel by what feels like a calculated millimetre. The RAM slots are accessible. The M.2 slot is exposed. So far, the case design is living up to its promise.
+First panels off the printer went straight into a test fit. The B660M drops in cleanly, standoff holes line up, and the Thermalright cooler clears the top panel with just enough room. So far so good.
 
-**Observation:** The print quality matters here. Any warping in the base plate would throw off standoff alignment and stress the motherboard. PETG at moderate speeds proved to be the right call.
-
-### Step 2: Clearance Check from the Side
+### Side View
 
 ![Side View Cooler Mount](/images/3d-printed-micro-atx-case-build/03-side-view-cooler-mount.jpg)
 
-Rotating the frame shows the vertical layout more clearly. The be quiet! exhaust fan mounts to a dedicated bracket at the top of the case, creating a direct chimney airflow path. The CPU cooler sits dead centre, the RAM is tucked alongside it, and the M.2 drive is visible just above the chipset heatsink.
+You can see the vertical layout here. The PSU exhaust fan sits at the top, pulling air up and out. CPU cooler is dead center, RAM slots are accessible, M.2 is exposed. What you cannot see yet is how the GPU and PSU are going to share this space, or where the cables are supposed to go. Still optimistic at this point.
 
-What is not yet visible: the GPU, the PSU, or any sense of how the cables will route. The optimism is still intact at this stage.
-
-### Step 3: Adding the Heavy Hitters
+### GPU and PSU Installed
 
 ![GPU and PSU Installed](/images/3d-printed-micro-atx-case-build/04-gpu-psu-installed.jpg)
 
-Now the real engineering shows up. The MSI GeForce RTX card slides into the PCIe slot horizontally, which in this vertical case means it protrudes from the side like a drawer. The ATX PSU mounts above it, oriented so its fan aligns with the top exhaust. The 24-pin motherboard cable and 8-pin CPU cable are already fighting for space.
+Now it gets real. The RTX 3060 slides in horizontally, which in this vertical case means it sticks out the side. The ATX PSU mounts above it. The 24-pin and 8-pin CPU cables are already fighting for room.
 
-**Key challenge:** The GPU power connectors now live in a narrow canyon between the card's shroud and the PSU housing. Cable selection matters — stiff braided cables would not have fit. Flexible, flat cables are mandatory.
+The GPU power connectors live in a tight gap between the card shroud and the PSU housing. Stiff braided cables would have been a nightmare. Flat flexible cables are basically required here.
 
-### Step 4: Storage and Cable Tetris
+### SSD and Cable Routing
 
 ![SSD and Cable Routing](/images/3d-printed-micro-atx-case-build/05-ssd-cable-routing.jpg)
 
-The Crucial 2.5-inch SSD mounts to a printed bracket on the front panel, directly in front of the GPU. SATA power and data cables loop around the side, joining the growing bundle of wires being politely asked to occupy negative space. The PSU's cables — motherboard, CPU, GPU, SATA — all converge in a zone roughly the size of a deck of cards.
+The MX500 mounts to a printed bracket on the front panel, right in front of the GPU. SATA power and data loop around the side and join the bundle of wires that are all trying to fit in a space roughly the size of a deck of cards.
 
-This is the point where you realise the case designer absolutely knew what they were doing. Every bracket, every cutout, every millimetre of clearance has been accounted for. It is not *generous* clearance, but it is *sufficient* clearance, which in SFF is the same thing as luxury.
+Makerunit absolutely knew what they were doing with this design. Every bracket and cutout is accounted for. There is not much spare room, but there is enough, and in a case this small that is basically luxury.
 
-### Step 5: The Aesthetic Reveal
+### The Panels
 
 ![Wavy 3D Printed Panels](/images/3d-printed-micro-atx-case-build/06-wavy-3d-printed-panels.jpg)
 
-Before the panels go on, a moment to appreciate the design. The side panels use a curved wave pattern that serves double duty: structural ribbing for rigidity, and directional airflow channels. The two-tone split — half gray, half light blue — was a filament-change experiment that turned into a deliberate aesthetic choice. The layers are clean, the curves are smooth, and the whole thing looks more like a piece of desktop sculpture than a spool of melted plastic.
+Before everything gets closed up, the side panels. They have that curved wave pattern that works as both structural ribbing and airflow channels. The color split happened because I ran out of gray filament mid-print and decided to commit to it instead of starting over. The layers came out clean and the curves are smooth.
 
-### Step 6: The Back Panel
+### Back View
 
 ![Final Back View](/images/3d-printed-micro-atx-case-build/07-final-back-view.jpg)
 
-The rear of the completed build reveals the geometric back panel — a tessellated star pattern printed in translucent dark filament that lets LED glow through while hiding cable chaos. The case sits on small printed feet, elevated just enough for bottom intake. The power cable exits cleanly from the top rear.
+The back panel has a geometric star pattern printed in dark translucent filament. It hides cable mess while letting some LED glow through. The case sits on small printed feet just high enough for bottom intake. Power cable exits from the top rear.
 
-On the shelf below: parts organisers, because a build this compact requires a well-stocked spare screw collection for the inevitable "what if I want to upgrade the RAM?" moments.
-
-### Step 7: Scale Check
+### Scale Check
 
 ![Front View with RTX 4090 for Scale](/images/3d-printed-micro-atx-case-build/08-front-with-4090-scale.jpg)
 
-Here is the money shot. The fully assembled micro-ATX case, panels on, running, alive — with an NVIDIA RTX 4090 Founders Edition resting on top of it like a hat. The 4090 is physically larger in every dimension than the entire computer beneath it. This is not a trick of perspective. The case is genuinely that small, and the 4090 is genuinely that comically oversized in comparison.
+This is the photo that makes the whole thing worth it. The fully assembled case with the RTX 4090 pencil case sitting on top like a hat. The 4090 pencil case is literally bigger than the entire computer. That is not camera trickery. The case is just that small.
 
-**Components inside the case:** motherboard, CPU, cooler, RAM, GPU, PSU, two SSDs, cables, hopes, dreams.
-**Components on top of the case:** one GPU that would not fit inside in a million years.
+## What Changed
 
-## Thermal & Performance Notes
+The obvious one is that it went from a floor PC to a desk PC. It actually fits on top of the desk now without looking like a piece of furniture.
 
-### Airflow Design
+The downside is that the constrained space means the fans have to work harder. They are noticeably louder than before, and throttling is more likely on paper. That said, I have not actually felt any throttling happen in real use. Temperatures stay in a perfectly fine range. The vertical chimney layout does more work than you would expect.
 
-The case relies on a chimney effect:
+## The Honest Verdict
 
-1. **Bottom intake**: Through the ventilated base and gaps around the GPU
-2. **CPU cooler**: Pulls air across the heatsink and pushes it upward
-3. **Top exhaust**: The be quiet! fan evacuates hot air directly upward
+**Pros:**
 
-### Temperatures (Approximate, Ambient ~22°C)
+- Absurdly compact. Micro-ATX plus ATX PSU in a footprint smaller than most ITX builds.
+- Thermally fine. The chimney airflow works better than you would think.
+- Cheap. Filament cost is nothing compared to buying a case.
+- Reprintable. Break a panel? Print another.
 
-| Component   | Idle    | Gaming Load |
-| ----------- | ------- | ----------- |
-| CPU         | ~40°C   | ~75°C       |
-| GPU         | ~35°C   | ~78°C       |
-| PSU         | ~38°C   | ~55°C       |
+**Cons:**
 
-These are perfectly acceptable for a case with no dedicated intake fans. The vertical layout and natural convection do more work than expected.
+- Cable management is visible. There is no behind-the-motherboard routing. Every wire is out in the open.
+- No dust filtering. The open slat design means you will be cleaning it.
+- GPU length limit. Anything longer than the RTX 3060 is not going to fit.
+- Print time. Expect a solid chunk of hours depending on your speeds.
+- Fans are louder now. Tighter space means more fan noise.
 
-### Noise Profile
+**Repairability: 8/10**
 
-- **Idle**: Nearly silent. The be quiet! fan spins down, and the GPU's zero-RPM mode keeps things whisper-quiet.
-- **Load**: Audible but not intrusive. The top exhaust fan carries most of the thermal workload.
-
-## Build Quality Assessment
-
-### Pros
-
-✅ **Absurdly compact** — micro-ATX + ATX PSU in a footprint smaller than most ITX builds  
-✅ **Surprisingly thermally competent** — chimney airflow works better than sceptics predict  
-✅ **Customisable** — print it in any colour, any filament, with any panel pattern variants  
-✅ **Inexpensive** — filament cost is a fraction of even budget aluminium cases  
-✅ **Community-validated** — the original designer reviewed this exact build  
-
-### Cons
-
-❌ **Cable management is an art form** — there is no behind-the-motherboard routing; every wire is visible  
-❌ **No dust filtering** — open slat design means regular cleaning is necessary  
-❌ **GPU length limited** — anything longer than a dual-slot, dual-fan card will not fit  
-❌ **3D printing time** — expect 20-30 hours of print time depending on settings  
-
-### Repairability: 8/10
-
-- **Fully tool-accessible** — M3 screws and panel clips
-- **Standard parts** — nothing proprietary
-- **Re-printable** — break a panel? Print another.
-- Deductions for: tight cable access and the need to remove the PSU to reach some motherboard headers
+- Fully tool accessible with M3 screws
+- Nothing proprietary
+- Break a panel? Print another
+- Deductions for tight cable access and needing to pull the PSU to reach some headers
 
 ## What I Learned
 
-1. **ATX PSUs in small spaces are possible** — vertical mounting is underrated.
-2. **PETG is the right material** — rigid enough for structure, forgiving enough for tolerance stacking.
-3. **Flat cables are not optional** — they are survival equipment in cases this dense.
-4. **Scale is relative** — your "full-size desktop" is probably 70% empty air.
-5. **Designers on Printables are doing incredible work** — NixieShift's case design handles tolerances better than some commercial products.
+1. ATX PSUs in small spaces are totally doable if you mount them vertically.
+2. PETG is the right call for structure. Rigid enough, forgiving enough.
+3. Flat cables are not optional in cases this dense. They are survival equipment.
+4. Most full-size desktops are like 70% empty air.
+5. The 3D printing community on Printables is doing genuinely impressive work. Makerunit handled tolerances better than some commercial cases I have used.
 
 ## Next Steps
 
 - [x] Print case panels
 - [x] Transplant all components
-- [x] Verify thermal stability under load
-- [x] Take a photo with an RTX 4090 on top for internet points
-- [ ] Design a custom fan duct for directed CPU airflow
-- [ ] Experiment with a dual-tone PETG+TPU flexible panel variant
+- [x] Verify it does not overheat
+- [x] Take a photo with a 4090 on top for scale
+- [ ] Maybe design a custom fan duct for directed CPU airflow
+- [ ] Try a dual-tone PETG and TPU flexible panel variant at some point
 
-## Conclusion
+## Final Word
 
-This build proves that "desktop PC" does not have to mean "desk-dominating monolith." By leveraging a well-designed 3D printable case, it is possible to fit a genuinely capable gaming and productivity system into a volume smaller than a shoebox. The trade-offs — cable visibility, GPU length limits, print time — are entirely reasonable for the footprint gained.
+This build proves that "desktop PC" does not have to mean "takes up the entire desk." You can fit a genuinely capable system into a volume smaller than a shoebox if you are willing to deal with visible cables and a bit more fan noise. The tradeoffs are worth it for the footprint you get back.
 
-**Key Takeaway:** The future of PC cases is not exclusively machined aluminium and tempered glass. Sometimes it is melted plastic, carefully layered, with just enough clearance to keep your GPU from suffocating.
+**Build Difficulty:** Medium (planning matters more than skill)
+**Cost:** Great (filament is cheap, your time is not)
+**Thermal Performance:** Fine for what it is
+**Smugness Factor:** Off the charts when you put a 4090 on top
 
-**Overall Assessment:**
-
-- **Build Difficulty:** Medium (planning matters more than skill)
-- **Cost:** Exceptional (filament is cheap; your time is not)
-- **Thermal Performance:** Surprisingly good for passive chimney flow
-- **Smugness Factor:** Off the charts when you place a 4090 on top
-
-**Final Verdict:** ⭐⭐⭐⭐⭐ (5/5) — A testament to what the 3D printing community can achieve when given enough CAD patience and PETG spools.
+**Final Verdict:** 5/5. A good reminder that the 3D printing community can build things that rival commercial stuff when given enough CAD patience and PETG spools.
