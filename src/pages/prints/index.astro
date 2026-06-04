@@ -1,43 +1,23 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro'
 import DeviceIcons from '../../components/DeviceIcons.astro'
+import OptimizedImage from '../../components/OptimizedImage.astro'
+import { getCollection } from 'astro:content'
 
-// Mock print data - replace with actual collection later
-const prints = [
-  {
-    id: 1,
-    image: '/images/bambu-a1-mini/IMG20250731124342.jpg',
-    title: 'Cable Organizers',
-    printer: 'A1 Mini',
-    material: 'PLA',
-    category: 'workspace',
-  },
-  {
-    id: 2,
-    image: '/images/bambu-a1-mini/IMG20250803142849.jpg',
-    title: 'Pen Holders',
-    printer: 'A1 Mini',
-    material: 'PLA',
-    category: 'workspace',
-  },
-  {
-    id: 3,
-    image: '/images/bambu-a1-combo/IMG20250814220937.jpg',
-    title: 'Multiboard Accessories',
-    printer: 'A1 Combo',
-    material: 'PETG',
-    category: 'workspace',
-  },
-  // Add more prints here
-]
+const prints = await getCollection('prints')
 
-const categories = [...new Set(prints.map((p) => p.category))]
-const printers = [...new Set(prints.map((p) => p.printer))]
+const sortedPrints = prints.sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+)
+
+const categories = [...new Set(prints.map((p) => p.data.category))].sort()
+const printers = [...new Set(prints.map((p) => p.data.printer).filter(Boolean))].sort()
+const filaments = [...new Set(prints.map((p) => p.data.filament).filter(Boolean))].sort()
 ---
 
 <BaseLayout
   title="3D Prints Gallery"
-  description="All prints made with Bambu Lab printers"
+  description="A gallery of 3D printed projects — functional, decorative, and everything in between"
 >
   <main class="gallery-container">
     <header class="gallery-header">
@@ -64,39 +44,63 @@ const printers = [...new Set(prints.map((p) => p.printer))]
           {categories.map((c) => <option value={c}>{c}</option>)}
         </select>
       </div>
+
+      <div class="filter-group">
+        <label>Filament:</label>
+        <select id="filament-filter">
+          <option value="all">All</option>
+          {filaments.map((f) => <option value={f}>{f}</option>)}
+        </select>
+      </div>
     </div>
 
     <div class="prints-grid" id="prints-grid">
       {
-        prints.map((print) => (
-          <div
+        sortedPrints.map((print) => (
+          <a
+            href={`/prints/${print.id}/`}
             class="print-card"
-            data-printer={print.printer}
-            data-category={print.category}
+            data-printer={print.data.printer}
+            data-category={print.data.category}
+            data-filament={print.data.filament}
             data-id={print.id}
           >
-            <img src={print.image} alt={print.title} loading="lazy" />
-            <div class="print-info">
-              <h3>{print.title}</h3>
-              <div class="meta">
-                <span class="badge">{print.printer}</span>
-                <span class="badge">{print.material}</span>
-              </div>
+            <div class="print-image-wrapper">
+              <OptimizedImage
+                src={print.data.image}
+                alt={print.data.title}
+                aspect="square"
+              />
             </div>
-          </div>
+            <div class="print-info">
+              <h3>{print.data.title}</h3>
+              <div class="meta">
+                {print.data.printer && (
+                  <span class="badge printer-badge">{print.data.printer}</span>
+                )}
+                {print.data.filament && (
+                  <span class="badge filament-badge">{print.data.filament}</span>
+                )}
+                <span class="badge category-badge">{print.data.category}</span>
+              </div>
+              {print.data.color && (
+                <span class="color-hint">{print.data.color}</span>
+              )}
+            </div>
+          </a>
         ))
       }
     </div>
 
-    <!-- Lightbox -->
-    <div id="lightbox" class="lightbox">
-      <button class="close">&times;</button>
-      <img id="lightbox-img" src="" alt="" />
-      <div class="lightbox-info">
-        <h2 id="lightbox-title"></h2>
-        <p id="lightbox-meta"></p>
+    {prints.length === 0 && (
+      <div class="empty-state">
+        <p>No prints in the collection yet.</p>
+        <p>
+          Drop images into <code>~/Downloads/3d-prints/</code> and run{' '}
+          <code>node scripts/generate-print-stubs.js</code>
+        </p>
       </div>
-    </div>
+    )}
   </main>
 </BaseLayout>
 
@@ -135,6 +139,7 @@ const printers = [...new Set(prints.map((p) => p.printer))]
     gap: 2rem;
     margin-bottom: 2rem;
     flex-wrap: wrap;
+    justify-content: center;
   }
 
   .filter-group {
@@ -143,12 +148,19 @@ const printers = [...new Set(prints.map((p) => p.printer))]
     gap: 0.5rem;
   }
 
+  .filter-group label {
+    font-size: 0.875rem;
+    color: var(--md-sys-color-on-surface-variant);
+  }
+
   .filter-group select {
     padding: 0.5rem 1rem;
     background: var(--md-sys-color-surface-container);
     border: 1px solid var(--md-sys-color-outline);
     border-radius: 8px;
     color: var(--md-sys-color-on-surface);
+    font-size: 0.875rem;
+    cursor: pointer;
   }
 
   .prints-grid {
@@ -161,10 +173,12 @@ const printers = [...new Set(prints.map((p) => p.printer))]
     background: var(--md-sys-color-surface-container);
     border-radius: 12px;
     overflow: hidden;
-    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
     transition:
       transform 0.2s,
       box-shadow 0.2s;
+    display: block;
   }
 
   .print-card:hover {
@@ -172,10 +186,17 @@ const printers = [...new Set(prints.map((p) => p.printer))]
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
   }
 
-  .print-card img {
+  .print-image-wrapper {
     width: 100%;
     aspect-ratio: 1;
+    overflow: hidden;
+  }
+
+  .print-image-wrapper :global(.optimized-img) {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
+    border-radius: 0;
   }
 
   .print-info {
@@ -185,65 +206,64 @@ const printers = [...new Set(prints.map((p) => p.printer))]
   .print-info h3 {
     margin: 0 0 0.5rem 0;
     font-size: 1rem;
+    color: var(--md-sys-color-on-surface);
   }
 
   .meta {
     display: flex;
     gap: 0.5rem;
     flex-wrap: wrap;
+    margin-bottom: 0.25rem;
   }
 
   .badge {
     padding: 0.25rem 0.5rem;
-    background: var(--md-sys-color-primary-container);
-    color: var(--md-sys-color-on-primary-container);
     border-radius: 4px;
     font-size: 0.75rem;
   }
 
-  /* Lightbox */
-  .lightbox {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.95);
-    z-index: 1000;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 2rem;
+  .printer-badge {
+    background: var(--md-sys-color-primary-container);
+    color: var(--md-sys-color-on-primary-container);
   }
 
-  .lightbox.active {
-    display: flex;
+  .filament-badge {
+    background: var(--md-sys-color-secondary-container);
+    color: var(--md-sys-color-on-secondary-container);
   }
 
-  .lightbox img {
-    max-width: 90%;
-    max-height: 70vh;
-    object-fit: contain;
-    border-radius: 8px;
+  .category-badge {
+    background: var(--md-sys-color-tertiary-container);
+    color: var(--md-sys-color-on-tertiary-container);
   }
 
-  .lightbox-info {
-    color: white;
+  .color-hint {
+    font-size: 0.75rem;
+    color: var(--md-sys-color-on-surface-variant);
+  }
+
+  .empty-state {
     text-align: center;
-    margin-top: 1rem;
+    padding: 4rem 2rem;
+    color: var(--md-sys-color-on-surface-variant);
   }
 
-  .lightbox .close {
-    position: absolute;
-    top: 2rem;
-    right: 2rem;
-    background: none;
-    border: none;
-    color: white;
-    font-size: 3rem;
-    cursor: pointer;
-    line-height: 1;
+  .empty-state code {
+    background: var(--md-sys-color-surface-container-high);
+    padding: 0.125rem 0.375rem;
+    border-radius: 4px;
+    font-size: 0.875rem;
+  }
+
+  @media (max-width: 640px) {
+    .prints-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    .filters {
+      gap: 1rem;
+    }
   }
 </style>
 
@@ -251,60 +271,28 @@ const printers = [...new Set(prints.map((p) => p.printer))]
   // Filtering
   const printerFilter = document.getElementById('printer-filter')
   const categoryFilter = document.getElementById('category-filter')
+  const filamentFilter = document.getElementById('filament-filter')
   const grid = document.getElementById('prints-grid')
 
   function filterPrints() {
     const printer = printerFilter.value
     const category = categoryFilter.value
+    const filament = filamentFilter.value
     const cards = grid.querySelectorAll('.print-card')
 
     cards.forEach((card) => {
       const matchPrinter = printer === 'all' || card.dataset.printer === printer
       const matchCategory =
         category === 'all' || card.dataset.category === category
+      const matchFilament =
+        filament === 'all' || card.dataset.filament === filament
 
-      card.style.display = matchPrinter && matchCategory ? 'block' : 'none'
+      card.style.display =
+        matchPrinter && matchCategory && matchFilament ? 'block' : 'none'
     })
   }
 
   printerFilter.addEventListener('change', filterPrints)
   categoryFilter.addEventListener('change', filterPrints)
-
-  // Lightbox
-  const lightbox = document.getElementById('lightbox')
-  const lightboxImg = document.getElementById('lightbox-img')
-  const lightboxTitle = document.getElementById('lightbox-title')
-  const lightboxMeta = document.getElementById('lightbox-meta')
-
-  document.querySelectorAll('.print-card').forEach((card) => {
-    card.addEventListener('click', () => {
-      const img = card.querySelector('img')
-      const title = card.querySelector('h3').textContent
-      const badges = Array.from(card.querySelectorAll('.badge'))
-        .map((b) => b.textContent)
-        .join(' • ')
-
-      lightboxImg.src = img.src
-      lightboxTitle.textContent = title
-      lightboxMeta.textContent = badges
-      lightbox.classList.add('active')
-    })
-  })
-
-  document.querySelector('.close').addEventListener('click', () => {
-    lightbox.classList.remove('active')
-  })
-
-  lightbox.addEventListener('click', (e) => {
-    if (e.target === lightbox) {
-      lightbox.classList.remove('active')
-    }
-  })
-
-  // Keyboard support - Escape to close
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && lightbox.classList.contains('active')) {
-      lightbox.classList.remove('active')
-    }
-  })
+  filamentFilter.addEventListener('change', filterPrints)
 </script>

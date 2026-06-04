@@ -6,6 +6,7 @@ import FloatingParticles from '../components/FloatingParticles.astro'
 import DeviceIcons from '../components/DeviceIcons.astro'
 import FocusMode from '../components/FocusMode.astro'
 import OptimizedImage from '../components/OptimizedImage.astro'
+import FeaturedPrints from '../components/FeaturedPrints.astro'
 import { getCollection } from 'astro:content'
 
 const teardowns = await getCollection('teardowns')
@@ -321,6 +322,8 @@ const sortedTeardowns = teardowns.sort((a, b) => {
         </a>
       </div>
     </section>
+
+    <FeaturedPrints />
 
     <section class="teardowns-grid" id="components">
       {

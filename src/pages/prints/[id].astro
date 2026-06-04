@@ -1,0 +1,306 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import OptimizedImage from '../../components/OptimizedImage.astro'
+import { getCollection, render } from 'astro:content'
+
+export async function getStaticPaths() {
+  const prints = await getCollection('prints')
+  return prints.map((print) => ({
+    params: { id: print.id },
+    props: { print },
+  }))
+}
+
+const { print } = Astro.props
+const { Content } = await render(print)
+
+const dateFormatted = new Date(print.data.pubDate).toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+})
+---
+
+<BaseLayout
+  title={print.data.title}
+  description={`${print.data.title} — 3D printed on ${print.data.printer || 'a Bambu Lab printer'}`}
+  image={print.data.image}
+  type="article"
+>
+  <main class="print-detail">
+    <nav class="breadcrumb">
+      <a href="/prints/">← Gallery</a>
+      <span>/</span>
+      <a href="/prints/timeline/">Timeline</a>
+    </nav>
+
+    <div class="detail-layout">
+      <div class="image-section">
+        <OptimizedImage
+          src={print.data.image}
+          alt={print.data.title}
+          aspect="auto"
+          sizes="(max-width: 768px) 100vw, 60vw"
+        />
+      </div>
+
+      <aside class="meta-section">
+        <h1>{print.data.title}</h1>
+
+        <div class="meta-grid">
+          {print.data.printer && (
+            <div class="meta-item">
+              <span class="meta-label">Printer</span>
+              <span class="meta-value">{print.data.printer}</span>
+            </div>
+          )}
+
+          {print.data.filament && (
+            <div class="meta-item">
+              <span class="meta-label">Filament</span>
+              <span class="meta-value">{print.data.filament}</span>
+            </div>
+          )}
+
+          {print.data.color && (
+            <div class="meta-item">
+              <span class="meta-label">Color</span>
+              <span class="meta-value">{print.data.color}</span>
+            </div>
+          )}
+
+          <div class="meta-item">
+            <span class="meta-label">Category</span>
+            <span class="meta-value">{print.data.category}</span>
+          </div>
+
+          <div class="meta-item">
+            <span class="meta-label">Date</span>
+            <span class="meta-value">{dateFormatted}</span>
+          </div>
+        </div>
+
+        {print.data.sourceUrl && (
+          <a
+            href={print.data.sourceUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="source-link"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+              <polyline points="15 3 21 3 21 9"/>
+              <line x1="10" y1="14" x2="21" y2="3"/>
+            </svg>
+            View Model Source
+          </a>
+        )}
+
+        {print.data.relatedTeardown && (
+          <a href={`/teardowns/${print.data.relatedTeardown}/`} class="related-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+            </svg>
+            Related Teardown
+          </a>
+        )}
+
+        {print.data.tags && print.data.tags.length > 0 && (
+          <div class="tags">
+            {print.data.tags.map((tag) => (
+              <span class="tag">{tag}</span>
+            ))}
+          </div>
+        )}
+      </aside>
+    </div>
+
+    <div class="content-section">
+      <Content />
+    </div>
+  </main>
+</BaseLayout>
+
+<style>
+  .print-detail {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+    font-size: 0.875rem;
+  }
+
+  .breadcrumb a {
+    color: var(--md-sys-color-primary);
+    text-decoration: none;
+  }
+
+  .breadcrumb a:hover {
+    text-decoration: underline;
+  }
+
+  .breadcrumb span {
+    color: var(--md-sys-color-outline);
+  }
+
+  .detail-layout {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+  }
+
+  .image-section {
+    border-radius: 16px;
+    overflow: hidden;
+    background: var(--md-sys-color-surface-container);
+  }
+
+  .image-section :global(.optimized-img) {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .meta-section h1 {
+    font-size: 2rem;
+    margin: 0 0 1.5rem 0;
+    line-height: 1.2;
+  }
+
+  .meta-grid {
+    display: grid;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .meta-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--md-sys-color-on-surface-variant);
+  }
+
+  .meta-value {
+    font-size: 1rem;
+    color: var(--md-sys-color-on-surface);
+    font-weight: 500;
+  }
+
+  .source-link,
+  .related-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+    transition: background 0.2s;
+  }
+
+  .source-link {
+    background: var(--md-sys-color-primary-container);
+    color: var(--md-sys-color-on-primary-container);
+  }
+
+  .related-link {
+    background: var(--md-sys-color-secondary-container);
+    color: var(--md-sys-color-on-secondary-container);
+  }
+
+  .source-link:hover,
+  .related-link:hover {
+    filter: brightness(1.1);
+  }
+
+  .source-link svg,
+  .related-link svg {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  .tag {
+    padding: 0.25rem 0.75rem;
+    background: var(--md-sys-color-surface-container-high);
+    color: var(--md-sys-color-on-surface-variant);
+    border-radius: 12px;
+    font-size: 0.75rem;
+  }
+
+  .content-section {
+    max-width: 720px;
+    line-height: 1.7;
+  }
+
+  .content-section :global(p) {
+    margin-bottom: 1rem;
+    color: var(--md-sys-color-on-surface);
+  }
+
+  .content-section :global(h2) {
+    font-size: 1.5rem;
+    margin: 2rem 0 1rem;
+    color: var(--md-sys-color-on-surface);
+  }
+
+  .content-section :global(h3) {
+    font-size: 1.25rem;
+    margin: 1.5rem 0 0.75rem;
+    color: var(--md-sys-color-on-surface);
+  }
+
+  .content-section :global(ul),
+  .content-section :global(ol) {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+  }
+
+  .content-section :global(li) {
+    margin-bottom: 0.5rem;
+  }
+
+  .content-section :global(a) {
+    color: var(--md-sys-color-primary);
+  }
+
+  .content-section :global(blockquote) {
+    border-left: 3px solid var(--md-sys-color-primary);
+    padding-left: 1rem;
+    margin: 1.5rem 0;
+    color: var(--md-sys-color-on-surface-variant);
+    font-style: italic;
+  }
+
+  @media (max-width: 768px) {
+    .detail-layout {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .meta-section h1 {
+      font-size: 1.5rem;
+    }
+  }
+</style>

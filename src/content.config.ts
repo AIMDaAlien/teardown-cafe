@@ -46,4 +46,24 @@ const discoveries = defineCollection({
   }),
 })
 
-export const collections = { teardowns, discoveries }
+const prints = defineCollection({
+  loader: glob({
+    pattern: '**/*.{md,mdx}',
+    base: './src/data/prints',
+  }),
+  schema: z.object({
+    title: z.string(),
+    image: z.string(),
+    pubDate: z.coerce.date(),
+    printer: z.string(),
+    filament: z.string().optional(),
+    category: z.string(),
+    sourceUrl: z.string().optional(),
+    tags: z.array(z.string()).optional(),
+    featured: z.boolean().optional().default(false),
+    relatedTeardown: z.string().optional(),
+    color: z.string().optional(),
+  }),
+})
+
+export const collections = { teardowns, discoveries, prints }

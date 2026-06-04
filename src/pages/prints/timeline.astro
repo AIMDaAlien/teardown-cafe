@@ -1,54 +1,35 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro'
+import OptimizedImage from '../../components/OptimizedImage.astro'
+import { getCollection } from 'astro:content'
 
-// Timeline-based print organization
-const printTimeline = [
-  {
-    date: 'September 2025',
-    prints: [
-      {
-        image: '/images/bambu-a1-combo/IMG20250910221256.jpg',
-        title: 'Large workspace organizer',
-        printer: 'A1 Combo',
-      },
-      {
-        image: '/images/bambu-a1-combo/IMG20250912221351.jpg',
-        title: 'Multi-color cable holders',
-        printer: 'A1 Combo',
-      },
-    ],
-  },
-  {
-    date: 'August 2025',
-    prints: [
-      {
-        image: '/images/bambu-a1-combo/IMG20250819142955.jpg',
-        title: 'OpenGrid bases',
-        printer: 'A1 Combo',
-      },
-      {
-        image: '/images/bambu-a1-mini/IMG20250803142849.jpg',
-        title: 'Pen holders',
-        printer: 'A1 Mini',
-      },
-    ],
-  },
-  {
-    date: 'July 2025',
-    prints: [
-      {
-        image: '/images/bambu-a1-mini/IMG20250731124342.jpg',
-        title: 'Initial workspace prints',
-        printer: 'A1 Mini',
-      },
-    ],
-  },
-]
+const prints = await getCollection('prints')
+
+// Group by month
+const grouped = new Map()
+for (const print of prints) {
+  const d = new Date(print.data.pubDate)
+  const key = `${d.toLocaleString('en-US', { month: 'long' })} ${d.getFullYear()}`
+  if (!grouped.has(key)) grouped.set(key, [])
+  grouped.get(key).push(print)
+}
+
+// Sort groups by date (newest first)
+const sortedGroups = Array.from(grouped.entries()).sort((a, b) => {
+  const dateA = new Date(a[1][0].data.pubDate)
+  const dateB = new Date(b[1][0].data.pubDate)
+  return dateB - dateA
+})
+
+// Sort prints within each group
+for (const [, group] of sortedGroups) {
+  group.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+}
 ---
 
 <BaseLayout
   title="3D Prints Timeline"
-  description="Chronological view of all prints"
+  description="Chronological archive of 3D printed projects"
 >
   <main class="timeline-container">
     <header>
@@ -58,24 +39,54 @@ const printTimeline = [
 
     <div class="timeline">
       {
-        printTimeline.map((period) => (
+        sortedGroups.map(([period, periodPrints]) => (
           <div class="timeline-period">
-            <h2 class="period-date">{period.date}</h2>
+            <h2 class="period-date">
+              {period}
+              <span class="period-count">{periodPrints.length}</span>
+            </h2>
             <div class="period-prints">
-              {period.prints.map((print) => (
-                <div class="timeline-print">
-                  <img src={print.image} alt={print.title} loading="lazy" />
-                  <div class="print-details">
-                    <h3>{print.title}</h3>
-                    <span class="printer-badge">{print.printer}</span>
+              {periodPrints.map((print) => (
+                <a href={`/prints/${print.id}/`} class="timeline-print">
+                  <div class="timeline-image">
+                    <OptimizedImage
+                      src={print.data.image}
+                      alt={print.data.title}
+                      aspect="square"
+                    />
                   </div>
-                </div>
+                  <div class="print-details">
+                    <h3>{print.data.title}</h3>
+                    <div class="print-meta">
+                      {print.data.printer && (
+                        <span class="printer-badge">{print.data.printer}</span>
+                      )}
+                      {print.data.filament && (
+                        <span class="filament-badge">{print.data.filament}</span>
+                      )}
+                      <span class="category-badge">{print.data.category}</span>
+                    </div>
+                    {print.data.color && (
+                      <p class="color-line">{print.data.color}</p>
+                    )}
+                  </div>
+                </a>
               ))}
             </div>
           </div>
         ))
       }
     </div>
+
+    {prints.length === 0 && (
+      <div class="empty-state">
+        <p>No prints in the timeline yet.</p>
+        <p>
+          Drop images into <code>~/Downloads/3d-prints/</code> and run{' '}
+          <code>node scripts/generate-print-stubs.js</code>
+        </p>
+      </div>
+    )}
   </main>
 </BaseLayout>
 
@@ -89,6 +100,15 @@ const printTimeline = [
   header {
     text-align: center;
     margin-bottom: 4rem;
+  }
+
+  header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  header p {
+    color: var(--md-sys-color-on-surface-variant);
   }
 
   .timeline {
@@ -114,6 +134,17 @@ const printTimeline = [
     position: relative;
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .period-count {
+    font-size: 0.875rem;
+    padding: 0.25rem 0.75rem;
+    background: var(--md-sys-color-primary-container);
+    color: var(--md-sys-color-on-primary-container);
+    border-radius: 12px;
   }
 
   .period-date::before {
@@ -141,17 +172,27 @@ const printTimeline = [
     border-radius: 12px;
     padding: 1rem;
     transition: transform 0.2s;
+    text-decoration: none;
+    color: inherit;
   }
 
   .timeline-print:hover {
     transform: translateX(8px);
   }
 
-  .timeline-print img {
+  .timeline-image {
     width: 120px;
     height: 120px;
-    object-fit: cover;
+    flex-shrink: 0;
     border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .timeline-image :global(.optimized-img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0;
   }
 
   .print-details {
@@ -161,14 +202,58 @@ const printTimeline = [
     gap: 0.5rem;
   }
 
-  .printer-badge {
+  .print-details h3 {
+    margin: 0;
+    font-size: 1.125rem;
+  }
+
+  .print-meta {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .printer-badge,
+  .filament-badge,
+  .category-badge {
     display: inline-block;
     padding: 0.25rem 0.75rem;
-    background: var(--md-sys-color-primary-container);
-    color: var(--md-sys-color-on-primary-container);
     border-radius: 12px;
     font-size: 0.75rem;
-    width: fit-content;
+  }
+
+  .printer-badge {
+    background: var(--md-sys-color-primary-container);
+    color: var(--md-sys-color-on-primary-container);
+  }
+
+  .filament-badge {
+    background: var(--md-sys-color-secondary-container);
+    color: var(--md-sys-color-on-secondary-container);
+  }
+
+  .category-badge {
+    background: var(--md-sys-color-tertiary-container);
+    color: var(--md-sys-color-on-tertiary-container);
+  }
+
+  .color-line {
+    margin: 0;
+    font-size: 0.875rem;
+    color: var(--md-sys-color-on-surface-variant);
+  }
+
+  .empty-state {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: var(--md-sys-color-on-surface-variant);
+  }
+
+  .empty-state code {
+    background: var(--md-sys-color-surface-container-high);
+    padding: 0.125rem 0.375rem;
+    border-radius: 4px;
+    font-size: 0.875rem;
   }
 
   @media (max-width: 640px) {
@@ -184,7 +269,7 @@ const printTimeline = [
       flex-direction: column;
     }
 
-    .timeline-print img {
+    .timeline-image {
       width: 100%;
       height: 200px;
     }
