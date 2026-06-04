@@ -265,6 +265,44 @@
       }
     ]
   },
+  "/images/server-drive-rebuild/02-new-hard-drives.jpg": {
+    "original": "/images/server-drive-rebuild/02-new-hard-drives-cleaned.jpg",
+    "width": 2304,
+    "height": 4096,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/server-drive-rebuild/02-new-hard-drives-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/server-drive-rebuild/02-new-hard-drives-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/server-drive-rebuild/02-new-hard-drives-1200w.webp"
+      }
+    ]
+  },
+  "/images/server-drive-rebuild/01-hard-drives-messy.jpg": {
+    "original": "/images/server-drive-rebuild/01-hard-drives-messy-cleaned.jpg",
+    "width": 4080,
+    "height": 3072,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/server-drive-rebuild/01-hard-drives-messy-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/server-drive-rebuild/01-hard-drives-messy-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/server-drive-rebuild/01-hard-drives-messy-1200w.webp"
+      }
+    ]
+  },
   "/images/raspberry-pi-5-nvme/06-final-assembly.webp": {
     "original": "/images/raspberry-pi-5-nvme/06-final-assembly-cleaned.webp",
     "width": 1200,
@@ -1994,6 +2032,120 @@
       }
     ]
   },
+  "/images/jonsbo-server-build/06-pc-listing.png": {
+    "original": "/images/jonsbo-server-build/06-pc-listing-cleaned.png",
+    "width": 1456,
+    "height": 240,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/jonsbo-server-build/06-pc-listing-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/jonsbo-server-build/06-pc-listing-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/jonsbo-server-build/06-pc-listing-1200w.webp"
+      }
+    ]
+  },
+  "/images/jonsbo-server-build/05-hba-card.png": {
+    "original": "/images/jonsbo-server-build/05-hba-card-cleaned.png",
+    "width": 1416,
+    "height": 264,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/jonsbo-server-build/05-hba-card-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/jonsbo-server-build/05-hba-card-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/jonsbo-server-build/05-hba-card-1200w.webp"
+      }
+    ]
+  },
+  "/images/jonsbo-server-build/04-homelab-corner.jpg": {
+    "original": "/images/jonsbo-server-build/04-homelab-corner-cleaned.jpg",
+    "width": 3072,
+    "height": 3072,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/jonsbo-server-build/04-homelab-corner-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/jonsbo-server-build/04-homelab-corner-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/jonsbo-server-build/04-homelab-corner-1200w.webp"
+      }
+    ]
+  },
+  "/images/jonsbo-server-build/03-truenas-screen.jpg": {
+    "original": "/images/jonsbo-server-build/03-truenas-screen-cleaned.jpg",
+    "width": 3072,
+    "height": 3072,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/jonsbo-server-build/03-truenas-screen-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/jonsbo-server-build/03-truenas-screen-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/jonsbo-server-build/03-truenas-screen-1200w.webp"
+      }
+    ]
+  },
+  "/images/jonsbo-server-build/02-server-in-jonsbo.jpg": {
+    "original": "/images/jonsbo-server-build/02-server-in-jonsbo-cleaned.jpg",
+    "width": 3072,
+    "height": 3072,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/jonsbo-server-build/02-server-in-jonsbo-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/jonsbo-server-build/02-server-in-jonsbo-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/jonsbo-server-build/02-server-in-jonsbo-1200w.webp"
+      }
+    ]
+  },
+  "/images/jonsbo-server-build/01-server-before-jonsbo.jpg": {
+    "original": "/images/jonsbo-server-build/01-server-before-jonsbo-cleaned.jpg",
+    "width": 2304,
+    "height": 4096,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/jonsbo-server-build/01-server-before-jonsbo-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/jonsbo-server-build/01-server-before-jonsbo-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/jonsbo-server-build/01-server-before-jonsbo-1200w.webp"
+      }
+    ]
+  },
   "/images/hp-elitebook-g7-840/frankenstein-all-in-one.webp": {
     "original": "/images/hp-elitebook-g7-840/frankenstein-all-in-one-cleaned.webp",
     "width": 1200,
@@ -2754,6 +2906,158 @@
       }
     ]
   },
+  "/images/3d-printed-micro-atx-case-build/08-front-with-4090-scale.jpg": {
+    "original": "/images/3d-printed-micro-atx-case-build/08-front-with-4090-scale-cleaned.jpg",
+    "width": 3072,
+    "height": 4096,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/3d-printed-micro-atx-case-build/08-front-with-4090-scale-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/3d-printed-micro-atx-case-build/08-front-with-4090-scale-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/3d-printed-micro-atx-case-build/08-front-with-4090-scale-1200w.webp"
+      }
+    ]
+  },
+  "/images/3d-printed-micro-atx-case-build/07-final-back-view.jpg": {
+    "original": "/images/3d-printed-micro-atx-case-build/07-final-back-view-cleaned.jpg",
+    "width": 3072,
+    "height": 3072,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/3d-printed-micro-atx-case-build/07-final-back-view-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/3d-printed-micro-atx-case-build/07-final-back-view-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/3d-printed-micro-atx-case-build/07-final-back-view-1200w.webp"
+      }
+    ]
+  },
+  "/images/3d-printed-micro-atx-case-build/06-wavy-3d-printed-panels.jpg": {
+    "original": "/images/3d-printed-micro-atx-case-build/06-wavy-3d-printed-panels-cleaned.jpg",
+    "width": 3072,
+    "height": 3072,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/3d-printed-micro-atx-case-build/06-wavy-3d-printed-panels-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/3d-printed-micro-atx-case-build/06-wavy-3d-printed-panels-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/3d-printed-micro-atx-case-build/06-wavy-3d-printed-panels-1200w.webp"
+      }
+    ]
+  },
+  "/images/3d-printed-micro-atx-case-build/05-ssd-cable-routing.jpg": {
+    "original": "/images/3d-printed-micro-atx-case-build/05-ssd-cable-routing-cleaned.jpg",
+    "width": 3072,
+    "height": 3072,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/3d-printed-micro-atx-case-build/05-ssd-cable-routing-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/3d-printed-micro-atx-case-build/05-ssd-cable-routing-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/3d-printed-micro-atx-case-build/05-ssd-cable-routing-1200w.webp"
+      }
+    ]
+  },
+  "/images/3d-printed-micro-atx-case-build/04-gpu-psu-installed.jpg": {
+    "original": "/images/3d-printed-micro-atx-case-build/04-gpu-psu-installed-cleaned.jpg",
+    "width": 3072,
+    "height": 3072,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/3d-printed-micro-atx-case-build/04-gpu-psu-installed-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/3d-printed-micro-atx-case-build/04-gpu-psu-installed-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/3d-printed-micro-atx-case-build/04-gpu-psu-installed-1200w.webp"
+      }
+    ]
+  },
+  "/images/3d-printed-micro-atx-case-build/03-side-view-cooler-mount.jpg": {
+    "original": "/images/3d-printed-micro-atx-case-build/03-side-view-cooler-mount-cleaned.jpg",
+    "width": 3072,
+    "height": 3072,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/3d-printed-micro-atx-case-build/03-side-view-cooler-mount-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/3d-printed-micro-atx-case-build/03-side-view-cooler-mount-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/3d-printed-micro-atx-case-build/03-side-view-cooler-mount-1200w.webp"
+      }
+    ]
+  },
+  "/images/3d-printed-micro-atx-case-build/02-motherboard-cooler-fit.jpg": {
+    "original": "/images/3d-printed-micro-atx-case-build/02-motherboard-cooler-fit-cleaned.jpg",
+    "width": 3072,
+    "height": 3072,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/3d-printed-micro-atx-case-build/02-motherboard-cooler-fit-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/3d-printed-micro-atx-case-build/02-motherboard-cooler-fit-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/3d-printed-micro-atx-case-build/02-motherboard-cooler-fit-1200w.webp"
+      }
+    ]
+  },
+  "/images/3d-printed-micro-atx-case-build/01-premigration-bulky-case.jpg": {
+    "original": "/images/3d-printed-micro-atx-case-build/01-premigration-bulky-case-cleaned.jpg",
+    "width": 2304,
+    "height": 4096,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/3d-printed-micro-atx-case-build/01-premigration-bulky-case-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/3d-printed-micro-atx-case-build/01-premigration-bulky-case-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/3d-printed-micro-atx-case-build/01-premigration-bulky-case-1200w.webp"
+      }
+    ]
+  },
   "/images/bambu-a1-combo/IMG20250912221351.webp": {
     "original": "/images/bambu-a1-combo/IMG20250912221351-cleaned.webp",
     "width": 1200,
@@ -3017,158 +3321,6 @@
       {
         "width": 1200,
         "path": "/images/bambu-a1-combo/IMG20250727165952-1200w.webp"
-      }
-    ]
-  },
-  "/images/3d-printed-micro-atx-case-build/08-front-with-4090-scale.jpg": {
-    "original": "/images/3d-printed-micro-atx-case-build/08-front-with-4090-scale-cleaned.jpg",
-    "width": 3072,
-    "height": 4096,
-    "variants": [
-      {
-        "width": 400,
-        "path": "/images/3d-printed-micro-atx-case-build/08-front-with-4090-scale-400w.webp"
-      },
-      {
-        "width": 800,
-        "path": "/images/3d-printed-micro-atx-case-build/08-front-with-4090-scale-800w.webp"
-      },
-      {
-        "width": 1200,
-        "path": "/images/3d-printed-micro-atx-case-build/08-front-with-4090-scale-1200w.webp"
-      }
-    ]
-  },
-  "/images/3d-printed-micro-atx-case-build/07-final-back-view.jpg": {
-    "original": "/images/3d-printed-micro-atx-case-build/07-final-back-view-cleaned.jpg",
-    "width": 3072,
-    "height": 3072,
-    "variants": [
-      {
-        "width": 400,
-        "path": "/images/3d-printed-micro-atx-case-build/07-final-back-view-400w.webp"
-      },
-      {
-        "width": 800,
-        "path": "/images/3d-printed-micro-atx-case-build/07-final-back-view-800w.webp"
-      },
-      {
-        "width": 1200,
-        "path": "/images/3d-printed-micro-atx-case-build/07-final-back-view-1200w.webp"
-      }
-    ]
-  },
-  "/images/3d-printed-micro-atx-case-build/06-wavy-3d-printed-panels.jpg": {
-    "original": "/images/3d-printed-micro-atx-case-build/06-wavy-3d-printed-panels-cleaned.jpg",
-    "width": 3072,
-    "height": 3072,
-    "variants": [
-      {
-        "width": 400,
-        "path": "/images/3d-printed-micro-atx-case-build/06-wavy-3d-printed-panels-400w.webp"
-      },
-      {
-        "width": 800,
-        "path": "/images/3d-printed-micro-atx-case-build/06-wavy-3d-printed-panels-800w.webp"
-      },
-      {
-        "width": 1200,
-        "path": "/images/3d-printed-micro-atx-case-build/06-wavy-3d-printed-panels-1200w.webp"
-      }
-    ]
-  },
-  "/images/3d-printed-micro-atx-case-build/05-ssd-cable-routing.jpg": {
-    "original": "/images/3d-printed-micro-atx-case-build/05-ssd-cable-routing-cleaned.jpg",
-    "width": 3072,
-    "height": 3072,
-    "variants": [
-      {
-        "width": 400,
-        "path": "/images/3d-printed-micro-atx-case-build/05-ssd-cable-routing-400w.webp"
-      },
-      {
-        "width": 800,
-        "path": "/images/3d-printed-micro-atx-case-build/05-ssd-cable-routing-800w.webp"
-      },
-      {
-        "width": 1200,
-        "path": "/images/3d-printed-micro-atx-case-build/05-ssd-cable-routing-1200w.webp"
-      }
-    ]
-  },
-  "/images/3d-printed-micro-atx-case-build/04-gpu-psu-installed.jpg": {
-    "original": "/images/3d-printed-micro-atx-case-build/04-gpu-psu-installed-cleaned.jpg",
-    "width": 3072,
-    "height": 3072,
-    "variants": [
-      {
-        "width": 400,
-        "path": "/images/3d-printed-micro-atx-case-build/04-gpu-psu-installed-400w.webp"
-      },
-      {
-        "width": 800,
-        "path": "/images/3d-printed-micro-atx-case-build/04-gpu-psu-installed-800w.webp"
-      },
-      {
-        "width": 1200,
-        "path": "/images/3d-printed-micro-atx-case-build/04-gpu-psu-installed-1200w.webp"
-      }
-    ]
-  },
-  "/images/3d-printed-micro-atx-case-build/03-side-view-cooler-mount.jpg": {
-    "original": "/images/3d-printed-micro-atx-case-build/03-side-view-cooler-mount-cleaned.jpg",
-    "width": 3072,
-    "height": 3072,
-    "variants": [
-      {
-        "width": 400,
-        "path": "/images/3d-printed-micro-atx-case-build/03-side-view-cooler-mount-400w.webp"
-      },
-      {
-        "width": 800,
-        "path": "/images/3d-printed-micro-atx-case-build/03-side-view-cooler-mount-800w.webp"
-      },
-      {
-        "width": 1200,
-        "path": "/images/3d-printed-micro-atx-case-build/03-side-view-cooler-mount-1200w.webp"
-      }
-    ]
-  },
-  "/images/3d-printed-micro-atx-case-build/02-motherboard-cooler-fit.jpg": {
-    "original": "/images/3d-printed-micro-atx-case-build/02-motherboard-cooler-fit-cleaned.jpg",
-    "width": 3072,
-    "height": 3072,
-    "variants": [
-      {
-        "width": 400,
-        "path": "/images/3d-printed-micro-atx-case-build/02-motherboard-cooler-fit-400w.webp"
-      },
-      {
-        "width": 800,
-        "path": "/images/3d-printed-micro-atx-case-build/02-motherboard-cooler-fit-800w.webp"
-      },
-      {
-        "width": 1200,
-        "path": "/images/3d-printed-micro-atx-case-build/02-motherboard-cooler-fit-1200w.webp"
-      }
-    ]
-  },
-  "/images/3d-printed-micro-atx-case-build/01-premigration-bulky-case.jpg": {
-    "original": "/images/3d-printed-micro-atx-case-build/01-premigration-bulky-case-cleaned.jpg",
-    "width": 2304,
-    "height": 4096,
-    "variants": [
-      {
-        "width": 400,
-        "path": "/images/3d-printed-micro-atx-case-build/01-premigration-bulky-case-400w.webp"
-      },
-      {
-        "width": 800,
-        "path": "/images/3d-printed-micro-atx-case-build/01-premigration-bulky-case-800w.webp"
-      },
-      {
-        "width": 1200,
-        "path": "/images/3d-printed-micro-atx-case-build/01-premigration-bulky-case-1200w.webp"
       }
     ]
   },

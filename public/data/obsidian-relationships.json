@@ -1,1 +1,84 @@
-{}
+{
+  "truenas": {
+    "obsidianNotes": [
+      {
+        "title": "09 - Disk Exhaustion Prevention",
+        "path": "Projects/The Penthouse Self-Hosting/09 - Disk Exhaustion Prevention",
+        "url": "https://aimdaalien.github.io/knowledge-garden-vault/?note=Projects%2FThe%20Penthouse%20Self-Hosting%2F09%20-%20Disk%20Exhaustion%20Prevention"
+      },
+      {
+        "title": "08 - SSH Hardening on TrueNAS",
+        "path": "Projects/The Penthouse Self-Hosting/08 - SSH Hardening on TrueNAS",
+        "url": "https://aimdaalien.github.io/knowledge-garden-vault/?note=Projects%2FThe%20Penthouse%20Self-Hosting%2F08%20-%20SSH%20Hardening%20on%20TrueNAS"
+      },
+      {
+        "title": "02 - TrueNAS Deploy Runbook",
+        "path": "Projects/The Penthouse Self-Hosting/02 - TrueNAS Deploy Runbook",
+        "url": "https://aimdaalien.github.io/knowledge-garden-vault/?note=Projects%2FThe%20Penthouse%20Self-Hosting%2F02%20-%20TrueNAS%20Deploy%20Runbook"
+      },
+      {
+        "title": "01 - Architecture",
+        "path": "Projects/The Penthouse Self-Hosting/01 - Architecture",
+        "url": "https://aimdaalien.github.io/knowledge-garden-vault/?note=Projects%2FThe%20Penthouse%20Self-Hosting%2F01%20-%20Architecture"
+      },
+      {
+        "title": "00 - Index",
+        "path": "Projects/The Penthouse Self-Hosting/00 - Index",
+        "url": "https://aimdaalien.github.io/knowledge-garden-vault/?note=Projects%2FThe%20Penthouse%20Self-Hosting%2F00%20-%20Index"
+      },
+      {
+        "title": "The Penthouse - Session Notes 2026-02-13",
+        "path": "Projects/The Penthouse/2025-02-13 Session Notes",
+        "url": "https://aimdaalien.github.io/knowledge-garden-vault/?note=Projects%2FThe%20Penthouse%2F2025-02-13%20Session%20Notes"
+      }
+    ],
+    "teardowns": [
+      {
+        "title": "Home Server Build - Jonsbo D41 Migration",
+        "slug": "jonsbo-server-build",
+        "url": "/teardowns/jonsbo-server-build"
+      }
+    ]
+  },
+  "homelab": {
+    "obsidianNotes": [
+      {
+        "title": "Troubleshooting Log",
+        "path": "Projects/Homelab NOC Skills/Troubleshooting Log",
+        "url": "https://aimdaalien.github.io/knowledge-garden-vault/?note=Projects%2FHomelab%20NOC%20Skills%2FTroubleshooting%20Log"
+      },
+      {
+        "title": "Prometheus Grafana Stack",
+        "path": "Projects/Homelab NOC Skills/Prometheus Grafana Stack",
+        "url": "https://aimdaalien.github.io/knowledge-garden-vault/?note=Projects%2FHomelab%20NOC%20Skills%2FPrometheus%20Grafana%20Stack"
+      },
+      {
+        "title": "Project Overview   Noc Skills Homelab",
+        "path": "Projects/Homelab NOC Skills/Project Overview - NOC Skills Homelab",
+        "url": "https://aimdaalien.github.io/knowledge-garden-vault/?note=Projects%2FHomelab%20NOC%20Skills%2FProject%20Overview%20-%20NOC%20Skills%20Homelab"
+      },
+      {
+        "title": "Docker And Portainer Setup",
+        "path": "Projects/Homelab NOC Skills/Docker and Portainer Setup",
+        "url": "https://aimdaalien.github.io/knowledge-garden-vault/?note=Projects%2FHomelab%20NOC%20Skills%2FDocker%20and%20Portainer%20Setup"
+      },
+      {
+        "title": "Pi-hole Migration - RPi B+ to RPi 5 NVMe",
+        "path": "Projects/Archive/Pi-hole Migration - RPi B+ to RPi 5 NVMe",
+        "url": "https://aimdaalien.github.io/knowledge-garden-vault/?note=Projects%2FArchive%2FPi-hole%20Migration%20-%20RPi%20B%2B%20to%20RPi%205%20NVMe"
+      }
+    ],
+    "teardowns": [
+      {
+        "title": "Server Drive Rebuild - When SAS Drives Die",
+        "slug": "server-drive-rebuild",
+        "url": "/teardowns/server-drive-rebuild"
+      },
+      {
+        "title": "Home Server Build - Jonsbo D41 Migration",
+        "slug": "jonsbo-server-build",
+        "url": "/teardowns/jonsbo-server-build"
+      }
+    ]
+  }
+}

@@ -1,5 +1,14 @@
 {
   "total": 121,
-  "matched": 0,
-  "tags": {}
+  "matched": 2,
+  "tags": {
+    "truenas": {
+      "obsidian": 6,
+      "teardowns": 1
+    },
+    "homelab": {
+      "obsidian": 5,
+      "teardowns": 2
+    }
+  }
 }
