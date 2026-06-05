@@ -5,9 +5,12 @@ pubDate: 2025-09-28
 device: nas
 difficulty: medium
 heroImage: /images/truenas-sas-build/01-asus-motherboard-layout.jpg
-relatedNotes:
-  - 'Projects/TrueNAS Build Guide'
-  - 'Projects/Budget SAS Drive NAS Build Guide'
+tags:
+  - nas
+  - truenas
+  - sas
+  - homelab
+  - 3d-printing
 ---
 
 ## What This Is

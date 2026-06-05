@@ -6,6 +6,10 @@ device: mechanical-keyboard
 difficulty: medium
 heroImage: /images/epomaker-split-65/IMG20250219205819.jpg
 video: /images/epomaker-split-65/20250423_214212.mp4
+tags:
+  - mechanical-keyboard
+  - sound-mod
+  - desk-setup
 ---
 
 ## What This Is

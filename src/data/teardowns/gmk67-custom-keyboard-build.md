@@ -6,6 +6,10 @@ device: mechanical-keyboard
 difficulty: easy
 heroImage: /images/gmk67-custom/IMG20240620164959-EDIT-EDIT.jpg
 video: /images/gmk67-custom/soundtest.mp4
+tags:
+  - mechanical-keyboard
+  - custom-build
+  - hot-swap
 ---
 
 ## What This Is

@@ -1,38 +1,90 @@
 {
+  "setup": {
+    "obsidianNotes": [
+      {
+        "title": "Personal Setup",
+        "path": "Systems/Personal Setup.md",
+        "url": "https://aimdaalien.github.io/First-Portfolio-Iteration/garden-terminal.html?note=Systems%2FPersonal%20Setup.md"
+      }
+    ],
+    "teardowns": [
+      {
+        "title": "Bambu Lab P2S - Enclosed Printer Setup",
+        "slug": "bambu-lab-p2s-setup",
+        "url": "/teardowns/bambu-lab-p2s-setup"
+      },
+      {
+        "title": "Bambu Lab A1 Mini - Best Beginner 3D Printer Setup",
+        "slug": "bambu-lab-a1-mini-setup",
+        "url": "/teardowns/bambu-lab-a1-mini-setup"
+      }
+    ]
+  },
+  "bambu-lab": {
+    "obsidianNotes": [
+      {
+        "title": "3D Printing Optimization Journey",
+        "path": "Learning/3D Printing Optimization Journey.md",
+        "url": "https://aimdaalien.github.io/First-Portfolio-Iteration/garden-terminal.html?note=Learning%2F3D%20Printing%20Optimization%20Journey.md"
+      }
+    ],
+    "teardowns": [
+      {
+        "title": "Bambu Lab P2S - Enclosed Printer Setup",
+        "slug": "bambu-lab-p2s-setup",
+        "url": "/teardowns/bambu-lab-p2s-setup"
+      },
+      {
+        "title": "Bambu Lab A1 Mini - Best Beginner 3D Printer Setup",
+        "slug": "bambu-lab-a1-mini-setup",
+        "url": "/teardowns/bambu-lab-a1-mini-setup"
+      },
+      {
+        "title": "Bambu Lab A1 Combo - Upgrade from A1 Mini",
+        "slug": "bambu-a1-combo-upgrade",
+        "url": "/teardowns/bambu-a1-combo-upgrade"
+      }
+    ]
+  },
   "truenas": {
     "obsidianNotes": [
       {
         "title": "09 - Disk Exhaustion Prevention",
-        "path": "Projects/The Penthouse Self-Hosting/09 - Disk Exhaustion Prevention",
-        "url": "https://aimdaalien.github.io/knowledge-garden-vault/?note=Projects%2FThe%20Penthouse%20Self-Hosting%2F09%20-%20Disk%20Exhaustion%20Prevention"
+        "path": "Projects/The Penthouse Self-Hosting/09 - Disk Exhaustion Prevention.md",
+        "url": "https://aimdaalien.github.io/First-Portfolio-Iteration/garden-terminal.html?note=Projects%2FThe%20Penthouse%20Self-Hosting%2F09%20-%20Disk%20Exhaustion%20Prevention.md"
       },
       {
         "title": "08 - SSH Hardening on TrueNAS",
-        "path": "Projects/The Penthouse Self-Hosting/08 - SSH Hardening on TrueNAS",
-        "url": "https://aimdaalien.github.io/knowledge-garden-vault/?note=Projects%2FThe%20Penthouse%20Self-Hosting%2F08%20-%20SSH%20Hardening%20on%20TrueNAS"
+        "path": "Projects/The Penthouse Self-Hosting/08 - SSH Hardening on TrueNAS.md",
+        "url": "https://aimdaalien.github.io/First-Portfolio-Iteration/garden-terminal.html?note=Projects%2FThe%20Penthouse%20Self-Hosting%2F08%20-%20SSH%20Hardening%20on%20TrueNAS.md"
       },
       {
         "title": "02 - TrueNAS Deploy Runbook",
-        "path": "Projects/The Penthouse Self-Hosting/02 - TrueNAS Deploy Runbook",
-        "url": "https://aimdaalien.github.io/knowledge-garden-vault/?note=Projects%2FThe%20Penthouse%20Self-Hosting%2F02%20-%20TrueNAS%20Deploy%20Runbook"
+        "path": "Projects/The Penthouse Self-Hosting/02 - TrueNAS Deploy Runbook.md",
+        "url": "https://aimdaalien.github.io/First-Portfolio-Iteration/garden-terminal.html?note=Projects%2FThe%20Penthouse%20Self-Hosting%2F02%20-%20TrueNAS%20Deploy%20Runbook.md"
       },
       {
         "title": "01 - Architecture",
-        "path": "Projects/The Penthouse Self-Hosting/01 - Architecture",
-        "url": "https://aimdaalien.github.io/knowledge-garden-vault/?note=Projects%2FThe%20Penthouse%20Self-Hosting%2F01%20-%20Architecture"
+        "path": "Projects/The Penthouse Self-Hosting/01 - Architecture.md",
+        "url": "https://aimdaalien.github.io/First-Portfolio-Iteration/garden-terminal.html?note=Projects%2FThe%20Penthouse%20Self-Hosting%2F01%20-%20Architecture.md"
       },
       {
         "title": "00 - Index",
-        "path": "Projects/The Penthouse Self-Hosting/00 - Index",
-        "url": "https://aimdaalien.github.io/knowledge-garden-vault/?note=Projects%2FThe%20Penthouse%20Self-Hosting%2F00%20-%20Index"
+        "path": "Projects/The Penthouse Self-Hosting/00 - Index.md",
+        "url": "https://aimdaalien.github.io/First-Portfolio-Iteration/garden-terminal.html?note=Projects%2FThe%20Penthouse%20Self-Hosting%2F00%20-%20Index.md"
       },
       {
-        "title": "The Penthouse - Session Notes 2026-02-13",
-        "path": "Projects/The Penthouse/2025-02-13 Session Notes",
-        "url": "https://aimdaalien.github.io/knowledge-garden-vault/?note=Projects%2FThe%20Penthouse%2F2025-02-13%20Session%20Notes"
+        "title": "TrueNAS Build Entry",
+        "path": "Projects/Teardown Cafe/Documentation/TrueNAS Build Entry.md",
+        "url": "https://aimdaalien.github.io/First-Portfolio-Iteration/garden-terminal.html?note=Projects%2FTeardown%20Cafe%2FDocumentation%2FTrueNAS%20Build%20Entry.md"
       }
     ],
     "teardowns": [
+      {
+        "title": "Enterprise SAS NAS Build - Budget TrueNAS Server",
+        "slug": "truenas-enterprise-sas-build",
+        "url": "/teardowns/truenas-enterprise-sas-build"
+      },
       {
         "title": "Home Server Build - Jonsbo D41 Migration",
         "slug": "jonsbo-server-build",
@@ -43,36 +95,31 @@
   "homelab": {
     "obsidianNotes": [
       {
-        "title": "Troubleshooting Log",
-        "path": "Projects/Homelab NOC Skills/Troubleshooting Log",
-        "url": "https://aimdaalien.github.io/knowledge-garden-vault/?note=Projects%2FHomelab%20NOC%20Skills%2FTroubleshooting%20Log"
+        "title": "2026-01-20 Network Troubleshooting Log - Intermittent WAN Instability",
+        "path": "IT Projects/Session Notes/2026-01-20 Network Troubleshooting Log - Intermittent WAN Instability.md",
+        "url": "https://aimdaalien.github.io/First-Portfolio-Iteration/garden-terminal.html?note=IT%20Projects%2FSession%20Notes%2F2026-01-20%20Network%20Troubleshooting%20Log%20-%20Intermittent%20WAN%20Instability.md"
       },
       {
-        "title": "Prometheus Grafana Stack",
-        "path": "Projects/Homelab NOC Skills/Prometheus Grafana Stack",
-        "url": "https://aimdaalien.github.io/knowledge-garden-vault/?note=Projects%2FHomelab%20NOC%20Skills%2FPrometheus%20Grafana%20Stack"
-      },
-      {
-        "title": "Project Overview   Noc Skills Homelab",
-        "path": "Projects/Homelab NOC Skills/Project Overview - NOC Skills Homelab",
-        "url": "https://aimdaalien.github.io/knowledge-garden-vault/?note=Projects%2FHomelab%20NOC%20Skills%2FProject%20Overview%20-%20NOC%20Skills%20Homelab"
-      },
-      {
-        "title": "Docker And Portainer Setup",
-        "path": "Projects/Homelab NOC Skills/Docker and Portainer Setup",
-        "url": "https://aimdaalien.github.io/knowledge-garden-vault/?note=Projects%2FHomelab%20NOC%20Skills%2FDocker%20and%20Portainer%20Setup"
-      },
-      {
-        "title": "Pi-hole Migration - RPi B+ to RPi 5 NVMe",
-        "path": "Projects/Archive/Pi-hole Migration - RPi B+ to RPi 5 NVMe",
-        "url": "https://aimdaalien.github.io/knowledge-garden-vault/?note=Projects%2FArchive%2FPi-hole%20Migration%20-%20RPi%20B%2B%20to%20RPi%205%20NVMe"
+        "title": "2026-01-09 Troubleshooting DNS Loop",
+        "path": "IT Projects/Session Notes/2026-01-09 Troubleshooting DNS Loop.md",
+        "url": "https://aimdaalien.github.io/First-Portfolio-Iteration/garden-terminal.html?note=IT%20Projects%2FSession%20Notes%2F2026-01-09%20Troubleshooting%20DNS%20Loop.md"
       }
     ],
     "teardowns": [
       {
+        "title": "Enterprise SAS NAS Build - Budget TrueNAS Server",
+        "slug": "truenas-enterprise-sas-build",
+        "url": "/teardowns/truenas-enterprise-sas-build"
+      },
+      {
         "title": "Server Drive Rebuild - When SAS Drives Die",
         "slug": "server-drive-rebuild",
         "url": "/teardowns/server-drive-rebuild"
+      },
+      {
+        "title": "Raspberry Pi 5 NVMe Build",
+        "slug": "raspberry-pi-5-nvme-build",
+        "url": "/teardowns/raspberry-pi-5-nvme-build"
       },
       {
         "title": "Home Server Build - Jonsbo D41 Migration",
@@ -80,5 +127,75 @@
         "url": "/teardowns/jonsbo-server-build"
       }
     ]
+  },
+  "manual-server-drive-rebuild": {
+    "obsidianNotes": [
+      {
+        "title": "Building a Beast: TrueNAS SAS Server for $270",
+        "path": "Projects/Archive/TrueNAS Build Guide.md",
+        "url": "https://aimdaalien.github.io/First-Portfolio-Iteration/garden-terminal.html?note=Projects%2FArchive%2FTrueNAS%20Build%20Guide.md"
+      },
+      {
+        "title": "Prometheus & Grafana Monitoring Stack - Lessons Learned",
+        "path": "Systems/Homelab/Prometheus Grafana Monitoring Stack - Lessons Learned.md",
+        "url": "https://aimdaalien.github.io/First-Portfolio-Iteration/garden-terminal.html?note=Systems%2FHomelab%2FPrometheus%20Grafana%20Monitoring%20Stack%20-%20Lessons%20Learned.md"
+      }
+    ],
+    "teardowns": []
+  },
+  "manual-truenas-enterprise-sas-build": {
+    "obsidianNotes": [
+      {
+        "title": "Building a Beast: TrueNAS SAS Server for $270",
+        "path": "Projects/Archive/TrueNAS Build Guide.md",
+        "url": "https://aimdaalien.github.io/First-Portfolio-Iteration/garden-terminal.html?note=Projects%2FArchive%2FTrueNAS%20Build%20Guide.md"
+      },
+      {
+        "title": "Budget SAS Drive NAS Build Guide",
+        "path": "Projects/Archive/Budget SAS Drive NAS Build Guide.md",
+        "url": "https://aimdaalien.github.io/First-Portfolio-Iteration/garden-terminal.html?note=Projects%2FArchive%2FBudget%20SAS%20Drive%20NAS%20Build%20Guide.md"
+      }
+    ],
+    "teardowns": []
+  },
+  "manual-raspberry-pi-5-nvme-build": {
+    "obsidianNotes": [
+      {
+        "title": "Pi-hole Setup: Raspberry Pi 3 B+",
+        "path": "Projects/Archive/Pi-hole Setup Guide - Complete Journey.md",
+        "url": "https://aimdaalien.github.io/First-Portfolio-Iteration/garden-terminal.html?note=Projects%2FArchive%2FPi-hole%20Setup%20Guide%20-%20Complete%20Journey.md"
+      },
+      {
+        "title": "Prometheus + Grafana Monitoring Stack - Implementation Guide",
+        "path": "Systems/Homelab/Prometheus Grafana Stack - Implementation Guide.md",
+        "url": "https://aimdaalien.github.io/First-Portfolio-Iteration/garden-terminal.html?note=Systems%2FHomelab%2FPrometheus%20Grafana%20Stack%20-%20Implementation%20Guide.md"
+      },
+      {
+        "title": "Prometheus & Grafana Monitoring Stack - Lessons Learned",
+        "path": "Systems/Homelab/Prometheus Grafana Monitoring Stack - Lessons Learned.md",
+        "url": "https://aimdaalien.github.io/First-Portfolio-Iteration/garden-terminal.html?note=Systems%2FHomelab%2FPrometheus%20Grafana%20Monitoring%20Stack%20-%20Lessons%20Learned.md"
+      }
+    ],
+    "teardowns": []
+  },
+  "manual-hp-elitebook-g7-840-may-2023": {
+    "obsidianNotes": [
+      {
+        "title": "Teardown Documentation Lessons",
+        "path": "Projects/Archive/Teardown Documentation Lessons.md",
+        "url": "https://aimdaalien.github.io/First-Portfolio-Iteration/garden-terminal.html?note=Projects%2FArchive%2FTeardown%20Documentation%20Lessons.md"
+      }
+    ],
+    "teardowns": []
+  },
+  "manual-thinkpad-t490s-2023": {
+    "obsidianNotes": [
+      {
+        "title": "Teardown Documentation Lessons",
+        "path": "Projects/Archive/Teardown Documentation Lessons.md",
+        "url": "https://aimdaalien.github.io/First-Portfolio-Iteration/garden-terminal.html?note=Projects%2FArchive%2FTeardown%20Documentation%20Lessons.md"
+      }
+    ],
+    "teardowns": []
   }
 }

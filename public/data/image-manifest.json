@@ -2146,6 +2146,82 @@
       }
     ]
   },
+  "/images/gmk67-custom/IMG20240620183234.webp": {
+    "original": "/images/gmk67-custom/IMG20240620183234-cleaned.webp",
+    "width": 1200,
+    "height": 2128,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/gmk67-custom/IMG20240620183234-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/gmk67-custom/IMG20240620183234-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/gmk67-custom/IMG20240620183234-1200w.webp"
+      }
+    ]
+  },
+  "/images/gmk67-custom/IMG20240620183234.jpg": {
+    "original": "/images/gmk67-custom/IMG20240620183234-cleaned.jpg",
+    "width": 2608,
+    "height": 4624,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/gmk67-custom/IMG20240620183234-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/gmk67-custom/IMG20240620183234-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/gmk67-custom/IMG20240620183234-1200w.webp"
+      }
+    ]
+  },
+  "/images/gmk67-custom/IMG20240620164959-EDIT-EDIT.webp": {
+    "original": "/images/gmk67-custom/IMG20240620164959-EDIT-EDIT-cleaned.webp",
+    "width": 1200,
+    "height": 1680,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/gmk67-custom/IMG20240620164959-EDIT-EDIT-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/gmk67-custom/IMG20240620164959-EDIT-EDIT-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/gmk67-custom/IMG20240620164959-EDIT-EDIT-1200w.webp"
+      }
+    ]
+  },
+  "/images/gmk67-custom/IMG20240620164959-EDIT-EDIT.jpg": {
+    "original": "/images/gmk67-custom/IMG20240620164959-EDIT-EDIT-cleaned.jpg",
+    "width": 2364,
+    "height": 3310,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/gmk67-custom/IMG20240620164959-EDIT-EDIT-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/gmk67-custom/IMG20240620164959-EDIT-EDIT-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/gmk67-custom/IMG20240620164959-EDIT-EDIT-1200w.webp"
+      }
+    ]
+  },
   "/images/hp-elitebook-g7-840/frankenstein-all-in-one.webp": {
     "original": "/images/hp-elitebook-g7-840/frankenstein-all-in-one-cleaned.webp",
     "width": 1200,
@@ -2333,82 +2409,6 @@
       {
         "width": 1200,
         "path": "/images/hp-elitebook-g7-840/01-keyboards-comparison-1200w.webp"
-      }
-    ]
-  },
-  "/images/gmk67-custom/IMG20240620183234.webp": {
-    "original": "/images/gmk67-custom/IMG20240620183234-cleaned.webp",
-    "width": 1200,
-    "height": 2128,
-    "variants": [
-      {
-        "width": 400,
-        "path": "/images/gmk67-custom/IMG20240620183234-400w.webp"
-      },
-      {
-        "width": 800,
-        "path": "/images/gmk67-custom/IMG20240620183234-800w.webp"
-      },
-      {
-        "width": 1200,
-        "path": "/images/gmk67-custom/IMG20240620183234-1200w.webp"
-      }
-    ]
-  },
-  "/images/gmk67-custom/IMG20240620183234.jpg": {
-    "original": "/images/gmk67-custom/IMG20240620183234-cleaned.jpg",
-    "width": 2608,
-    "height": 4624,
-    "variants": [
-      {
-        "width": 400,
-        "path": "/images/gmk67-custom/IMG20240620183234-400w.webp"
-      },
-      {
-        "width": 800,
-        "path": "/images/gmk67-custom/IMG20240620183234-800w.webp"
-      },
-      {
-        "width": 1200,
-        "path": "/images/gmk67-custom/IMG20240620183234-1200w.webp"
-      }
-    ]
-  },
-  "/images/gmk67-custom/IMG20240620164959-EDIT-EDIT.webp": {
-    "original": "/images/gmk67-custom/IMG20240620164959-EDIT-EDIT-cleaned.webp",
-    "width": 1200,
-    "height": 1680,
-    "variants": [
-      {
-        "width": 400,
-        "path": "/images/gmk67-custom/IMG20240620164959-EDIT-EDIT-400w.webp"
-      },
-      {
-        "width": 800,
-        "path": "/images/gmk67-custom/IMG20240620164959-EDIT-EDIT-800w.webp"
-      },
-      {
-        "width": 1200,
-        "path": "/images/gmk67-custom/IMG20240620164959-EDIT-EDIT-1200w.webp"
-      }
-    ]
-  },
-  "/images/gmk67-custom/IMG20240620164959-EDIT-EDIT.jpg": {
-    "original": "/images/gmk67-custom/IMG20240620164959-EDIT-EDIT-cleaned.jpg",
-    "width": 2364,
-    "height": 3310,
-    "variants": [
-      {
-        "width": 400,
-        "path": "/images/gmk67-custom/IMG20240620164959-EDIT-EDIT-400w.webp"
-      },
-      {
-        "width": 800,
-        "path": "/images/gmk67-custom/IMG20240620164959-EDIT-EDIT-800w.webp"
-      },
-      {
-        "width": 1200,
-        "path": "/images/gmk67-custom/IMG20240620164959-EDIT-EDIT-1200w.webp"
       }
     ]
   },
@@ -2906,6 +2906,386 @@
       }
     ]
   },
+  "/images/bambu-a1-mini/IMG20251014222542.webp": {
+    "original": "/images/bambu-a1-mini/IMG20251014222542-cleaned.webp",
+    "width": 1200,
+    "height": 1200,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-a1-mini/IMG20251014222542-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-a1-mini/IMG20251014222542-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-a1-mini/IMG20251014222542-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-a1-mini/IMG20251014222542.jpg": {
+    "original": "/images/bambu-a1-mini/IMG20251014222542-cleaned.jpg",
+    "width": 1920,
+    "height": 1920,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-a1-mini/IMG20251014222542-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-a1-mini/IMG20251014222542-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-a1-mini/IMG20251014222542-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-a1-mini/IMG20250916132007.webp": {
+    "original": "/images/bambu-a1-mini/IMG20250916132007-cleaned.webp",
+    "width": 1200,
+    "height": 1600,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-a1-mini/IMG20250916132007-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-a1-mini/IMG20250916132007-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-a1-mini/IMG20250916132007-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-a1-mini/IMG20250916132007.jpg": {
+    "original": "/images/bambu-a1-mini/IMG20250916132007-cleaned.jpg",
+    "width": 1440,
+    "height": 1920,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-a1-mini/IMG20250916132007-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-a1-mini/IMG20250916132007-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-a1-mini/IMG20250916132007-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-a1-mini/IMG20250803230410.webp": {
+    "original": "/images/bambu-a1-mini/IMG20250803230410-cleaned.webp",
+    "width": 1200,
+    "height": 1600,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-a1-mini/IMG20250803230410-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-a1-mini/IMG20250803230410-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-a1-mini/IMG20250803230410-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-a1-mini/IMG20250803230410.jpg": {
+    "original": "/images/bambu-a1-mini/IMG20250803230410-cleaned.jpg",
+    "width": 1440,
+    "height": 1920,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-a1-mini/IMG20250803230410-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-a1-mini/IMG20250803230410-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-a1-mini/IMG20250803230410-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-a1-mini/IMG20250803142849.webp": {
+    "original": "/images/bambu-a1-mini/IMG20250803142849-cleaned.webp",
+    "width": 1200,
+    "height": 1600,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-a1-mini/IMG20250803142849-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-a1-mini/IMG20250803142849-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-a1-mini/IMG20250803142849-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-a1-mini/IMG20250803142849.jpg": {
+    "original": "/images/bambu-a1-mini/IMG20250803142849-cleaned.jpg",
+    "width": 1440,
+    "height": 1920,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-a1-mini/IMG20250803142849-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-a1-mini/IMG20250803142849-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-a1-mini/IMG20250803142849-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-a1-mini/IMG20250731124342.webp": {
+    "original": "/images/bambu-a1-mini/IMG20250731124342-cleaned.webp",
+    "width": 1200,
+    "height": 1600,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-a1-mini/IMG20250731124342-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-a1-mini/IMG20250731124342-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-a1-mini/IMG20250731124342-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-a1-mini/IMG20250731124342.jpg": {
+    "original": "/images/bambu-a1-mini/IMG20250731124342-cleaned.jpg",
+    "width": 1440,
+    "height": 1920,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-a1-mini/IMG20250731124342-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-a1-mini/IMG20250731124342-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-a1-mini/IMG20250731124342-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-a1-mini/IMG20250730111013.webp": {
+    "original": "/images/bambu-a1-mini/IMG20250730111013-cleaned.webp",
+    "width": 1200,
+    "height": 1600,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-a1-mini/IMG20250730111013-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-a1-mini/IMG20250730111013-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-a1-mini/IMG20250730111013-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-a1-mini/IMG20250730111013.jpg": {
+    "original": "/images/bambu-a1-mini/IMG20250730111013-cleaned.jpg",
+    "width": 1440,
+    "height": 1920,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-a1-mini/IMG20250730111013-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-a1-mini/IMG20250730111013-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-a1-mini/IMG20250730111013-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-a1-mini/IMG20250729113314.webp": {
+    "original": "/images/bambu-a1-mini/IMG20250729113314-cleaned.webp",
+    "width": 1200,
+    "height": 1600,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-a1-mini/IMG20250729113314-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-a1-mini/IMG20250729113314-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-a1-mini/IMG20250729113314-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-a1-mini/IMG20250729113314.jpg": {
+    "original": "/images/bambu-a1-mini/IMG20250729113314-cleaned.jpg",
+    "width": 1440,
+    "height": 1920,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-a1-mini/IMG20250729113314-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-a1-mini/IMG20250729113314-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-a1-mini/IMG20250729113314-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-a1-mini/IMG20250728190321.webp": {
+    "original": "/images/bambu-a1-mini/IMG20250728190321-cleaned.webp",
+    "width": 1200,
+    "height": 1600,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-a1-mini/IMG20250728190321-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-a1-mini/IMG20250728190321-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-a1-mini/IMG20250728190321-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-a1-mini/IMG20250728190321.jpg": {
+    "original": "/images/bambu-a1-mini/IMG20250728190321-cleaned.jpg",
+    "width": 1440,
+    "height": 1920,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-a1-mini/IMG20250728190321-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-a1-mini/IMG20250728190321-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-a1-mini/IMG20250728190321-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-a1-mini/IMG20250727170205.webp": {
+    "original": "/images/bambu-a1-mini/IMG20250727170205-cleaned.webp",
+    "width": 1200,
+    "height": 1600,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-a1-mini/IMG20250727170205-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-a1-mini/IMG20250727170205-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-a1-mini/IMG20250727170205-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-a1-mini/IMG20250727170205.jpg": {
+    "original": "/images/bambu-a1-mini/IMG20250727170205-cleaned.jpg",
+    "width": 1440,
+    "height": 1920,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-a1-mini/IMG20250727170205-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-a1-mini/IMG20250727170205-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-a1-mini/IMG20250727170205-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-a1-mini/IMG20250727165525.webp": {
+    "original": "/images/bambu-a1-mini/IMG20250727165525-cleaned.webp",
+    "width": 1200,
+    "height": 1600,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-a1-mini/IMG20250727165525-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-a1-mini/IMG20250727165525-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-a1-mini/IMG20250727165525-1200w.webp"
+      }
+    ]
+  },
+  "/images/bambu-a1-mini/IMG20250727165525.jpg": {
+    "original": "/images/bambu-a1-mini/IMG20250727165525-cleaned.jpg",
+    "width": 1440,
+    "height": 1920,
+    "variants": [
+      {
+        "width": 400,
+        "path": "/images/bambu-a1-mini/IMG20250727165525-400w.webp"
+      },
+      {
+        "width": 800,
+        "path": "/images/bambu-a1-mini/IMG20250727165525-800w.webp"
+      },
+      {
+        "width": 1200,
+        "path": "/images/bambu-a1-mini/IMG20250727165525-1200w.webp"
+      }
+    ]
+  },
   "/images/3d-printed-micro-atx-case-build/08-front-with-4090-scale.jpg": {
     "original": "/images/3d-printed-micro-atx-case-build/08-front-with-4090-scale-cleaned.jpg",
     "width": 3072,
@@ -3321,386 +3701,6 @@
       {
         "width": 1200,
         "path": "/images/bambu-a1-combo/IMG20250727165952-1200w.webp"
-      }
-    ]
-  },
-  "/images/bambu-a1-mini/IMG20251014222542.webp": {
-    "original": "/images/bambu-a1-mini/IMG20251014222542-cleaned.webp",
-    "width": 1200,
-    "height": 1200,
-    "variants": [
-      {
-        "width": 400,
-        "path": "/images/bambu-a1-mini/IMG20251014222542-400w.webp"
-      },
-      {
-        "width": 800,
-        "path": "/images/bambu-a1-mini/IMG20251014222542-800w.webp"
-      },
-      {
-        "width": 1200,
-        "path": "/images/bambu-a1-mini/IMG20251014222542-1200w.webp"
-      }
-    ]
-  },
-  "/images/bambu-a1-mini/IMG20251014222542.jpg": {
-    "original": "/images/bambu-a1-mini/IMG20251014222542-cleaned.jpg",
-    "width": 1920,
-    "height": 1920,
-    "variants": [
-      {
-        "width": 400,
-        "path": "/images/bambu-a1-mini/IMG20251014222542-400w.webp"
-      },
-      {
-        "width": 800,
-        "path": "/images/bambu-a1-mini/IMG20251014222542-800w.webp"
-      },
-      {
-        "width": 1200,
-        "path": "/images/bambu-a1-mini/IMG20251014222542-1200w.webp"
-      }
-    ]
-  },
-  "/images/bambu-a1-mini/IMG20250916132007.webp": {
-    "original": "/images/bambu-a1-mini/IMG20250916132007-cleaned.webp",
-    "width": 1200,
-    "height": 1600,
-    "variants": [
-      {
-        "width": 400,
-        "path": "/images/bambu-a1-mini/IMG20250916132007-400w.webp"
-      },
-      {
-        "width": 800,
-        "path": "/images/bambu-a1-mini/IMG20250916132007-800w.webp"
-      },
-      {
-        "width": 1200,
-        "path": "/images/bambu-a1-mini/IMG20250916132007-1200w.webp"
-      }
-    ]
-  },
-  "/images/bambu-a1-mini/IMG20250916132007.jpg": {
-    "original": "/images/bambu-a1-mini/IMG20250916132007-cleaned.jpg",
-    "width": 1440,
-    "height": 1920,
-    "variants": [
-      {
-        "width": 400,
-        "path": "/images/bambu-a1-mini/IMG20250916132007-400w.webp"
-      },
-      {
-        "width": 800,
-        "path": "/images/bambu-a1-mini/IMG20250916132007-800w.webp"
-      },
-      {
-        "width": 1200,
-        "path": "/images/bambu-a1-mini/IMG20250916132007-1200w.webp"
-      }
-    ]
-  },
-  "/images/bambu-a1-mini/IMG20250803230410.webp": {
-    "original": "/images/bambu-a1-mini/IMG20250803230410-cleaned.webp",
-    "width": 1200,
-    "height": 1600,
-    "variants": [
-      {
-        "width": 400,
-        "path": "/images/bambu-a1-mini/IMG20250803230410-400w.webp"
-      },
-      {
-        "width": 800,
-        "path": "/images/bambu-a1-mini/IMG20250803230410-800w.webp"
-      },
-      {
-        "width": 1200,
-        "path": "/images/bambu-a1-mini/IMG20250803230410-1200w.webp"
-      }
-    ]
-  },
-  "/images/bambu-a1-mini/IMG20250803230410.jpg": {
-    "original": "/images/bambu-a1-mini/IMG20250803230410-cleaned.jpg",
-    "width": 1440,
-    "height": 1920,
-    "variants": [
-      {
-        "width": 400,
-        "path": "/images/bambu-a1-mini/IMG20250803230410-400w.webp"
-      },
-      {
-        "width": 800,
-        "path": "/images/bambu-a1-mini/IMG20250803230410-800w.webp"
-      },
-      {
-        "width": 1200,
-        "path": "/images/bambu-a1-mini/IMG20250803230410-1200w.webp"
-      }
-    ]
-  },
-  "/images/bambu-a1-mini/IMG20250803142849.webp": {
-    "original": "/images/bambu-a1-mini/IMG20250803142849-cleaned.webp",
-    "width": 1200,
-    "height": 1600,
-    "variants": [
-      {
-        "width": 400,
-        "path": "/images/bambu-a1-mini/IMG20250803142849-400w.webp"
-      },
-      {
-        "width": 800,
-        "path": "/images/bambu-a1-mini/IMG20250803142849-800w.webp"
-      },
-      {
-        "width": 1200,
-        "path": "/images/bambu-a1-mini/IMG20250803142849-1200w.webp"
-      }
-    ]
-  },
-  "/images/bambu-a1-mini/IMG20250803142849.jpg": {
-    "original": "/images/bambu-a1-mini/IMG20250803142849-cleaned.jpg",
-    "width": 1440,
-    "height": 1920,
-    "variants": [
-      {
-        "width": 400,
-        "path": "/images/bambu-a1-mini/IMG20250803142849-400w.webp"
-      },
-      {
-        "width": 800,
-        "path": "/images/bambu-a1-mini/IMG20250803142849-800w.webp"
-      },
-      {
-        "width": 1200,
-        "path": "/images/bambu-a1-mini/IMG20250803142849-1200w.webp"
-      }
-    ]
-  },
-  "/images/bambu-a1-mini/IMG20250731124342.webp": {
-    "original": "/images/bambu-a1-mini/IMG20250731124342-cleaned.webp",
-    "width": 1200,
-    "height": 1600,
-    "variants": [
-      {
-        "width": 400,
-        "path": "/images/bambu-a1-mini/IMG20250731124342-400w.webp"
-      },
-      {
-        "width": 800,
-        "path": "/images/bambu-a1-mini/IMG20250731124342-800w.webp"
-      },
-      {
-        "width": 1200,
-        "path": "/images/bambu-a1-mini/IMG20250731124342-1200w.webp"
-      }
-    ]
-  },
-  "/images/bambu-a1-mini/IMG20250731124342.jpg": {
-    "original": "/images/bambu-a1-mini/IMG20250731124342-cleaned.jpg",
-    "width": 1440,
-    "height": 1920,
-    "variants": [
-      {
-        "width": 400,
-        "path": "/images/bambu-a1-mini/IMG20250731124342-400w.webp"
-      },
-      {
-        "width": 800,
-        "path": "/images/bambu-a1-mini/IMG20250731124342-800w.webp"
-      },
-      {
-        "width": 1200,
-        "path": "/images/bambu-a1-mini/IMG20250731124342-1200w.webp"
-      }
-    ]
-  },
-  "/images/bambu-a1-mini/IMG20250730111013.webp": {
-    "original": "/images/bambu-a1-mini/IMG20250730111013-cleaned.webp",
-    "width": 1200,
-    "height": 1600,
-    "variants": [
-      {
-        "width": 400,
-        "path": "/images/bambu-a1-mini/IMG20250730111013-400w.webp"
-      },
-      {
-        "width": 800,
-        "path": "/images/bambu-a1-mini/IMG20250730111013-800w.webp"
-      },
-      {
-        "width": 1200,
-        "path": "/images/bambu-a1-mini/IMG20250730111013-1200w.webp"
-      }
-    ]
-  },
-  "/images/bambu-a1-mini/IMG20250730111013.jpg": {
-    "original": "/images/bambu-a1-mini/IMG20250730111013-cleaned.jpg",
-    "width": 1440,
-    "height": 1920,
-    "variants": [
-      {
-        "width": 400,
-        "path": "/images/bambu-a1-mini/IMG20250730111013-400w.webp"
-      },
-      {
-        "width": 800,
-        "path": "/images/bambu-a1-mini/IMG20250730111013-800w.webp"
-      },
-      {
-        "width": 1200,
-        "path": "/images/bambu-a1-mini/IMG20250730111013-1200w.webp"
-      }
-    ]
-  },
-  "/images/bambu-a1-mini/IMG20250729113314.webp": {
-    "original": "/images/bambu-a1-mini/IMG20250729113314-cleaned.webp",
-    "width": 1200,
-    "height": 1600,
-    "variants": [
-      {
-        "width": 400,
-        "path": "/images/bambu-a1-mini/IMG20250729113314-400w.webp"
-      },
-      {
-        "width": 800,
-        "path": "/images/bambu-a1-mini/IMG20250729113314-800w.webp"
-      },
-      {
-        "width": 1200,
-        "path": "/images/bambu-a1-mini/IMG20250729113314-1200w.webp"
-      }
-    ]
-  },
-  "/images/bambu-a1-mini/IMG20250729113314.jpg": {
-    "original": "/images/bambu-a1-mini/IMG20250729113314-cleaned.jpg",
-    "width": 1440,
-    "height": 1920,
-    "variants": [
-      {
-        "width": 400,
-        "path": "/images/bambu-a1-mini/IMG20250729113314-400w.webp"
-      },
-      {
-        "width": 800,
-        "path": "/images/bambu-a1-mini/IMG20250729113314-800w.webp"
-      },
-      {
-        "width": 1200,
-        "path": "/images/bambu-a1-mini/IMG20250729113314-1200w.webp"
-      }
-    ]
-  },
-  "/images/bambu-a1-mini/IMG20250728190321.webp": {
-    "original": "/images/bambu-a1-mini/IMG20250728190321-cleaned.webp",
-    "width": 1200,
-    "height": 1600,
-    "variants": [
-      {
-        "width": 400,
-        "path": "/images/bambu-a1-mini/IMG20250728190321-400w.webp"
-      },
-      {
-        "width": 800,
-        "path": "/images/bambu-a1-mini/IMG20250728190321-800w.webp"
-      },
-      {
-        "width": 1200,
-        "path": "/images/bambu-a1-mini/IMG20250728190321-1200w.webp"
-      }
-    ]
-  },
-  "/images/bambu-a1-mini/IMG20250728190321.jpg": {
-    "original": "/images/bambu-a1-mini/IMG20250728190321-cleaned.jpg",
-    "width": 1440,
-    "height": 1920,
-    "variants": [
-      {
-        "width": 400,
-        "path": "/images/bambu-a1-mini/IMG20250728190321-400w.webp"
-      },
-      {
-        "width": 800,
-        "path": "/images/bambu-a1-mini/IMG20250728190321-800w.webp"
-      },
-      {
-        "width": 1200,
-        "path": "/images/bambu-a1-mini/IMG20250728190321-1200w.webp"
-      }
-    ]
-  },
-  "/images/bambu-a1-mini/IMG20250727170205.webp": {
-    "original": "/images/bambu-a1-mini/IMG20250727170205-cleaned.webp",
-    "width": 1200,
-    "height": 1600,
-    "variants": [
-      {
-        "width": 400,
-        "path": "/images/bambu-a1-mini/IMG20250727170205-400w.webp"
-      },
-      {
-        "width": 800,
-        "path": "/images/bambu-a1-mini/IMG20250727170205-800w.webp"
-      },
-      {
-        "width": 1200,
-        "path": "/images/bambu-a1-mini/IMG20250727170205-1200w.webp"
-      }
-    ]
-  },
-  "/images/bambu-a1-mini/IMG20250727170205.jpg": {
-    "original": "/images/bambu-a1-mini/IMG20250727170205-cleaned.jpg",
-    "width": 1440,
-    "height": 1920,
-    "variants": [
-      {
-        "width": 400,
-        "path": "/images/bambu-a1-mini/IMG20250727170205-400w.webp"
-      },
-      {
-        "width": 800,
-        "path": "/images/bambu-a1-mini/IMG20250727170205-800w.webp"
-      },
-      {
-        "width": 1200,
-        "path": "/images/bambu-a1-mini/IMG20250727170205-1200w.webp"
-      }
-    ]
-  },
-  "/images/bambu-a1-mini/IMG20250727165525.webp": {
-    "original": "/images/bambu-a1-mini/IMG20250727165525-cleaned.webp",
-    "width": 1200,
-    "height": 1600,
-    "variants": [
-      {
-        "width": 400,
-        "path": "/images/bambu-a1-mini/IMG20250727165525-400w.webp"
-      },
-      {
-        "width": 800,
-        "path": "/images/bambu-a1-mini/IMG20250727165525-800w.webp"
-      },
-      {
-        "width": 1200,
-        "path": "/images/bambu-a1-mini/IMG20250727165525-1200w.webp"
-      }
-    ]
-  },
-  "/images/bambu-a1-mini/IMG20250727165525.jpg": {
-    "original": "/images/bambu-a1-mini/IMG20250727165525-cleaned.jpg",
-    "width": 1440,
-    "height": 1920,
-    "variants": [
-      {
-        "width": 400,
-        "path": "/images/bambu-a1-mini/IMG20250727165525-400w.webp"
-      },
-      {
-        "width": 800,
-        "path": "/images/bambu-a1-mini/IMG20250727165525-800w.webp"
-      },
-      {
-        "width": 1200,
-        "path": "/images/bambu-a1-mini/IMG20250727165525-1200w.webp"
       }
     ]
   },

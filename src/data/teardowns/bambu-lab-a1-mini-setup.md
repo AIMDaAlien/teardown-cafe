@@ -5,6 +5,11 @@ pubDate: 2025-08-27
 device: 3d-printer
 difficulty: easy
 heroImage: /images/bambu-a1-mini/IMG20250727165525.jpg
+tags:
+  - 3d-printing
+  - bambu-lab
+  - setup
+  - beginner-friendly
 ---
 
 ## What This Is

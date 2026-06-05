@@ -6,6 +6,10 @@ device: smartphone
 difficulty: medium
 heroImage: /images/moto-g-stylus-2022-screen/04-screen-replaced.jpg
 video: /images/moto-g-stylus-2022-screen/repair-process.mp4
+tags:
+  - smartphone
+  - screen-repair
+  - motorola
 ---
 
 ## What This Is

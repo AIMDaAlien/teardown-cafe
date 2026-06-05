@@ -1,14 +1,22 @@
 {
-  "total": 121,
-  "matched": 2,
+  "total": 321,
+  "matched": 4,
   "tags": {
+    "setup": {
+      "obsidian": 1,
+      "teardowns": 2
+    },
+    "bambu-lab": {
+      "obsidian": 1,
+      "teardowns": 3
+    },
     "truenas": {
       "obsidian": 6,
-      "teardowns": 1
+      "teardowns": 2
     },
     "homelab": {
-      "obsidian": 5,
-      "teardowns": 2
+      "obsidian": 2,
+      "teardowns": 4
     }
   }
 }

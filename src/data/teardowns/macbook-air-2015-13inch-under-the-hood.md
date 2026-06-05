@@ -5,6 +5,11 @@ pubDate: 2025-03-02
 device: laptop
 difficulty: easy
 heroImage: /images/macbook-air-2015-13inch/01-full-internals-view.jpg
+tags:
+  - macbook
+  - apple
+  - teardown
+  - legacy-hardware
 ---
 
 ## What This Is

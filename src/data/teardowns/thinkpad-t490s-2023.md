@@ -5,8 +5,10 @@ pubDate: 2023-08-30
 device: laptop
 difficulty: easy
 heroImage: /images/thinkpad-t490s-2023/01-internals-overview.jpg
-relatedNotes:
-  - 'Hardware/Laptop Repair Techniques'
+tags:
+  - laptop
+  - thinkpad
+  - teardown
 ---
 
 ## What This Is

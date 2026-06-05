@@ -5,10 +5,11 @@ pubDate: 2025-10-15
 device: raspberry-pi
 difficulty: easy
 heroImage: /images/raspberry-pi-5-nvme/01-components-overview.jpg
-relatedNotes:
-  - 'Homelab/Pi-hole Setup'
-  - 'Projects/Raspberry Pi NVMe Configuration'
-  - 'Systems/ARM Architecture'
+tags:
+  - raspberry-pi
+  - nvme
+  - homelab
+  - pi-hole
 ---
 
 ## What This Is
@@ -68,6 +69,16 @@ Power draw is basically nothing. Idle around 4W, maybe 8W under load, peaking at
 
 I had the hardware together but at the time of writing this the software stack was still on the todo list.
 
+## Update: Software Stack
+
+I wrote this when the hardware was done but the services were still theoretical. Theyre not theoretical anymore.
+
+**Prometheus and Grafana** went live a few days after I finished the build. Real-time metrics on the Pi 5 itself — CPU, RAM, disk, network. Grafana dashboards on port 3000. The whole monitoring stack uses about 280MB of RAM. Barely touches the 4GB.
+
+**Pi-hole** migrated over later. Id been running it on a Pi 3 B+ with a 32GB SD card for a while. The SD card was dying and the B+ only had 512MB RAM. Moving it to the Pi 5 with NVMe was night and day. Network-wide ad blocking, Unbound recursive DNS, HaGeZi blocklists. No more SD card anxiety.
+
+The detailed setup guides for both stacks are in my knowledge garden.
+
 ## What Worked
 
 - NVMe is genuinely 10x faster than SD. No exaggeration.
@@ -87,4 +98,4 @@ For 60 bucks extra the HAT + NVMe combo turns the Pi 5 from a toy into something
 ---
 
 _Build date: October 2025_
-_Status: Hardware done, software stack pending_
+_Status: Pi-hole migrated, Prometheus + Grafana running, NVMe still fast_

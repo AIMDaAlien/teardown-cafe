@@ -1,4 +1,7 @@
 ---
+import fs from 'fs'
+import path from 'path'
+
 interface Props {
   tags: string[]
   slug: string
@@ -16,13 +19,15 @@ interface Relationship {
 
 const { tags, slug } = Astro.props
 
-// Load relationships
+// Load relationships from disk at build time
 let relationships: Record<string, Relationship> = {}
 try {
-  const data = await fetch('/data/obsidian-relationships.json')
-  relationships = await data.json()
+  const filePath = path.join(process.cwd(), 'public/data/obsidian-relationships.json')
+  if (fs.existsSync(filePath)) {
+    const raw = fs.readFileSync(filePath, 'utf-8')
+    relationships = JSON.parse(raw)
+  }
 } catch {
-  // File doesn't exist yet - build will create it
   relationships = {}
 }
 

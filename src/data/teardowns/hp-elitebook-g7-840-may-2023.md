@@ -5,9 +5,11 @@ pubDate: 2023-05-18
 device: laptop
 difficulty: medium
 heroImage: /images/hp-elitebook-g7-840/04-laptop-disassembled.jpg
-relatedNotes:
-  - 'Hardware/Laptop Repair Techniques'
-  - 'Projects/Teardown Cafe Workspace Evolution'
+tags:
+  - laptop
+  - repair
+  - bangladesh
+  - screen-replacement
 ---
 
 ## What This Is

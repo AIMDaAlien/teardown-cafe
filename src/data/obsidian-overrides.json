@@ -1,1 +1,31 @@
-{}
+{
+  "server-drive-rebuild": {
+    "additionalNotes": [
+      "Projects/Archive/TrueNAS Build Guide.md",
+      "Systems/Homelab/Prometheus Grafana Monitoring Stack - Lessons Learned.md"
+    ]
+  },
+  "truenas-enterprise-sas-build": {
+    "additionalNotes": [
+      "Projects/Archive/TrueNAS Build Guide.md",
+      "Projects/Archive/Budget SAS Drive NAS Build Guide.md"
+    ]
+  },
+  "raspberry-pi-5-nvme-build": {
+    "additionalNotes": [
+      "Projects/Archive/Pi-hole Setup Guide - Complete Journey.md",
+      "Systems/Homelab/Prometheus Grafana Stack - Implementation Guide.md",
+      "Systems/Homelab/Prometheus Grafana Monitoring Stack - Lessons Learned.md"
+    ]
+  },
+  "hp-elitebook-g7-840-may-2023": {
+    "additionalNotes": [
+      "Projects/Archive/Teardown Documentation Lessons.md"
+    ]
+  },
+  "thinkpad-t490s-2023": {
+    "additionalNotes": [
+      "Projects/Archive/Teardown Documentation Lessons.md"
+    ]
+  }
+}
