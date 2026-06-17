@@ -2,6 +2,7 @@
 import '../styles/global.css'
 import ThemeToggle from '../components/ThemeToggle.astro'
 import Analytics from '../components/Analytics.astro'
+import VercelAnalytics from '@vercel/analytics/astro'
 import Logo from '../components/Logo.astro'
 import Search from '../components/Search.astro'
 import Lightbox from '../components/Lightbox.astro'
@@ -74,6 +75,9 @@ const ogImageURL = new URL(image, Astro.site || 'https://teardown.cafe')
         document.documentElement.setAttribute('data-theme', theme)
       })()
     </script>
+
+    <!-- Vercel Web Analytics -->
+    <VercelAnalytics />
   </head>
   <body>
     <a href="#main-content" class="skip-link">Skip to content</a>
