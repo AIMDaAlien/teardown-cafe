@@ -3,7 +3,11 @@ import BaseLayout from '../layouts/BaseLayout.astro'
 import Logo from '../components/Logo.astro'
 ---
 
-<BaseLayout title="Page Not Found" description="The page you're looking for doesn't exist">
+<BaseLayout
+  title="Page Not Found"
+  description="The page you're looking for doesn't exist"
+  noindex
+>
   <div class="not-found">
     <div class="glitch-container">
       <Logo class="broken-logo" />
@@ -15,15 +19,19 @@ import Logo from '../components/Logo.astro'
 
     <div class="actions">
       <a href="/" class="primary-button">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-icon">
-          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-          <polyline points="9 22 9 12 15 12 15 22" />
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          class="btn-icon"
+        >
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+          <polyline points="9 22 9 12 15 12 15 22"></polyline>
         </svg>
         Back to Home
       </a>
-      <a href="/about" class="secondary-button">
-        About This Site
-      </a>
+      <a href="/about" class="secondary-button"> About This Site </a>
     </div>
 
     <div class="suggestions">
