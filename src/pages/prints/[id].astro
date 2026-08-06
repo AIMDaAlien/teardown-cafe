@@ -48,31 +48,41 @@ const dateFormatted = new Date(print.data.pubDate).toLocaleDateString('en-US', {
         <h1>{print.data.title}</h1>
 
         <div class="meta-grid">
-          {print.data.printer && (
-            <div class="meta-item">
-              <span class="meta-label">Printer</span>
-              <span class="meta-value">{print.data.printer}</span>
-            </div>
-          )}
+          {
+            print.data.printer && (
+              <div class="meta-item">
+                <span class="meta-label">Printer</span>
+                <span class="meta-value">{print.data.printer}</span>
+              </div>
+            )
+          }
 
-          {print.data.filament && (
-            <div class="meta-item">
-              <span class="meta-label">Filament</span>
-              <span class="meta-value">{print.data.filament}</span>
-            </div>
-          )}
+          {
+            print.data.filament && (
+              <div class="meta-item">
+                <span class="meta-label">Filament</span>
+                <span class="meta-value">{print.data.filament}</span>
+              </div>
+            )
+          }
 
-          {print.data.color && (
-            <div class="meta-item">
-              <span class="meta-label">Color</span>
-              <span class="meta-value">{print.data.color}</span>
-            </div>
-          )}
+          {
+            print.data.color && (
+              <div class="meta-item">
+                <span class="meta-label">Color</span>
+                <span class="meta-value">{print.data.color}</span>
+              </div>
+            )
+          }
 
-          <div class="meta-item">
-            <span class="meta-label">Category</span>
-            <span class="meta-value">{print.data.category}</span>
-          </div>
+          {
+            print.data.category && (
+              <div class="meta-item">
+                <span class="meta-label">Category</span>
+                <span class="meta-value">{print.data.category}</span>
+              </div>
+            )
+          }
 
           <div class="meta-item">
             <span class="meta-label">Date</span>
@@ -80,38 +90,57 @@ const dateFormatted = new Date(print.data.pubDate).toLocaleDateString('en-US', {
           </div>
         </div>
 
-        {print.data.sourceUrl && (
-          <a
-            href={print.data.sourceUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="source-link"
-          >
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-              <polyline points="15 3 21 3 21 9"/>
-              <line x1="10" y1="14" x2="21" y2="3"/>
-            </svg>
-            View Model Source
-          </a>
-        )}
+        {
+          print.data.sourceUrl && (
+            <a
+              href={print.data.sourceUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="source-link"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                <polyline points="15 3 21 3 21 9" />
+                <line x1="10" y1="14" x2="21" y2="3" />
+              </svg>
+              View Model Source
+            </a>
+          )
+        }
 
-        {print.data.relatedTeardown && (
-          <a href={`/teardowns/${print.data.relatedTeardown}/`} class="related-link">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
-            </svg>
-            Related Teardown
-          </a>
-        )}
+        {
+          print.data.relatedTeardown && (
+            <a
+              href={`/teardowns/${print.data.relatedTeardown}/`}
+              class="related-link"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+              </svg>
+              Related Teardown
+            </a>
+          )
+        }
 
-        {print.data.tags && print.data.tags.length > 0 && (
-          <div class="tags">
-            {print.data.tags.map((tag) => (
-              <span class="tag">{tag}</span>
-            ))}
-          </div>
-        )}
+        {
+          print.data.tags && print.data.tags.length > 0 && (
+            <div class="tags">
+              {print.data.tags.map((tag) => (
+                <span class="tag">{tag}</span>
+              ))}
+            </div>
+          )
+        }
       </aside>
     </div>
 

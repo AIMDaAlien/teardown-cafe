@@ -62,9 +62,15 @@ for (const [, group] of sortedGroups) {
                         <span class="printer-badge">{print.data.printer}</span>
                       )}
                       {print.data.filament && (
-                        <span class="filament-badge">{print.data.filament}</span>
+                        <span class="filament-badge">
+                          {print.data.filament}
+                        </span>
                       )}
-                      <span class="category-badge">{print.data.category}</span>
+                      {print.data.category && (
+                        <span class="category-badge">
+                          {print.data.category}
+                        </span>
+                      )}
                     </div>
                     {print.data.color && (
                       <p class="color-line">{print.data.color}</p>
@@ -78,15 +84,17 @@ for (const [, group] of sortedGroups) {
       }
     </div>
 
-    {prints.length === 0 && (
-      <div class="empty-state">
-        <p>No prints in the timeline yet.</p>
-        <p>
-          Drop images into <code>~/Downloads/3d-prints/</code> and run{' '}
-          <code>node scripts/generate-print-stubs.js</code>
-        </p>
-      </div>
-    )}
+    {
+      prints.length === 0 && (
+        <div class="empty-state">
+          <p>No prints in the timeline yet.</p>
+          <p>
+            Drop images into <code>~/Downloads/3d-prints/</code> and run{' '}
+            <code>node scripts/generate-print-stubs.js</code>
+          </p>
+        </div>
+      )
+    }
   </main>
 </BaseLayout>
 

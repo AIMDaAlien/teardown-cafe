@@ -24,7 +24,8 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 // ─── Configuration ───────────────────────────────────────────────────────────
 
-const SOURCE_DIR = process.argv[2] || path.join(process.env.HOME, 'Downloads', '3d-prints')
+const SOURCE_DIR =
+  process.argv[2] || path.join(process.env.HOME, 'Downloads', '3d-prints')
 const TARGET_IMAGE_DIR = path.resolve(process.cwd(), 'public/images/prints')
 const TARGET_MD_DIR = path.resolve(process.cwd(), 'src/data/prints')
 
@@ -32,12 +33,12 @@ const SUPPORTED_EXTS = ['.jpg', '.jpeg', '.png', '.webp', '.gif', '.avif']
 
 // Map common filename patterns to categories
 const CATEGORY_GUESSES = {
-  case: 'functional',
+  case: 'case',
   holder: 'organizer',
   stand: 'organizer',
-  mount: 'functional',
-  cover: 'functional',
-  box: 'functional',
+  mount: 'mount',
+  cover: 'cover',
+  box: 'container',
   organizer: 'organizer',
   tray: 'organizer',
   vase: 'decorative',
@@ -47,9 +48,9 @@ const CATEGORY_GUESSES = {
   toy: 'toy',
   tool: 'tool',
   adapter: 'tool',
-  clip: 'functional',
-  bracket: 'functional',
-  handle: 'functional',
+  clip: 'hardware',
+  bracket: 'hardware',
+  handle: 'hardware',
 }
 
 // ─── Utilities ───────────────────────────────────────────────────────────────
@@ -74,7 +75,7 @@ function guessCategory(filename) {
   for (const [key, cat] of Object.entries(CATEGORY_GUESSES)) {
     if (lower.includes(key)) return cat
   }
-  return 'functional'
+  return undefined
 }
 
 function formatDate(d) {
@@ -126,8 +127,12 @@ async function main() {
 
   if (!fs.existsSync(SOURCE_DIR)) {
     console.error(`❌ Source directory not found: ${SOURCE_DIR}`)
-    console.error(`   Create it and drop your print photos there, or pass a custom path:`)
-    console.error(`   node scripts/generate-print-stubs.js /path/to/your/photos`)
+    console.error(
+      `   Create it and drop your print photos there, or pass a custom path:`
+    )
+    console.error(
+      `   node scripts/generate-print-stubs.js /path/to/your/photos`
+    )
     process.exit(1)
   }
 
@@ -185,7 +190,7 @@ image: '${imageWebPath}'
 pubDate: ${pubDate}
 printer: ''
 filament: ''
-category: '${category}'
+${category ? `category: '${category}'` : ''}
 featured: false
 ---
 `

@@ -4,6 +4,5 @@ image: '/images/prints/cat garden+knitted heart teddy+knitted turtle+ conifer.jp
 pubDate: 2026-06-04
 printer: ''
 filament: ''
-category: 'functional'
 featured: false
 ---

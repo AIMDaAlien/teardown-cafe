@@ -10,9 +10,19 @@ const sortedPrints = prints.sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 )
 
-const categories = [...new Set(prints.map((p) => p.data.category))].sort()
-const printers = [...new Set(prints.map((p) => p.data.printer).filter(Boolean))].sort()
-const filaments = [...new Set(prints.map((p) => p.data.filament).filter(Boolean))].sort()
+const categories = [
+  ...new Set(
+    prints
+      .map((p) => p.data.category)
+      .filter((category): category is string => Boolean(category))
+  ),
+].sort()
+const printers = [
+  ...new Set(prints.map((p) => p.data.printer).filter(Boolean)),
+].sort()
+const filaments = [
+  ...new Set(prints.map((p) => p.data.filament).filter(Boolean)),
+].sort()
 ---
 
 <BaseLayout
@@ -79,9 +89,15 @@ const filaments = [...new Set(prints.map((p) => p.data.filament).filter(Boolean)
                   <span class="badge printer-badge">{print.data.printer}</span>
                 )}
                 {print.data.filament && (
-                  <span class="badge filament-badge">{print.data.filament}</span>
+                  <span class="badge filament-badge">
+                    {print.data.filament}
+                  </span>
                 )}
-                <span class="badge category-badge">{print.data.category}</span>
+                {print.data.category && (
+                  <span class="badge category-badge">
+                    {print.data.category}
+                  </span>
+                )}
               </div>
               {print.data.color && (
                 <span class="color-hint">{print.data.color}</span>
@@ -92,15 +108,17 @@ const filaments = [...new Set(prints.map((p) => p.data.filament).filter(Boolean)
       }
     </div>
 
-    {prints.length === 0 && (
-      <div class="empty-state">
-        <p>No prints in the collection yet.</p>
-        <p>
-          Drop images into <code>~/Downloads/3d-prints/</code> and run{' '}
-          <code>node scripts/generate-print-stubs.js</code>
-        </p>
-      </div>
-    )}
+    {
+      prints.length === 0 && (
+        <div class="empty-state">
+          <p>No prints in the collection yet.</p>
+          <p>
+            Drop images into <code>~/Downloads/3d-prints/</code> and run{' '}
+            <code>node scripts/generate-print-stubs.js</code>
+          </p>
+        </div>
+      )
+    }
   </main>
 </BaseLayout>
 

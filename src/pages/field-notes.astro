@@ -10,10 +10,15 @@ import FeaturedPrints from '../components/FeaturedPrints.astro'
 import { getCollection } from 'astro:content'
 
 const teardowns = await getCollection('teardowns')
+const discoveries = await getCollection('discoveries')
 
 const sortedTeardowns = teardowns.sort((a, b) => {
   return b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 })
+
+const latestDiscoveries = discoveries
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 3)
 ---
 
 <BaseLayout
@@ -330,8 +335,12 @@ const sortedTeardowns = teardowns.sort((a, b) => {
       </div>
     </section>
 
-    <FeaturedPrints />
-
+    <div class="collection-heading">
+      <div>
+        <p class="collection-kicker">Main collection</p>
+        <h2>Field Notes from the bench</h2>
+      </div>
+    </div>
     <section class="teardowns-grid" id="components">
       {
         sortedTeardowns.map((teardown, index) => (
@@ -388,6 +397,40 @@ const sortedTeardowns = teardowns.sort((a, b) => {
         ))
       }
     </section>
+
+    <section class="discoveries-preview" aria-labelledby="discoveries-title">
+      <div class="collection-heading">
+        <div>
+          <p class="collection-kicker">Second shelf</p>
+          <h2 id="discoveries-title">Discoveries</h2>
+        </div>
+        <a href="/discoveries">View all discoveries</a>
+      </div>
+      <div class="discoveries-grid">
+        {
+          latestDiscoveries.map((discovery) => (
+            <article class="discovery-preview-card">
+              <div class="discovery-preview-meta">
+                <span>{discovery.data.device}</span>
+                <time datetime={discovery.data.pubDate.toISOString()}>
+                  {discovery.data.pubDate.toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'short',
+                    day: 'numeric',
+                  })}
+                </time>
+              </div>
+              <h3>{discovery.data.title}</h3>
+              <p>{discovery.data.finding}</p>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <div class="prints-shelf">
+      <FeaturedPrints />
+    </div>
 
     {
       sortedTeardowns.length === 0 && (
@@ -466,6 +509,72 @@ const sortedTeardowns = teardowns.sort((a, b) => {
     margin: 4rem 0;
     position: relative;
     z-index: 2;
+  }
+
+  .collection-heading {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 4rem;
+  }
+
+  .collection-heading h2,
+  .collection-heading p {
+    margin: 0;
+  }
+
+  .collection-kicker {
+    margin-bottom: 0.4rem !important;
+    color: var(--md-sys-color-primary);
+    font: 600 0.75rem/1.4 var(--md-sys-typescale-code-font);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .collection-heading a {
+    font-weight: 500;
+  }
+
+  .discoveries-preview {
+    margin: 5rem 0 2rem;
+  }
+
+  .discoveries-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .discovery-preview-card {
+    padding: 1.5rem;
+    background: var(--md-sys-color-surface-container);
+    border: 1px solid var(--md-sys-color-outline-variant);
+    border-radius: var(--md-sys-shape-corner-large);
+    box-shadow: var(--md-sys-elevation-level1);
+  }
+
+  .discovery-preview-meta {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    color: var(--md-sys-color-on-surface-variant);
+    font: 500 0.75rem/1.4 var(--md-sys-typescale-code-font);
+  }
+
+  .discovery-preview-card h3 {
+    margin: 0.8rem 0;
+  }
+
+  .discovery-preview-card p {
+    margin: 0;
+    color: var(--md-sys-color-on-surface-variant);
+  }
+
+  .prints-shelf {
+    margin-top: 5rem;
+    opacity: 0.9;
   }
 
   .teardown-card {
@@ -792,6 +901,11 @@ const sortedTeardowns = teardowns.sort((a, b) => {
   }
 
   @media (max-width: 768px) {
+    .collection-heading {
+      align-items: start;
+      flex-direction: column;
+    }
+
     .content-wrapper {
       padding-top: 100px;
     }

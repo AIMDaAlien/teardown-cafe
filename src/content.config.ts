@@ -58,7 +58,7 @@ const prints = defineCollection({
     pubDate: z.coerce.date(),
     printer: z.string(),
     filament: z.string().optional(),
-    category: z.string(),
+    category: z.string().optional(),
     sourceUrl: z.string().optional(),
     tags: z.array(z.string()).optional(),
     featured: z.boolean().optional().default(false),
