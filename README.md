@@ -1,221 +1,208 @@
-# Teardown Cafe
+# The Buying Desk by Teardown Cafe
 
-A modern device teardown blog built with **Astro 5** and Material You 3 design system.
+The Buying Desk is the service-first front door for Teardown Cafe. Aim checks products, listings, shortlists, and buying problems before someone spends the money.
 
-## 🏗️ Architecture Overview
+The workbench content still lives here as Field Notes. That includes teardowns, builds, repairs, discoveries, and 3D prints.
 
-This project uses **Astro 5's Content Layer API** (released December 2024) for content management. This is a significant departure from legacy content collections.
+## What the site does
 
-### Key Astro 5 Changes Implemented
+- Presents 3 manual buying services: Check This, Compare These, and Choose for Me
+- Builds an email draft from the request wizard without uploading or sending visitor data
+- Publishes hands-on Field Notes from Astro content collections
+- Keeps existing teardown, print, discovery, device, and tag routes intact
+- Generates a sitemap, RSS feed, and Pagefind search index
+- Uses a dark theme by default with a saved light theme option
+- Loads Ubuntu and JetBrains Mono from local WOFF2 files
 
-1. **Content configuration location**: `src/content.config.ts` (moved from `src/content/config.ts`)
-2. **Loader-based collections**: Uses `glob()` loader instead of `type: 'content'`
-3. **Content location**: `src/data/teardowns/` (can be anywhere on filesystem)
-4. **API changes**:
-   - `entry.slug` → `entry.id`
-   - `entry.render()` → `render(entry)` as separate import
-   - `[slug].astro` → `[id].astro` for dynamic routes
+There are no accounts, cookies, analytics, payments, uploads, or server-side request handling.
 
-## 📁 Project Structure
+## Content priority
 
+The site has a deliberate order:
+
+1. Buying Desk services
+2. Field Notes such as teardowns, builds, and repairs
+3. Discoveries
+4. 3D prints
+
+Prints stay available as supporting work. They arent the main reason the site exists.
+
+## Stack
+
+- Astro 5
+- Astro Content Layer collections
+- MDX support
+- Sharp for local image processing
+- Pagefind for static search
+- Plain CSS and browser JavaScript
+
+No frontend framework or hosted form provider is required.
+
+## Project map
+
+```text
+src/
+  components/          Shared Astro components
+  data/
+    teardowns/         Main Field Notes
+    discoveries/       Short lessons and findings
+    prints/            3D print records
+  layouts/
+    BaseLayout.astro   Metadata, navigation, footer, theme, and search
+  pages/               Public routes and collection pages
+  styles/
+    global.css         Material You tokens and shared site styles
+    buying-desk.css    Buying Desk page styles
+  content.config.ts    Collection loaders and schemas
+public/
+  data/                Generated image and Obsidian relationship data
+  fonts/               Self-hosted font files and licenses
+  images/              Original and generated image assets
+scripts/
+  process-images.js        Strips metadata and makes responsive images
+  build-obsidian-links.js  Builds public Obsidian relationships
 ```
-teardown-cafe/
-├── src/
-│   ├── content.config.ts          # Astro 5 Content Layer config (NEW LOCATION)
-│   ├── data/
-│   │   └── teardowns/             # Teardown markdown files (NEW LOCATION)
-│   │       └── *.md
-│   ├── layouts/
-│   │   └── BaseLayout.astro       # Site wrapper with Material You 3
-│   ├── pages/
-│   │   ├── index.astro            # Homepage grid
-│   │   ├── about.astro            # About page
-│   │   └── teardowns/
-│   │       └── [id].astro         # Dynamic teardown pages (uses id, not slug)
-│   ├── styles/
-│   │   └── global.css             # Material You 3 design tokens
-│   └── env.d.ts
-├── public/
-│   └── images/                    # Static images
-├── astro.config.mjs
-├── package.json
-├── tsconfig.json
-└── README.md
-```
 
-## 🚀 Getting Started
+## Local setup
 
-### Prerequisites
+Requirements:
 
-- Node.js 18+
-- npm or pnpm
+- Node.js 18 or newer
+- npm
 
-### Installation
+Install and start the site:
 
 ```bash
-cd teardown-cafe
 npm install
-```
-
-### Development
-
-```bash
 npm run dev
 ```
 
-Server runs at `http://localhost:4321`
+Astro serves the site at `http://localhost:4321` by default.
 
-### Building for Production
+## Useful commands
 
 ```bash
+npm run dev
+npm run lint
+npx prettier --check .
 npm run build
 npm run preview
 ```
 
-## ✍️ Adding New Teardowns
+`npm run build` runs the image and Obsidian generators before Astro, then runs Pagefind afterward. Those generators can modify tracked files in `public/data/` and create image variants. Check `git status` before and after a full build.
 
-### 1. Create Markdown File
+For a build check that doesnt run those lifecycle scripts:
 
-Create a new `.md` or `.mdx` file in `src/data/teardowns/`:
-
-```markdown
----
-title: 'Device Name Teardown'
-description: "Brief description of what you're tearing down"
-pubDate: 2025-10-15
-device: laptop # Options: monitor, laptop, smartphone, raspberry-pi, nas, mechanical-keyboard, other
-difficulty: medium # Options: easy, medium, hard
-heroImage: /images/your-image.jpg # Optional
----
-
-## Your Content Here
-
-Write your teardown documentation in markdown...
+```bash
+npx astro build
+npx pagefind --site dist --output-path dist/pagefind
 ```
 
-### 2. Add Images
+## Main routes
 
-Place images in `public/images/` directory. Reference them as `/images/filename.jpg` in markdown.
+| Route            | Purpose                                |
+| ---------------- | -------------------------------------- |
+| `/`              | Buying Desk homepage                   |
+| `/services`      | The 3 active services                  |
+| `/request`       | Accessible 3-step email request wizard |
+| `/sample-report` | Example report and evidence format     |
+| `/how-it-works`  | Manual pilot process                   |
+| `/field-notes`   | Main workbench collection              |
+| `/discoveries`   | Short findings and lessons             |
+| `/prints`        | Lower-priority 3D print gallery        |
+| `/about`         | Aim and the Teardown Cafe story        |
 
-**Privacy Note**: Images should have EXIF metadata stripped before upload to protect location data.
+Dynamic content keeps its existing public paths:
 
-### 3. Build
+- `/teardowns/[id]`
+- `/prints/[id]`
+- `/device/[type]`
+- `/tags/[tag]`
 
-The Content Layer API automatically detects new files. Just refresh the dev server or rebuild.
+## Adding a Field Note
 
-## 🎨 Design System
-
-This site uses **Material You 3** design tokens with a periwinkle/lavender purple color scheme.
-
-### Color Tokens
-
-- Primary: `#C4ACFA` (Periwinkle)
-- Surface: `#131218` (Dark background)
-- All tokens defined in `src/styles/global.css`
-
-### Typography
-
-- Font: Inter (Google Fonts)
-- Scale: Material You 3 typescale system
-
-### Elevation
-
-5 elevation levels using Material You 3 shadow system
-
-## 🔧 Configuration
-
-### Astro Config (`astro.config.mjs`)
-
-```javascript
-export default defineConfig({
-  site: 'https://teardown.cafe', // Update to your domain
-  integrations: [mdx(), sitemap()],
-})
-```
-
-### Content Schema (`src/content.config.ts`)
-
-Modify the schema to add custom frontmatter fields:
-
-```typescript
-schema: z.object({
-  title: z.string(),
-  description: z.string(),
-  pubDate: z.coerce.date(),
-  device: z.enum(['monitor', 'laptop', /* add more */]),
-  difficulty: z.enum(['easy', 'medium', 'hard']),
-  heroImage: z.string().optional(),
-  // Add custom fields here
-}),
-```
-
-## 📦 Dependencies
-
-- **astro**: `^5.14.5` - Core framework
-- **@astrojs/mdx**: `^4.3.7` - MDX support (required for Astro 5)
-- **@astrojs/sitemap**: `^3.6.0` - Automatic sitemap generation
-- **sharp**: `^0.34.4` - Image optimization
-
-## 🚨 Troubleshooting
-
-### Content not appearing?
-
-1. Verify file is in `src/data/teardowns/`
-2. Check frontmatter matches schema in `src/content.config.ts`
-3. Restart dev server: `npm run dev`
-4. Clear Astro cache: `rm -rf .astro`
-
-### "Cannot find module 'astro:content'"?
-
-Run `npm install` to ensure all dependencies are installed.
-
-### Build errors about MDX?
-
-Ensure `@astrojs/mdx` is at least version 4.0.0 (required for Astro 5).
-
-## 📚 Resources
-
-- [Astro 5 Documentation](https://docs.astro.build/)
-- [Content Layer API Reference](https://docs.astro.build/en/reference/content-loader-reference/)
-- [Astro 5 Upgrade Guide](https://docs.astro.build/en/guides/upgrade-to/v5/)
-- [Material You 3 Guidelines](https://m3.material.io/)
-
-## 🔗 Obsidian Knowledge Garden Integration
-
-### Bidirectional Linking
-
-Teardowns can link to your Obsidian notes using the `relatedNotes` frontmatter field:
+Create a Markdown or MDX file in `src/data/teardowns/`.
 
 ```yaml
-relatedNotes:
-  - 'Homelab/Pi-hole Setup'
-  - 'Projects/Raspberry Pi NVMe Configuration'
+---
+title: 'Device or project name'
+description: 'A short, direct summary.'
+pubDate: 2026-08-06
+device: laptop
+difficulty: medium
+heroImage: /images/example.jpg
+tags:
+  - repair
+  - laptop
+---
 ```
 
-These render as clickable links to your published knowledge garden.
+Valid device and difficulty values live in `src/content.config.ts`. The filename becomes the public article ID.
 
-### Automatic Index Updates
+Keep published writing in Aim's voice. Use short sentences, contractions, regular hyphens, and no semicolons or em dashes. The full writing guide is `/Users/aim/Documents/VOICE.md` on Aim's machine.
 
-Run `./sync-to-obsidian.sh` after committing teardowns to automatically update your Obsidian vault with:
+## Adding a discovery
 
-- Complete teardown index
-- Statistics and categories
-- Bidirectional links
-- Auto-generated metadata
+Create a Markdown or MDX file in `src/data/discoveries/` with a title, device, finding, date, and severity. Discoveries appear below the main Field Notes and keep their own page at `/discoveries`.
 
-See [WORKFLOW.md](./WORKFLOW.md) for complete integration details.
+## Adding a print
 
-## 🔒 Privacy Considerations
+Create a Markdown file in `src/data/prints/` or run:
 
-- All uploaded images should have EXIF metadata stripped
-- No analytics tracking by default
-- Static site = minimal attack surface
-- No server-side user tracking
+```bash
+npm run generate-print-stubs
+```
 
-## 📄 License
+Print categories are optional. Use one only when it tells the visitor something useful. The old catch-all `functional` category was removed because it didnt help anyone find anything.
 
-MIT
+## Images
 
-## 🙏 Credits
+Put source images in `public/images/` and reference them with paths such as `/images/example.jpg`.
 
-Built with [Astro](https://astro.build) and designed following [Material You 3](https://m3.material.io/) principles.
+Run this when new source images are ready:
+
+```bash
+npm run process-images
+```
+
+The script strips image metadata, writes cleaned copies, creates 400px, 800px, and 1200px WebP variants, then updates `public/data/image-manifest.json`.
+
+Review every source image before publishing. The script removes embedded metadata. It cannot tell whether private information is visible inside the picture.
+
+## Obsidian links
+
+`scripts/build-obsidian-links.js` reads Aim's local Obsidian vault and matches public notes to teardowns by tags or explicit `relatedNotes` entries.
+
+Run it with:
+
+```bash
+node scripts/build-obsidian-links.js
+```
+
+It writes:
+
+- `public/data/obsidian-relationships.json`
+- `public/data/tag-stats.json`
+
+The script expects the vault at `~/Documents/Obsidian Notes Vault`. It skips links to notes marked private or unpublished in the garden manifest.
+
+## Request wizard
+
+The request form is intentionally static. It validates the answers, builds a review summary, and opens an encoded email draft addressed to:
+
+- To: `amasud.tech@gmail.com`
+- CC: `amasudtech@gmail.com`
+
+Nothing is sent until the visitor presses Send in their email app. The copy button is the fallback when a device cannot open a draft.
+
+## Fonts
+
+Ubuntu and JetBrains Mono are stored in `public/fonts/` and declared with `@font-face` in `src/styles/global.css`. The browser doesnt contact Google Fonts.
+
+The downloaded font licenses are stored beside the font files.
+
+## Deployment
+
+Astro writes the static site to `dist/`. The canonical production URL is configured as `https://teardown.cafe` in `astro.config.mjs`.
+
+This repository does not contain a deployment workflow. Publishing depends on the external host that serves `dist/`.
