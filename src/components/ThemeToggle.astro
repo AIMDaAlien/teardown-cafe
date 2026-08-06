@@ -50,28 +50,16 @@
       this.splash = document.getElementById('theme-splash')
       this.isAnimating = false
 
-      // Initialize theme from localStorage or system preference
+      // Initialize theme from localStorage; dark is the site default.
       this.initTheme()
 
       // Add click handler
       this.toggle?.addEventListener('click', () => this.handleToggle())
-
-      // Listen for system theme changes
-      window
-        .matchMedia('(prefers-color-scheme: dark)')
-        .addEventListener('change', (e) => {
-          if (!localStorage.getItem('theme')) {
-            this.setTheme(e.matches ? 'dark' : 'light')
-          }
-        })
     }
 
     initTheme() {
       const savedTheme = localStorage.getItem('theme')
-      const systemPrefersDark = window.matchMedia(
-        '(prefers-color-scheme: dark)'
-      ).matches
-      const theme = savedTheme || (systemPrefersDark ? 'dark' : 'light')
+      const theme = savedTheme || 'dark'
       this.setTheme(theme)
     }
 
@@ -257,6 +245,15 @@
     .theme-icon {
       width: 18px;
       height: 18px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .theme-toggle,
+    .theme-icon,
+    .theme-splash {
+      animation: none !important;
+      transition: none !important;
     }
   }
 </style>

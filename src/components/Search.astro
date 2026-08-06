@@ -4,10 +4,22 @@
 ---
 
 <div class="search-container">
-  <button class="search-trigger" id="search-trigger" aria-label="Open search">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="search-icon">
-      <circle cx="11" cy="11" r="8" />
-      <path d="M21 21l-4.35-4.35" stroke-linecap="round" />
+  <button
+    class="search-trigger"
+    id="search-trigger"
+    aria-label="Open search"
+    aria-controls="search-modal"
+    aria-expanded="false"
+  >
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      class="search-icon"
+    >
+      <circle cx="11" cy="11" r="8"></circle>
+      <path d="M21 21l-4.35-4.35" stroke-linecap="round"></path>
     </svg>
     <span class="search-text">Search</span>
     <kbd class="search-kbd">/</kbd>
@@ -15,13 +27,25 @@
 </div>
 
 <!-- Search Modal -->
-<div class="search-modal" id="search-modal">
+<div
+  class="search-modal"
+  id="search-modal"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Site search"
+  hidden
+>
   <div class="search-backdrop"></div>
   <div class="search-dialog">
     <div id="pagefind-search"></div>
     <button class="search-close" aria-label="Close search">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M18 6L6 18M6 6l12 12" stroke-linecap="round" />
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <path d="M18 6L6 18M6 6l12 12" stroke-linecap="round"></path>
       </svg>
     </button>
   </div>
@@ -43,7 +67,8 @@
     border-radius: var(--md-sys-shape-corner-full);
     color: var(--md-sys-color-on-surface-variant);
     cursor: pointer;
-    transition: all var(--md-sys-motion-duration-short) var(--md-sys-motion-easing-standard);
+    transition: all var(--md-sys-motion-duration-short)
+      var(--md-sys-motion-easing-standard);
   }
 
   .search-trigger:hover {
@@ -194,7 +219,9 @@
   let pagefindInitialized = false
 
   function openSearch() {
+    if (modal) modal.hidden = false
     modal?.classList.add('active')
+    trigger?.setAttribute('aria-expanded', 'true')
     document.body.style.overflow = 'hidden'
 
     if (!pagefindInitialized) {
@@ -211,7 +238,10 @@
 
   function closeSearch() {
     modal?.classList.remove('active')
+    if (modal) modal.hidden = true
+    trigger?.setAttribute('aria-expanded', 'false')
     document.body.style.overflow = ''
+    trigger?.focus()
   }
 
   trigger?.addEventListener('click', openSearch)
@@ -219,7 +249,7 @@
   closeBtn?.addEventListener('click', closeSearch)
 
   // Focus trap for modal
-  function trapFocus(e: KeyboardEvent) {
+  function trapFocus(e) {
     if (e.key !== 'Tab' || !modal?.classList.contains('active')) return
     const focusables = modal.querySelectorAll<HTMLElement>(
       'button, input, [href], select, textarea, [tabindex]:not([tabindex="-1"])'

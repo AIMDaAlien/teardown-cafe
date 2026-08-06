@@ -1,0 +1,908 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+---
+
+<BaseLayout
+  title="Request"
+  description="Tell me what you're trying to buy. I'll turn it into an email draft you can check before sending."
+>
+  <div class="desk-page request-page">
+    <header class="desk-page-header">
+      <p class="desk-eyebrow">Request / manual pilot</p>
+      <h1>Put the decision on the desk.</h1>
+      <p>
+        Fill this out and I'll turn it into an email draft on your device. The
+        site doesnt upload or send anything.
+      </p>
+    </header>
+
+    <div class="wizard-shell">
+      <aside class="wizard-progress" aria-label="Request progress">
+        <p
+          class="desk-step-label"
+          id="wizard-status"
+          role="status"
+          aria-live="polite"
+        >
+          Step 1 of 3 · Choose a service
+        </p>
+        <progress id="wizard-progress" max="3" value="1">Step 1 of 3</progress>
+        <p>
+          I'll confirm what I can check, how long it'll take, and the price
+          before I start.
+        </p>
+      </aside>
+
+      <form id="request-form" class="wizard-form" novalidate>
+        <div
+          id="error-summary"
+          class="error-summary"
+          role="alert"
+          tabindex="-1"
+          hidden
+        >
+          <h2>Please fix the following</h2>
+          <ul></ul>
+        </div>
+
+        <section
+          class="wizard-step"
+          data-step="1"
+          aria-labelledby="step-1-title"
+        >
+          <h2 id="step-1-title" tabindex="-1">Choose the request</h2>
+          <fieldset data-field="service">
+            <legend>Which decision do you need help with?</legend>
+            <div class="choice-grid">
+              <label class="wizard-choice">
+                <input type="radio" name="service" value="check-this" />
+                <span><strong>Check This</strong>One product or listing</span>
+              </label>
+              <label class="wizard-choice">
+                <input type="radio" name="service" value="compare-these" />
+                <span
+                  ><strong>Compare These</strong>Two options, plus an optional
+                  third</span
+                >
+              </label>
+              <label class="wizard-choice">
+                <input type="radio" name="service" value="choose-for-me" />
+                <span
+                  ><strong>Choose for Me</strong>A shortlist built around your
+                  needs</span
+                >
+              </label>
+            </div>
+            <p class="field-error" data-error-for="service" hidden></p>
+          </fieldset>
+
+          <div class="form-field" data-field="category">
+            <label for="category">Product category</label>
+            <select id="category" name="category">
+              <option value="">Choose a category</option>
+              <option>Laptop</option>
+              <option>Tablet</option>
+              <option>Keyboard</option>
+              <option>3D printer</option>
+              <option>Audio</option>
+              <option>Phone</option>
+              <option>PC part</option>
+              <option>Home server or storage</option>
+              <option>Other tech / not sure</option>
+            </select>
+            <p class="field-error" data-error-for="category" hidden></p>
+          </div>
+        </section>
+
+        <section
+          class="wizard-step"
+          data-step="2"
+          aria-labelledby="step-2-title"
+          hidden
+        >
+          <h2 id="step-2-title" tabindex="-1">Add the decision details</h2>
+
+          <fieldset data-service-fields="check-this" hidden>
+            <legend>Check This details</legend>
+            <div class="form-field" data-field="product_listing">
+              <label for="product-listing">Product or listing</label>
+              <input
+                id="product-listing"
+                name="product_listing"
+                type="text"
+                autocomplete="url"
+              />
+              <p class="field-hint">
+                Paste a URL or identify the exact product.
+              </p>
+              <p class="field-error" data-error-for="product_listing" hidden>
+              </p>
+            </div>
+            <div class="form-field" data-field="asking_price">
+              <label for="asking-price">Asking price</label>
+              <input
+                id="asking-price"
+                name="asking_price"
+                type="text"
+                inputmode="decimal"
+              />
+              <p class="field-hint">Include the currency.</p>
+              <p class="field-error" data-error-for="asking_price" hidden></p>
+            </div>
+            <div class="form-field" data-field="intended_use_check">
+              <label for="intended-use-check">Intended use</label>
+              <textarea
+                id="intended-use-check"
+                name="intended_use_check"
+                rows="4"></textarea>
+              <p class="field-error" data-error-for="intended_use_check" hidden>
+              </p>
+            </div>
+          </fieldset>
+
+          <fieldset data-service-fields="compare-these" hidden>
+            <legend>Compare These details</legend>
+            <div class="form-field" data-field="option_a">
+              <label for="option-a">Option one</label>
+              <input id="option-a" name="option_a" type="text" />
+              <p class="field-error" data-error-for="option_a" hidden></p>
+            </div>
+            <div class="form-field" data-field="option_b">
+              <label for="option-b">Option two</label>
+              <input id="option-b" name="option_b" type="text" />
+              <p class="field-error" data-error-for="option_b" hidden></p>
+            </div>
+            <div class="form-field" data-field="option_c">
+              <label for="option-c">Option three <span>(optional)</span></label>
+              <input id="option-c" name="option_c" type="text" />
+            </div>
+            <div class="form-field" data-field="intended_use_compare">
+              <label for="intended-use-compare">Intended use</label>
+              <textarea
+                id="intended-use-compare"
+                name="intended_use_compare"
+                rows="4"></textarea>
+              <p
+                class="field-error"
+                data-error-for="intended_use_compare"
+                hidden
+              >
+              </p>
+            </div>
+          </fieldset>
+
+          <fieldset data-service-fields="choose-for-me" hidden>
+            <legend>Choose for Me details</legend>
+            <div class="form-field" data-field="budget">
+              <label for="budget">Budget</label>
+              <input
+                id="budget"
+                name="budget"
+                type="text"
+                inputmode="decimal"
+              />
+              <p class="field-hint">A range is fine.</p>
+              <p class="field-error" data-error-for="budget" hidden></p>
+            </div>
+            <div class="form-field" data-field="region_currency">
+              <label for="region-currency">Region and currency</label>
+              <input
+                id="region-currency"
+                name="region_currency"
+                type="text"
+                autocomplete="country-name"
+              />
+              <p class="field-error" data-error-for="region_currency" hidden>
+              </p>
+            </div>
+            <div class="form-field" data-field="intended_use_choose">
+              <label for="intended-use-choose">Intended use</label>
+              <textarea
+                id="intended-use-choose"
+                name="intended_use_choose"
+                rows="4"></textarea>
+              <p
+                class="field-error"
+                data-error-for="intended_use_choose"
+                hidden
+              >
+              </p>
+            </div>
+            <div class="form-field" data-field="deal_breakers">
+              <label for="deal-breakers">Deal-breakers</label>
+              <textarea id="deal-breakers" name="deal_breakers" rows="3"
+              ></textarea>
+              <p class="field-hint">
+                Examples: size, repairability, operating system, noise.
+              </p>
+              <p class="field-error" data-error-for="deal_breakers" hidden></p>
+            </div>
+          </fieldset>
+        </section>
+
+        <section
+          class="wizard-step"
+          data-step="3"
+          aria-labelledby="step-3-title"
+          hidden
+        >
+          <h2 id="step-3-title" tabindex="-1">Review and open your email</h2>
+          <fieldset>
+            <legend>Reply details</legend>
+            <div class="form-field" data-field="name">
+              <label for="name">Name <span>(optional)</span></label>
+              <input id="name" name="name" type="text" autocomplete="name" />
+            </div>
+            <div class="form-field" data-field="email">
+              <label for="email">Reply email</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                autocomplete="email"
+              />
+              <p class="field-error" data-error-for="email" hidden></p>
+            </div>
+            <div class="form-field" data-field="notes">
+              <label for="notes">Notes <span>(optional)</span></label>
+              <textarea id="notes" name="notes" rows="4"></textarea>
+            </div>
+          </fieldset>
+
+          <section class="review-card" aria-labelledby="review-title">
+            <p class="desk-code">Customer copy / review</p>
+            <h3 id="review-title">Request summary</h3>
+            <dl id="review-summary"></dl>
+          </section>
+
+          <div class="acknowledgement" data-field="acknowledgement">
+            <label>
+              <input name="acknowledgement" type="checkbox" />
+              <span>
+                I know this only opens an email draft. Nothing is sent until I
+                press Send. I also know Aim will confirm the scope, timing, and
+                price before starting.
+              </span>
+            </label>
+            <p class="field-error" data-error-for="acknowledgement" hidden></p>
+          </div>
+
+          <div class="delivery-note">
+            <p>The draft is addressed to:</p>
+            <ul>
+              <li>
+                <strong>To:</strong>
+                <a href="mailto:amasud.tech@gmail.com">amasud.tech@gmail.com</a>
+              </li>
+              <li>
+                <strong>CC:</strong>
+                <a href="mailto:amasudtech@gmail.com">amasudtech@gmail.com</a>
+              </li>
+            </ul>
+            <p>
+              Add screenshots in your email app after the draft opens. This site
+              doesnt upload them.
+            </p>
+          </div>
+
+          <label class="visually-hidden" for="request-text"
+            >Generated request text</label
+          >
+          <textarea
+            id="request-text"
+            class="request-text"
+            readonly
+            rows="12"
+            tabindex="-1"></textarea>
+          <button class="copy-button" id="copy-request" type="button"
+            >Copy request text</button
+          >
+          <p
+            id="copy-status"
+            class="copy-status"
+            role="status"
+            aria-live="polite"
+          >
+          </p>
+        </section>
+
+        <div class="wizard-actions">
+          <button class="desk-button quiet" id="back-step" type="button" hidden
+            >Back</button
+          >
+          <button class="desk-button" id="next-step" type="button"
+            >Continue</button
+          >
+          <button class="desk-button" id="open-email" type="submit" hidden
+            >Open email draft</button
+          >
+        </div>
+      </form>
+    </div>
+  </div>
+</BaseLayout>
+
+<script>
+  const serviceNames = {
+    'check-this': 'Check This',
+    'compare-these': 'Compare These',
+    'choose-for-me': 'Choose for Me',
+  }
+
+  type ServiceKey = keyof typeof serviceNames
+  type ErrorItem = { name: string; message: string }
+
+  const form = document.querySelector<HTMLFormElement>('#request-form')!
+  const steps = [...form.querySelectorAll<HTMLElement>('[data-step]')]
+  const progress =
+    document.querySelector<HTMLProgressElement>('#wizard-progress')!
+  const status = document.querySelector<HTMLElement>('#wizard-status')!
+  const backButton = document.querySelector<HTMLButtonElement>('#back-step')!
+  const nextButton = document.querySelector<HTMLButtonElement>('#next-step')!
+  const emailButton = document.querySelector<HTMLButtonElement>('#open-email')!
+  const errorSummary = document.querySelector<HTMLElement>('#error-summary')!
+  const reviewSummary = document.querySelector<HTMLElement>('#review-summary')!
+  const requestText =
+    document.querySelector<HTMLTextAreaElement>('#request-text')!
+  const copyStatus = document.querySelector<HTMLElement>('#copy-status')!
+  let currentStep = 1
+
+  const value = (name: string) => {
+    const field = form.elements.namedItem(name)
+    if (field instanceof RadioNodeList) return field.value.trim()
+    if (
+      field instanceof HTMLInputElement ||
+      field instanceof HTMLTextAreaElement ||
+      field instanceof HTMLSelectElement
+    ) {
+      return field.value.trim()
+    }
+    return ''
+  }
+
+  const selectedService = () => value('service') as ServiceKey
+
+  function updateServiceFields() {
+    const service = selectedService()
+    form
+      .querySelectorAll<HTMLElement>('[data-service-fields]')
+      .forEach((group) => {
+        group.hidden = group.dataset.serviceFields !== service
+      })
+  }
+
+  function showStep(step: number, focus = true) {
+    currentStep = step
+    steps.forEach((panel) => {
+      panel.hidden = Number(panel.dataset.step) !== step
+    })
+    progress.value = step
+    const labels = ['Choose a service', 'Decision details', 'Review and email']
+    status.textContent = `Step ${step} of 3 · ${labels[step - 1]}`
+    backButton.hidden = step === 1
+    nextButton.hidden = step === 3
+    emailButton.hidden = step !== 3
+    errorSummary.hidden = true
+    updateServiceFields()
+    if (step === 3) updateReview()
+    if (focus)
+      document.querySelector<HTMLElement>(`#step-${step}-title`)?.focus()
+  }
+
+  function clearErrors() {
+    form.querySelectorAll<HTMLElement>('.field-error').forEach((message) => {
+      message.hidden = true
+      message.textContent = ''
+    })
+    form
+      .querySelectorAll<HTMLElement>('[aria-invalid="true"]')
+      .forEach((field) => {
+        field.removeAttribute('aria-invalid')
+        field.removeAttribute('aria-describedby')
+      })
+    errorSummary.hidden = true
+  }
+
+  function fieldElements(name: string) {
+    return [...form.querySelectorAll<HTMLElement>(`[name="${name}"]`)]
+  }
+
+  function showErrors(errors: ErrorItem[]) {
+    const list = errorSummary.querySelector('ul')!
+    list.replaceChildren()
+    errors.forEach(({ name, message }) => {
+      const messageElement = form.querySelector<HTMLElement>(
+        `[data-error-for="${name}"]`
+      )
+      const fields = fieldElements(name)
+      const messageId = `${name}-error`
+      if (messageElement) {
+        messageElement.id = messageId
+        messageElement.textContent = message
+        messageElement.hidden = false
+      }
+      fields.forEach((field) => {
+        field.setAttribute('aria-invalid', 'true')
+        field.setAttribute('aria-describedby', messageId)
+      })
+      const item = document.createElement('li')
+      const link = document.createElement('a')
+      link.href = `#${fields[0]?.id || name}`
+      link.textContent = message
+      link.addEventListener('click', (event) => {
+        event.preventDefault()
+        fields[0]?.focus()
+      })
+      item.append(link)
+      list.append(item)
+    })
+    errorSummary.hidden = false
+    errorSummary.focus()
+  }
+
+  function validateStep(step: number) {
+    clearErrors()
+    const errors: ErrorItem[] = []
+    const required = (name: string, message: string) => {
+      if (!value(name)) errors.push({ name, message })
+    }
+
+    if (step === 1) {
+      required('service', 'Choose a service.')
+      required('category', 'Choose a product category.')
+    }
+
+    if (step === 2) {
+      const service = selectedService()
+      if (service === 'check-this') {
+        required('product_listing', 'Enter the product or listing.')
+        required('asking_price', 'Enter the asking price and currency.')
+        required('intended_use_check', 'Describe how you intend to use it.')
+      } else if (service === 'compare-these') {
+        required('option_a', 'Enter the first option.')
+        required('option_b', 'Enter the second option.')
+        required(
+          'intended_use_compare',
+          'Describe how you intend to use the options.'
+        )
+      } else if (service === 'choose-for-me') {
+        required('budget', 'Enter your budget.')
+        required('region_currency', 'Enter your region and currency.')
+        required(
+          'intended_use_choose',
+          'Describe how you intend to use the product.'
+        )
+        required('deal_breakers', 'Enter your deal-breakers, or say none.')
+      }
+    }
+
+    if (step === 3) {
+      const email = form.elements.namedItem('email')
+      if (!(email instanceof HTMLInputElement) || !email.value.trim()) {
+        errors.push({
+          name: 'email',
+          message: 'Enter the email address Aim should reply to.',
+        })
+      } else if (!email.validity.valid) {
+        errors.push({
+          name: 'email',
+          message: 'Enter a valid reply email address.',
+        })
+      }
+      const ack = form.elements.namedItem('acknowledgement')
+      if (!(ack instanceof HTMLInputElement) || !ack.checked) {
+        errors.push({
+          name: 'acknowledgement',
+          message: 'Confirm that you understand how the email draft works.',
+        })
+      }
+    }
+
+    if (errors.length) showErrors(errors)
+    return errors.length === 0
+  }
+
+  function requestLines() {
+    const service = selectedService()
+    const lines = [
+      'THE BUYING DESK REQUEST',
+      '',
+      `Service: ${serviceNames[service] || 'Not selected'}`,
+      `Category: ${value('category') || 'Not selected'}`,
+    ]
+
+    if (service === 'check-this') {
+      lines.push(
+        `Product or listing: ${value('product_listing')}`,
+        `Asking price: ${value('asking_price')}`,
+        `Intended use: ${value('intended_use_check')}`
+      )
+    } else if (service === 'compare-these') {
+      lines.push(
+        `Option one: ${value('option_a')}`,
+        `Option two: ${value('option_b')}`,
+        `Option three: ${value('option_c') || 'Not provided'}`,
+        `Intended use: ${value('intended_use_compare')}`
+      )
+    } else if (service === 'choose-for-me') {
+      lines.push(
+        `Budget: ${value('budget')}`,
+        `Region and currency: ${value('region_currency')}`,
+        `Intended use: ${value('intended_use_choose')}`,
+        `Deal-breakers: ${value('deal_breakers')}`
+      )
+    }
+
+    lines.push(
+      '',
+      `Name: ${value('name') || 'Not provided'}`,
+      `Reply email: ${value('email')}`,
+      `Notes: ${value('notes') || 'None'}`,
+      '',
+      'I understand that Aim will confirm scope, timing, and price by email before work begins.'
+    )
+    return lines
+  }
+
+  function updateReview() {
+    const service = selectedService()
+    const items = [
+      ['Service', serviceNames[service] || 'Not selected'],
+      ['Category', value('category') || 'Not selected'],
+    ]
+    if (service === 'check-this')
+      items.push(['Product', value('product_listing') || 'Not provided'])
+    if (service === 'compare-these')
+      items.push([
+        'Options',
+        [value('option_a'), value('option_b'), value('option_c')]
+          .filter(Boolean)
+          .join(' / ') || 'Not provided',
+      ])
+    if (service === 'choose-for-me')
+      items.push(['Budget', value('budget') || 'Not provided'])
+
+    reviewSummary.replaceChildren()
+    items.forEach(([term, description]) => {
+      const dt = document.createElement('dt')
+      const dd = document.createElement('dd')
+      dt.textContent = term
+      dd.textContent = description
+      reviewSummary.append(dt, dd)
+    })
+    requestText.value = requestLines().join('\n')
+  }
+
+  nextButton.addEventListener('click', () => {
+    if (validateStep(currentStep)) showStep(currentStep + 1)
+  })
+
+  backButton.addEventListener('click', () => showStep(currentStep - 1))
+
+  form.addEventListener('input', () => {
+    updateServiceFields()
+    if (currentStep === 3) updateReview()
+  })
+
+  form.addEventListener('submit', (event) => {
+    event.preventDefault()
+    if (currentStep < 3) {
+      if (validateStep(currentStep)) showStep(currentStep + 1)
+      return
+    }
+    if (!validateStep(3)) return
+    updateReview()
+    const service = selectedService()
+    const subject = `Buying Desk request: ${serviceNames[service]} - ${value('category')}`
+    const mailto = `mailto:amasud.tech@gmail.com?cc=${encodeURIComponent('amasudtech@gmail.com')}&subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(requestText.value)}`
+    window.location.href = mailto
+  })
+
+  document
+    .querySelector<HTMLButtonElement>('#copy-request')!
+    .addEventListener('click', async () => {
+      if (!validateStep(3)) return
+      updateReview()
+      try {
+        await navigator.clipboard.writeText(requestText.value)
+        copyStatus.textContent = 'Request text copied.'
+      } catch {
+        requestText.tabIndex = 0
+        requestText.focus()
+        requestText.select()
+        copyStatus.textContent =
+          'Clipboard access was blocked. The request text is selected for you to copy.'
+      }
+    })
+
+  const requestedService = new URLSearchParams(window.location.search).get(
+    'service'
+  )
+  if (requestedService && requestedService in serviceNames) {
+    const option = form.querySelector<HTMLInputElement>(
+      `[name="service"][value="${requestedService}"]`
+    )
+    if (option) option.checked = true
+  }
+  showStep(1, false)
+</script>
+
+<style>
+  .wizard-shell {
+    display: grid;
+    grid-template-columns: minmax(230px, 0.35fr) minmax(0, 0.65fr);
+    border: 1px solid var(--desk-line);
+    border-radius: 2px;
+    background: var(--desk-paper);
+    box-shadow:
+      12px 12px 0 var(--desk-paper-2),
+      13px 13px 0 var(--desk-line);
+  }
+
+  .wizard-progress,
+  .wizard-form {
+    min-width: 0;
+    padding: clamp(1.25rem, 4vw, 2.5rem);
+  }
+
+  .wizard-progress {
+    border-right: 1px solid var(--desk-line);
+    background: var(--desk-paper-2);
+  }
+
+  .wizard-progress progress {
+    width: 100%;
+    height: 0.65rem;
+    margin: 1rem 0;
+    accent-color: var(--md-sys-color-primary);
+  }
+
+  .wizard-progress p:last-child {
+    color: var(--md-sys-color-on-surface-variant);
+  }
+
+  .wizard-step h2 {
+    margin-bottom: 1.5rem;
+    font-size: clamp(1.7rem, 4vw, 2.7rem);
+  }
+
+  fieldset {
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+
+  fieldset + fieldset,
+  fieldset + .form-field,
+  .form-field + .form-field {
+    margin-top: 1.25rem;
+  }
+
+  legend,
+  .form-field > label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--md-sys-color-on-surface);
+    font-weight: 700;
+  }
+
+  label span {
+    color: var(--md-sys-color-on-surface-variant);
+    font-weight: 400;
+  }
+
+  .choice-grid {
+    display: grid;
+    gap: 0.7rem;
+  }
+
+  .wizard-choice {
+    position: relative;
+    display: block;
+  }
+
+  .wizard-choice input {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    width: 1.2rem;
+    height: 1.2rem;
+    accent-color: var(--md-sys-color-primary);
+  }
+
+  .wizard-choice > span {
+    min-height: 64px;
+    display: grid;
+    padding: 0.8rem 1rem 0.8rem 3rem;
+    border: 1px solid var(--desk-line);
+    background: var(--md-sys-color-background);
+    cursor: pointer;
+  }
+
+  .wizard-choice strong {
+    color: var(--md-sys-color-on-surface);
+  }
+
+  .wizard-choice input:checked + span {
+    border-color: var(--md-sys-color-primary);
+    box-shadow: 0 0 0 2px var(--md-sys-color-primary);
+  }
+
+  .wizard-choice input:focus-visible + span {
+    outline: 3px solid var(--md-sys-color-accent-teal);
+    outline-offset: 3px;
+  }
+
+  input[type='text'],
+  input[type='email'],
+  select,
+  textarea {
+    width: 100%;
+    min-height: 48px;
+    padding: 0.7rem 0.8rem;
+    border: 1px solid var(--md-sys-color-outline);
+    border-radius: var(--md-sys-shape-corner-extra-small);
+    background: var(--md-sys-color-background);
+    color: var(--md-sys-color-on-background);
+    font: inherit;
+  }
+
+  textarea {
+    resize: vertical;
+  }
+
+  [aria-invalid='true'] {
+    border-color: var(--md-sys-color-error) !important;
+  }
+
+  .field-hint,
+  .field-error {
+    margin-top: 0.35rem;
+    font-size: 0.85rem;
+  }
+
+  .field-hint {
+    color: var(--md-sys-color-on-surface-variant);
+  }
+
+  .field-error {
+    color: var(--md-sys-color-error);
+    font-weight: 700;
+  }
+
+  .error-summary {
+    margin-bottom: 1.4rem;
+    padding: 1rem;
+    border: 2px solid var(--md-sys-color-error);
+    background: var(--md-sys-color-error-container);
+    color: var(--md-sys-color-on-error-container);
+  }
+
+  .error-summary h2 {
+    font-size: 1.1rem;
+  }
+
+  .error-summary ul {
+    margin-top: 0.5rem;
+    padding-left: 1.2rem;
+  }
+
+  .error-summary a {
+    color: inherit;
+    text-decoration: underline;
+  }
+
+  .wizard-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.8rem;
+    margin-top: 1.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--desk-line);
+  }
+
+  #next-step,
+  #open-email {
+    margin-left: auto;
+  }
+
+  .review-card,
+  .delivery-note {
+    margin-top: 1.5rem;
+    padding: 1.2rem;
+    border: 1px dashed var(--desk-line);
+    background: var(--md-sys-color-background);
+  }
+
+  .review-card h3 {
+    margin: 0.4rem 0 1rem;
+  }
+
+  .review-card dl {
+    display: grid;
+    grid-template-columns: 7rem 1fr;
+    gap: 0.5rem 1rem;
+  }
+
+  .review-card dt {
+    color: var(--md-sys-color-on-surface-variant);
+    font: 600 0.72rem/1.6 var(--md-sys-typescale-code-font);
+    text-transform: uppercase;
+  }
+
+  .review-card dd {
+    overflow-wrap: anywhere;
+  }
+
+  .acknowledgement {
+    margin-top: 1.5rem;
+  }
+
+  .acknowledgement label {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.75rem;
+    align-items: start;
+  }
+
+  .acknowledgement input {
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-top: 0.2rem;
+    accent-color: var(--md-sys-color-primary);
+  }
+
+  .delivery-note ul {
+    margin: 0.5rem 0;
+    padding-left: 1.2rem;
+  }
+
+  .request-text {
+    margin-top: 1rem;
+    font-family: var(--md-sys-typescale-code-font);
+    font-size: 0.8rem;
+  }
+
+  .copy-button {
+    min-height: 44px;
+    margin-top: 0.7rem;
+    padding: 0.6rem 0.9rem;
+    border: 1px solid var(--desk-line);
+    border-radius: var(--md-sys-shape-corner-small);
+    background: var(--desk-paper-2);
+    color: var(--md-sys-color-on-surface);
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  .copy-status {
+    min-height: 1.6em;
+    margin-top: 0.4rem;
+    color: var(--md-sys-color-on-surface-variant);
+  }
+
+  @media (max-width: 800px) {
+    .wizard-shell {
+      grid-template-columns: 1fr;
+      margin-right: 13px;
+    }
+
+    .wizard-progress {
+      border-right: 0;
+      border-bottom: 1px solid var(--desk-line);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .review-card dl {
+      grid-template-columns: 1fr;
+      gap: 0.15rem;
+    }
+
+    .review-card dd + dt {
+      margin-top: 0.7rem;
+    }
+  }
+</style>

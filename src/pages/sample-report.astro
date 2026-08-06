@@ -1,0 +1,186 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+---
+
+<BaseLayout
+  title="Sample Report"
+  description="A made-up listing that shows exactly how a Buying Desk report is laid out."
+>
+  <div class="desk-page">
+    <header class="desk-page-header">
+      <p class="desk-eyebrow">Sample / fictional listing</p>
+      <h1>Good machine. Weak listing.</h1>
+      <p>
+        This is a made-up listing that shows the report format. It isnt a live
+        price check and it doesnt describe a real seller.
+      </p>
+    </header>
+
+    <section class="desk-two-column" aria-labelledby="verdict-title">
+      <article class="desk-card desk-verdict">
+        <span class="desk-verdict-badge">Proceed carefully</span>
+        <h2 id="verdict-title">ThinkPad T14 Gen 2 / used</h2>
+        <p>
+          Suitable for the stated office and light development work. The listing
+          needs battery, serial, and display evidence before it justifies the
+          ask.
+        </p>
+        <div class="desk-price-line">
+          <span>Example fair range</span><strong>$340-$390</strong>
+        </div>
+      </article>
+      <article class="desk-card">
+        <p class="desk-code">Request summary</p>
+        <ul class="desk-register">
+          <li>
+            <strong>Use</strong><span>Office work, web development, travel</span
+            >
+          </li>
+          <li><strong>Listing price</strong><span>$425</span></li>
+          <li>
+            <strong>Claimed spec</strong><span
+              >Ryzen 5 Pro, 16 GB RAM, 512 GB SSD</span
+            >
+          </li>
+          <li>
+            <strong>Decision</strong><span
+              >Continue only if the seller supplies the missing evidence.</span
+            >
+          </li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="desk-section" aria-labelledby="fit-title">
+      <div class="desk-section-heading">
+        <div>
+          <p class="desk-kicker">01 / fit</p>
+          <h2 id="fit-title">Why it fits the job.</h2>
+        </div>
+      </div>
+      <div class="desk-grid">
+        <article class="desk-card">
+          <h3>Workload</h3>
+          <p>
+            The claimed processor and memory are good enough for browsers,
+            office apps, and a modest local development setup.
+          </p>
+        </article>
+        <article class="desk-card">
+          <h3>Travel</h3>
+          <p>
+            The chassis makes sense for regular travel, but battery health can
+            turn this exact unit into a bad buy pretty quickly.
+          </p>
+        </article>
+        <article class="desk-card">
+          <h3>Longevity</h3>
+          <p>
+            Replaceable storage and service documentation help. The exact
+            display panel and battery condition remain the major unknowns.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="desk-section" aria-labelledby="evidence-title">
+      <div class="desk-section-heading">
+        <div>
+          <p class="desk-kicker">02 / evidence register</p>
+          <h2 id="evidence-title">What supports the verdict.</h2>
+        </div>
+      </div>
+      <article class="desk-card">
+        <ul class="desk-register">
+          <li>
+            <strong>Listing information</strong><span
+              >Seller claims 16 GB RAM, 512 GB storage, and a replacement
+              battery. Photos don’t prove battery condition or the exact panel.</span
+            >
+          </li>
+          <li>
+            <strong>Measured research</strong><span
+              >Model-level documentation supports the ports, serviceability, and
+              processor configuration, but not this unit’s condition.</span
+            >
+          </li>
+          <li>
+            <strong>Personally tested</strong><span
+              >I havent touched this unit. I wont pretend I did.</span
+            >
+          </li>
+          <li>
+            <strong>Insufficient evidence</strong><span
+              >No battery report, serial photo, firmware screen, or
+              white-background display photo.</span
+            >
+          </li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="desk-section" aria-labelledby="questions-title">
+      <div class="desk-section-heading">
+        <div>
+          <p class="desk-kicker">03 / before paying</p>
+          <h2 id="questions-title">Ask for these receipts.</h2>
+        </div>
+      </div>
+      <div class="desk-two-column">
+        <article class="desk-card">
+          <h3>Seller questions</h3>
+          <ol>
+            <li>
+              Can you send a battery-health report showing design and
+              full-charge capacity?
+            </li>
+            <li>
+              Can you photograph the serial label and matching firmware
+              information screen?
+            </li>
+            <li>
+              Can you show the display on solid white and black backgrounds?
+            </li>
+            <li>
+              Are the USB-C charging ports stable when the cable is moved
+              gently?
+            </li>
+          </ol>
+        </article>
+        <article class="desk-card">
+          <h3>Walk away if</h3>
+          <ul>
+            <li>The serial or core specification doesn’t match the listing</li>
+            <li>The seller refuses basic condition evidence</li>
+            <li>Battery capacity is poor without a lower price</li>
+            <li>The display shows pressure marks or persistent bright spots</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="desk-section" aria-labelledby="confidence-title">
+      <div class="desk-two-column">
+        <div>
+          <p class="desk-kicker">04 / confidence</p>
+          <h2 id="confidence-title">Medium.</h2>
+        </div>
+        <article class="desk-card">
+          <p>
+            I know the model fits the job. I dont know enough about this exact
+            unit to call $425 a good buy. Confidence goes up if the screenshots
+            look real and the price moves into the example range.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="desk-section desk-final">
+      <h2>Need this for your decision?</h2>
+      <p>I'll confirm the real scope, timing, and price before I start.</p>
+      <div class="desk-actions">
+        <a class="desk-button" href="/request">Start a request</a>
+      </div>
+    </section>
+  </div>
+</BaseLayout>

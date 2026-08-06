@@ -1,792 +1,411 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
-import CircuitAccents from '../components/CircuitAccents.astro'
-import WaveDiffusions from '../components/WaveDiffusions.astro'
-import FloatingParticles from '../components/FloatingParticles.astro'
-import DeviceIcons from '../components/DeviceIcons.astro'
-import FocusMode from '../components/FocusMode.astro'
 import OptimizedImage from '../components/OptimizedImage.astro'
-import FeaturedPrints from '../components/FeaturedPrints.astro'
 import { getCollection } from 'astro:content'
 
-const teardowns = await getCollection('teardowns')
-
-const sortedTeardowns = teardowns.sort((a, b) => {
-  return b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-})
+const latestNotes = (await getCollection('teardowns'))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 3)
 ---
 
-<BaseLayout title="Home">
-  <!-- Ambient effects -->
-  <CircuitAccents />
-  <WaveDiffusions />
-  <FloatingParticles />
+<BaseLayout
+  title="The Buying Desk"
+  description="Send me a listing, shortlist, or buying problem. I'll check the price, red flags, and whether the thing actually fits what you need."
+>
+  <div class="desk-page">
+    <div class="desk-sprites" aria-hidden="true">
+      <svg class="desk-sprite desk-sprite-dossier" viewBox="0 0 120 120">
+        <rect class="sprite-paper" x="24" y="18" width="72" height="88" rx="10"
+        ></rect>
+        <path d="M47 18v-5h26v5"></path>
+        <rect x="42" y="12" width="36" height="13" rx="5"></rect>
+        <g class="sprite-check sprite-check-one">
+          <circle cx="43" cy="48" r="6"></circle>
+          <path d="m40 48 2 2 4-5"></path>
+          <path d="M57 48h24"></path>
+        </g>
+        <g class="sprite-check sprite-check-two">
+          <circle cx="43" cy="68" r="6"></circle>
+          <path d="m40 68 2 2 4-5"></path>
+          <path d="M57 68h24"></path>
+        </g>
+        <g class="sprite-check sprite-check-three">
+          <circle cx="43" cy="88" r="6"></circle>
+          <path d="M57 88h18"></path>
+        </g>
+      </svg>
 
-  <!-- Focus Mode Toggle -->
-  <FocusMode />
+      <svg class="desk-sprite desk-sprite-lens" viewBox="0 0 120 120">
+        <circle cx="52" cy="49" r="28"></circle>
+        <path d="m72 70 27 27"></path>
+        <path class="sprite-scan" d="M31 49h42"></path>
+        <circle class="sprite-focus-dot" cx="52" cy="49" r="5"></circle>
+      </svg>
 
-  <!-- Content layer -->
-  <div class="content-wrapper">
-    <section class="hero" id="intro">
-      <div class="logo-wrapper">
-        <img
-          class="cafe-logo"
-          src="/logo.png"
-          alt="Teardown Cafe - Teahouse Gaiwan"
-          width="480"
-          height="480"
-        />
+      <svg class="desk-sprite desk-sprite-compare" viewBox="0 0 120 120">
+        <path d="M22 96h78M28 96V26"></path>
+        <rect
+          class="sprite-bar sprite-bar-one"
+          x="39"
+          y="63"
+          width="13"
+          height="33"
+          rx="4"></rect>
+        <rect
+          class="sprite-bar sprite-bar-two"
+          x="59"
+          y="47"
+          width="13"
+          height="49"
+          rx="4"></rect>
+        <rect
+          class="sprite-bar sprite-bar-three"
+          x="79"
+          y="31"
+          width="13"
+          height="65"
+          rx="4"></rect>
+        <path class="sprite-trend" d="m38 54 24-15 18 5 19-20"></path>
+      </svg>
+
+      <svg class="desk-sprite desk-sprite-stamp" viewBox="0 0 120 120">
+        <path d="M42 58V45c0-12 7-21 18-21s18 9 18 21v13"></path>
+        <path d="M34 58h52l7 19H27z"></path>
+        <rect x="22" y="78" width="76" height="21" rx="7"></rect>
+        <path class="sprite-stamp-mark" d="m45 88 8 7 22-22"></path>
+      </svg>
+    </div>
+
+    <section class="desk-hero" aria-labelledby="hero-title">
+      <div>
+        <p class="desk-eyebrow">Independent buying advice / copy 01</p>
+        <h1 id="hero-title">Buy the right tech. Keep the receipt.</h1>
+        <p class="desk-lede">
+          Send me the listing, shortlist, or problem. I'll give you a straight
+          answer and show you what I checked. No affiliate link nonsense. No
+          chatbot shrug.
+        </p>
+        <div class="desk-actions">
+          <a class="desk-button" href="/request">Start a request</a>
+          <a class="desk-button secondary" href="/sample-report"
+            >Read a sample report</a
+          >
+        </div>
       </div>
-      <h1 class="display-large">Teardown Cafe</h1>
-      <p class="hero-subtitle">
-        Curiosity meets caffeine. Constructing and deconstructing is either
-        screwing or unscrewing
-        <svg
-          class="inline-icon"
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"
-            stroke="var(--md-sys-color-tertiary)"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"></path>
-        </svg>
-      </p>
+      <aside class="desk-receipt" data-label="Buying desk / intake">
+        <strong>A paper trail for expensive decisions.</strong>
+        <p>
+          You get the verdict, fair price, red flags, and the exact questions
+          worth asking. All based on how you'll actually use the thing.
+        </p>
+        <span class="desk-stamp">Independent by design</span>
+      </aside>
     </section>
 
-    <!-- Device Type Navigation -->
-    <section class="device-nav">
-      <h2 class="section-title">Browse by Device Type</h2>
-      <div class="device-grid">
-        <a href="/device/laptop" class="device-card">
-          <svg
-            class="device-icon"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
+    <section
+      class="desk-section"
+      id="services"
+      aria-labelledby="services-title"
+    >
+      <div class="desk-section-heading">
+        <div>
+          <p class="desk-kicker">Pick the decision, not a package</p>
+          <h2 id="services-title">What do you need decided?</h2>
+        </div>
+        <p>
+          This is a manual pilot. I'll confirm what I can check, how long it'll
+          take, and the price by email before I start.
+        </p>
+      </div>
+      <div class="desk-grid">
+        <article class="desk-card">
+          <p class="desk-code">Form A / single item</p>
+          <h3>Check This</h3>
+          <p>
+            Send me one product or listing. I'll check fit, price, red flags,
+            and what you should ask before paying.
+          </p>
+          <a class="desk-link" href="/request?service=check-this"
+            >Request Check This →</a
           >
-            <path
-              d="M4 5h16a1 1 0 0 1 1 1v10H3V6a1 1 0 0 1 1-1Z"
-              stroke="currentColor"
-              stroke-width="1.5"></path>
-            <path
-              d="M2 16h20v2a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-2Z"
-              stroke="currentColor"
-              stroke-width="1.5"></path>
-            <rect
-              x="6"
-              y="8"
-              width="12"
-              height="6"
-              rx="0.5"
-              fill="#1A0B2E"
-              stroke="currentColor"
-              stroke-width="1"
-              opacity="0.6"></rect>
-            <circle cx="12" cy="17.5" r="0.5" fill="#00BCD4"></circle>
-          </svg>
-          <h3>Laptops</h3>
-          <p>Ultrabooks, gaming machines, and everything in between</p>
-        </a>
-        <a href="/device/3d-printer" class="device-card">
-          <svg
-            class="device-icon"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
+        </article>
+        <article class="desk-card">
+          <p class="desk-code">Form B / short list</p>
+          <h3>Compare These</h3>
+          <p>
+            Send me 2 or 3 options. I'll compare them around your use instead of
+            dumping a spec sheet on you.
+          </p>
+          <a class="desk-link" href="/request?service=compare-these"
+            >Request Compare These →</a
           >
-            <rect
-              x="4"
-              y="3"
-              width="16"
-              height="2"
-              rx="1"
-              stroke="currentColor"
-              stroke-width="1.5"></rect>
-            <path d="M6 5v14h12V5" stroke="currentColor" stroke-width="1.5"
-            ></path>
-            <rect
-              x="8"
-              y="15"
-              width="8"
-              height="4"
-              rx="0.5"
-              fill="currentColor"
-              opacity="0.3"></rect>
-            <path
-              d="M10 7h4v6h-4z"
-              stroke="currentColor"
-              stroke-width="1.2"
-              fill="#1A0B2E"
-              opacity="0.6"></path>
-            <circle cx="12" cy="9" r="1" fill="#00BCD4"></circle>
-            <line
-              x1="10"
-              y1="20"
-              x2="14"
-              y2="20"
-              stroke="currentColor"
-              stroke-width="1.5"
-              stroke-linecap="round"></line>
-          </svg>
-          <h3>3D Printers</h3>
-          <p>Setup, calibration, and hardware analysis</p>
-        </a>
-        <a href="/device/raspberry-pi" class="device-card">
-          <svg
-            class="device-icon"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
+        </article>
+        <article class="desk-card">
+          <p class="desk-code">Form C / open search</p>
+          <h3>Choose for Me</h3>
+          <p>
+            Give me the job, budget, region, and deal-breakers. I'll build a
+            short list and tell you where each option cuts corners.
+          </p>
+          <a class="desk-link" href="/request?service=choose-for-me"
+            >Request Choose for Me →</a
           >
-            <rect
-              x="4"
-              y="4"
-              width="16"
-              height="16"
-              rx="1.5"
-              stroke="currentColor"
-              stroke-width="1.5"></rect>
-            <rect
-              x="6"
-              y="6"
-              width="12"
-              height="12"
-              rx="0.5"
-              fill="#1A0B2E"
-              stroke="currentColor"
-              stroke-width="1"
-              opacity="0.6"></rect>
-            <circle cx="8" cy="8" r="1" fill="#00BCD4"></circle>
-            <circle cx="16" cy="8" r="1" fill="#00BCD4"></circle>
-            <circle cx="8" cy="16" r="1" fill="#00BCD4"></circle>
-            <circle cx="16" cy="16" r="1" fill="#00BCD4"></circle>
-            <rect
-              x="10"
-              y="10"
-              width="4"
-              height="4"
-              rx="0.3"
-              fill="currentColor"
-              opacity="0.3"></rect>
-          </svg>
-          <h3>Raspberry Pi</h3>
-          <p>SBC builds, modifications, and projects</p>
-        </a>
-        <a href="/device/nas" class="device-card">
-          <svg
-            class="device-icon"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <rect
-              x="4"
-              y="3"
-              width="16"
-              height="5"
-              rx="1"
-              stroke="currentColor"
-              stroke-width="1.5"></rect>
-            <rect
-              x="4"
-              y="9.5"
-              width="16"
-              height="5"
-              rx="1"
-              stroke="currentColor"
-              stroke-width="1.5"></rect>
-            <rect
-              x="4"
-              y="16"
-              width="16"
-              height="5"
-              rx="1"
-              stroke="currentColor"
-              stroke-width="1.5"></rect>
-            <circle cx="17" cy="5.5" r="0.8" fill="#00BCD4"></circle>
-            <circle cx="17" cy="12" r="0.8" fill="#00BCD4"></circle>
-            <circle cx="17" cy="18.5" r="0.8" fill="#00BCD4"></circle>
-            <rect
-              x="6"
-              y="4.5"
-              width="8"
-              height="2"
-              rx="0.3"
-              fill="currentColor"
-              opacity="0.3"></rect>
-          </svg>
-          <h3>NAS & Storage</h3>
-          <p>Network storage and homelab setups</p>
-        </a>
-        <a href="/device/smartphone" class="device-card">
-          <svg
-            class="device-icon"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <rect
-              x="6"
-              y="2"
-              width="12"
-              height="20"
-              rx="2"
-              stroke="currentColor"
-              stroke-width="1.5"></rect>
-            <line
-              x1="9"
-              y1="4.5"
-              x2="15"
-              y2="4.5"
-              stroke="currentColor"
-              stroke-width="1"
-              stroke-linecap="round"
-              opacity="0.5"></line>
-            <rect
-              x="8"
-              y="6"
-              width="8"
-              height="13"
-              rx="0.5"
-              fill="#1A0B2E"
-              stroke="currentColor"
-              stroke-width="0.8"
-              opacity="0.6"></rect>
-            <circle cx="12" cy="20" r="0.8" fill="#00BCD4"></circle>
-          </svg>
-          <h3>Smartphones</h3>
-          <p>Repair guides and component analysis</p>
-        </a>
-        <a href="/device/mechanical-keyboard" class="device-card">
-          <svg
-            class="device-icon"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <rect
-              x="2"
-              y="6"
-              width="20"
-              height="12"
-              rx="1.5"
-              stroke="currentColor"
-              stroke-width="1.5"></rect>
-            <rect
-              x="4"
-              y="8"
-              width="2"
-              height="2"
-              rx="0.3"
-              fill="currentColor"
-              opacity="0.5"></rect>
-            <rect
-              x="7"
-              y="8"
-              width="2"
-              height="2"
-              rx="0.3"
-              fill="currentColor"
-              opacity="0.5"></rect>
-            <rect
-              x="10"
-              y="8"
-              width="2"
-              height="2"
-              rx="0.3"
-              fill="currentColor"
-              opacity="0.5"></rect>
-            <rect
-              x="13"
-              y="8"
-              width="2"
-              height="2"
-              rx="0.3"
-              fill="currentColor"
-              opacity="0.5"></rect>
-            <rect
-              x="5"
-              y="14"
-              width="10"
-              height="2"
-              rx="0.3"
-              fill="#00BCD4"
-              opacity="0.6"></rect>
-          </svg>
-          <h3>Keyboards</h3>
-          <p>Mechanical keyboard disassembly and mods</p>
-        </a>
+        </article>
       </div>
     </section>
 
-    <FeaturedPrints />
+    <section class="desk-section" aria-labelledby="categories-title">
+      <div class="desk-section-heading">
+        <div>
+          <p class="desk-kicker">Supported categories</p>
+          <h2 id="categories-title">Tech that deserves a closer look.</h2>
+        </div>
+        <p>
+          If it isnt listed, choose Other. I'll tell you if I cant check it
+          properly.
+        </p>
+      </div>
+      <ul class="desk-categories" aria-label="Supported product categories">
+        <li>Laptops</li>
+        <li>Tablets</li>
+        <li>Keyboards</li>
+        <li>3D printers</li>
+        <li>Audio</li>
+        <li>Phones</li>
+        <li>PC parts</li>
+        <li>Home servers</li>
+        <li>Other tech</li>
+      </ul>
+    </section>
 
-    <section class="teardowns-grid" id="components">
-      {
-        sortedTeardowns.map((teardown, index) => (
-          <article
-            class="teardown-card"
-            style={`--card-index: ${index};`}
-            data-card-index={index}
-          >
-            <a href={`/teardowns/${teardown.id}`} class="card-link">
-              {teardown.data.heroImage && (
-                <div class="card-image">
-                  <OptimizedImage
-                    src={teardown.data.heroImage}
-                    alt={teardown.data.title}
-                    loading="lazy"
-                    sizes="(max-width: 600px) 90vw, (max-width: 1024px) 45vw, 400px"
-                    aspect="video"
-                  />
-                  <div class="image-overlay" aria-hidden="true" />
-                </div>
+    <section class="desk-section" aria-labelledby="sample-title">
+      <div class="desk-section-heading">
+        <div>
+          <p class="desk-kicker">A verdict you can act on</p>
+          <h2 id="sample-title">The answer first. Receipts underneath.</h2>
+        </div>
+        <p>
+          This is just the report format. I'll always tell you what I checked
+          and what I couldnt verify.
+        </p>
+      </div>
+      <div class="desk-two-column">
+        <article class="desk-card desk-verdict">
+          <span class="desk-verdict-badge">Proceed carefully</span>
+          <h3>Good machine. Weak listing.</h3>
+          <p>
+            The laptop fits the work, but the seller hasn’t shown enough
+            evidence to justify the asking price yet.
+          </p>
+          <div class="desk-price-line">
+            <span>Fair-price range</span><strong>$340-$390</strong>
+          </div>
+        </article>
+        <article class="desk-card">
+          <p class="desk-code">Evidence register / sample</p>
+          <ul class="desk-register">
+            <li>
+              <strong>Listing claim</strong>
+              <span
+                >16 GB memory and a replaced battery. Health isnt shown.</span
+              >
+            </li>
+            <li>
+              <strong>Measured research</strong>
+              <span
+                >The display and sustained performance suit the stated office
+                work.</span
+              >
+            </li>
+            <li>
+              <strong>Warning sign</strong>
+              <span
+                >No serial photo or charging-cycle screenshot. Ask before
+                paying.</span
+              >
+            </li>
+            <li>
+              <strong>Confidence</strong>
+              <span>Medium. Enough to continue, not enough to buy unseen.</span>
+            </li>
+          </ul>
+          <a class="desk-link" href="/sample-report">Open the full sample →</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="desk-section" aria-labelledby="evidence-title">
+      <div class="desk-section-heading">
+        <div>
+          <p class="desk-kicker">Evidence method</p>
+          <h2 id="evidence-title">No mystery confidence score.</h2>
+        </div>
+        <p>
+          I label every source. You can see what I know, how I know it, and
+          where the guesswork starts.
+        </p>
+      </div>
+      <div class="desk-grid">
+        <article class="desk-card">
+          <p class="desk-code">01 / direct</p>
+          <h3>Personally tested</h3>
+          <p>Stuff I've built, repaired, or used myself.</p>
+        </article>
+        <article class="desk-card">
+          <p class="desk-code">02 / sourced</p>
+          <h3>Reliable measurement</h3>
+          <p>Manufacturer documents and credible independent testing.</p>
+        </article>
+        <article class="desk-card">
+          <p class="desk-code">03 / limited</p>
+          <h3>Listing or insufficient</h3>
+          <p>Seller claims stay labeled, and missing evidence stays visible.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="desk-section" aria-labelledby="process-title">
+      <div class="desk-section-heading">
+        <div>
+          <p class="desk-kicker">Three steps</p>
+          <h2 id="process-title">Small desk. Human process.</h2>
+        </div>
+        <a class="desk-link" href="/how-it-works">See how it works →</a>
+      </div>
+      <div class="desk-grid desk-process">
+        <article class="desk-card">
+          <h3>Send the decision</h3>
+          <p>
+            Share the listing, shortlist, or buying problem and intended use.
+          </p>
+        </article>
+        <article class="desk-card">
+          <h3>Confirm the job</h3>
+          <p>
+            I'll reply with what I can check, how long it'll take, and the
+            price. I wont start until you agree.
+          </p>
+        </article>
+        <article class="desk-card">
+          <h3>Receive the report</h3>
+          <p>
+            Get the verdict, evidence, risks, questions, and confidence by
+            email.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="desk-section" aria-labelledby="operator-title">
+      <div class="desk-two-column">
+        <div>
+          <p class="desk-kicker">The operator</p>
+          <h2 id="operator-title">Advice from the workbench.</h2>
+        </div>
+        <div class="desk-card">
+          <p>
+            I’m Aim. I tear down electronics, repair broken gear, build PCs and
+            home servers, tune 3D printers, and note down what worked and what
+            didnt. The Buying Desk is the same skeptical work, just before you
+            spend the money.
+          </p>
+          <a class="desk-link" href="/about">About Aim and Teardown Cafe →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="desk-section" aria-labelledby="notes-title">
+      <div class="desk-section-heading">
+        <div>
+          <p class="desk-kicker">Field Notes</p>
+          <h2 id="notes-title">Recent work from the bench.</h2>
+        </div>
+        <a class="desk-link" href="/field-notes">Browse all Field Notes →</a>
+      </div>
+      <div class="desk-grid">
+        {
+          latestNotes.map((note) => (
+            <article class="desk-card desk-note-card">
+              {note.data.heroImage && (
+                <OptimizedImage
+                  src={note.data.heroImage}
+                  alt=""
+                  loading="lazy"
+                  aspect="video"
+                  sizes="(max-width: 900px) 90vw, 360px"
+                />
               )}
-              <div class="card-content">
-                <div class="card-meta">
-                  <span class="device-type">
-                    <span class="device-icon" aria-hidden="true">
-                      <DeviceIcons
-                        type={teardown.data.device}
-                        class="icon-svg"
-                      />
-                    </span>
-                    {teardown.data.device}
-                  </span>
-                  <span class={`difficulty badge-difficulty-${teardown.data.difficulty}`}>
-                    {teardown.data.difficulty}
-                  </span>
-                </div>
-                <h2 class="title-large">{teardown.data.title}</h2>
-                <p class="card-description">{teardown.data.description}</p>
-                <time
-                  class="card-date"
-                  datetime={teardown.data.pubDate.toISOString()}
-                >
-                  {teardown.data.pubDate.toLocaleDateString('en-US', {
+              <div>
+                <p class="desk-code">{note.data.device}</p>
+                <h3>{note.data.title}</h3>
+                <p>{note.data.description}</p>
+                <time datetime={note.data.pubDate.toISOString()}>
+                  {note.data.pubDate.toLocaleDateString('en-US', {
                     year: 'numeric',
                     month: 'long',
                     day: 'numeric',
                   })}
                 </time>
+                <br />
+                <a class="desk-link" href={`/teardowns/${note.id}`}>
+                  Read note →
+                </a>
               </div>
-            </a>
-          </article>
-        ))
-      }
+            </article>
+          ))
+        }
+      </div>
     </section>
 
-    {
-      sortedTeardowns.length === 0 && (
-        <div class="empty-state" id="analysis">
-          <p>No teardowns yet. Check back soon!</p>
+    <section class="desk-section" aria-labelledby="faq-title">
+      <div class="desk-section-heading">
+        <div>
+          <p class="desk-kicker">FAQ</p>
+          <h2 id="faq-title">Before you send anything.</h2>
         </div>
-      )
-    }
+      </div>
+      <div class="desk-faq">
+        <details>
+          <summary>Is this an automated or AI-generated report?</summary>
+          <p>
+            No. I review the request and write the report myself. Research tools
+            can help me find sources. The judgment is mine.
+          </p>
+        </details>
+        <details>
+          <summary>Do you earn affiliate commissions?</summary>
+          <p>
+            No. Affiliate links and seller payments dont affect the verdict. If
+            that ever changes, I'll say it plainly.
+          </p>
+        </details>
+        <details>
+          <summary>Can you inspect a device in person?</summary>
+          <p>
+            Not right now. Inspect It isnt available during this pilot. I can
+            only check what's visible in the listing, screenshots, and sources.
+          </p>
+        </details>
+        <details>
+          <summary>What happens after I submit the request?</summary>
+          <p>
+            The site opens an email draft. Nothing is sent until you press Send
+            in your email app. I'll reply with scope, timing, and price.
+          </p>
+        </details>
+      </div>
+    </section>
 
-    <!-- Footer/conclusion section -->
-    <section class="site-footer" id="conclusion">
-      <p class="footer-text">More teardowns coming soon. Stay curious.</p>
+    <section class="desk-section desk-final" aria-labelledby="final-title">
+      <p class="desk-kicker">Request / copy 01</p>
+      <h2 id="final-title">Put the decision on the desk.</h2>
+      <p>
+        No account. No upload portal. Fill this out, check the draft, and send
+        it from your own email app.
+      </p>
+      <div class="desk-actions">
+        <a class="desk-button" href="/request">Start a request</a>
+      </div>
     </section>
   </div>
 </BaseLayout>
-
-<style>
-  .content-wrapper {
-    position: relative;
-    z-index: 1;
-    padding-top: 120px; /* Space for fixed progress bar */
-  }
-
-  .hero {
-    text-align: center;
-    margin-bottom: 3rem;
-    padding: 2rem 0;
-    position: relative;
-    z-index: 2;
-    min-height: 40vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .hero-subtitle {
-    font-size: 1.25rem;
-    color: var(--md-sys-color-on-surface-variant);
-    margin-top: 1rem;
-    animation: fadeInUp 0.8s var(--md-sys-motion-easing-decelerate) 0.2s both;
-  }
-
-  .display-large {
-    animation: fadeInUp 0.8s var(--md-sys-motion-easing-decelerate) both;
-  }
-
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  .teardowns-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 1.5rem;
-    margin: 4rem 0;
-    position: relative;
-    z-index: 2;
-  }
-
-  .teardown-card {
-    background-color: var(--md-sys-color-surface-container);
-    border-radius: var(--md-sys-shape-corner-large);
-    overflow: hidden;
-    transition:
-      transform var(--md-sys-motion-duration-medium)
-        var(--md-sys-motion-easing-emphasized-decel),
-      box-shadow var(--md-sys-motion-duration-medium)
-        var(--md-sys-motion-easing-emphasized-decel);
-    box-shadow: var(--md-sys-elevation-level1);
-    opacity: 0;
-    animation: cardFadeIn 0.6s var(--md-sys-motion-easing-decelerate) forwards;
-    animation-delay: calc(var(--card-index) * 100ms + 400ms);
-    position: relative;
-    will-change: transform, box-shadow;
-  }
-
-  @keyframes cardFadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(30px) scale(0.95);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-    }
-  }
-
-  .teardown-card:hover {
-    transform: translateY(-6px) scale(1.01);
-    box-shadow: var(--md-sys-elevation-level4);
-  }
-
-  .teardown-card::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: var(--md-sys-color-surface-container-high);
-    opacity: 0;
-    transition: opacity var(--md-sys-motion-duration-medium)
-      var(--md-sys-motion-easing-standard);
-    backdrop-filter: blur(0px);
-    z-index: -1;
-  }
-
-  .teardown-card:hover::before {
-    opacity: 0.3;
-    backdrop-filter: blur(8px);
-  }
-
-  .card-link {
-    text-decoration: none;
-    color: inherit;
-    display: block;
-  }
-
-  .card-image {
-    width: 100%;
-    min-height: 160px;
-    max-height: 260px;
-    background: var(--md-sys-color-surface-container-low);
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .card-image :global(picture.optimized-picture) {
-    display: block;
-    width: 100%;
-  }
-
-  .card-image :global(picture.optimized-picture .optimized-img) {
-    width: 100%;
-    height: auto;
-    max-height: 260px;
-    object-fit: contain;
-    aspect-ratio: auto;
-    border-radius: 0;
-    transition: transform var(--md-sys-motion-duration-medium)
-      var(--md-sys-motion-easing-emphasized-decel);
-  }
-
-  .teardown-card:hover .card-image :global(.optimized-img) {
-    transform: scale(1.12);
-  }
-
-  .image-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      180deg,
-      transparent 0%,
-      rgba(19, 18, 24, 0.4) 100%
-    );
-    opacity: 0;
-    transition: opacity var(--md-sys-motion-duration-short)
-      var(--md-sys-motion-easing-standard);
-  }
-
-  .teardown-card:hover .image-overlay {
-    opacity: 1;
-  }
-
-  .card-content {
-    padding: 1.5rem;
-    position: relative;
-    background: var(--md-sys-color-surface-container);
-  }
-
-  .card-meta {
-    display: flex;
-    gap: 0.75rem;
-    margin-bottom: 0.75rem;
-    flex-wrap: wrap;
-  }
-
-  .device-type {
-    background-color: var(--md-sys-color-primary-container);
-    color: var(--md-sys-color-on-primary-container);
-    padding: 0.35rem 0.85rem;
-    border-radius: var(--md-sys-shape-corner-full);
-    font-size: 0.875rem;
-    font-weight: 500;
-    text-transform: capitalize;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.35rem;
-    transition: all var(--md-sys-motion-duration-short)
-      var(--md-sys-motion-easing-emphasized-decel);
-  }
-
-  .device-icon {
-    width: 16px;
-    height: 16px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .device-icon :global(.icon-svg) {
-    width: 100%;
-    height: 100%;
-  }
-
-  .teardown-card:hover .device-type {
-    background-color: var(--md-sys-color-primary);
-    color: var(--md-sys-color-on-primary);
-  }
-
-  .difficulty {
-    padding: 0.35rem 0.85rem;
-    border-radius: var(--md-sys-shape-corner-full);
-    font-size: 0.875rem;
-    font-weight: 500;
-    text-transform: capitalize;
-  }
-
-  .card-content h2 {
-    margin: 0.5rem 0;
-    color: var(--md-sys-color-on-surface);
-    transition: color var(--md-sys-motion-duration-short)
-      var(--md-sys-motion-easing-standard);
-  }
-
-  .teardown-card:hover .card-content h2 {
-    color: var(--md-sys-color-primary);
-  }
-
-  .card-description {
-    color: var(--md-sys-color-on-surface-variant);
-    margin: 0.75rem 0;
-    line-height: 1.5;
-  }
-
-  .card-date {
-    display: block;
-    font-size: 0.875rem;
-    color: var(--md-sys-color-on-surface-variant);
-    margin-top: 0.75rem;
-  }
-
-  .empty-state {
-    text-align: center;
-    padding: 4rem 2rem;
-    color: var(--md-sys-color-on-surface-variant);
-    font-size: 1.25rem;
-    min-height: 40vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .site-footer {
-    text-align: center;
-    padding: 4rem 2rem 8rem;
-    min-height: 30vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .footer-text {
-    font-size: 1.125rem;
-    color: var(--md-sys-color-on-surface-variant);
-  }
-
-  /* Device Navigation Styles */
-  .device-nav {
-    margin: 4rem 0;
-    text-align: center;
-  }
-
-  .section-title {
-    font-size: var(--md-sys-typescale-headline-large-size);
-    font-weight: var(--md-sys-typescale-headline-large-weight);
-    margin-bottom: 2rem;
-    color: var(--md-sys-color-on-surface);
-  }
-
-  .device-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(196px, 1fr));
-    gap: 1.05rem;
-    max-width: 1000px;
-    margin: 0 auto;
-  }
-
-  .device-card {
-    background: var(--md-sys-color-surface-container);
-    border-radius: var(--md-sys-shape-corner-large);
-    padding: 1.4rem 1.05rem;
-    text-decoration: none;
-    color: inherit;
-    transition: all var(--md-sys-motion-duration-medium)
-      var(--md-sys-motion-easing-standard);
-    box-shadow: var(--md-sys-elevation-level1);
-    border: 1px solid var(--md-sys-color-outline-variant);
-  }
-
-  .device-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--md-sys-elevation-level3);
-    border-color: var(--md-sys-color-primary);
-  }
-
-  .logo-wrapper {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 1.5rem;
-    margin-top: -240px;
-    animation: fadeInUp 0.8s var(--md-sys-motion-easing-decelerate) both;
-  }
-
-  .cafe-logo {
-    width: 480px;
-    height: 480px;
-    object-fit: contain;
-    filter: drop-shadow(0 8px 30px rgba(184, 179, 255, 0.5));
-  }
-
-  .inline-icon {
-    width: 24px;
-    height: 24px;
-    display: inline-block;
-    vertical-align: middle;
-    margin-left: 0.25rem;
-  }
-
-  .device-card .device-icon {
-    width: 56px;
-    height: 56px;
-    margin: 0 auto 0.7rem;
-    display: block;
-    color: var(--md-sys-color-primary);
-    transition: all var(--md-sys-motion-duration-medium)
-      var(--md-sys-motion-easing-standard);
-  }
-
-  .device-card:hover .device-icon {
-    transform: scale(1.1);
-    filter: drop-shadow(0 2px 8px rgba(184, 179, 255, 0.4));
-  }
-
-  .device-card h3 {
-    font-size: calc(var(--md-sys-typescale-title-large-size) * 0.9);
-    font-weight: var(--md-sys-typescale-title-large-weight);
-    margin-bottom: 0.5rem;
-    color: var(--md-sys-color-on-surface);
-  }
-
-  .device-card p {
-    color: var(--md-sys-color-on-surface-variant);
-    font-size: calc(var(--md-sys-typescale-body-medium-size) * 0.95);
-    line-height: 1.4;
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .teardown-card,
-    .hero-subtitle,
-    .display-large {
-      animation: fadeInSimple 0.6s ease-out both;
-    }
-
-    @keyframes fadeInSimple {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
-    }
-
-    .teardown-card,
-    .teardown-card:hover {
-      transform: none;
-    }
-
-    .teardown-card:hover .card-image img {
-      transform: none;
-    }
-  }
-
-  @media (max-width: 768px) {
-    .content-wrapper {
-      padding-top: 100px;
-    }
-
-    .teardowns-grid {
-      grid-template-columns: 1fr;
-      margin: 2rem 0;
-    }
-
-    .hero {
-      padding: 1.5rem 0;
-      margin-bottom: 2rem;
-      min-height: 30vh;
-    }
-  }
-</style>
-
-<script>
-  // Card hover is now pure CSS — no JS physics needed.
-  // Reduced-motion preferences are handled via CSS media query.
-</script>

@@ -1,0 +1,114 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+---
+
+<BaseLayout
+  title="Services"
+  description="Send me one product, a short list, or a buying problem. I'll check what fits, what looks wrong, and what the tradeoffs are."
+>
+  <div class="desk-page">
+    <header class="desk-page-header">
+      <p class="desk-eyebrow">The Buying Desk / services</p>
+      <h1>Start with the decision.</h1>
+      <p>
+        Three remote, manual services. I'll confirm what I can check, how long
+        it'll take, and the price by email before I start.
+      </p>
+    </header>
+
+    <section class="desk-section" aria-labelledby="active-services">
+      <div class="desk-section-heading">
+        <div>
+          <p class="desk-kicker">Available now</p>
+          <h2 id="active-services">Choose the closest fit.</h2>
+        </div>
+      </div>
+      <div class="desk-grid">
+        <article class="desk-card">
+          <p class="desk-code">Form A / single item</p>
+          <h2>Check This</h2>
+          <p>For one product, listing, or deal you’re already considering.</p>
+          <ul>
+            <li>Fit for your intended use</li>
+            <li>Price context and obvious red flags</li>
+            <li>Seller questions and evidence to request</li>
+            <li>A clear verdict with visible limits</li>
+          </ul>
+          <a class="desk-link" href="/request?service=check-this"
+            >Start Check This →</a
+          >
+        </article>
+        <article class="desk-card">
+          <p class="desk-code">Form B / short list</p>
+          <h2>Compare These</h2>
+          <p>For two required options and an optional third.</p>
+          <ul>
+            <li>Tradeoffs tied to your use</li>
+            <li>Value, longevity, and repair considerations</li>
+            <li>What each option does better or worse</li>
+            <li>A recommendation, not a spec dump</li>
+          </ul>
+          <a class="desk-link" href="/request?service=compare-these"
+            >Start Compare These →</a
+          >
+        </article>
+        <article class="desk-card">
+          <p class="desk-code">Form C / open search</p>
+          <h2>Choose for Me</h2>
+          <p>For a job and budget without a settled shortlist.</p>
+          <ul>
+            <li>A small short list that actually fits</li>
+            <li>Region and currency considered</li>
+            <li>Deal-breakers kept visible</li>
+            <li>Clear compromises at the budget</li>
+          </ul>
+          <a class="desk-link" href="/request?service=choose-for-me"
+            >Start Choose for Me →</a
+          >
+        </article>
+      </div>
+    </section>
+
+    <section class="desk-section" aria-labelledby="coverage-title">
+      <div class="desk-section-heading">
+        <div>
+          <p class="desk-kicker">Coverage</p>
+          <h2 id="coverage-title">Broad category, honest boundary.</h2>
+        </div>
+        <p>
+          I can help with laptops, tablets, keyboards, 3D printers, audio,
+          phones, PC parts, home servers, and similar tech.
+        </p>
+      </div>
+      <div class="desk-two-column">
+        <article class="desk-card">
+          <h3>What I can include</h3>
+          <ul>
+            <li>Verdict and confidence</li>
+            <li>Fair-price context where evidence allows</li>
+            <li>Expected fit for the stated use</li>
+            <li>Limitations, warning signs, and seller questions</li>
+            <li>Requested tests or screenshots</li>
+          </ul>
+        </article>
+        <article class="desk-card unavailable">
+          <p class="desk-code">Later / not available</p>
+          <h3>Inspect It</h3>
+          <p>
+            I'm not doing in-person inspections during this pilot. If I havent
+            touched the device, I wont pretend I did.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="desk-section desk-final">
+      <h2>Not sure which one?</h2>
+      <p>Pick the closest one. I can fix the scope when I reply.</p>
+      <div class="desk-actions">
+        <a class="desk-button" href="/request">Start a request</a>
+        <a class="desk-button secondary" href="/how-it-works">How it works</a>
+      </div>
+    </section>
+  </div>
+</BaseLayout>

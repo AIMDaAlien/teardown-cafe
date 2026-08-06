@@ -2,14 +2,37 @@
 import BaseLayout from '../layouts/BaseLayout.astro'
 ---
 
-<BaseLayout title="About">
+<BaseLayout
+  title="About"
+  description="I'm Aim. I tear down, repair, and build tech, then note down what actually matters."
+>
   <article class="about-content">
-    <h1 class="display-large">About Teardown Cafe</h1>
+    <p class="desk-eyebrow">Aim / operator notes</p>
+    <h1 class="display-large">About Aim & Teardown Cafe</h1>
 
     <section class="about-section">
       <p class="lead-text">
-        Hey! I'm Aim. This is where I document tearing things apart and
-        occasionally putting them back together.
+        Hey! I'm Aim. I run The Buying Desk and note down the hands-on work
+        behind it. Mostly tearing things apart and occasionally putting them
+        back together.
+      </p>
+
+      <p class="pilot-note">
+        <strong>The Buying Desk is a manual pilot.</strong> I read every request
+        myself, then confirm the scope, timing, and price by email before I start.
+      </p>
+
+      <h2 class="headline-large">Why a Buying Desk</h2>
+      <p>
+        A lot of buying advice is written to sell you something. I got tired of
+        that. The Buying Desk starts with what you actually need, shows the
+        receipts, and says when the evidence is weak.
+      </p>
+      <p>
+        The useful bit isnt a badge collection. It's years of opening laptops
+        and phones, repairing electronics, building PCs and home servers, tuning
+        3D printers, modifying keyboards, and learning what matters once the
+        marketing copy is gone.
       </p>
 
       <h2 class="headline-large">What This Is</h2>
@@ -53,7 +76,7 @@ import BaseLayout from '../layouts/BaseLayout.astro'
       <p>Pretty straightforward:</p>
       <ul>
         <li>Take photos during disassembly</li>
-        <li>Document what worked and what didn't</li>
+        <li>Note down what worked and what didnt</li>
         <li>Note component choices and build quality</li>
         <li>
           Rate repairability (because some devices are deliberately anti-repair)
@@ -80,11 +103,11 @@ import BaseLayout from '../layouts/BaseLayout.astro'
       </p>
 
       <p>
-        Same reason I use privacy-focused analytics (Plausible) - I want to know
-        if anyone's actually reading this stuff, but I don't need to track you
-        across the internet to do that. No cookies, no personal data collection,
-        no selling your browsing habits. Just basic "X people viewed this page"
-        stats.
+        The site doesn't use tracking, cookies, accounts, a payment form, or an
+        upload service. The Buying Desk request page builds an email draft on
+        your device. Nothing is sent until you press Send in your email app.
+        Read the
+        <a href="/privacy">plain-language privacy page</a> for the pilot details.
       </p>
 
       <p>
@@ -94,8 +117,9 @@ import BaseLayout from '../layouts/BaseLayout.astro'
 
       <h2 class="headline-large">Get in Touch</h2>
       <p>
-        Questions, suggestions, or found an error? Drop me a line or open an
-        issue on the <a
+        Questions, suggestions, or found an error? Email <a
+          href="mailto:amasud.tech@gmail.com">amasud.tech@gmail.com</a
+        > or open an issue on the <a
           href="https://github.com/AIMDaAlien/teardown-cafe"
           target="_blank">GitHub repo</a
         >.

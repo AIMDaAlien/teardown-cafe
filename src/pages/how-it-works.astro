@@ -1,0 +1,105 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+---
+
+<BaseLayout
+  title="How It Works"
+  description="You send the buying question. I check it, research it, and send back a straight answer with the receipts."
+>
+  <div class="desk-page">
+    <header class="desk-page-header">
+      <p class="desk-eyebrow">The Buying Desk / method</p>
+      <h1>Here's how it works.</h1>
+      <p>
+        You send the question. I check whether I can answer it. Then I research
+        it and send the report. No account, dashboard, or automated checkout.
+      </p>
+    </header>
+
+    <section class="desk-section" aria-labelledby="steps-title">
+      <div class="desk-section-heading">
+        <div>
+          <p class="desk-kicker">The sequence</p>
+          <h2 id="steps-title">From question to verdict.</h2>
+        </div>
+      </div>
+      <div class="desk-grid desk-process">
+        <article class="desk-card">
+          <h2>Build the request</h2>
+          <p>
+            Choose a service, describe the intended use, and include the
+            relevant products, listings, budget, or deal-breakers.
+          </p>
+        </article>
+        <article class="desk-card">
+          <h2>Confirm scope</h2>
+          <p>
+            I'll reply by email with what I can check, what the report will
+            cover, how long it'll take, and the price. I wont start until you
+            agree.
+          </p>
+        </article>
+        <article class="desk-card">
+          <h2>Receive the report</h2>
+          <p>
+            The email report leads with the verdict, then shows evidence, risks,
+            questions to ask, limitations, and confidence.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="desk-section" aria-labelledby="labels-title">
+      <div class="desk-section-heading">
+        <div>
+          <p class="desk-kicker">Evidence labels</p>
+          <h2 id="labels-title">What I know and how.</h2>
+        </div>
+      </div>
+      <div class="desk-two-column">
+        <article class="desk-card">
+          <ul class="desk-register">
+            <li>
+              <strong>Personally tested</strong><span
+                >I've used, built, or repaired it myself.</span
+              >
+            </li>
+            <li>
+              <strong>Measured research</strong><span
+                >Credible documentation or independent measurement.</span
+              >
+            </li>
+            <li>
+              <strong>Listing information</strong><span
+                >A seller or manufacturer claim that hasn’t been independently
+                verified.</span
+              >
+            </li>
+            <li>
+              <strong>Insufficient evidence</strong><span
+                >Something important is missing, so confidence drops.</span
+              >
+            </li>
+          </ul>
+        </article>
+        <article class="desk-card">
+          <h3>Remote means remote</h3>
+          <p>
+            A listing check isnt an inspection. Screenshots help. They still
+            cant prove everything. Audio is subjective, so I'll give you useful
+            buying advice instead of pretending I ran a lab.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="desk-section desk-final">
+      <h2>See the finished shape.</h2>
+      <p>The sample shows the answer-first report structure and its limits.</p>
+      <div class="desk-actions">
+        <a class="desk-button" href="/sample-report">Read the sample</a>
+        <a class="desk-button secondary" href="/request">Start a request</a>
+      </div>
+    </section>
+  </div>
+</BaseLayout>
