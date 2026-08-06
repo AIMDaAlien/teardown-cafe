@@ -1,3 +1,35 @@
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/ubuntu-400-latin.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/ubuntu-500-latin.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/ubuntu-700-latin.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url('/fonts/jetbrains-mono-400-600-latin.woff2') format('woff2');
+}
+
 /* Material You 3 Design Tokens - Dark Theme (Default) */
 /* Primary: Periwinkle/Lavender Purple */
 
@@ -86,7 +118,9 @@
 
   /* Legacy aliases for backward compatibility during transition */
   --md-sys-motion-easing-spring: var(--md-sys-motion-easing-emphasized-decel);
-  --md-sys-motion-easing-spring-soft: var(--md-sys-motion-easing-emphasized-decel);
+  --md-sys-motion-easing-spring-soft: var(
+    --md-sys-motion-easing-emphasized-decel
+  );
 
   /* Typography Tokens */
   --md-sys-typescale-display-large-font: 'Ubuntu', system-ui, sans-serif;
@@ -274,7 +308,9 @@ html {
   line-height: 1.7;
   background-color: var(--md-sys-color-background);
   color: var(--md-sys-color-on-background);
-  font-feature-settings: 'liga' 1, 'cv11' 1;
+  font-feature-settings:
+    'liga' 1,
+    'cv11' 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
